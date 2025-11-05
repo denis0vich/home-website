@@ -14,10 +14,11 @@ const config: Config = {
           DEFAULT: 'rgba(190, 140, 193, 1)',
         },
       },
-      fontFamily: {
-        'eb-garamond': ['EB Garamond', 'serif'],
-        'bella-queta': ['Bella Queta', 'serif'],
-      },
+          fontFamily: {
+            'eb-garamond': ['EB Garamond', 'serif'],
+            'bella-queta': ['Bella Queta', 'serif'],
+            'roboto-serif': ['Roboto Serif', 'serif'],
+          },
     },
   },
   plugins: [],

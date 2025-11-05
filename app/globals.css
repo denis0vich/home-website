@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap');
 
 @font-face {
@@ -15,14 +16,22 @@
 :root {
   --font-family-eb-garamond: 'EB Garamond', serif;
   --font-family-bella-queta: 'Bella Queta', serif;
+  --font-family-roboto-serif: 'Roboto Serif', serif;
   --text-white: rgba(255, 255, 255, 1);
   --text-purple: rgba(190, 140, 193, 1);
   --purple-button: rgba(190, 140, 193, 1);
 }
 
 body {
-  font-family: var(--font-family-bella-queta), var(--font-family-eb-garamond), serif;
+  font-family: 'Roboto Serif', serif;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6,
+.stories-title,
+.stories-subtitle,
+.font-bella-queta {
+  font-family: var(--font-family-bella-queta), var(--font-family-eb-garamond), serif;
 }
 
 @layer utilities {
