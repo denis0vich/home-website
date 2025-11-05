@@ -1,0 +1,1292 @@
+
+--- Page 1 ---
+Generation Z’s Conceptualization
+of the “Dream Home”
+A Thesis
+Presented to the
+Department of Communication
+College of Liberal Arts
+De La Salle University - Manila
+Term 3, A.Y. 2024-2025
+In partial fulfillment
+of the requirements for the degree
+Bachelor of Arts Major in Communication Arts
+Submitted by:
+GARCIA, Kirsten Jewel C.
+ZAMBRANO, Anne Nicole B.
+August 9, 2025
+
+--- Page 2 ---
+2
+ABSTRACT
+This production thesis explores how Generation Z (Gen Z) in Metro Manila
+conceptualizes the "dream home" as a profound symbol of liberation, psychological
+sanctuary, and identity. The project addresses a critical gap in existing housing discourse,
+which predominantly focuses on pragmatic concerns like economics and physical aesthetics,
+by instead delving into the deeply personal and emotional meanings Gen Z attaches to their
+ideal dwelling. It asserts that for this generation, a home is not merely a tangible structure
+but a subjectively constructed space shaped by lived experiences and aspirational ideals.
+The primary output of this project is a multimedia-rich web magazine featuring three
+creative nonfiction articles. These articles are the result of in-depth interviews with Gen Z
+individuals and are designed to be a human-centered and nuanced exploration of the topic.
+The magazine's format is deliberately chosen to align with the digital native sensibilities of
+its target audience, utilizing interactive and dynamic elements for engagement. Key
+theoretical frameworks, namely Affordance Theory and the Sense of Place framework, guide
+the project's creative direction. Affordance Theory is used to design the web magazine in a
+way that encourages user participation and emotional connection, while the Sense of Place
+framework provides a lens to analyze how interviewees form deep, meaningful connections
+to their imagined spaces. By concentrating on the internal, emotional landscape of the
+"dream home," this study expands the academic discourse on the subject, recognizing its
+crucial role in individual well-being beyond its function as a physical shelter. Ultimately, this
+thesis endeavors to reveal the compelling human stories behind a generation’s search for
+personal freedom and sanctuary.
+
+--- Page 3 ---
+3
+TABLE OF CONTENTS
+ABSTRACT………………………………………………………………………………...……....2
+I. Introduction…………………………………………………………………………….4
+II. Review of Related Literature……………………..…………...……………………..19
+III. Methodology………...……………………..………………………………………..…38
+IV. Works Cited……………………...………..………………………………………..…..49
+
+--- Page 4 ---
+4
+I. Introduction
+Nature and Description of the Project
+For Generation Z (Gen Z) in Metro Manila, the concept of "home" extends far beyond
+a physical dwelling, it embodies their aspiration for liberation and psychological sanctuary.
+As they navigate the early stages of their careers and the complexities of independent living
+in a densely populated urban city, their vision of an ideal living space becomes a powerful
+reflection of their deepest desires for autonomy, self-expression, and emotional stability.
+With that, the output centers on developing a web magazine designed to explore the
+subjective conceptualization of the "dream home" among Gen Z individuals residing in
+Metro Manila. A web magazine is particularly helpful for Gen Z because its interactive and
+multimedia-rich format aligns with their digital native sensibilities and preference for
+dynamic content consumption. Gen Z generally shows a strong preference for digital media
+over traditional forms; they are digital natives, having grown up with the internet, social
+media, and mobile devices, shaping their expectations for speed, convenience, and
+on-demand access (Chang & Chang). The primary objectives of this project are to provide a
+profoundly human-centered and psychologically nuanced understanding of the "dream
+home" concept for Gen Z, moving beyond superficial aesthetics or mere pragmatic
+affordability, and making this accessible and engaging through a digital medium. Specifically,
+it aims to explore how lived adversities transform the "dream home" into a potent symbol of
+liberation, psychological sanctuary, and identity, thereby expanding the academic discourse
+
+--- Page 5 ---
+5
+on "home" beyond a physical structure to encompass its vital role in individual well-being
+and self-actualization.
+Guiding this project are key theoretical frameworks, including Affordance theory
+and the Sense of Place framework. Affordance theory, as conceptualized by James Gibson
+and refined by Don Norman, offers a lens through which to understand the interactive
+potential of our digital web magazine. It focuses on how the platform's design actively
+invites Gen Z users to engage with and shape their conceptualizations of a dream home,
+creating emotional connection and direct participation rather than passive consumption
+(Gibson; Norman). The Sense of Place framework, drawing on the work of Dai and Liu
+(2024) and Raymond, Kytta, and Stedman (2020), explores how individuals form profound
+meanings about spaces, whether physical or virtual. This framework is instrumental in
+examining how Gen Z's "dream home" transcends mere physical structure, becoming an
+emotional and aspirational entity shaped by their lived experiences and digital interactions.
+The selection of a digital web magazine over a static physical publication is precisely
+because its dynamic, interactive, and multimedia capabilities are crucial for capturing the
+multifaceted nature of Gen Z's understanding of "home."
+Each creative nonfiction article will incorporate customized visual and thematic
+elements that directly reflect the interviewees' visions of their ideal homes. This includes
+tailored design, color palettes, imagery, and interactive features unique to each narrative,
+mirroring the emotional and aesthetic landscape of their "dream home." In addition to these
+immersive narratives, the web magazine will feature informational sections, including
+'Design & Autonomy,' 'Sustainable Living,' 'Financial Liberation,' and 'Expert Q&A.' It will
+
+--- Page 6 ---
+6
+also feature interactive elements like comment sections, a 'Community Forum,' 'Quizzes,'
+and 'Reader Submissions.' These components are designed to create an immersive user
+experience, allowing readers to virtually "walk through" the narratives and engage with the
+multifaceted concept of a dream home. The immersive design will dynamically adjust visual
+and interactive elements as users navigate each narrative, symbolically representing the
+interviewee's journey in conceptualizing their ideal living space.
+This digital medium is particularly fitting as it allows for a dynamic and interactive
+presentation of diverse perspectives. It utilizes multimedia elements such as images, videos,
+and written narratives to capture the nuanced understanding of "home." The core concept
+driving this project is to investigate the intricate relationship between varied lived
+experiences and the formation of this ideal "dream home," moving beyond a mere physical
+structure to encompass emotional, social, and aspirational dimensions of belonging and
+personal space.
+Background of the Study
+The conceptualization of a "dream home" among Gen Z individuals in Metro Manila
+is deeply embedded within a complex social and cultural landscape. This generation, often
+characterized as "digital natives," has grown up with unprecedented access to global trends
+and architectural aesthetics through social media and online platforms (Manalac). This
+exposure has broadened their perspectives on what an ideal home can be, moving beyond
+traditional Filipino housing models to embrace diverse design influences such as minimalist,
+modern, or eco-friendly concepts (Colliers).
+
+--- Page 7 ---
+7
+Furthermore, the urban reality of Metro Manila, marked by increasing population
+density and rising property costs, significantly shapes their housing aspirations. Metro
+Manila's population density, estimated at over 21,000 people per square kilometer, makes it
+one of the most densely populated regions in the world (Philippine Statistics Authority).
+This intense urbanization is compounded by significant housing cost inflation; for instance,
+the national residential real estate price index rose by 5.3% year-on-year in the first quarter
+of 2024, presenting a considerable barrier to homeownership for many young professionals
+(Bangko Sentral ng Pilipinas).
+Furthermore, the urban reality of Metro Manila, marked by increasing population
+density and rising property costs, significantly shapes their housing aspirations. Metro
+Manila is one of the densest regions in the Philippines, leading to challenges in mobility and
+a severe lack of urban planning implementation (Alvaira). While traditional Filipino values
+often emphasize multi-generational households and close-knit family structures, there is an
+observable shift towards nuclear families and single-person households among younger
+generations, influencing a demand for housing options that prioritize convenience,
+accessibility to work and amenities, and adaptable spaces, such as condominiums and
+townhouses (Baricaua).
+Economically, navigating early career stages in a highly competitive urban
+environment means that affordability and financial stability are significant concerns. A
+survey by PhilhealthCare, Inc. (PhilCare) found that while many Gen Z individuals believe
+their earnings suffice for retirement and leisure, they lack confidence in managing
+unforeseen expenses and view homeownership as an "elusive dream rather than a realistic
+
+--- Page 8 ---
+8
+possibility" (Manalac). This financial reality often leads them to consider more flexible
+options like renting or seeking properties with favorable payment schemes and entry-level
+pricing (Baricaua; RichestPH).
+Rationale
+This production thesis aims to understand the nuanced conceptualization of the
+"dream home" among Gen Z, moving beyond superficial aesthetics or mere pragmatic
+affordability. Existing architectural media and broader housing discourses, such as high-end
+publications like Architectural Digest and specialized issues like YES! Magazine: The
+Affordable Housing Issue (2018), frequently showcases aspirational residences and
+addresses general housing issues. Yet they often overlook the deeply personal,
+psychological, and symbolic meanings individuals, particularly Gen Z, attach to their ideal
+dwelling.
+Furthermore, this production seeks to address this critical gap by exploring how
+challenging lived experiences, such as strict upbringings, persistent financial hardship, or
+abusive domestic environments, transform the notion of a "dream home" into a symbol of
+liberation, psychological sanctuary, and identity formation. This production critically
+differentiates between a 'house' as a tangible physical structure and a 'home' as a dynamic,
+emotionally resonant, and subjectively constructed space. The focus is not on architectural
+blueprints or property values, but rather on the deeply personal and symbolic meanings
+that transform a mere dwelling into a cherished sanctuary and an embodiment of personal
+ideals. This, therefore, asserts that for Gen Z, the 'dream home' transcends its architectural
+
+--- Page 9 ---
+9
+form to become a profoundly subjective, emotional, and psychological 'home', a symbol of
+liberation, psychological sanctuary, and identity formation.
+This exploration is fundamentally guided by Affordance Theory and the Sense of
+Place framework. These frameworks together provide the theoretical lens to analyze how
+these subjective, psychological, and symbolic meanings are formed through interaction with
+environments, both lived and digital, thereby addressing the gap in current discourses. By
+concentrating on the internal experience of the dream home, particularly its emotional
+landscape, this study posits that a "dream home" represents a fundamental psychological
+aspiration. This perspective expands the academic discourse on "home" beyond its
+definition as a physical structure, recognizing its vital role in individual well-being and
+self-actualization. Ultimately, this thesis endeavors to reveal the compelling human stories
+underlying the 'dream home' for a generation navigating distinctive challenges,
+demonstrating that media serves not merely as a source of inspiration but as a critical tool
+for psychological coping, aspirational pursuit, and the attainment of personal freedom and
+sanctuary.
+Assumptions
+Only humans can build a home. Jerry Moore, an archaeologist and professor at
+California State University, argues in his award-winning book that while animals tend to
+construct shelters, humans build homes that hold meaning beyond physical function (1).
+Across cultures, people require spaces to gather, work, socialize, and rest. Hasty, Lewis, and
+Snipes, researchers from Oregon State University, the University of Pennsylvania, and the
+
+--- Page 10 ---
+10
+University of West Georgia, elucidate that “Dominant ideas about work, gender, marriage,
+parenting, hospitality, and status all shape the places we call home. Home involves a
+combination of materials, technologies, social relationships, everyday practices, deeply held
+values, and shared ideas” (ch. 3). This meaning is expressed in modern architectural designs
+and developmental landscape, where the foundation of structures is no longer fixed, but
+incessantly recalibrated by human experiences lived through these spaces. (Nicolini 2) The
+first assumption of this study is that it is innate for humans to create a home based on their
+environment, language, and culture, as each home is made to reflect their respective needs.
+However, as social and cultural conditions evolve, what constitutes a home ceases to be
+definite. In particular, for younger generations like Gen Z, whose environments are
+influenced by digital spaces, economic precarity, and changing family structures, the
+meaning of home is becoming more fluid and fragmented.
+The second assumption is that while existing discourse on homeownership
+highlights its economic and sociological dimensions, the psychological motivations behind
+having a dream home remain underexplored. A survey conducted by RocketMortgage, a
+retail mortgage lender, reveals that 72% of Gen Z Americans regard homeownership as a
+primary aspiration (Lenzen). Another American-based study reports that over 90% of
+individuals aged 18 to 44 wish to own a home at some point in their lives (Goodman and
+Mayer 32). Whereas, in the Philippines, 39% of Gen Z identify homeownership as one of
+their top concerns for the future (Antivola). It is consequential to acknowledge the complex
+emotional and psychological factors that drive these homeownership aspirations. In line
+
+--- Page 11 ---
+11
+with this, Boston Consulting Group, through its Manila division based in Bonifacio Global
+City, implemented a study led by Oundjian et al. observing that even those who already own
+homes remain hopeful about acquiring better ones that offer greater security (4). It follows
+that the factors that define security are more than a material goal, which reveals an ongoing
+emotional pursuit.
+The notions behind these emotional pursuits are drawn from media portrayals of
+houses, aggregated to suggest how a ‘home’ might be defined. Kiessel and Stubbs, professors
+from Arkin University of Creative Arts & Design and Cyprus International University,
+discovered that science-fiction dystopian houses accentuate societal discourses on class.
+They posit that following the depiction of utopian motifs of houses, eventually transformed
+by postmodern semiotic transformation, what remains is a sense of human isolation and the
+absence of ‘home’ (54-64).
+Simultaneously, emotions serve a fundamental purpose in movies, which evoke
+positive and negative emotional states in individuals (Luz et. al 4). Building on this, the third
+assumption postulates how media, particularly films and television, can affect the housing
+aspirations of a dream home. If media can inspire action anchored in storytelling, it
+becomes necessary to examine how these portrayals emotionally resonate with audiences,
+and in turn, accommodate their vision for a home.
+
+--- Page 12 ---
+12
+Scope and Limitations
+This study will produce a web magazine consisting of three creative nonfiction
+articles, complemented by visual designs inspired by architectural and domestic elements.
+The magazine will feature narratives from three Filipino Gen Z members, whose
+conceptualizations of a dream home are informed by significant personal experiences such
+as complex family dynamics, mental health challenges, and formative environments. It will
+also address subtopics such as finances, identity formation, education, and environmental
+influences, supported by insights from architecture, engineering, and psychology
+professionals. These themes will contextualize how the meaning of home for Filipino Gen Z
+has evolved in response to shifting social, cultural, and economic factors.
+Only three samples will be chosen to allow for a deeper focus on each narrative,
+taking into account the diversity of the participants’ backgrounds. Each subject will be
+selected based on the richness of their experiences and their potential to yield detailed,
+meaningful insights relevant to the topic. They will be treated as individual case studies to
+fully capture their lived experiences. In a study published by SAGE Publications, Schoch, a
+case study researcher, notes that using a case study “provides you with the chance to get an
+in-depth look at the inner workings and interactions of that organization or individual”
+(246). To support this approach, purposive sampling will be employed. As van Rijnsoever, a
+professor from Utrecht University, explains, “purposive scenarios are much more efficient
+than the random chance scenario” (12). This study is limited in scope to a small sample size,
+consisting of three Gen Z subjects and three expert informants. As such, the findings will
+provide qualitative insights rather than statistically representative conclusions.
+
+--- Page 13 ---
+13
+Gibson's theory of affordances presents a compelling alternative to how objects are
+typically perceived by the mind. Rather than observing an object’s physical features and
+mentally interpreting its function, Gibson contends that individuals directly perceive what
+the object affords — that is, what actions it makes possible. When applied to digital
+environments, such as websites or digital magazines, affordances refer to the immediate,
+relational possibilities offered to users: the capacity to learn, to interact, to reflect, or to be
+immersed. Within this study’s digital magazine, the narrative affordance of a third-person
+perspective will be utilized. According to Gander and Gander, researchers from Sweden,
+third-person narratives lead readers to adopt a third-person visual perspective, in which a
+vantage point is introduced that allows for a more observational and reflective stance.
+Interestingly, they found that readers of nonfiction are more visually aligned with the
+protagonist, suggesting a deeper emotional resonance and awareness even when written
+from an external viewpoint. This reflects the affordance of the narrative form. It positions
+readers as empathetic participants who engage with the material critically.
+Furthermore, the project will focus exclusively on the perspectives of Filipino Gen Z
+and will not explore the experiences of other generational or national groups. While the
+study touches on economic, social, and emotional dimensions of homeownership and
+domestic aspirations, it does not claim to address the full range of factors influencing these
+phenomena. The project’s production, from the conduct of conducting interviews to the
+development of developing the digital magazine, will take place from September to
+December 2025. Although only one issue will be developed during the production period,
+
+--- Page 14 ---
+14
+the project envisions the potential for a continuing series, depending on future interest and
+available capacity.
+Statement of the Problem
+Existing discourse often falls short in exploring the subjective and psychological
+dimensions of housing aspirations, particularly how Gen Z individuals in Metro Manila
+conceptualize their "dream home" as more than just a dwelling, but as a potent symbol of
+liberation and psychological sanctuary. There's a significant gap in understanding how
+specific lived adversities influence this unique conceptualization among this demographic.
+This study aims to bridge these gaps by investigating how these lived experiences shape
+their "dream home" concept and, in turn, how the aesthetic and functional elements they
+prioritize in their envisioned homes reflect their pursuit of personal autonomy, identity
+expression, and emotional well-being, ultimately offering a more holistic and
+psychologically informed perspective on the evolving housing needs and aspirations of Gen
+Z.
+Study Framework
+Theoretical Framework
+James Gibson coined the term affordance theory in his book The Ecological Approach
+to Visual Perception, first published in 1977. He described affordances as what the
+environment offers a person or an animal, meaning the possible actions made available by
+
+--- Page 15 ---
+15
+objects and surroundings (Gibson 127). According to Gibson, how an object is used is tied to
+its physical shape, but affordances also depend on the relationship between the user and the
+object. Affordances do not need to be physically noticeable or even consciously perceived.
+Osiurak, Rossetti, and Badets explain, “They are objective because they exist independently
+of the act of perception, but they are also subjective because the frame of reference is the
+individual’s action capabilities.”
+Some affordances remain unrecognized until they are acted on. Don Norman
+redefined the idea of affordances in the context of Human-Computer Interaction, focusing on
+how digital tools offer users possibilities for interaction. He described affordance as “the
+perceived and actual properties of the thing, primarily those fundamental properties that
+determine just how the thing could possibly be used” (Norman). In this study, the subject
+would be Gen Z, and the object would be the digital magazine platform. Affordance refers to
+what the platform allows Gen Z to do, such as imagine their dream homes, engage
+emotionally, and interact with the content. Norman also emphasized that affordances are
+part of communication, which aligns with this study’s aim to make the magazine not just
+something to consume, but something that invites participation through feedback,
+reflection, and emotional identification.
+Some affordances remain unrecognized until they are acted on. Don Norman
+redefined the idea of affordances in the context of human-computer interaction, focusing on
+how digital tools offer users the possibility of interaction. He described affordance as “the
+perceived and actual properties of the thing, primarily those fundamental properties that
+
+--- Page 16 ---
+16
+determine just how the thing could be used” (Norman). In this study, the subject will be Gen
+Z, and the object will be the digital magazine platform. Affordance refers to what the
+platform allows Gen Z to do, such as imagine their dream homes, engage emotionally, and
+interact with the content. Norman also emphasized that affordances are part of
+communication, which aligns with this study’s aim to make the magazine not just something
+to consume, but something that invites participation through feedback, reflection, and
+emotional identification.
+
+--- Page 17 ---
+17
+Conceptual Framework
+This study presents a conceptual framework that explores how Gen Z forms their
+idea of a dream home. It focuses on two central areas: housing aspirations, which refer to
+the psychological, societal, and economic motivations behind wanting a home, and the
+mutation of a home, which considers how the meaning of “home” shifts over time and across
+contexts. These are examined through the lens of sense of place, a variable adapted from the
+framework of Dai and Liu (2024).
+While Dai and Liu’s original study is not centered on housing, it explains how both
+digital and physical interactions shape people’s experiences of place. They note that “the
+fusion of digital and physical space practices enables continuous innovation in our
+experiences of place, leading to the formation of a more inclusive and extensive sense of
+
+--- Page 18 ---
+18
+place” (5). This provides a foundation for understanding how Gen Z may not view home
+strictly as a physical structure, but as something shaped by lived experiences, emotions, and
+media.
+To strengthen this perspective, the study also draws from Raymond, Kytta, and
+Stedman (2020), who argue that sense of place research has often overlooked how
+meanings are formed through direct perception and sensory engagement. They suggest that
+affordance theory can address this by explaining how people form meaning through
+real-time interaction with their environment. As they write, “affordance theory could
+overcome a number of blind spots in sense of place scholarship” by bridging immediate, felt
+experiences with longer-term, socially constructed meanings (11). This supports the study’s
+use of affordance theory as its theoretical lens and highlights how Gen Z actively engages
+with physical and digital spaces that shape their emotional understanding of home.
+Bringing these ideas together, the conceptual framework guides the analysis of how
+housing aspirations and changing meanings of home contribute to the conceptualization of a
+dream home. These narratives will be expressed through the production of a digital
+magazine, which serves as both the creative output and a digital “place” that reflects how
+Gen Z imagines, remembers, and aspires toward home. The magazine transforms into a safe
+space for both subjects and readers to engage with the evolving idea of what a home can be.
+
+--- Page 19 ---
+19
+II. Review of Related Literature
+The study's review of related literature provides a focused discussion on the "dream
+home" concept for Gen Z. All related literature found below are research-based and will
+support the content of the articles.
+Gen Z’s Conceptualization of the ‘Dream Home’
+The "dream home" for Gen Z is not merely a physical structure but a multilayered
+and deeply personal concept that embodies aspirations for psychological sanctuary,
+liberation, and identity. This conceptualization is contextualized within the unique
+socio-economic landscape and digital fluency of this generation. For many, a dream home
+serves as a symbol of autonomy, a safe haven from external pressures, and a space for
+self-expression.
+Paz-Pardo argues that declining homeownership among younger generations is
+driven by a lack of financial security and rising house prices, forcing many to delay this life
+milestone (2022). Sheedy, Shah, and Pan's research on young adults in Australia
+corroborates this, finding that while homeownership remains a key aspiration for many, a
+significant minority rejects it for the sake of freedom and flexibility (2023). This desire for
+freedom is also a key driver for those who opt to delay ownership to pursue other lifestyle
+goals. Abidoye et al.'s study in Jakarta, Indonesia, further reinforces these findings, noting
+that while homeownership is a major challenge, young adults are driven by functional
+motivations like a place to live or to start a family, rather than by pride or social status
+
+--- Page 20 ---
+20
+(2020). The authors identify affordability and insufficient income as crucial barriers.
+Similarly, Byun and Shon’s research on South Korean youth highlights that while co-living is
+a pragmatic solution to reduce costs, young adults often frame it as a lifestyle choice to
+conceal the reality of their limited options (2022). This "duplicity" suggests that for many,
+housing decisions are a compromise between economic reality and a desire to maintain a
+certain image.
+The collective findings from these studies demonstrate a significant disconnect
+between the traditional aspiration of homeownership and the realities faced by Gen Z. The
+broader context of this literature suggests that while the "dream home" remains a powerful
+ideal, its conceptualization is undergoing a fundamental shift. Financial precarity and a
+desire for freedom have led to a re-evaluation of what constitutes a stable and fulfilling
+living situation. Homeownership is no longer the sole marker of success, with many Gen Z
+individuals prioritizing flexibility and experiential living. This interpretation highlights a
+new dynamic where housing choices are not just about securing an asset, but about
+navigating a complex landscape of financial constraints, personal values, and psychological
+needs.
+This literature is highly relevant as it provides a foundation for exploring Gen Z's
+unique conceptualization of the "dream home." The research informs this study by
+validating that housing decisions are driven by economic necessity, personal aspirations for
+freedom, and psychological well-being. The findings from Paz-Pardo and Abidoye et al.
+provide essential context on the financial barriers facing this generation, while Sheedy, Shah,
+and Pan's work highlights the emerging trade-off between security and freedom. The
+
+--- Page 21 ---
+21
+concept of "duplicity" from Byun and Shon is particularly insightful, as it allows us to
+analyze how Gen Z’s public portrayal of their housing choices may differ from their private
+motivations. This allows the study to move beyond a simplistic view of housing and
+investigate how economic and societal pressures are actively reshaping what a "dream
+home" truly means for this generation.
+Housing Aspirations
+Housing aspirations refer to an individual's personal goals and desires regarding
+their ideal living situation. These aspirations are not static, they are a behavioral response to
+an individual's current residential environment, shaped by a combination of personal
+feelings, mental assessments of their living situation, and the influence of cultural and social
+norms.
+The reviewed literature offers a comprehensive understanding of housing
+aspirations as a complex concept. Opoko et al. (2015) explore aspirations within an informal
+urban settlement, revealing that residents' desires to move are driven by a combination of
+practical factors such as poor living conditions, household size, and a need for exclusive
+facilities, as well as personal circumstances like age and marital status. Their research posits
+that housing aspiration is a behavioral response rooted in an individual's subjective
+assessment of their environment and is a key predictor of mobility or home modification
+(Opoko et al. 119). Similarly, Diaz-Serrano's study on homeownership and housing
+satisfaction demonstrates a strong link between tenure status and perceived well-being
+(2009). The research found that a change from renting to owning significantly increases
+
+--- Page 22 ---
+22
+housing satisfaction, suggesting that a portion of this satisfaction is a result of fulfilling the
+expectation or aspiration to own a home. This underscores the psychological and emotional
+weight attached to achieving one's housing goals.
+These studies collectively highlight that housing aspirations are a crucial component
+of an individual's overall well-being and are influenced by a complex relationship of
+personal circumstances and external factors. The broader context of this literature suggests
+that while aspirations are deeply personal, they are not formed in a vacuum, they are a
+direct response to an individual's current living conditions, as seen in the desire for better
+facilities in informal settlements. The findings also indicate a significant emotional and
+psychological reward tied to fulfilling these aspirations, particularly when it comes to the
+cultural ideal of homeownership. This interpretation emphasizes that housing is a central,
+and often emotional, aspect of human life, and a primary driver for major life decisions.
+This literature is highly relevant to the study because it provides a foundational
+understanding of what drives housing aspirations beyond simple aesthetics. The findings
+from Diaz-Serrano are insightful, as they suggest that the emotional satisfaction of achieving
+a "dream home" may be tied less to the physical structure itself and more to the fulfillment
+of the aspiration to own. This provides a valuable lens for the study, allowing researchers to
+investigate whether Gen Z's "dream home" is an authentic desire for a specific type of space
+or a response to societal expectations and the psychological gratification of achieving a
+significant life milestone.
+
+--- Page 23 ---
+23
+Psychological Factors
+Psychological factors, in the context of this study, are defined as the mental and
+emotional aspects that shape a person's relationship with their living space. These include
+emotions, well-being, sense of security, and the psychological benefits derived from a home.
+The reviewed literature highlights the profound psychological significance of home
+environments. Graham, Gosling, and Travis argue that despite the considerable emotional
+and financial investment people place in their homes, psychological research has largely
+overlooked this domain (346). They advocate for a deeper study into how homes serve as a
+real-world context for social, developmental, and cognitive processes, suggesting that homes
+are vital for emotional regulation and well-being. This perspective is supported by Park and
+Kim, who investigated the relationship between homeownership and life satisfaction
+(2023). Their research found that while homeownership can boost life satisfaction, this
+psychological benefit is significantly diminished for individuals who experience housing
+affordability stress, indicating that the emotional reward is tied to financial security. Further
+reinforcing this, Seo and Park examined the link between housing and the mental health of
+young adults living independently (2021). Their study reveals a negative association
+between perceived poor housing quality and material hardship and the mental health of
+young adults, especially those living alone, highlighting the critical role of a stable and
+quality living environment in promoting psychological well-being during the transition to
+adulthood.
+
+--- Page 24 ---
+24
+The collective findings from these studies underscore that the home is not merely a
+backdrop for life but an active and influential agent in a person's psychological well-being.
+The literature demonstrates that the emotional and mental benefits of a home, including a
+sense of sanctuary, stability, and satisfaction, are tangible and measurable. The aspiration
+for a "dream home" is therefore a deep psychological pursuit, yet the research also suggests
+this pursuit is fraught with challenges. The psychological rewards of home are conditional
+on factors like affordability and housing quality. This implies that for a generation facing
+economic precarity, their "dream home" is more than a desire, it is a fundamental
+psychological need for security and a stable environment, which may be at odds with their
+current reality.
+This literature is highly relevant as it provides a basis for exploring the psychological
+dimensions of the "dream home" for Generation Z. The research informs this study by
+validating that the home is a critical context for psychological processes, including
+emotional regulation and identity formation. The findings from Park and Kim and Seo and
+Park are particularly insightful, as they directly link housing affordability and quality to
+mental health outcomes in young adults. This allows the study to move beyond superficial
+aesthetics and investigate how lived adversities, such as a lack of a stable home
+environment, can intensify the desire for a "dream home" as a symbol of mental well-being
+and a space of personal sanctuary.
+
+--- Page 25 ---
+25
+Societal Factors
+Societal factors, in the context of this study, are defined as the social norms, cultural
+values, and shared beliefs that influence a generation's perceptions and aspirations
+regarding housing. These elements extend beyond individual financial capacity and include
+the emotional and psychological weight placed on the concept of "home," such as its role in
+establishing identity, social standing, and a sense of belonging.
+The reviewed literature provides a multifaceted understanding of the societal and
+cultural influences on housing aspirations. Preece highlights the significant role of
+socio-cultural factors, such as identity and social norms, in guiding people's views on
+housing (2018). This research suggests a need to investigate whether new trends, such as
+house-sharing, are a lifestyle choice or a coping strategy for young adults. In a related vein,
+Odermatt and Stutzer challenge the widespread belief that homeownership intrinsically
+leads to happiness. Their study found that home buyers, particularly those with
+extrinsically-oriented life goals, often systematically overestimate the life satisfaction they
+will gain from owning a home, suggesting that a socially ingrained belief may drive the
+aspiration more than the reality (2022). Complementing this, Zavisca and Gerber discuss
+how homeownership functions as a socio-cultural foundation for stability and belonging.
+They explain that beyond its material value as an asset, a home can embody an extension of
+the self, signal social status, and enhance a sense of community, thereby influencing
+subjective well-being and civic engagement (2016).
+
+--- Page 26 ---
+26
+These studies collectively demonstrate that the "dream home" is not merely a
+financial or logistical goal but a deeply embedded social and psychological ideal. The
+literature suggests that society's traditional view of homeownership as the ultimate symbol
+of happiness, stability, and success may be a cultural construct that is being re-evaluated.
+For a generation navigating unprecedented social and economic shifts, the emotional and
+social motivations behind housing choices are more complex than ever. The research
+indicates a potential gap between a deeply held cultural ideal and the realized experiences
+of homeownership, pointing to the possibility that young adults may be seeking different,
+perhaps less traditional, avenues to achieve the sense of stability and identity historically
+associated with owning a home.
+This literature is highly relevant as it provides a strong academic basis for exploring
+the social and cultural dimensions of the "dream home" for Gen Z. The research informs this
+study by highlighting that a home is more than a physical shelter, it is a social and
+psychological concept tied to identity and social norms. These findings are crucial for
+investigating whether Gen Z still holds the traditional ideal of homeownership or if they are
+actively redefining what "home" means to them, prioritizing new social norms like
+community-based living or flexibility. The research also helps to frame the analysis of
+whether Gen Z's aspirations are driven by a genuine desire for the benefits of
+homeownership or by a socially conditioned belief that it leads to happiness.
+
+--- Page 27 ---
+27
+Economic Factors
+Economic factors, in the context of this study, refer to the financial and market
+conditions that influence an individual's ability to acquire, afford, and maintain a home.
+These factors include but are not limited to income levels, employment stability, housing
+affordability, interest rates, and the broader macroeconomic environment. For Gen Z, these
+elements are particularly significant as they shape the gap between their housing
+aspirations and the practical realities they face.
+Preece et al. examine the literature on housing aspirations, arguing for a more
+precise definition of the term and a move away from focusing solely on homeownership
+(90). The authors highlight how broader trends, such as declining homeownership rates,
+affordability issues, and precarious labor markets, are fundamentally reshaping people's
+housing goals. Building on this, Galiani et al. present a study on aspiration adaptation in
+resource-constrained environments (2021). Their research indicates that while individuals
+in poor neighborhoods may initially increase their housing aspirations in response to
+community upgrades, these aspirations eventually decay and return to baseline levels when
+faced with persistent resource limitations. This suggests that without the means to act on
+them, aspirations can fade. Finally, Vaidynathan et al. analyze the effect of economic
+indicators on housing prices, concluding that factors like CPI, real GDP, and interest rates
+significantly influence the real estate market (201). The authors emphasize the need for
+policies that increase housing supply to mitigate price hikes and address the demand for
+affordable housing.
+
+--- Page 28 ---
+28
+These studies collectively demonstrate a critical disjunction between an individual's
+housing aspirations and the economic realities that enable or hinder their achievement. The
+literature confirms that aspirations are not static but are shaped by a complex relationship
+of personal desires, social context, and financial capacity. In the broader context, this means
+that for a generation facing significant economic precarity, the "dream home" is less of a
+fixed ideal and more of a fluid concept that must constantly be adapted to external
+pressures. The research underscores that simply desiring a home is insufficient, the ability
+to realize that desire is deeply tied to market conditions and resource availability, which, as
+shown, can be both a source of hope and a source of frustration.
+This studies are relevant as it provides a strong academic basis for understanding
+how economic factors define and limit the conceptualization of the "dream home" for Gen Z.
+The research informs this study by highlighting that aspirations for housing are not fixed
+ideals but are fluid and must be constantly adapted to financial realities. It provides a lens to
+analyze how Gen Z's ideals may be shaped by the threat of aspiration fatigue, or the
+possibility of scaling down their dreams in the face of affordability issues and unstable labor
+markets. These insights are crucial for investigating how broader market forces and
+financial limitations directly influence Gen Z's housing expectations and choices, ultimately
+positioning the study to uncover the dynamic and often constrained nature of their housing
+dreams.
+
+--- Page 29 ---
+29
+Mutation of Home
+People would not be holistically satisfied with their needs if not for their homes.
+Maslow’s Hierarchy of Needs, coined by Abraham Maslow in 1943, established a framework
+wherein human needs are identified at a hierarchical level. Maslow’s theory contends that
+basic survival needs must be met before an individual can pursue higher-level psychological
+needs (Maslow). The physiological needs located at the bottom of his pyramid framework
+include necessary conditions for human survival, such as air, food, drink, shelter, clothing,
+warmth, sex, and sleep. These needs are seen as paramount and must be fulfilled in order to
+attain the other levels of human needs.
+Shelter, then, as elucidated by Samanani et al., researchers from The Cambridge
+Encyclopedia of Anthropology, has always been central to how people experience and define
+their humanity: “houses, homes, and practices of homemaking have been an inescapable
+background within anthropological writing throughout the discipline’s history.” The
+implications of a house and a home serve as a foundation to further understand key social
+science theories, from how family relationships are defined, how social status is maintained
+across generations, to how our senses are influenced by our environment. They furthermore
+theorize that “when we imagine home, it is often not the structures themselves but the
+feelings, practices, and relationships within familiar spaces which give home a powerful
+sense of belonging.” The meaning of home is one that transforms and transcends, a story
+that is constant in changing the definition according to its readers.
+
+--- Page 30 ---
+30
+The mutation of how home is defined does not confine a definite circumstance, race,
+or religion. Home mutates because of how much it is desired and how relevant it still is in
+attaining the necessary conditions to be considered human. In Christianity, the Book of
+Genesis tells of the Garden of Eden, where the first humans, Adam and Eve, were placed in
+their original “home.” The biblical paradise was intended to have everything to satisfy the
+humans so that they would never want for more (The Bible, Gen. 2.15). This signifies how a
+home has always been intended to provide one’s needs. When Eve became enlightened by
+the serpent, it can be argued that her definition of a home, a paradise, no longer simply
+encapsulated her current shelter, because she wanted more. From this, it is clear that this
+phenomenon is inevitable: as society continues to change and humanity evolves, the only
+constant is the mutation in how a home is perceived.
+Home as a House
+The house is an intimate extension of a person’s identity, built upon layers of
+memory, development, and lived experience. While the term “house” is broadly defined as “a
+building for habitation,” the word “home” is first and foremost “the place where a person or
+animal dwells” and only secondarily “the place where one lives or was brought up, with
+reference to the feelings of belonging, comfort, etc., associated with it” (Oxford English
+Dictionary). These two definitions are often used synonymously. In informal spaces like
+social media, for instance, phrases such as “moving house” and “moving home” are used
+
+--- Page 31 ---
+31
+without much thought for their deeper meanings. Still, to define a house is to trace the
+trajectory of one’s personal and cultural history.
+In the Philippine context, architecture carries its own social narrative. According to
+Del Castillo and Corpuz-Mendoza, researchers from the College of Architecture at the
+University of the Philippines Diliman, the meaning of a house varies depending on
+socioeconomic background. Informal settlers associate it primarily with shelter and family.
+Project housing residents value the role of community. Residents of gated subdivisions
+express more individualized meanings tied to self-expression and status (Del Castillo and
+Corpuz-Mendoza). Their study also notes that many homes in the country are not designed
+by professional architects or well-known designers. Instead, they are often self-built or
+modified with the help of skilled laborers. This raises a critical discussion investigating what
+people genuinely value in the spaces they build or buy for themselves?
+Historical conditions further shape how houses have been conceptualized.
+Yamaguchi, a researcher from Ateneo de Manila University, writes about how Filipino elites
+during the American colonial period constructed “American-style” wooden houses in the
+absence of American-built homes for Filipinos. These structures, which followed the visual
+language of colonial superiority, reflected aspirations for modernity and became part of
+family legacies and rising social status. Yamaguchi argues that these homes were not just
+places of dwelling but physical assertions of colonial alignment (Yamaguchi). This also
+opens a critical lens. During colonization, the home for many Filipinos may have been
+reduced to merely a house, shaped by inherited systems and hierarchies that left little room
+
+--- Page 32 ---
+32
+for personal or cultural growth. In such a setting, even calling a place “home” might have felt
+like a luxury because identifying as Filipino was itself a complicated act.
+Home as a Form of Security
+The constructs of a home are immortalized in what it offers to its inhabitants. The
+word security holds multiple meanings. It is defined as “the quality or state of being secure,”
+such as “freedom from danger” and “freedom from fear or anxiety” (Merriam-Webster
+Dictionary). In the book Living with Buildings, Ian Sinclair, a writer and filmmaker from
+London, highlights how buildings and structures “can isolate and endanger us, but they can
+also heal us. We project our hopes and fears onto buildings, while they absorb our histories.”
+The process of formulating the meaning of a home may seem uncomplicated on the
+surface, but the cognitive and emotional layers behind it are intricate. According to Sigmon,
+Whitcomb, and Snyder, researchers in the field of community psychology, “the psychological
+home addresses a feeling of connection and belonging to others that goes beyond a physical
+dwelling.” Similarly, Martin Heidegger, a German philosopher, elaborated on the idea of
+dwelling as the connection formed between people and places, making it a philosophical
+inquiry into existence.
+The way people perceive home as a form of security varies and can be seen as a need
+that is constantly desired and influenced by different realities. In Malaysia, for instance,
+Ismael et al., researchers from the Universiti Sains Malaysia, found that the concept of secure
+
+--- Page 33 ---
+33
+homes often points to gated or protected residential areas. However, there is no single
+authoritative definition of what makes a home secure, since people define it based on their
+circumstances. To someone wealthy, it might mean privacy and protection in an exclusive
+neighborhood. To someone less privileged, it could simply mean having a roof over their
+head and a space that keeps their family together.
+In a study conducted by Capistrano et al., scholars from Colegio de San Juan de
+Letran in Calamba, Laguna uncovered that the idea of home among adolescents was rooted
+in love, unity, peace, and understanding. These participants had experienced trauma,
+including physical and sexual abuse from family members, yet they found a sense of home in
+a shelter that provided them emotional and physical safety. Even in more unconventional
+spaces, the idea of home continues to evolve. Duncan, a fandom enthusiast from the
+University of the Witwatersrand, points out that home is an often an overlooked concept in
+fandom communities, where shared digital spaces can offer comfort and a sense of
+belonging.
+Altogether, the idea of home as a form of security is not limited to its physical
+structure. It also includes the emotional, relational, and cultural elements that is integrated
+in how individuals feel safe, connected, and whole.
+
+--- Page 34 ---
+34
+Digital Magazine
+A digital magazine possesses information that continues to engage its reader,
+bringing to life stories that have yet to be heard. But what makes it different from other
+forms of medium, when it can be used all the same to tell a story? In an age where people
+are using artificial intelligence for their therapy, it is not too far-fetched to rely on digital
+media to enrich people’s minds. The shift from traditional to digital publishing has redefined
+how audiences engage with media.
+In the Philippines, Summit Media’s complete digital transformation in 2018 serves as
+a key example. Once known for its popular print titles such as Cosmopolitan and Candy, the
+company shut down its remaining six print magazines and successfully migrated all its
+content online. Summit Media president Lisa Gokongwei-Cheng explained that this pivot
+was driven by their respect for audience behavior and the evolution of digital consumption.
+Brands like Cosmo.ph and Preview.ph have since thrived in the digital space, continuing to
+uphold their distinct voices while catering to Gen Z’s online habits (“Summit Media
+Completes”).
+This trend is echoed globally by companies like NME (New Musical Express), which,
+after 66 years in print, ceased publication and transitioned into an online-only platform in
+2018. Despite the print edition’s wide distribution, it failed to meet financial expectations.
+As NME editor Charlotte Gunn noted, “From the moment we closed the print mag, we were a
+profitable business again” (Clarke). By November of the same year, NME reportedly reached
+
+--- Page 35 ---
+35
+the highest number of unique monthly users in its 22-year digital history (Clarke). Clarke, a
+journalist for The Drum, emphasized that this success illustrates the potential for
+profitability and reach in digital formats.
+These examples affirm the viability and potential of digital magazines as interactive,
+accessible, and sustainable mediums. Julie Dayton, an engineer from Western Michigan
+University, emphasizes how digital media is quicker, more affordable, and capable of
+reaching wider audiences than traditional formats (Dayton). Similarly, Henderson, Finger,
+and Selwyn, educators from Australian universities, argue that mobile accessibility increases
+engagement, particularly among students, allowing publications to be viewed anywhere
+through a simple web link (Henderson et al.).
+Beyond practicality, the digital magazine serves as a site of affordance. According to
+sociologist Ian Hutchby, affordances are “functional and relational aspects, which frame,
+while not determining, the possibilities for agentic action in relation to an object” (444). In
+digital contexts, this means that technology enables but does not dictate user behavior,
+making room for interactivity, personalization, and engagement. Leonardi and Barley,
+scholars in organizational communication and sociology, further argue that technology’s
+materiality and human agency intersect to shape its use, making the concept of affordance
+especially useful in studying digital spaces (Leonardi and Barley 161).
+This supports the structure of The Haven, a digital magazine where readers get to
+conceptualize their own dream home along the way. They are not passive consumers but
+
+--- Page 36 ---
+36
+active participants, scrolling through dream houses, listening to soundbites, and leaving
+real-time comments.
+Compared to a static PDF or print format, a digital magazine offers an immersive,
+story-driven experience. The Haven envisions a publication that mimics entering a home,
+using visual transitions, animated elements, and sound. This not only draws readers in but
+also addresses Gen Z’s shortened attention spans and preference for dynamic, mobile-first
+content. In line with Christine Greenhow and Benjamin Chapman, teachers from Michigan
+State University who found that digital tools support civic participation and active learning,
+The Haven aims to be a hybrid platform for storytelling, emotional resonance, and
+community-building (Greenhow and Chapman 6–8).
+Thus, the digital magazine as a medium aligns with the study’s aim to understand
+how Gen Z imagines their dream homes. The digital format does more than spread
+awareness. It invites readers to inhabit it, as a home would do.
+Gap in Literature
+Research on housing has largely focused on practical and structural concerns,
+particularly those tied to economic stability, ownership, and shelter as mentioned in the
+previous sections. These studies often address housing access, urban development, and
+policy-related frameworks. While crucial, such scholarship leaves a gap in understanding
+
+--- Page 37 ---
+37
+the emotional, psychological, and symbolic dimensions of home, especially how individuals,
+especially younger generations like Gen Z, conceptualize their “dream home.”
+Samanani et al. maintain that although homes shape the very foundation of social
+life, they are frequently treated as self-evident and remain underexamined in analytical
+discourse. The house is often viewed as a static backdrop rather than an active component
+of identity, memory, and aspiration. Following this line of reasoning, Del Castillo observes
+that much of the literature on Filipino architecture lacks deeper engagement with how
+Filipino culture both communicates and is communicated through built structures. Cultural
+values, aspirations, and meanings embedded in these spaces are often overlooked in favor of
+more utilitarian analyses.
+Marta et al., a team of Italian educators, strengthen this oversight in global housing
+literature. While acknowledging the role of home in personal well-being, they note that few
+studies have examined the lived experiences of individuals transitioning from homelessness
+to independent housing, again emphasizing the lack of focus on daily life and emotional
+attachment.
+These gaps highlight the need for more nuanced, interdisciplinary inquiries into how
+people imagine, idealize, and emotionally relate to their homes. This study attempts to
+respond to that absence by examining the reasons why Gen Z leans into the idea of a “dream
+home.”
+
+--- Page 38 ---
+38
+III. Methodology
+A. Method
+Format of the creative nonfiction articles
+Various articles and columns collectively served as a basis for the webzine. In terms
+of the writing style, the researchers took inspiration from The New Yorker. The publication
+is regarded for its long-form articles, many of which range from 2,000 to 10,000 words in
+length. An example of one that follows the researchers’ preferred storytelling approach is A
+House Is Not a Home by Eula Biss, which uses personal anecdotes and philosophical musings
+to explore the profound meanings embedded in domestic spaces, mirroring the project's
+storytelling approach. Each article will be a long-form piece, ranging from 1,500 to 3,000
+words, designed to provide in-depth, human-centered narratives that capture the subjective
+experiences of Generation Z individuals. The choice of this format is deliberate, as it allows
+for the nuanced exploration of how lived adversities and aspirations for autonomy are
+manifested in a person's vision of their ideal home.
+Format and creative direction of the webzine
+The project will consist of three creative nonfiction articles, each supported by
+customized visual and thematic elements. The web magazine's design will be highly
+intentional, with a unique color palette, imagery, and interactive features for each narrative,
+
+--- Page 39 ---
+39
+directly reflecting the interviewees' visions of their ideal homes. The immersive design will
+dynamically adjust visual and interactive elements, as users navigate each narrative,
+symbolically representing the interviewee's journey in conceptualizing their ideal living
+space. To further enhance this immersive experience, soundbites from the interviews will be
+included, allowing users to hear the authentic voices and emotions of the individuals as they
+describe their dream homes. This approach is guided by Affordance Theory, which ensures
+the platform's design actively invites user participation and emotional engagement, and the
+Sense of Place framework, which is used to capture how each interviewee's "dream home"
+transcends a mere physical structure to become an emotional and aspirational entity. The
+webzine is conceived as an interactive journey, where the user does not simply read about a
+dream home but experiences its formation alongside the narrative's protagonist.
+Data Collection
+Sampling Procedure
+The chosen sampling procedure for this qualitative study is purposive sampling.
+This method, also known as judgmental or selective sampling, involves intentionally
+selecting participants based on their specific characteristics and relevance to the research
+question. The researchers' judgment is key in identifying individuals who can provide rich,
+in-depth insights into the phenomenon under investigation, in this case, the subjective
+conceptualization of a "dream home" among Generation Z in Metro Manila. The goal is not to
+
+--- Page 40 ---
+40
+generalize findings to a larger population, but to deeply understand the diverse and
+nuanced experiences of a targeted group. This procedure allows for the efficient collection
+of highly relevant data from individuals whose backgrounds and lived adversities directly
+inform the research's core themes.
+Purposive sampling offers several strengths, including the ability to select
+"information-rich" cases, which is crucial for the depth required in qualitative research. It is
+also a cost-effective and time-efficient method, as it focuses resources on gathering
+high-quality data from a select few rather than a large, random sample. However, this
+method also has significant weaknesses, most notably limited generalizability and the
+potential for researcher bias. Because the sample is not random, the findings may not
+represent the full diversity of Generation Z in Metro Manila, and the researchers' subjective
+criteria for selection could introduce bias. To mitigate these weaknesses, the study will aim
+for theoretical generalization. While acknowledging that its findings may not be statistically
+generalizable, this approach ensures that the insights gained will contribute to a more
+comprehensive understanding of the "dream home" concept. This rich, contextual
+knowledge can then be applied by other researchers and practitioners to similar contexts.
+
+--- Page 41 ---
+41
+Contacting the Participants
+The stories on the CNF articles will be sourced from three mutual friends of the
+researchers. The pair reached out to them via private messaging and properly briefed them
+on the nature of the thesis. Upon signing the informed consent form, the researchers will ask
+each of them to enumerate what particular subject matter(s) they will be comfortable
+discussing. An in-depth interview via Zoom will be conducted afterwards in relation to these
+subject matter(s).
+Each interview will run for approximately 45-60 minutes. Afterwards, an audio
+recording will be generated solely for transcription purposes. This will be a crucial step in
+the production process to ensure that the participants will not be misquoted.
+Profile of the Participants
+Found below is a profile of each participant, which consists of their chosen
+pseudonyms, age and the themes that they discussed:
+PSEUDONYM AND AGE Theme(s) to be discussed
+Blair, 21 years old Abuse, Repressed Personal Identity
+Lala, 22 years old Religion, Homophobia
+Elijah, 20 years old Mental Health, Financial Precarity
+
+--- Page 42 ---
+42
+Consent of the Subjects
+The three subjects were sent an informed consent form to sign. The 4-page
+document strictly follows the format provided by De La Salle University and consists of the
+following details: the names of the researchers, thesis project title, purpose of the thesis
+project, study procedures, study duration, voluntary participation terms, confidentiality
+terms and the researchers’ contact information in case they had any further inquiries about
+their role in the project. Finally, the consent agreement portion asks for the participant’s full
+name, signature and the date the document was signed.
+Each participant will be given one week to read and understand the informed
+consent form. They are free to drop out of the project in the event that they are no longer
+comfortable with the terms that will be presented to them, or for other reasons, could
+simply no longer accommodate the researchers.
+Profile of the Experts
+Found below is a profile of each expert that will be contributing informal but
+educational commentaries to the CNF articles. Details that are enumerated include their
+names, current profession and educational background:
+
+--- Page 43 ---
+43
+EXPERT CREDENTIALS
+Lucia Da Silva She is an accomplished Interior Designer who
+earned her Bachelor of Science in Interior Design
+from SoFa Design Institute in 2024.
+Gabrielle B. She is a dedicated mental health professional with a
+Zambrano strong academic background. Currently serving as an
+OIC Guidance Counselor, she is also a Registered
+Psychometrician. She is expanding her expertise by
+pursuing a Master of Arts in Guidance and
+Counseling, having completed 36 units. She earned
+her Bachelor of Arts in Psychology in 2018.
+John Kelly Josue A seasoned Civil Engineer with a strong background
+in both professional practice and academia, he
+currently serves as a Project Manager at Neptel
+Design + Build, a position he has held since 2022.
+Concurrently, he contributes to the education sector
+as a College Instructor at Eulogio “Amang” Rodriguez
+Institute of Science and Technology in Manila, a role
+he started in 2020. He also held a faculty position at
+National University, Philippines from 2023 to 2025.
+His academic qualifications include a Bachelor of
+Science in Civil Engineering from National University,
+earned in 2019, and a Master of Science in
+Construction Management from the Polytechnic
+University of the Philippines, completed in 2022.
+Since 2024, he has been a dedicated member of the
+Philippine Institute of Civil Engineers.
+
+--- Page 44 ---
+44
+Contacting the Experts
+Each expert listed above was contacted via email and was properly briefed on the
+nature of the thesis. The interviews will commence after all three stories for the creative non
+fiction articles had been gathered, as the questions crafted per expert will be based on the
+personal accounts. The interview proper will run for approximately 20-30 minutes via
+Zoom, and an audio recording will be generated solely for transcription purposes. The
+researchers will request that these interviews to be articulated in its simplest form possible,
+as utilizing layman’s terms would appeal greatly to the CNF articles’ target audience.
+Outline of the CNF Articles
+Provided below is a detailed outline of the CNF articles, which enumerates every
+subsection, its projected length and what information they shall contain. As previously
+mentioned, all three CNF articles will be supplemented by commentaries from various
+experts:
+Intro
+The opening will invite
+readers to reflect on their
+personal concept of a
+“dream home.” It challenges
+the possibility that everyone
+holds a vision of home,
+
+--- Page 45 ---
+45
+whether they realize it or
+not.
+First Story
+A woman who has lived in
+multiple homes will share
+how each move was an
+attempt to escape the
+psychological hold of an
+abusive father.
+Second Story
+A queer woman grapples
+with the weight of religious
+expectations, describing how
+her dream home is one
+where she can live truthfully,
+without fear or shame.
+Third Story
+A man quietly battles the
+fear that his dreams of
+owning a home, of building
+stability, may never
+materialize due to financial
+burdens and family
+responsibilities.
+Expert Story
+Interwoven insights from
+professionals and experts
+will contextualize the
+broader implications of a
+dream home.
+
+--- Page 46 ---
+46
+B. Budget and Timetable
+Production Timeline
+Gathering of data for the creative nonfiction articles
+Activity September 2025
+Weeks 1 2 3 4
+Interviews with the
+three subjects
+Interviews with the
+experts
+Transcribing of all the
+interviews
+Submission of
+outlines for the
+creative nonfiction
+articles to the mentor
+Writing of the creative nonfiction articles
+Thesis production will begin with the collection of stories through interviews with
+the three subjects during the first week of September. In the second week, the experts will
+be interviewed regarding their insights in relation to the stories. The researchers will also
+
+--- Page 47 ---
+47
+work closely with the three experts and the three subjects to ensure that nobody is
+misquoted.
+Activity October 2025 November 2025 December 2025
+Weeks 1 2 3 4 1 2 3 4 1 2 3 4
+Writing of
+the first
+drafts
+Writing of
+the second
+drafts
+Writing of
+the final
+articles
+Creating the illustrations
+The researchers will reach out to artists in September 2025 for the project. Given
+that each CNF article tackles a different subject matter, an illustration was commissioned for
+each one. The researchers will work closely with these artists up until December 2025 to
+ensure that the art best represented the stories told by the subjects.
+Activity September 2025 November 2025 December 2025
+Weeks 1 2 3 4 1 2 3 4 1 2 3 4
+Contacting
+of artists
+
+--- Page 48 ---
+48
+Artists
+working on
+the
+illustrations
+Budget
+ITEM COST
+Website Php 20,000.00
+Three Dream Homes Illustration Php 3,000.00
+Token for Resource Persons Php 2,500.00
+Contingency Funds Php 3,000
+TOTAL Php 28,500.00
+The proposed budget for the digital magazine is estimated at Php 28,500. The bulk
+of the cost will go toward building a fully functional website, which will cover both front-end
+and back-end development. This includes interactive features, visual transitions, and free
+hosting integration to keep costs manageable. The goal is to create an immersive reading
+experience where each article scrolls into the subject’s dream home design.
+To complement the overall design of the website, three custom illustrations will be
+commissioned to represent the dream houses of the featured subjects. These visuals will
+appear in their respective sections of the magazine to enhance storytelling and emotional
+
+--- Page 49 ---
+49
+connection. Moreover, there will be no transportation or meal expenses for the researchers,
+as most tasks and transactions will be conducted online. The final budget remains flexible
+and may be adjusted depending on the needs of production.
+IV. Works Cited
+Abidoye, Rotimi, et al. "Young Adults and Homeownership in Jakarta, Indonesia."
+International Journal of Housing Markets and Analysis, 2020,
+doi:10.1108/IJHMA-03-2020-0030.
+Alvaira, Wennie. "An Analysis of Metro Manila's Impediments from and Progress towards
+Sustainable Urban Development." ResearchGate, 8 June 2022,
+www.researchgate.net/publication/361160871_An_Analysis_of_Metro_Manila's_Imp
+ediments_from_and_Progress_towards_Sustainable_Urban_Development.
+Antivola, Miguel Hanz L. “Homeownership Weighing on Minds of Gen Z Employees.”
+BusinessWorld, 5 Jan. 2024,
+www.bworldonline.com/labor-and-management/2024/01/05/567002/homeowne
+rship-weighing-on-minds-of-gen-z-employees/.
+Bangko Sentral ng Pilipinas. "Residential Real Estate Prices Continue to Rise." Bangko
+Sentral ng Pilipinas, 2024.
+
+--- Page 50 ---
+50
+Baricaua, Carla Mortel. "Deconstructing Homeownership by Millennials and Gen Zs." Manila
+Bulletin, 12 Mar. 2025,
+mb.com.ph/12/3/2025/deconstructing-homeownership-by-millennials-and-gen-zs.
+Byun, N., and D. Shon. "Living Place Matters: The Duplicity of Shared Housing in the Young
+Adults of South Korea." Frontiers in Psychology, vol. 13, 2022,
+doi:10.3389/fpsyg.2022.634905.
+Capistrano, Christian Jeric, et al. "Constructs of “Home” among Selected Adolescents in
+Calamba, Laguna: A Basis for a Structured Learning Experience Module." Ani: Letran
+Calamba Research Report, vol. 18, no. 1, 2022, p. 47.
+Castillo, Nicolo Precioso Del, and Aurora Corpuz-Mendoza. The Meaning of the Meaning of
+Houses: an Interdisciplinary Study.
+Chang, C.-W., & Chang, S.-H. (2023). "The Impact of Digital Disruption: Influences of Digital
+Media and Social Networks on Forming Digital Natives’ Attitude." SAGE Open, vol. 13,
+no. 3. https://doi.org/10.1177/21582440231191741.
+Clarke, Cameron. “How the NME Found Its Highest-Ever Readership and a New Lease of Life
+after Print.” The Drum, 9 Nov. 2018,
+www.thedrum.com/news/2018/11/09/how-the-nme-found-its-highest-ever-reade
+rship-and-new-lease-life-after-print.
+Colliers. "Philippines Property Market Outlook Q1 2025." Colliers Philippines, 2025.
+Cordero, Claro, Jr. "Changing Preferences, New Economic Realities in Residential Real
+Estate." Philippine Daily Inquirer, 18 Mar. 2025,
+
+--- Page 51 ---
+51
+business.inquirer.net/513542/changing-preferences-new-economic-realities-in-real
+-estate.
+Dai, Juncheng, and Fangyu Liu. “Embracing the Digital Landscape: Enriching the Concept of
+Sense of Place in the Digital Age.” Humanities and Social Sciences Communications,
+vol. 11, no. 1, 2024, https://doi.org/10.1057/s41599-024-03200-4.
+Dayton, Katherine. The Comparison of Effectiveness between Print Media & Electronic Media
+in Terms of Promotion and Recruitment. 2016. Honors Theses, no. 2692, Western
+Michigan University, scholarworks.wmich.edu/honors_theses/2692.
+Diaz-Serrano, Luis. "Disentangling the Housing Satisfaction Puzzle: Does Homeownership
+Really Matter?" Journal of Economic Psychology, vol. 30, no. 5, 2009, pp. 745-55,
+doi:10.1016/j.joep.2009.06.006.
+Duncan, Catherine. “Fandom, Homes and Families: Home as an Overlooked Site of Fannish
+Practice.” The Journal of Fandom Studies, vol. 10, no. 1, Mar. 2022, pp. 3–17,
+https://doi.org/10.1386/jfs_00047_1.
+Fernández-Aguilar, Luz, et al. “How Effective Are Films in Inducing Positive and Negative
+Emotional States? A Meta-analysis.” PLoS ONE, vol. 14, no. 11, Nov. 2019, p.
+e0225040. https://doi.org/10.1371/journal.pone.0225040.
+Galiani, Sebastian, et al. "Aspiration Adaptation in Resource-Constrained Environments."
+Journal of Urban Economics, vol. 123, 2021, doi:10.1016/j.jue.2021.103326.
+Gander, Pierre, and Anna Jia Gander. “Visual Perspective in Imagination and Memory of
+Factual and Fictional Stories.” Journal of Cognitive Psychology, vol. 34, no. 1, 2021, pp.
+112–126, https://doi.org/10.1080/20445911.2021.1928144.
+
+--- Page 52 ---
+52
+Gibson, James J. The Ecological Approach to Visual Perception. Classic ed., 1st ed., Psychology
+Press, 2014. Taylor & Francis eBooks, https://doi.org/10.4324/9781315740218.
+Gibson, James J. The Ecological Approach to Visual Perception. Houghton Mifflin, 1979.
+GMB.ph. "Transferring Values to Your Family: Evolving Filipino Dynamics." GMB.ph, 2025.
+Goodman, Laurie S., and Christopher Mayer. “Homeownership and the American Dream.”
+Journal of Economic Perspectives, vol. 32, no. 1, 2018, p. 32,
+https://doi.org/10.1257/jep.32.1.31.
+Graham, Lindsay, et al. "The Psychology of Home Environments: A Call for Research on
+Residential Space." Perspectives on Psychological Science, vol. 10, no. 3, 2015, pp.
+346–56, doi:10.1177/1745691615576761.
+Hasty, Jennifer, et al. Introduction to Anthropology. OpenStax, 23 Feb. 2022,
+openstax.org/books/introduction-anthropology/pages/3-1-the-homeyness-of-cultu
+re.
+Heidegger, Martin. “Building, Dwelling, Thinking.” Poetry, Language, Thought, translated by
+Albert Hofstadter, Harper & Row, 1971. Archive.org,
+ia801805.us.archive.org/25/items/ApolloHumanRightsBooks/56015071-Martin-H
+eidegger-Poetry-Language-Thought-Perennial-Classics.pdf.
+Henderson, Michael, et al. “What’s Used and What’s Useful? Exploring Digital Technology
+Use(s) among Taught Postgraduate Students.” Active Learning in Higher Education,
+vol. 17, no. 3, 2016, pp. 235–47, https://doi.org/10.1177/1469787416654798.
+Hutchby, Ian. “Technologies, Texts and Affordances.” Sociology, vol. 35, no. 2, 2001, pp.
+441–56, https://doi.org/10.1177/S0038038501000219.
+
+--- Page 53 ---
+53
+Ismail, Radzi, et al. “Preferences of Security Criteria in Low-Cost Housings among Malaysian
+Residents.” International Journal on Advanced Science, Engineering and Information
+Technology, vol. 13, no. 3, May 2023, pp. 1170–76,
+https://doi.org/10.18517/ijaseit.13.3.16956.
+Jocson, Luisa. "Philippine homeownership dreams stifled by costs, wages." BusinessWorld, 5
+Mar. 2025,
+bworldonline.com/editors-picks/2025/03/05/657173/philippine-homeownership
+-dreams-stifled-by-rising-costs-and-stagnant-wages/.
+Kiessel, Marko, and Jonathan Stubbs. "Urban Dystopia on Screen: The City, Architecture and
+Power in the Contemporary Science Fiction Film." Athens Journal of Architecture, vol.
+9, 7 July 2023, pp. 54-64, doi:10.30958/aja.9-4-4.
+Klein, Christian. “Understanding the Relevance of Digital Media in Higher Education.”
+International Journal of Technology in Education and Science (IJTES), vol. 7, no. 1,
+2023, pp. 71–82, https://doi.org/10.46328/ijtes.451.
+Lenzen, Isabel. “72% of Gen Zers Plan to Buy a Home in Under 6 Years, but How Are They
+Preparing?” Rocket Mortgage, 26 July 2023,
+www.rocketmortgage.com/learn/gen-z-home-buying.
+Leonardi, Paul M. “When Flexible Routines Meet Flexible Technologies: Affordance,
+Constraint, and the Imbrication of Human and Material Agencies.” MIS Quarterly, vol.
+35, no. 1, 2011, pp. 147–67.
+
+--- Page 54 ---
+54
+Manalac, Alejandro. "Gen Z cautious on homeownership prospects." Real Estate News
+Philippines, 8 Jan. 2024,
+realestatenews.ph/national/gen-z-cautious-on-homeownership-prospects.
+Marta, Gaboardi, et al. “In My New Home: The Daily Lives of People Living in Public Houses
+after a Long Period of Homelessness.” Behavioral Sciences (Basel, Switzerland) vol.
+12, no. 11, 27 Oct. 2022, doi:10.3390/bs12110416.
+Maslow, A. H. “A Theory of Human Motivation.” Psychological Review, vol. 50, no. 4, 1943, pp.
+370–396.
+“Security.” Merriam-Webster.com Dictionary, Merriam-Webster,
+www.merriam-webster.com/dictionary/security. Accessed 7 Aug. 2025.
+Moises, Marilyn. "Filipino Values Within The Family." Scribd, n.d.,
+www.scribd.com/document/340828307/Filipino-values-within-the-family-docx.
+Moore, Jerry D. The Prehistory of Home. 1st ed., University of California Press, 2012. JSTOR,
+www.jstor.org/stable/10.1525/j.ctt1ppx7m. Accessed 15 July 2025.
+Nicolini, Emilio. "Built Environment and Wellbeing—Standards, Multi-Criteria Evaluation
+Methods, Certifications." Sustainability, vol. 14, no. 8, 2022, p. 4754,
+https://doi.org/10.3390/su14084754.
+Norman, Donald A. The Design of Everyday Things. Revised and expanded ed., Basic Books,
+2013.
+Odermatt, Reto, and Alois Stutzer. "Does the Dream of Home Ownership Rest Upon Biased
+Beliefs? A Test Based on Predicted and Realized Life Satisfaction." Journal of
+Happiness Studies, vol. 23, 2022, pp. 3731–3763, doi:10.1007/s10902-022-00571-w.
+
+--- Page 55 ---
+55
+Opoko, Akunnaya, et al. "Housing Aspiration in an Informal Urban Settlement: A Case Study."
+Urbani Izziv, vol. 26, no. 2, 2015, pp. 117-31,
+doi:10.5379/urbani-izziv-2015-en-26-02-003.
+Oundjian, Anthony, et al. The Filipino Dream. Boston Consulting Group, Nov. 2024. PDF file,
+web-assets.bcg.com/22/e5/c7c6ba3f4154aaafeb15b461a6ea/the-filipino-dream.pd
+f.
+Oxford English Dictionary Online. “House,” “Home.” Oxford University Press, www.oed.com/.
+Accessed 8 Aug. 2025.
+Park, G. R., and J. Kim. "Trajectories of Life Satisfaction Before and After Homeownership:
+The Role of Housing Affordability Stress." Journal of Happiness Studies, vol. 24, 2023,
+pp. 397–408, doi:10.1007/s10902-022-00601-7.
+Paz-Pardo, Gonzalo. "Younger Generations and the Lost Dream of Home Ownership."
+Research Bulletin, European Central Bank, vol. 91, 2022,
+ideas.repec.org/a/ecb/ecbrbu/20220091.html.
+Philippine Statistics Authority. "2020 Census of Population and Housing." Philippine
+Statistics Authority, 2021.
+Preece, Julia, et al. "Understanding Changing Housing Aspirations: A Review of the
+Evidence." Housing Studies, vol. 35, no. 1, 2019, pp. 87–106,
+doi:10.1080/02673037.2019.1584665.
+Preece, Julia. "Understanding Housing Aspirations and Choices in Changing Contexts."
+University of Sheffield, 21 Mar. 2018,
+
+--- Page 56 ---
+56
+housingevidence.ac.uk/wp-content/uploads/2024/03/W2018_06_01_Preece_under
+standing_housing_aspirations.pdf.
+Raymond, Christopher M., et al. "Sense of Place, Fast and Slow: The Potential Contributions
+of Affordance Theory to Sense of Place." Frontiers in Psychology, vol. 8, 2017,
+https://doi.org/10.3389/fpsyg.2017.01674.
+RichestPH. "Generational Shifts: Understanding the Needs of the Next Generation of Filipino
+Homebuyers." RichestPH, 9 June 2025,
+richestph.com/generational-shifts-understanding-the-needs-of-the-next-generation
+-of-filipino-homebuyers/.
+Samanani, Farhan, and Johannes Lenhard. “House and Home.” The Open Encyclopedia of
+Anthropology, edited by Felix Stein, facsimile ed., The Cambridge Encyclopedia of
+Anthropology, 2019, 2023, doi:10.29164/19home.
+Schoch, Kurt. “Case Study Research.” Research Design and Methods: An Applied Guide for the
+Scholar-Practitioner, edited by Gary J. Burkholder, et al., SAGE Publications, 2020, pp.
+245–258,
+www.researchgate.net/profile/Subhash-Basu-3/post/How_do_i_determine_the_sam
+ple_size_for_a_study_looking_at_the_treatment_outcomes_of_mental_health_patients_
+in_a_community_house/.
+Seo, B. K., and G. R. Park. "Housing, Living Arrangements and Mental Health of Young Adults
+in Independent Living." International Journal of Environmental Research and Public
+Health, vol. 18, no. 10, 2021, p. 5250, doi:10.3390/ijerph18105250.
+
+--- Page 57 ---
+57
+Sheedy, Elizabeth A., et al. "Young Adults and the Housing Challenge." 31 Oct. 2023. SSRN,
+ssrn.com/abstract=4884772.
+Sinclair, Ian. Living with Buildings: And Walking with Ghosts – On Health and Architecture.
+Wellcome Collection in association with Profile Books, 2018.
+Sigmon, S. T., et al. "Psychological Home." Psychological Sense of Community: Research
+Applications, and Implications, edited by A. T. Fisher, C. C. Sonn, and B. D. Bishop,
+Plenum Publishers, 2002, pp. 161–79.
+Summit Media Completes Full Digital Transformation. Summit Media, 11 Apr. 2018, Summit
+Media Completes Full Digital Transformation.
+The Holy Bible: New Life Version. New Life Version, Barbour Publishing, 1969. Bible Gateway,
+www.biblegateway.com/passage/?search=Genesis%202%3A4-6&version=NLV.
+Accessed 7 Aug. 2025.
+Toriano, Gynen Kyra. "Philippine Housing Takes on a Smarter, Greener, More Inclusive Path
+to 2040." Asia Property Awards, 5 June 2025,
+www.asiapropertyawards.com/en/philippine-housing-takes-on-a-smarter-greener-
+more-inclusive-path-to-2040/.
+Vaidynathan, Durga, et al. "Effects of Economic Factors on Median List and Selling Prices in
+the U.S. Housing Market." Data Science and Management, vol. 6, no. 4, 2023, pp.
+199-207, doi:10.1016/j.dsm.2023.08.001.
+Van Rijnsoever, Frank J. “(I Can’t Get No) Saturation: A Simulation and Guidelines for Sample
+Sizes in Qualitative Research.” PLoS ONE, vol. 12, no. 7, July 2017, p. e0181689,
+https://doi.org/10.1371/journal.pone.0181689.
+
+--- Page 58 ---
+58
+Yamaguchi, Kiyoko. “The New ‘American’ Houses in the Colonial Philippines and the Rise of
+the Urban Filipino Elite.” Philippine Studies, vol. 54, no. 3, 2006, pp. 412–51. JSTOR,
+www.jstor.org/stable/42633879. Accessed 8 Aug. 2025.
+Zavisca, Jane R., and Theodore P. Gerber. "The Socioeconomic, Demographic, and Political
+Effects of Housing in Comparative Perspective." Annual Review of Sociology, vol. 42,
+2016, pp. 347–367, doi:10.1146/annurev-soc-081715-074333.

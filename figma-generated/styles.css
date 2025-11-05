@@ -1,0 +1,428 @@
+
+/* Add font files for EB Garamond */
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/eb-garamond.woff2') format('woff2'),
+       url('fonts/eb-garamond.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --font-family-eb-garamond: 'EB Garamond', sans-serif;
+  --text-white: rgba(255, 255, 255, 1);
+  --text-rgb-190-140-193: rgba(190, 140, 193, 1);
+}
+
+.text-white {
+  color: var(--text-white);
+}
+
+.text-rgb-190-140-193 {
+  color: var(--text-rgb-190-140-193);
+}
+
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-1-2 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: auto;
+}
+
+.rectangle-1-3 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.line-24-4 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+}
+
+.line-28-5 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+}
+
+.line-27-6 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+}
+
+.line-26-7 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+}
+
+.line-25-8 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+}
+
+.line-29-9 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+}
+
+.line-31-10 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+}
+
+.line-32-11 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+}
+
+.line-33-12 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 6px solid rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+}
+
+.text-13 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 10px 4px 4px 0px rgba(0,0,0,0.5);
+  border: 0.699999988079071px solid rgba(255, 255, 255, 1);
+  font-family: var(--font-family-bella-queta);
+  font-weight: normal;
+  font-size: 24px;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-white);
+}
+
+.line-22-15 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+  border: 48px solid rgba(144, 159, 240, 1);
+  border: none;
+  outline: none;
+}
+
+.text-18 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 1px solid rgba(195, 175, 208, 1);
+  font-family: var(--font-family-eb-garamond);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 15%;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-white);
+}
+
+.text-19 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 0px 7px 4px 0px rgba(0,0,0,0.5);
+  border: 1px solid rgba(195, 175, 208, 1);
+  font-family: var(--font-family-eb-garamond);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 15%;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-white);
+}
+
+.text-20 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 0px 7px 4px 0px rgba(0,0,0,0.5);
+  border: 1px solid rgba(195, 175, 208, 1);
+  font-family: var(--font-family-eb-garamond);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 15%;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-white);
+}
+
+.text-21 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 0px 7px 4px 0px rgba(0,0,0,0.5);
+  border: 1px solid rgba(195, 175, 208, 1);
+  font-family: var(--font-family-eb-garamond);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 15%;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-white);
+}
+
+.text-22 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 0px 7px 4px 0px rgba(0,0,0,0.5);
+  border: 1px solid rgba(195, 175, 208, 1);
+  font-family: var(--font-family-eb-garamond);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 15%;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-white);
+}
+
+.text-23 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 0px 7px 4px 0px rgba(0,0,0,0.5);
+  border: 1px solid rgba(195, 175, 208, 1);
+  font-family: var(--font-family-eb-garamond);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 15%;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-white);
+}
+
+.group-156-17 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.group-157-16 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.group-167-14 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.rectangle-2-26 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  background-color: rgba(190, 140, 193, 1);
+  border-radius: 81px;
+}
+
+.text-27 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.5);
+  font-family: var(--font-family-eb-garamond);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 4%;
+  line-height: 108.00000429153442%;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-white);
+}
+
+.group-163-25 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.rectangle-2-29 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: inset 0px 4px 4px 0px rgba(0,0,0,0.5);
+  background-color: rgba(255, 255, 255, 1);
+  border: 9px solid rgba(255, 255, 255, 0.5);
+  border-radius: 118px;
+}
+
+.text-30 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  font-family: var(--font-family-eb-garamond);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 4%;
+  line-height: 108.00000429153442%;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-rgb-190-140-193);
+}
+
+.group-164-28 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.group-165-24 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: -4px 8px 4px 0px rgba(0,0,0,0.5);
+}
+
+.line-25-32 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 10px solid rgba(255, 255, 255, 0.1);
+  border: none;
+  outline: none;
+}
+
+.line-26-33 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  border: 10px solid rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+}
+
+.group-166-31 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+}
+
+.color-paleutte-1-1-34 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  width: 100%;
+  height: auto;
+}
+
+.text-36 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255, 255, 255, 1);
+  font-family: var(--font-family-bella-queta);
+  font-weight: normal;
+  font-size: 140px;
+  letter-spacing: 4%;
+  line-height: 108.00000429153442%;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--text-white);
+}
+
+.group-161-35 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  box-shadow: inset 0px 4px 11.800000190734863px 0px rgba(0,0,0,0.5), 0px 4px 4px 0px rgba(0,0,0,0.5), 0px 4px 4px 0px rgba(0,0,0,0.5), 7px 4px 4px 0px rgba(0,0,0,0.5);
+}
+
+.color-paleutte-1-37 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  width: 100%;
+  height: auto;
+}
+
+.pennywise-logo-2-4-2-38 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  width: 100%;
+  height: auto;
+}
+
+.bella-queta-1 {
+@media (max-width: 1440px) {
+  .bella-queta-1 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bella-queta-1 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  background-color: rgba(255, 255, 255, 0.1);
+}
