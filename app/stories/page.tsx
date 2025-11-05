@@ -89,10 +89,10 @@ export default function StoriesPage() {
         <div className="stories-content">
           <div className="stories-portal-section">
             <h1 className="stories-title">
-              Choose Your Story
+              Stories
             </h1>
             <p className="stories-subtitle">
-              Each portal leads to a unique journey. Hover to explore, click to enter.
+              This section features the heart of our exploration, with deeply personal narratives alongside expert analysis. Dive into the lives of individuals like Elijah, Blair, and Lala to understand how past trauma, financial anxiety, and identity struggles are translated into the blueprint of their dream home. Complement these stories with Professional Insights from architects, designers, and psychologists who explain how these emotional needs are met through real-world engineering and design principles.
             </p>
 
             {/* Professional Insights Link */}
