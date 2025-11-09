@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import StoryParagraph from '@/components/StoryParagraph'
 
 export default function InformationDesignPage() {
   return (
@@ -14,61 +15,65 @@ export default function InformationDesignPage() {
 
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeIn" delay={200}>
-            <header className="mb-12">
-              <h1 className="text-5xl md:text-6xl font-bella-queta text-gray-900 mb-4">
+          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+            <header className="mb-16">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
                 Information Design & Autonomy
               </h1>
-              <p className="text-lg font-bella-queta text-gray-600">
+              <p className="text-xl font-bella-queta text-gray-600">
                 The Psychology of the Digital Mood Board
               </p>
             </header>
           </ScrollAnimation>
 
-          <div className="prose prose-lg max-w-none font-bella-queta">
-            <ScrollAnimation direction="fadeInUp" delay={300}>
-              <p className="text-xl leading-relaxed text-gray-700 mb-8 italic">
+          <div className="prose prose-lg max-w-none">
+            <ScrollAnimation direction="fadeIn" delay={300} duration={1200}>
+              <p className="text-2xl md:text-3xl leading-relaxed text-gray-700 mb-16 italic font-light text-center max-w-3xl mx-auto">
                 Information Design & Autonomy explores the digital landscape where the modern dream home is first conceived. This section analyzes how the architecture of online platforms gives Gen Z a crucial sense of control and self-definition, making the act of curating digital aesthetics an essential part of shaping their identity and future aspirations.
               </p>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={400}>
+            <ScrollAnimation direction="fadeInUp" delay={400} duration={1000}>
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   The Promise Pins
                 </h2>
-                <p className="mb-6 leading-relaxed text-gray-700">
+                <StoryParagraph delay={500} duration={1000}>
                   Everyone has been there. It's midnight, the city noise is too loud, and one's small apartment feels like it's shrinking. So, people open Pinterest. They scroll through an endless feed of homes, minimalist concrete walls, and organized, professionally decorated offices. They tap 'Save,' 'Pin,' or 'Add to Collection.' They aren't just looking at decoration or designs, they are constructing a world that, right now, feels utterly unattainable.
-                </p>
-                <p className="mb-6 leading-relaxed text-gray-700">
+                </StoryParagraph>
+                <StoryParagraph delay={600} duration={1000}>
                   But what if that digital mood board, that collection of saved images on Instagram, that detailed Notion dashboard, or that secret board of Scandinavian furniture, isn't just a fantasy? What if it is, in fact, one of the most powerful, serious tools you possess for identity formation and achieving future stability?
-                </p>
-                <p className="mb-6 leading-relaxed text-gray-700 font-bold text-lg">
-                  These digital mood boards are people's first piece of real estate. It's the blueprint of their future self.
-                </p>
+                </StoryParagraph>
+                <ScrollAnimation direction="fadeIn" delay={700} duration={800}>
+                  <p className="mb-8 text-center text-2xl leading-relaxed text-gray-900 font-bold">
+                    These digital mood boards are people's first piece of real estate. It's the blueprint of their future self.
+                  </p>
+                </ScrollAnimation>
               </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={500}>
+            <ScrollAnimation direction="fadeInUp" delay={800} duration={1000}>
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   Curation as Control
                 </h2>
-                <p className="mb-6 leading-relaxed text-gray-700">
+                <StoryParagraph delay={900} duration={1000}>
                   In a hyper-urbanized environment like Metro Manila, Gen Z faces an overwhelming lack of control. You can't control traffic, you can't control rent prices, and you certainly can't control how quickly you climb the career ladder. This immense, external pressure creates a deep psychological need for internal autonomy.
-                </p>
-                <p className="mb-6 leading-relaxed text-gray-700">
+                </StoryParagraph>
+                <StoryParagraph delay={1000} duration={1000}>
                   This is where the mood board steps in. It gives you immediate, low-stakes control over your entire aesthetic future.
-                </p>
-                <p className="mb-6 leading-relaxed text-gray-700">
+                </StoryParagraph>
+                <StoryParagraph delay={1100} duration={1000}>
                   Design experts Nada Endrissat, Gazi Islam, and Claus Noppeney describe the physical mood board's power in their research on design coordination, but the concept translates perfectly to the digital space. They found that these aesthetic objects, even when just visual, act as a coordination tool. They can direct and align independent actors (in your case, the disparate parts of your own life: your job, your saving habits, your aesthetic taste) while still maintaining creative freedom.
-                </p>
-                <p className="mb-6 leading-relaxed text-gray-700 font-bold">
-                  Your board isn't just a collection of wishes, it's a non-verbal contract with yourself, a balance between the dream life with the resources you currently have.
-                </p>
-                <p className="mb-6 leading-relaxed text-gray-700">
+                </StoryParagraph>
+                <ScrollAnimation direction="fadeIn" delay={1200} duration={800}>
+                  <p className="mb-8 text-center text-xl leading-relaxed text-gray-900 font-bold">
+                    Your board isn't just a collection of wishes, it's a non-verbal contract with yourself, a balance between the dream life with the resources you currently have.
+                  </p>
+                </ScrollAnimation>
+                <StoryParagraph delay={1300} duration={1000}>
                   By constantly refining this digital blueprint, you are practicing decision-making. You are deciding: Do I prefer the curved chair or the straight one? Do I value natural light or high technology? These low-pressure choices are a dress rehearsal for the high-stakes decisions you will eventually make when you finally buy that first appliance or sign that first lease. It's a way to train the brain to know what it truly wants, establishing a visual language that it can carry with it every day.
-                </p>
+                </StoryParagraph>
               </section>
             </ScrollAnimation>
 

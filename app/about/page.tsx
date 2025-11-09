@@ -16,15 +16,15 @@ export default function AboutPage() {
 
       <div className="story-content-area">
         <div className="max-w-4xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeIn" delay={200}>
-            <header className="mb-12">
-              <h1 className="text-5xl md:text-6xl font-bella-queta text-gray-900 mb-4 text-center">
+          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+            <header className="mb-16">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 text-center leading-tight">
                 About The Haven
               </h1>
             </header>
           </ScrollAnimation>
 
-          <div className="prose prose-lg max-w-none font-bella-queta">
+          <div className="prose prose-lg max-w-none">
             {/* Project Overview */}
             <ScrollAnimation direction="fadeInUp" delay={300}>
               <section className="mb-12">

@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import StoryParagraph from '@/components/StoryParagraph'
 
 export default function FinancialLiberationPage() {
   return (
@@ -14,20 +15,20 @@ export default function FinancialLiberationPage() {
 
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeIn" delay={200}>
-            <header className="mb-12">
-              <h1 className="text-5xl md:text-6xl font-bella-queta text-gray-900 mb-4">
+          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+            <header className="mb-16">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
                 Financial Liberation
               </h1>
-              <p className="text-lg font-bella-queta text-gray-600">
+              <p className="text-xl font-bella-queta text-gray-600">
                 Rethinking Ownership: The Renting Mindset
               </p>
             </header>
           </ScrollAnimation>
 
-          <div className="prose prose-lg max-w-none font-bella-queta">
-            <ScrollAnimation direction="fadeInUp" delay={300}>
-              <p className="text-xl leading-relaxed text-gray-700 mb-8 italic">
+          <div className="prose prose-lg max-w-none">
+            <ScrollAnimation direction="fadeIn" delay={300} duration={1200}>
+              <p className="text-2xl md:text-3xl leading-relaxed text-gray-700 mb-16 italic font-light text-center max-w-3xl mx-auto">
                 Financial Liberation is the generation's survival strategy in one of the world's most competitive and costly urban centers. This section unpacks the financial anxiety of the urban struggle and explores how Gen Z is redefining value, prioritizing time, convenience, and psychological peace over expensive, traditional metrics of homeownership.
               </p>
             </ScrollAnimation>

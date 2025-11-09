@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import StoryParagraph from '@/components/StoryParagraph'
 
 export default function InteriorDesignerPage() {
   return (
@@ -15,28 +16,28 @@ export default function InteriorDesignerPage() {
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
           {/* Header */}
-          <header className="mb-12">
-            <h1 className="text-5xl md:text-6xl font-bella-queta text-gray-900 mb-4">
-              How Interior Design and Psychology Transform Pain into Peace
-            </h1>
-            <p className="text-lg font-bella-queta text-gray-600 mb-6">
-              This article is based on original interviews conducted by the authors with Interior Designer Lucia Da Silva and Psychometrician Gabrielle Zambrano, who provided expert insight into the relationship between mental health, identity, and physical space. This content aligns with the production thesis "Generation Z's Conceptualization of the 'Dream Home'" by Garcia and Zambrano (De La Salle University - Manila, 2025).
-            </p>
-          </header>
+          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+            <header className="mb-16">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
+                How Interior Design and Psychology Transform Pain into Peace
+              </h1>
+              <p className="text-xl font-bella-queta text-gray-600 mb-6">
+                This article is based on original interviews conducted by the authors with Interior Designer Lucia Da Silva and Psychometrician Gabrielle Zambrano, who provided expert insight into the relationship between mental health, identity, and physical space. This content aligns with the production thesis "Generation Z's Conceptualization of the 'Dream Home'" by Garcia and Zambrano (De La Salle University - Manila, 2025).
+              </p>
+            </header>
+          </ScrollAnimation>
 
           {/* Story Content */}
-          <div className="prose prose-lg max-w-none font-bella-queta">
-            <ScrollAnimation direction="fadeIn" delay={200}>
-              <p className="text-xl leading-relaxed text-gray-700 mb-8">
+          <div className="prose prose-lg max-w-none">
+            <ScrollAnimation direction="fadeIn" delay={300} duration={1200}>
+              <p className="text-2xl md:text-3xl leading-relaxed text-gray-700 mb-16 italic font-light text-center max-w-3xl mx-auto">
                 Psychometrician Gabrielle Zambrano defines the critical difference: "A house is the physical structure. A home is the meaning we give to that structure." This meaning, she explains, is rooted in providing "a sense of safety, belonging, love, memories, and identity."
               </p>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={300}>
-              <p className="mb-6 leading-relaxed text-gray-700">
-                The process of designing this mental refuge falls to experts like Interior Designer Lucia Da Silva. She asserts, "A home is the personality in the house, the way that the designer and the client collaborate to make it seem or give the personality of the client." For the young Filipino facing chronic stress from traffic, noise, and the high cost of living, the design process itself becomes a form of therapy, a structured way to turn anxiety and past trauma into a deliberate, supportive environment.
-              </p>
-            </ScrollAnimation>
+            <StoryParagraph delay={400} duration={1000}>
+              The process of designing this mental refuge falls to experts like Interior Designer Lucia Da Silva. She asserts, "A home is the personality in the house, the way that the designer and the client collaborate to make it seem or give the personality of the client." For the young Filipino facing chronic stress from traffic, noise, and the high cost of living, the design process itself becomes a form of therapy, a structured way to turn anxiety and past trauma into a deliberate, supportive environment.
+            </StoryParagraph>
 
             <ScrollAnimation direction="fadeInUp" delay={400}>
             <section className="my-12">

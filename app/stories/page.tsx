@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import PageTransition from '@/components/PageTransition'
 import Navigation from '@/components/Navigation'
+import ScrollAnimation from '@/components/ScrollAnimation'
 
 interface Portal {
   id: string
@@ -88,39 +89,58 @@ export default function StoriesPage() {
         {/* Main storytelling content area */}
         <div className="stories-content">
           <div className="stories-portal-section">
-            <h1 className="stories-title">
-              Stories
-            </h1>
-            <p className="stories-subtitle">
-              This section features the heart of our exploration, with deeply personal narratives alongside expert analysis. Dive into the lives of individuals like Elijah, Blair, and Lala to understand how past trauma, financial anxiety, and identity struggles are translated into the blueprint of their dream home. Complement these stories with Professional Insights from architects, designers, and psychologists who explain how these emotional needs are met through real-world engineering and design principles.
-            </p>
+            <ScrollAnimation direction="fadeInUp" duration={2000} threshold={0.15}>
+              <h1 className="stories-title">
+                Stories
+              </h1>
+            </ScrollAnimation>
+            
+            <ScrollAnimation direction="fadeInUp" duration={1800} threshold={0.2}>
+              <p className="stories-subtitle">
+                This section features the heart of our exploration, with deeply personal narratives alongside expert analysis. Dive into the lives of individuals like Elijah, Blair, and Lala to understand how past trauma, financial anxiety, and identity struggles are translated into the blueprint of their dream home. Complement these stories with Professional Insights from architects, designers, and psychologists who explain how these emotional needs are met through real-world engineering and design principles.
+              </p>
+            </ScrollAnimation>
 
             {/* Professional Insights Link */}
-            <div className="mb-16 text-center">
-              <Link 
-                href="/stories/professional-insights"
-                className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bella-queta font-bold text-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl"
-              >
-                View Professional Insights
-              </Link>
-            </div>
+            <ScrollAnimation direction="zoomIn" duration={1500} threshold={0.25}>
+              <div className="mb-12 text-center">
+                <Link 
+                  href="/stories/professional-insights"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bella-queta font-bold text-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+                >
+                  View Professional Insights
+                </Link>
+              </div>
+            </ScrollAnimation>
+
+            {/* Interviews & Dream Homes Link */}
+            <ScrollAnimation direction="zoomIn" duration={1500} threshold={0.25}>
+              <div className="mb-20 text-center">
+                <Link 
+                  href="/interviews-dream-homes"
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 text-white rounded-full font-bella-queta font-bold text-lg hover:from-orange-600 hover:to-pink-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+                >
+                  Listen to Interviews & View Dream Homes
+                </Link>
+              </div>
+            </ScrollAnimation>
 
             <div className="stories-portals-grid">
-          {portals.map((portal) => (
-            <div
-              key={portal.id}
-              className="portal-card-wrapper"
-              onClick={(e) => handlePortalClick(portal, e)}
-            >
-              <div 
-                className="portal-card-inner"
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'rotateY(180deg)'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'rotateY(0deg)'
-                }}
+              {portals.map((portal, index) => (
+                <ScrollAnimation key={portal.id} direction="zoomIn" duration={1800} threshold={0.2}>
+              <div
+                className="portal-card-wrapper"
+                onClick={(e) => handlePortalClick(portal, e)}
               >
+                <div 
+                  className="portal-card-inner"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'rotateY(180deg)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'rotateY(0deg)'
+                  }}
+                >
                 {/* Front of card */}
                 <div className="portal-card-front">
                   <div className={`w-full h-full bg-gradient-to-br ${portal.color} flex items-center justify-center relative`}>
@@ -153,6 +173,7 @@ export default function StoriesPage() {
                 </div>
               </div>
             </div>
+            </ScrollAnimation>
           ))}
             </div>
           </div>

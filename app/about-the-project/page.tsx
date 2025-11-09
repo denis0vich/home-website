@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import StoryParagraph from '@/components/StoryParagraph'
 import Link from 'next/link'
 
 export default function AboutTheProjectPage() {
@@ -15,21 +16,21 @@ export default function AboutTheProjectPage() {
 
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeIn" delay={200}>
-            <header className="mb-12">
-              <h1 className="text-5xl md:text-6xl font-bella-queta text-gray-900 mb-4">
+          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+            <header className="mb-16">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
                 About The Project
               </h1>
-              <p className="text-lg font-bella-queta text-gray-600">
+              <p className="text-xl font-bella-queta text-gray-600 mb-2">
                 Generation Z's Conceptualization of the "Dream Home"
               </p>
-              <p className="text-sm font-bella-queta text-gray-500 mt-2">
+              <p className="text-sm font-bella-queta text-gray-500">
                 A Production Thesis | De La Salle University - Manila | 2025
               </p>
             </header>
           </ScrollAnimation>
 
-          <div className="prose prose-lg max-w-none font-bella-queta">
+          <div className="prose prose-lg max-w-none">
             <ScrollAnimation direction="fadeInUp" delay={300}>
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
@@ -47,17 +48,17 @@ export default function AboutTheProjectPage() {
               </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={400}>
+            <ScrollAnimation direction="fadeInUp" delay={600} duration={1000}>
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   Theoretical Framework
                 </h2>
-                <p className="mb-6 leading-relaxed text-gray-700">
+                <StoryParagraph delay={700} duration={1000}>
                   <strong>Affordance Theory</strong> (James Gibson & Don Norman): This framework guides how the digital magazine platform invites Gen Z users to engage with and shape their conceptualizations of a dream home, creating emotional connection and direct participation rather than passive consumption. The platform's design actively invites user participation through interactive elements, feedback mechanisms, and emotional identification.
-                </p>
-                <p className="mb-6 leading-relaxed text-gray-700">
+                </StoryParagraph>
+                <StoryParagraph delay={800} duration={1000}>
                   <strong>Sense of Place Framework</strong> (Dai & Liu, 2024; Raymond, Kytta & Stedman, 2020): This framework explores how individuals form profound meanings about spaces, whether physical or virtual. It examines how Gen Z's "dream home" transcends mere physical structure, becoming an emotional and aspirational entity shaped by their lived experiences and digital interactions.
-                </p>
+                </StoryParagraph>
               </section>
             </ScrollAnimation>
 

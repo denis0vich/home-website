@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import StoryParagraph from '@/components/StoryParagraph'
 
 export default function ArchitectEngineerPage() {
   return (
@@ -15,40 +16,38 @@ export default function ArchitectEngineerPage() {
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
           {/* Header */}
-          <header className="mb-12">
-            <h1 className="text-5xl md:text-6xl font-bella-queta text-gray-900 mb-4">
-              The Strategic Blueprint: The True Cost of the Filipino Dream Home
-            </h1>
-            <p className="text-lg font-bella-queta text-gray-600 mb-6">
-              This article is based on interviews conducted by The Haven's authors with Engr. John Kelly Josue and Architect Tanya Kriselle S. Chua, who provided the technical and design expertise used throughout this analysis. This content aligns with the production thesis "Generation Z's Conceptualization of the 'Dream Home'" by Garcia and Zambrano (De La Salle University - Manila, 2025).
-            </p>
-          </header>
+          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+            <header className="mb-16">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
+                The Strategic Blueprint: The True Cost of the Filipino Dream Home
+              </h1>
+              <p className="text-xl font-bella-queta text-gray-600 mb-6">
+                This article is based on interviews conducted by The Haven's authors with Engr. John Kelly Josue and Architect Tanya Kriselle S. Chua, who provided the technical and design expertise used throughout this analysis. This content aligns with the production thesis "Generation Z's Conceptualization of the 'Dream Home'" by Garcia and Zambrano (De La Salle University - Manila, 2025).
+              </p>
+            </header>
+          </ScrollAnimation>
 
           {/* Story Content */}
-          <div className="prose prose-lg max-w-none font-bella-queta">
-            <ScrollAnimation direction="fadeIn" delay={200}>
-              <p className="text-xl leading-relaxed text-gray-700 mb-8">
+          <div className="prose prose-lg max-w-none">
+            <ScrollAnimation direction="fadeIn" delay={300} duration={1200}>
+              <p className="text-2xl md:text-3xl leading-relaxed text-gray-700 mb-16 italic font-light text-center max-w-3xl mx-auto">
                 The fast-paced routine, accompanied by financial worries of living in Metro Manila, encourages young Filipinos to seek refuge in the promise of the future, away from their existing homes. These scrupulous visions of the future, whether saved on a phone or kept as a constant dream, are much more than just enticing photos. It has saved souls by making people continue to hope.
               </p>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={300}>
-              <p className="mb-6 leading-relaxed text-gray-700 font-medium">
+            <ScrollAnimation direction="fadeIn" delay={400} duration={800}>
+              <p className="mb-12 text-center text-2xl leading-relaxed text-gray-900 font-medium">
                 They represent the primary goal in a life full of chaos: controlling one's narrative.
               </p>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={400}>
-              <p className="mb-6 leading-relaxed text-gray-700">
-                The Haven traverses how people build their sense of home, revealing that fantasizing about having a dream home is less about its actual size and more about its power to act as a mentally safe space. As Architect Tanya Kriselle S. Chua explains, a house is simply "a structure that shelters people from the elements," giving basic privacy. In complete contrast, a home is "where people live, grow, and fulfill the human needs that are above mere survival and security. Home is where people find belongingness and self-actualization."
-              </p>
-            </ScrollAnimation>
+            <StoryParagraph delay={500} duration={1000}>
+              The Haven traverses how people build their sense of home, revealing that fantasizing about having a dream home is less about its actual size and more about its power to act as a mentally safe space. As Architect Tanya Kriselle S. Chua explains, a house is simply "a structure that shelters people from the elements," giving basic privacy. In complete contrast, a home is "where people live, grow, and fulfill the human needs that are above mere survival and security. Home is where people find belongingness and self-actualization."
+            </StoryParagraph>
 
-            <ScrollAnimation direction="fadeInUp" delay={500}>
-              <p className="mb-6 leading-relaxed text-gray-700">
-                Engineers and architects today are trying to mitigate the rising costs of land and crowding in the city. With this, people in the housing industry including developers must try to address if their consumers' emotional needs are being satisfied by the walls they continuously create. It is not enough to just plaster money, and hope that it maybe adequate to alleviate distress among different homes. The following stories of three individuals —Elijah, who yearns for silence to escape financial problems; Blair, who tries to find a home in the wrong places; and Lala, who needs privacy to escape societal judgment, show how each construction carries a meaning. As true passion for design, architecture, and engineering starts with understanding the heart and soul of every concrete.
-              </p>
-            </ScrollAnimation>
+            <StoryParagraph delay={600} duration={1000}>
+              Engineers and architects today are trying to mitigate the rising costs of land and crowding in the city. With this, people in the housing industry including developers must try to address if their consumers' emotional needs are being satisfied by the walls they continuously create. It is not enough to just plaster money, and hope that it maybe adequate to alleviate distress among different homes. The following stories of three individuals —Elijah, who yearns for silence to escape financial problems; Blair, who tries to find a home in the wrong places; and Lala, who needs privacy to escape societal judgment, show how each construction carries a meaning. As true passion for design, architecture, and engineering starts with understanding the heart and soul of every concrete.
+            </StoryParagraph>
 
             <ScrollAnimation direction="fadeInUp" delay={600}>
             <section className="my-12">

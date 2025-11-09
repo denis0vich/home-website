@@ -3,10 +3,83 @@
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
+  const feelsLikeHomeRef = useRef<HTMLDivElement>(null)
+  const ourGalleryRef = useRef<HTMLDivElement>(null)
+  const [feelsLikeHomeScroll, setFeelsLikeHomeScroll] = useState(0)
+  const [ourGalleryScroll, setOurGalleryScroll] = useState(0)
+  const isScrolling = useRef(false)
+
+  // Handle vertical scroll to horizontal carousel conversion
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (isScrolling.current) return
+      
+      const windowHeight = window.innerHeight
+      
+      // Check if we're in the carousel sections
+      const feelsLikeHomeSection = feelsLikeHomeRef.current?.closest('section')
+      const ourGallerySection = ourGalleryRef.current?.closest('section')
+      
+      if (feelsLikeHomeSection) {
+        const rect = feelsLikeHomeSection.getBoundingClientRect()
+        // Check if section is in viewport (with some threshold)
+        if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2) {
+          e.preventDefault()
+          e.stopPropagation()
+          isScrolling.current = true
+          
+          const scrollContainer = feelsLikeHomeRef.current
+          if (scrollContainer) {
+            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth
+            const scrollAmount = e.deltaY * 0.8 // Adjust speed
+            const currentScroll = scrollContainer.scrollLeft
+            const newScroll = Math.min(Math.max(currentScroll + scrollAmount, 0), maxScroll)
+            
+            scrollContainer.scrollTo({ left: newScroll, behavior: 'smooth' })
+            setFeelsLikeHomeScroll(newScroll)
+          }
+          
+          setTimeout(() => {
+            isScrolling.current = false
+          }, 100)
+          return
+        }
+      }
+      
+      if (ourGallerySection) {
+        const rect = ourGallerySection.getBoundingClientRect()
+        // Check if section is in viewport (with some threshold)
+        if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2) {
+          e.preventDefault()
+          e.stopPropagation()
+          isScrolling.current = true
+          
+          const scrollContainer = ourGalleryRef.current
+          if (scrollContainer) {
+            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth
+            const scrollAmount = e.deltaY * 0.8 // Adjust speed
+            const currentScroll = scrollContainer.scrollLeft
+            const newScroll = Math.min(Math.max(currentScroll + scrollAmount, 0), maxScroll)
+            
+            scrollContainer.scrollTo({ left: newScroll, behavior: 'smooth' })
+            setOurGalleryScroll(newScroll)
+          }
+          
+          setTimeout(() => {
+            isScrolling.current = false
+          }, 100)
+          return
+        }
+      }
+    }
+
+    window.addEventListener('wheel', handleWheel, { passive: false })
+    return () => window.removeEventListener('wheel', handleWheel)
+  }, [])
 
   // Gallery captions from the docx
   const galleryCaptions = [
@@ -74,86 +147,130 @@ export default function GalleryPage() {
             </p>
           </ScrollAnimation>
 
-          {/* Feels Like Home Carousel */}
+          {/* Feels Like Home Carousel - Horizontal (Full Page) */}
           <ScrollAnimation direction="fadeInUp" delay={400}>
-            <section className="mb-20">
-              <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6 text-center">
+            <section className="mb-0 min-h-screen flex flex-col justify-center py-20">
+              <h2 className="text-4xl md:text-5xl font-bella-queta font-bold text-gray-900 mb-6 text-center">
                 Feels Like Home
               </h2>
-              <p className="text-gray-700 font-bella-queta text-center mb-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-gray-700 font-bella-queta text-center mb-12 max-w-2xl mx-auto leading-relaxed text-lg">
                 Home is a collection of stories, carried by memory and presence, by the living and those who came before. It is where souls rest, heal, and learn to begin again. Feels Like Home gathers these small, honest moments through a series of selfies taken by people in the spaces they call home. Each face holds a history they choose to honor.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                  <div key={num} className="relative aspect-square overflow-hidden rounded-lg shadow-lg">
-                    <Image
-                      src={`/gallery/feels-like-home/${num}.png`}
-                      alt={`Feels like home ${num}`}
-                      fill
-                      className="object-cover hover:scale-110 transition-transform duration-300"
-                      unoptimized
-                    />
+              <div className="relative flex-1 flex items-center">
+                <div 
+                  ref={feelsLikeHomeRef}
+                  className="overflow-x-auto scrollbar-hide scroll-smooth pb-4 w-full"
+                  style={{ scrollBehavior: 'smooth' }}
+                >
+                  <div className="flex gap-6" style={{ width: 'max-content', paddingLeft: '50vw', paddingRight: '50vw' }}>
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                      <div 
+                        key={num} 
+                        className="flex-shrink-0 w-[500px] h-[500px] relative overflow-hidden rounded-lg shadow-2xl hover:shadow-3xl transition-shadow group"
+                      >
+                        <Image
+                          src={`/gallery/feels-like-home/${num}.png`}
+                          alt={`Feels like home ${num}`}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          unoptimized
+                        />
+                      </div>
+                    ))}
                   </div>
-                ))}
+                </div>
+                {/* Scroll indicator */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                  <div className="text-sm text-gray-500 font-bella-queta animate-pulse">
+                    Scroll to navigate →
+                  </div>
+                </div>
               </div>
             </section>
           </ScrollAnimation>
 
-          {/* Our Gallery */}
+          {/* Our Gallery - Horizontal Carousel (Full Page) */}
           <ScrollAnimation direction="fadeInUp" delay={500}>
-            <section className="mb-20">
-              <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6 text-center">
+            <section className="mb-0 min-h-screen flex flex-col justify-center py-20">
+              <h2 className="text-4xl md:text-5xl font-bella-queta font-bold text-gray-900 mb-6 text-center">
                 Our Gallery
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Array.from({ length: 40 }, (_, i) => i + 1).map((num) => (
-                  <ScrollAnimation key={num} direction="zoomIn" delay={600 + (num * 10)}>
-                    <div 
-                      className="relative aspect-video overflow-hidden rounded-lg shadow-lg cursor-pointer hover:shadow-xl transition-all group"
-                      onClick={() => setSelectedImage(selectedImage === num ? null : num)}
-                    >
-                      <Image
-                        src={`/gallery/our-gallery/house${num}.jpg`}
-                        alt={`House ${num}`}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-300"
-                        unoptimized
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                      {selectedImage === num && (
-                        <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-4">
-                          <p className="text-white font-bella-queta text-sm text-center">
-                            {galleryCaptions[num - 1]}
-                          </p>
+              <div className="relative flex-1 flex items-center">
+                <div 
+                  ref={ourGalleryRef}
+                  className="overflow-x-auto scrollbar-hide scroll-smooth pb-4 w-full"
+                  style={{ scrollBehavior: 'smooth' }}
+                >
+                  <div className="flex gap-6" style={{ width: 'max-content', paddingLeft: '50vw', paddingRight: '50vw' }}>
+                    {Array.from({ length: 40 }, (_, i) => i + 1).map((num) => (
+                      <div
+                        key={num}
+                        className="flex-shrink-0 w-[600px]"
+                      >
+                        <div 
+                          className="relative aspect-video overflow-hidden rounded-lg shadow-2xl cursor-pointer hover:shadow-3xl transition-all group"
+                          onClick={() => setSelectedImage(selectedImage === num ? null : num)}
+                        >
+                          <Image
+                            src={`/gallery/our-gallery/house${num}.jpg`}
+                            alt={`House ${num}`}
+                            width={600}
+                            height={450}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            unoptimized
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                          {selectedImage === num && (
+                            <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6">
+                              <p className="text-white font-bella-queta text-base text-center leading-relaxed">
+                                {galleryCaptions[num - 1]}
+                              </p>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
-                    {selectedImage !== num && (
-                      <p className="text-sm text-gray-600 font-bella-queta mt-2 text-center">
-                        {galleryCaptions[num - 1].substring(0, 60)}...
-                      </p>
-                    )}
-                  </ScrollAnimation>
-                ))}
+                        {selectedImage !== num && (
+                          <p className="text-sm text-gray-600 font-bella-queta mt-3 text-center">
+                            {galleryCaptions[num - 1].substring(0, 80)}...
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/* Scroll indicator */}
+                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+                  <div className="text-sm text-gray-500 font-bella-queta animate-pulse">
+                    Scroll to navigate →
+                  </div>
+                </div>
               </div>
             </section>
           </ScrollAnimation>
 
-          {/* Video Reel */}
+          {/* Video Reel - Audio-like playback */}
           <ScrollAnimation direction="fadeInUp" delay={700}>
-            <section className="mb-12">
-              <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6 text-center">
+            <section className="mb-12 min-h-screen flex flex-col justify-center py-20">
+              <h2 className="text-4xl md:text-5xl font-bella-queta font-bold text-gray-900 mb-6 text-center">
                 Life in the Dream Home
               </h2>
-              <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
+              <div className="relative w-full max-w-6xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
                 <video
                   src="/videos/life-in-the-dream-home.mov"
-                  controls
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
                   className="w-full h-full object-cover"
-                  preload="metadata"
+                  preload="auto"
                 >
                   Your browser does not support the video tag.
                 </video>
+                {/* Audio-like overlay - minimal, just showing it's playing */}
+                <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm rounded-full p-3">
+                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.793L4.383 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.383l4-4.707a1 1 0 011.617-.793zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clipRule="evenodd" />
+                  </svg>
+                </div>
               </div>
             </section>
           </ScrollAnimation>
