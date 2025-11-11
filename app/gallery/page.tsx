@@ -1,395 +1,303 @@
 'use client'
 
 import Navigation from '@/components/Navigation'
-import ScrollAnimation from '@/components/ScrollAnimation'
-import Image from 'next/image'
-import { useState, useEffect, useRef } from 'react'
+import ScrollSnapCarousel from '@/components/ScrollSnapCarousel'
+import TransitionLink from '@/components/TransitionLink'
+import { LightboxImage } from '@/components/ImageLightbox'
+import { useCallback, useState } from 'react'
+
+const FEELS_LIKE_HOME_ITEMS = Array.from({ length: 8 }, (_, idx) => ({
+  id: idx + 1,
+  src: `/gallery/feels-like-home/${idx + 1}.png`,
+  alt: `Feels like home portrait ${idx + 1}`,
+}))
+
+const GALLERY_CAPTIONS = [
+  "This three-story house in Quezon City uses height for privacy, keeping family life separated and quiet from the street.",
+  "This white kitchen in Rizal uses white and wood cabinets to create a clean, comfortable cooking space.",
+  "This all-white room in Quezon provides a blank slate designed for quiet focus and personal ideas.",
+  "This single-story home in Parañaque provides easy access and flow, connecting all rooms on one level.",
+  "This condo living room in Quezon uses bright orange to feel energetic and unique, showing the owner's style.",
+  "These modern apartments in Cavite use wood and lighting to create a calm, lit-up refuge at night.",
+  "This modern house in Quezon uses glass walls to connect the indoor space to the pool's calming view.",
+  "This modern dining room in Cavite uses an all-white theme to make food and conversation the main focus.",
+  "This living room in Parañaque uses black furniture and blinds to create a dark, private place to relax.",
+  "This outdoor seating area in Cavite uses wooden touches to create a spot for relaxing together and connecting outside.",
+  "This wooden house in Cavite uses wood and small lights to give a strong feeling of warmth and security.",
+  "This two-story house in Cavite provides a modern, beige exterior that looks stable and simple.",
+  "These airy apartments in Cavite feel open and bright in the daytime, welcoming the morning light.",
+  "This apartment complex in Sta. Mesa uses small windows and no balconies to keep the building private and secure.",
+  "This internal courtyard in Sta. Mesa makes the area feel tight and enclosed due to the tall walls limiting air.",
+  "This apartment building in BGC provides big windows that connect residents directly to city life.",
+  "This apartment building in Sta. Mesa uses small windows that make the space strictly functional over scenic.",
+  "This gated house in Pandacan provides a strong gate and many plants to be both safe and full of life.",
+  "This gated house in Pandacan uses an outdoor altar to make faith a visible part of the home.",
+  "This Brutalist apartment in Pandacan uses heavy concrete to feel strong and secure, prioritizing durability.",
+  "This townhouse design in Pandacan provides many separate, compact homes attached within one larger building.",
+  "This home in Pandacan uses red gates and no ground-floor windows to ensure maximum privacy and street-level security.",
+  "This home in Pandacan provides fences for security, but bright decorations show personality shining through.",
+  "This house in Pandacan uses bright, unusual colors to make it stand out and show bold personal style.",
+  "This home's hidden location in Pandacan makes an extremely private atmosphere, away from the neighborhood's noise.",
+  "This street view in Pandacan shows the community is tightly packed, with busy, overlapping lives.",
+  "This classic Filipino style house in Pandacan is painted blue and gives a feeling of history and tradition.",
+  "This classic house in Pandacan uses no ground-floor windows and many plants to create a private, green escape.",
+  "This four-story apartment in Pandacan uses fenced windows and no terraces to maximize secure living space.",
+  "This two-story house in Pandacan uses fenced windows and no ground-floor windows to make the home a secure vault.",
+  "This three-story house in Pandacan provides fences and gates to confirm it is highly secured.",
+  "This condo skyscraper in Makati provides a tall, quiet view that is far away from the street noise and crowds.",
+  "This glass building in BGC overlooks a park to offer city life with a beautiful view of nature.",
+  "This condo's view in BGC is mostly of other towers, defining a life lived among high-rise buildings.",
+  "This apartment in BGC provides a balcony and view of trees to create a balanced city life with fresh air.",
+  "This apartment's location in BGC is close to trees which act as a natural break that calms the city environment.",
+  "This apartment in BGC provides a large balcony making private outdoor living a key luxury feature of the home.",
+  "This beach house in Batangas uses big windows and balconies facing the sea for escape and enjoying nature.",
+  "This condo in Pasay provides a view of the clean, large pool, giving the space a resort-like feel inside the city.",
+  "This subdivision in Nueva Ecija provides a large park and space between homes designed for stress-free family life.",
+]
+
+const range = (start: number, end: number) =>
+  Array.from({ length: end - start + 1 }, (_, idx) => start + idx)
+
+const GALLERY_GROUPS = [
+  {
+    id: 'sanctuary',
+    title: 'Sanctuary Within Walls',
+    description:
+      'We begin inside: quiet kitchens, open living rooms, and carefully lit corners where daily rituals breathe. Each frame is tender evidence that comfort can be curated, even when space is tight.',
+    items: range(1, 10),
+  },
+  {
+    id: 'community',
+    title: 'Communities After Dark',
+    description:
+      'Step outside into streets and courtyards awash with sodium lights. These homes glow against the night, holding families close and turning watchfulness into an act of care.',
+    items: range(11, 20),
+  },
+  {
+    id: 'guarded',
+    title: 'Guarded Thresholds',
+    description:
+      'Walls, gates, and bold colors tell stories about protection and identity. Here, architecture becomes armor—sometimes soft, sometimes sharp, always deeply personal.',
+    items: range(21, 30),
+  },
+  {
+    id: 'horizons',
+    title: 'Horizons & Escapes',
+    description:
+      'Finally, we look outward—toward skylines, balconies, open water, and borrowed green. These frames stretch the idea of home into views, air, and imagined futures.',
+    items: range(31, 40),
+  },
+] as const
 
 export default function GalleryPage() {
-  const [selectedImage, setSelectedImage] = useState<number | null>(null)
-  const feelsLikeHomeRef = useRef<HTMLDivElement>(null)
-  const ourGalleryRef = useRef<HTMLDivElement>(null)
-  const isScrolling = useRef(false)
-  const scrollersRef = useRef(
-    new Map<HTMLDivElement, { target: number; rafId: number | null }>()
-  )
+  const [activeFeelsIndex, setActiveFeelsIndex] = useState(0)
+  const [activeGroupIndices, setActiveGroupIndices] = useState<Record<string, number>>({})
 
-  // Handle vertical scroll to horizontal carousel conversion
-  useEffect(() => {
-    let releaseTimeout: number | undefined
-
-    const lockScrolling = (duration = 220) => {
-      if (releaseTimeout) window.clearTimeout(releaseTimeout)
-      isScrolling.current = true
-      releaseTimeout = window.setTimeout(() => {
-        isScrolling.current = false
-      }, duration)
-    }
-
-    const stopAllAnimations = () => {
-      scrollersRef.current.forEach((state) => {
-        if (state.rafId !== null) {
-          cancelAnimationFrame(state.rafId)
-          state.rafId = null
-        }
-      })
-      scrollersRef.current.clear()
-    }
-
-    const isSectionActive = (element: Element | null) => {
-      if (!element) return false
-      const rect = element.getBoundingClientRect()
-      const windowHeight = window.innerHeight || 0
-      return rect.top < windowHeight && rect.bottom > 0
-    }
-
-    const scrollToSiblingSection = (
-      container: HTMLDivElement | null,
-      direction: 'next' | 'prev'
-    ) => {
-      if (!container) return false
-      const section = container.closest('section')
-      if (!section) return false
-
-      const wrapper = section.parentElement
-      if (!wrapper) return false
-
-      let sibling: Element | null =
-        direction === 'next' ? wrapper.nextElementSibling : wrapper.previousElementSibling
-
-      while (sibling) {
-        const targetSection = sibling.querySelector('section')
-        if (targetSection) {
-          ;(targetSection as HTMLElement).scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          })
-          lockScrolling(700)
-          return true
-        }
-        sibling = direction === 'next' ? sibling.nextElementSibling : sibling.previousElementSibling
-      }
-
-      return false
-    }
-
-    const animateTo = (container: HTMLDivElement, next: number) => {
-      let state = scrollersRef.current.get(container)
-      if (!state) {
-        state = { target: container.scrollLeft, rafId: null }
-        scrollersRef.current.set(container, state)
-      }
-      state.target = next
-
-      if (state.rafId !== null) return
-
-      const step = () => {
-        const current = container.scrollLeft
-        const diff = state!.target - current
-        if (Math.abs(diff) < 0.5) {
-          container.scrollLeft = state!.target
-          state!.rafId = null
-          return
-        }
-        container.scrollLeft = current + diff * 0.18
-        state!.rafId = requestAnimationFrame(step)
-      }
-
-      state.rafId = requestAnimationFrame(step)
-    }
-
-    const handleHorizontalScroll = (container: HTMLDivElement | null, deltaY: number) => {
-      if (!container) return { handled: false, edge: null as 'start' | 'end' | null }
-
-      const maxScroll = container.scrollWidth - container.clientWidth
-      if (maxScroll <= 0) return { handled: false, edge: null as 'start' | 'end' | null }
-
-      const tolerance = 6
-      const current = container.scrollLeft
-      const atStart = current <= tolerance
-      const atEnd = current >= maxScroll - tolerance
-      let step = deltaY * 1.25
-      if (Math.abs(step) < 35) {
-        step = 35 * Math.sign(deltaY || 1)
-      }
-
-      if (deltaY > 0) {
-        if (!atEnd) {
-          const target = Math.min(maxScroll, current + step)
-          animateTo(container, target)
-          lockScrolling(200)
-          return { handled: true, edge: null as 'start' | 'end' | null }
-        }
-        return { handled: false, edge: 'end' as const }
-      }
-
-      if (deltaY < 0) {
-        if (!atStart) {
-          const target = Math.max(0, current + step)
-          animateTo(container, target)
-          lockScrolling(200)
-          return { handled: true, edge: null as 'start' | 'end' | null }
-        }
-        return { handled: false, edge: 'start' as const }
-      }
-
-      return { handled: false, edge: null as 'start' | 'end' | null }
-    }
-
-    const handleWheel = (e: WheelEvent) => {
-      if (isScrolling.current) {
-        e.preventDefault()
-        e.stopPropagation()
-        return
-      }
-
-      const deltaY = e.deltaY
-      if (deltaY === 0) return
-
-      const sections: Array<{ container: HTMLDivElement | null }> = [
-        { container: feelsLikeHomeRef.current },
-        { container: ourGalleryRef.current },
-      ]
-
-      for (const { container } of sections) {
-        if (!container) continue
-
-        const sectionElement = container.closest('section')
-        if (!isSectionActive(sectionElement)) continue
-
-        const { handled, edge } = handleHorizontalScroll(container, deltaY)
-
-        if (handled) {
-          e.preventDefault()
-          e.stopPropagation()
-          return
-        }
-
-        if (edge === 'end' && deltaY > 0) {
-          const moved = scrollToSiblingSection(container, 'next')
-          if (moved) {
-            e.preventDefault()
-            e.stopPropagation()
-            return
-          }
-        }
-
-        if (edge === 'start' && deltaY < 0) {
-          const moved = scrollToSiblingSection(container, 'prev')
-          if (moved) {
-            e.preventDefault()
-            e.stopPropagation()
-            return
-          }
-        }
-      }
-    }
-
-    window.addEventListener('wheel', handleWheel, { passive: false })
-    return () => {
-      window.removeEventListener('wheel', handleWheel)
-      if (releaseTimeout) {
-        window.clearTimeout(releaseTimeout)
-      }
-      stopAllAnimations()
-    }
+  const getCaptionFor = useCallback((itemNumber: number) => {
+    const caption = GALLERY_CAPTIONS[itemNumber - 1]
+    return caption ?? ''
   }, [])
 
-  // Gallery captions from the docx
-  const galleryCaptions = [
-    "This three-story house in Quezon City uses height for privacy, keeping family life separated and quiet from the street.",
-    "This white kitchen in Rizal uses white and wood cabinets to create a clean, comfortable cooking space.",
-    "This all-white room in Quezon provides a blank slate designed for quiet focus and personal ideas.",
-    "This single-story home in Parañaque provides easy access and flow, connecting all rooms on one level.",
-    "This condo living room in Quezon uses bright orange to feel energetic and unique, showing the owner's style.",
-    "These modern apartments in Cavite use wood and lighting to create a calm, lit-up refuge at night.",
-    "This modern house in Quezon uses glass walls to connect the indoor space to the pool's calming view.",
-    "This modern dining room in Cavite uses an all-white theme to make food and conversation the main focus.",
-    "This living room in Parañaque uses black furniture and blinds to create a dark, private place to relax.",
-    "This outdoor seating area in Cavite uses wooden touches to create a spot for relaxing together and connecting outside.",
-    "This wooden house in Cavite uses wood and small lights to give a strong feeling of warmth and security.",
-    "This two-story house in Cavite provides a modern, beige exterior that looks stable and simple.",
-    "These airy apartments in Cavite feel open and bright in the daytime, welcoming the morning light.",
-    "This apartment complex in Sta. Mesa uses small windows and no balconies to keep the building private and secure.",
-    "This internal courtyard in Sta. Mesa makes the area feel tight and enclosed due to the tall walls limiting air.",
-    "This apartment building in BGC provides big windows that connect residents directly to city life.",
-    "This apartment building in Sta. Mesa uses small windows that make the space strictly functional over scenic.",
-    "This gated house in Pandacan provides a strong gate and many plants to be both safe and full of life.",
-    "This gated house in Pandacan uses an outdoor altar to make faith a visible part of the home.",
-    "This Brutalist apartment in Pandacan uses heavy concrete to feel strong and secure, prioritizing durability.",
-    "This townhouse design in Pandacan provides many separate, compact homes attached within one larger building.",
-    "This home in Pandacan uses red gates and no ground-floor windows to ensure maximum privacy and street-level security.",
-    "This home in Pandacan provides fences for security, but bright decorations show personality shining through.",
-    "This house in Pandacan uses bright, unusual colors to make it stand out and show bold personal style.",
-    "This home's hidden location in Pandacan makes an extremely private atmosphere, away from the neighborhood's noise.",
-    "This street view in Pandacan shows the community is tightly packed, with busy, overlapping lives.",
-    "This classic Filipino style house in Pandacan is painted blue and gives a feeling of history and tradition.",
-    "This classic house in Pandacan uses no ground-floor windows and many plants to create a private, green escape.",
-    "This four-story apartment in Pandacan uses fenced windows and no terraces to maximize secure living space.",
-    "This two-story house in Pandacan uses fenced windows and no ground-floor windows to make the home a secure vault.",
-    "This three-story house in Pandacan provides fences and gates to confirm it is highly secured.",
-    "This condo skyscraper in Makati provides a tall, quiet view that is far away from the street noise and crowds.",
-    "This glass building in BGC overlooks a park to offer city life with a beautiful view of nature.",
-    "This condo's view in BGC is mostly of other towers, defining a life lived among high-rise buildings.",
-    "This apartment in BGC provides a balcony and view of trees to create a balanced city life with fresh air.",
-    "This apartment's location in BGC is close to trees which act as a natural break that calms the city environment.",
-    "This apartment in BGC provides a large balcony making private outdoor living a key luxury feature of the home.",
-    "This beach house in Batangas uses big windows and balconies facing the sea for escape and enjoying nature.",
-    "This condo in Pasay provides a view of the clean, large pool, giving the space a resort-like feel inside the city.",
-    "This subdivision in Nueva Ecija provides a large park and space between homes designed for stress-free family life."
-  ]
+  const handleGroupActiveChange = useCallback((groupId: string, index: number) => {
+    setActiveGroupIndices((prev) => ({
+      ...prev,
+      [groupId]: index,
+    }))
+  }, [])
 
   return (
-    <div className="story-page-wrapper">
-      <div className="story-background" />
-      
-      <div className="story-nav-overlay">
-        <Navigation />
-      </div>
+    <div className="relative min-h-screen overflow-x-hidden bg-[#081849] text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_10%_10%,rgba(95,52,117,0.28),rgba(8,24,73,0.65))]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_80%_0%,rgba(236,223,210,0.25),rgba(8,24,73,0.0))]" />
 
-      <div className="story-content-area">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeIn" delay={200}>
-            <h1 className="text-5xl md:text-6xl font-bella-queta text-gray-900 mb-4 text-center">
-              Gallery
-            </h1>
-          </ScrollAnimation>
-          
-          <ScrollAnimation direction="fadeInUp" delay={300}>
-            <p className="text-xl font-bella-queta text-gray-600 mb-16 text-center max-w-3xl mx-auto">
-              Experience the concept of home through the lens of those who live it every day. Our "Feels Like Home" Photo Carousel is a heartfelt collection of intimate moments captured by users, proving that home is truly defined by memory and presence, not perfection or price tag. Contrast these personal reflections with Our Gallery of homes across Metro Manila, where you can link specific architectural features to the psychological needs we've explored throughout the magazine.
+      <Navigation />
+
+      <main className="relative z-10 mx-auto max-w-7xl px-6 pt-36 pb-24">
+        <header className="text-center">
+          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-white/55">VISUAL ARCHIVE</p>
+          <h1 className="mb-6 font-bella-queta text-5xl md:text-6xl lg:text-7xl">Gallery</h1>
+          <p className="mx-auto max-w-3xl text-lg text-white/75 md:text-xl">
+            How do we see “home” when we freeze it in time? This gallery threads together portraits,
+            facades, and vantage points from Metro Manila—each frame a clue to how we build refuge,
+            perform identity, and carve out breath in dense cities.
+          </p>
+        </header>
+
+        <section className="mt-20 rounded-3xl border border-white/15 bg-white/5 p-8 shadow-[0_20px_60px_rgba(8,24,73,0.35)] backdrop-blur">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="font-bella-queta text-3xl md:text-4xl">Feels Like Home</h2>
+            <p className="mt-4 text-white/70">
+              A portrait series crowdsourced from friends of The Haven. Every gaze, grin, and soft
+              shadow hints at the emotional architecture that makes a place livable.
             </p>
-          </ScrollAnimation>
+            <p className="mt-6 text-xs uppercase tracking-[0.4em] text-white/40">
+              Scroll inside the ribbon · tap a card for a closer look
+            </p>
+          </div>
 
-          {/* Feels Like Home Carousel - Horizontal (Full Page) */}
-          <ScrollAnimation direction="fadeInUp" delay={400}>
-            <section className="mb-0 min-h-screen flex flex-col justify-center py-20">
-              <h2 className="text-4xl md:text-5xl font-bella-queta font-bold text-gray-900 mb-6 text-center">
-                Feels Like Home
-              </h2>
-              <p className="text-gray-700 font-bella-queta text-center mb-12 max-w-2xl mx-auto leading-relaxed text-lg">
-                Home is a collection of stories, carried by memory and presence, by the living and those who came before. It is where souls rest, heal, and learn to begin again. Feels Like Home gathers these small, honest moments through a series of selfies taken by people in the spaces they call home. Each face holds a history they choose to honor.
+          <div className="mt-10">
+            <ScrollSnapCarousel
+              ariaLabel="Feels like home portraits"
+              items={FEELS_LIKE_HOME_ITEMS}
+              onActiveChange={setActiveFeelsIndex}
+              renderItem={(item, index, isActive) => (
+                <LightboxImage
+                  src={item.src}
+                  alt={item.alt}
+                  description={item.alt}
+                  priority={index < 3}
+                  sizes="(max-width: 768px) 80vw, 420px"
+                  className={`group relative h-[420px] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur transition ${
+                    isActive ? 'ring-1 ring-white/60' : ''
+                  }`}
+                  renderOverlay={
+                    <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-[#081849]/80 via-[#081849]/30 to-transparent transition-opacity">
+                      <div className="p-6">
+                        <p className="font-bella-queta text-lg uppercase tracking-[0.35em] text-white/70">
+                          HOME {index + 1}
+                        </p>
+                        <p className="mt-2 text-sm text-white/60">
+                          One face, one room—held softly in the light they call their own.
+                        </p>
+                      </div>
+                    </div>
+                  }
+                />
+              )}
+            />
+          </div>
+
+          <div className="mt-6 text-center text-sm text-white/60">
+            Portrait {activeFeelsIndex + 1} of {FEELS_LIKE_HOME_ITEMS.length}
+          </div>
+        </section>
+
+        <section className="mt-24 space-y-20">
+          <div className="text-center">
+            <p className="text-sm uppercase tracking-[0.4em] text-white/45">HOMES ACROSS METRO MANILA</p>
+            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">Our Gallery</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-white/75">
+              Move through the chapters below to follow how home shifts—from rooms of ritual to guarded streets,
+              and finally to balconies that drink the skyline.
+            </p>
+          </div>
+
+          {GALLERY_GROUPS.map((group) => {
+            const activeIndex = activeGroupIndices[group.id] ?? 0
+            const activeNumber = group.items[activeIndex]
+            const activeCaption = getCaptionFor(activeNumber)
+
+            return (
+              <section
+                key={group.id}
+                className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/4 p-8 shadow-[0_20px_60px_rgba(8,24,73,0.45)] backdrop-blur"
+              >
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      'linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 55%), radial-gradient(120% 140% at 10% 10%, rgba(95,52,117,0.25) 0%, rgba(95,52,117,0) 55%), radial-gradient(120% 140% at 90% 0%, rgba(33,56,133,0.22) 0%, rgba(33,56,133,0) 55%)',
+                    mixBlendMode: 'screen',
+                  }}
+                />
+
+                <div className="relative z-10">
+                  <div className="mx-auto mb-8 max-w-4xl text-center">
+                    <h3 className="font-bella-queta text-2xl md:text-3xl">{group.title}</h3>
+                    <p className="mt-3 text-white/70">{group.description}</p>
+                  </div>
+
+                  <ScrollSnapCarousel
+                    ariaLabel={`${group.title} carousel`}
+                    items={group.items}
+                    onActiveChange={(index) => handleGroupActiveChange(group.id, index)}
+                    itemClassName="min-w-[min(360px,80vw)]"
+                    renderItem={(itemNumber, index, isActive) => (
+                      <LightboxImage
+                        key={itemNumber}
+                        src={`/gallery/our-gallery/house${itemNumber}.jpg`}
+                        alt={`Home ${itemNumber} from Our Gallery`}
+                        sizes="(max-width: 768px) 80vw, (max-width: 1200px) 360px, 440px"
+                        description={GALLERY_CAPTIONS[itemNumber - 1]}
+                        className={`group relative h-[340px] w-full overflow-hidden rounded-[2.2rem] border border-white/12 bg-white/5 transition ${
+                          isActive ? 'ring-1 ring-white/60' : ''
+                        }`}
+                        renderOverlay={
+                          <div
+                            className={`pointer-events-none absolute inset-0 bg-gradient-to-t from-[#081849]/85 via-[#081849]/45 to-transparent px-6 pb-6 pt-12 transition-opacity ${
+                              isActive ? 'opacity-100' : 'opacity-70'
+                            }`}
+                          >
+                            <p className="text-sm text-white/80">
+                              {GALLERY_CAPTIONS[itemNumber - 1]?.substring(0, 98)}…
+                            </p>
+                          </div>
+                        }
+                      />
+                    )}
+                  />
+
+                  <div className="mt-8 flex flex-col items-center gap-4 text-center">
+                    <div className="w-full max-w-3xl rounded-2xl border border-white/10 bg-white/6 px-6 py-5 text-white/80">
+                      <p className="text-sm leading-relaxed">{activeCaption}</p>
+                    </div>
+                    <p className="text-xs uppercase tracking-[0.4em] text-white/45">
+                      {activeIndex + 1} / {group.items.length}
+                    </p>
+                  </div>
+                </div>
+              </section>
+            )
+          })}
+        </section>
+
+        <section className="mt-24 rounded-3xl border border-white/10 bg-[#050f2f]/60 p-10 shadow-[0_20px_60px_rgba(8,24,73,0.45)] backdrop-blur">
+          <div className="mx-auto flex flex-col items-center gap-8 text-center md:flex-row md:text-left">
+            <div className="flex-1 space-y-4">
+              <p className="text-sm uppercase tracking-[0.4em] text-white/45">MICRO DOCU</p>
+              <h2 className="font-bella-queta text-3xl md:text-4xl">Life in the Dream Home</h2>
+              <p className="text-white/75">
+                A short visual essay about rituals, light, and the way sound travels through a space we love.
+                Keep the volume low and let the ambient track sit with you.
               </p>
-              <div className="relative flex-1 flex items-center">
-                <div 
-                  ref={feelsLikeHomeRef}
-                  className="overflow-x-auto scrollbar-hide scroll-smooth pb-4 w-full"
-                  style={{ scrollBehavior: 'smooth' }}
+              <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
+                <TransitionLink
+                  href="/entertainment"
+                  className="rounded-full border border-white/30 px-6 py-2 text-sm uppercase tracking-[0.3em] text-white transition hover:border-white hover:bg-white/10"
                 >
-                  <div className="flex gap-6" style={{ width: 'max-content', paddingLeft: '50vw', paddingRight: '50vw' }}>
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                      <div 
-                        key={num} 
-                        className="flex-shrink-0 w-[500px] h-[500px] relative overflow-hidden rounded-lg shadow-2xl hover:shadow-3xl transition-shadow group"
-                      >
-                        <Image
-                          src={`/gallery/feels-like-home/${num}.png`}
-                          alt={`Feels like home ${num}`}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          unoptimized
-                        />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                {/* Scroll indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-                  <div className="text-sm text-gray-500 font-bella-queta animate-pulse">
-                    Scroll to navigate →
-                  </div>
-                </div>
-              </div>
-            </section>
-          </ScrollAnimation>
-
-          {/* Our Gallery - Horizontal Carousel (Full Page) */}
-          <ScrollAnimation direction="fadeInUp" delay={500}>
-            <section className="mb-0 min-h-screen flex flex-col justify-center py-20">
-              <h2 className="text-4xl md:text-5xl font-bella-queta font-bold text-gray-900 mb-6 text-center">
-                Our Gallery
-              </h2>
-              <div className="relative flex-1 flex items-center">
-                <div 
-                  ref={ourGalleryRef}
-                  className="overflow-x-auto scrollbar-hide scroll-smooth pb-4 w-full"
-                  style={{ scrollBehavior: 'smooth' }}
+                  Take the home quiz
+                </TransitionLink>
+                <TransitionLink
+                  href="/contact"
+                  className="rounded-full bg-white/90 px-6 py-2 text-sm uppercase tracking-[0.3em] text-[#5F3475] transition hover:bg-white"
                 >
-                  <div className="flex gap-6" style={{ width: 'max-content', paddingLeft: '50vw', paddingRight: '50vw' }}>
-                    {Array.from({ length: 40 }, (_, i) => i + 1).map((num) => (
-                      <div
-                        key={num}
-                        className="flex-shrink-0 w-[600px]"
-                      >
-                        <div 
-                          className="relative aspect-video overflow-hidden rounded-lg shadow-2xl cursor-pointer hover:shadow-3xl transition-all group"
-                          onClick={() => setSelectedImage(selectedImage === num ? null : num)}
-                        >
-                          <Image
-                            src={`/gallery/our-gallery/house${num}.jpg`}
-                            alt={`House ${num}`}
-                            width={600}
-                            height={450}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            unoptimized
-                          />
-                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-                          {selectedImage === num && (
-                            <div className="absolute inset-0 bg-black/80 flex items-center justify-center p-6">
-                              <p className="text-white font-bella-queta text-base text-center leading-relaxed">
-                                {galleryCaptions[num - 1]}
-                              </p>
-                            </div>
-                          )}
-                        </div>
-                        {selectedImage !== num && (
-                          <p className="text-sm text-gray-600 font-bella-queta mt-3 text-center">
-                            {galleryCaptions[num - 1].substring(0, 80)}...
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                {/* Scroll indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-                  <div className="text-sm text-gray-500 font-bella-queta animate-pulse">
-                    Scroll to navigate →
-                  </div>
-                </div>
+                  Tell us your story
+                </TransitionLink>
               </div>
-            </section>
-          </ScrollAnimation>
+            </div>
 
-          {/* Video Reel - Audio-like playback */}
-          <ScrollAnimation direction="fadeInUp" delay={700}>
-            <section className="mb-12 min-h-screen flex flex-col justify-center py-20">
-              <h2 className="text-4xl md:text-5xl font-bella-queta font-bold text-gray-900 mb-6 text-center">
-                Life in the Dream Home
-              </h2>
-              <div className="relative w-full max-w-6xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl">
+            <div className="flex-1">
+              <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/15 bg-black/40 shadow-lg">
                 <video
                   src="/videos/life-in-the-dream-home.mov"
                   autoPlay
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="h-full w-full object-cover"
                   preload="auto"
                 >
                   Your browser does not support the video tag.
                 </video>
-                {/* Audio-like overlay - minimal, just showing it's playing */}
-                <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm rounded-full p-3">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.617.793L4.383 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.383l4-4.707a1 1 0 011.617-.793zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clipRule="evenodd" />
-                  </svg>
+                <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/55 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/80 backdrop-blur">
+                  <span>Ambient on</span>
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#ECDFD2]" />
                 </div>
               </div>
-            </section>
-          </ScrollAnimation>
-        </div>
-      </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   )
 }

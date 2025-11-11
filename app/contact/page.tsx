@@ -1,146 +1,146 @@
 'use client'
 
 import Navigation from '@/components/Navigation'
-import ScrollAnimation from '@/components/ScrollAnimation'
 import { useState } from 'react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // In a real implementation, this would send to a backend
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
     setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+    setTimeout(() => setSubmitted(false), 2400)
   }
 
   return (
-    <div className="story-page-wrapper">
-      <div className="story-background" />
-      
-      <div className="story-nav-overlay">
-        <Navigation />
-      </div>
+    <div className="relative min-h-screen overflow-x-hidden bg-[#050b22] text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_10%_-5%,rgba(137,49,114,0.45),rgba(5,11,34,0.92))]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_110%_at_90%_0%,rgba(33,56,133,0.5),rgba(5,11,34,0.95))]" />
 
-      <div className="story-content-area">
-        <div className="max-w-4xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeIn" delay={200}>
-            <h1 className="text-5xl md:text-6xl font-bella-queta text-gray-900 mb-4 text-center">
-              Contact Us
-            </h1>
-          </ScrollAnimation>
+      <Navigation />
 
-          <ScrollAnimation direction="fadeInUp" delay={300}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* Contact Form */}
-              <div>
-                <h2 className="text-2xl font-bella-queta font-bold text-gray-900 mb-6">
-                  Send us a Message
-                </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-bella-queta font-bold text-gray-700 mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-bella-queta focus:border-[#BE8CC1] focus:outline-none"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-bella-queta font-bold text-gray-700 mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-bella-queta focus:border-[#BE8CC1] focus:outline-none"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-bella-queta font-bold text-gray-700 mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={6}
-                      className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg font-bella-queta focus:border-[#BE8CC1] focus:outline-none resize-none"
-                      required
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full px-6 py-3 bg-[#BE8CC1] text-white font-bella-queta font-bold rounded-lg hover:bg-[#a87bac] transition-colors"
-                  >
-                    Send Message
-                  </button>
-                  {submitted && (
-                    <div className="p-4 bg-green-50 rounded-lg">
-                      <p className="text-green-700 font-bella-queta text-sm">
-                        Thank you for your message! We'll get back to you soon.
-                      </p>
-                    </div>
-                  )}
-                </form>
+      <main className="relative z-10 mx-auto max-w-4xl px-6 pt-40 pb-24">
+        <header className="text-center">
+          <p className="mb-3 text-sm uppercase tracking-[0.4em] text-white/55">
+            Say hello
+          </p>
+          <h1 className="mb-5 font-bella-queta text-5xl md:text-6xl">Contact Us</h1>
+          <p className="mx-auto max-w-2xl text-lg text-white/75">
+            Reach out if you’d like to collaborate, feature the project, or share how these stories
+            resonate with your own dream home.
+          </p>
+        </header>
+
+        <div className="mt-14 grid gap-8 md:grid-cols-[1.1fr_0.9fr]">
+          <section className="rounded-3xl border border-white/15 bg-white/10 p-8 shadow-[0_30px_70px_rgba(5,11,34,0.4)] backdrop-blur">
+            <h2 className="text-sm uppercase tracking-[0.35em] text-white/55">Message Us</h2>
+            <form onSubmit={handleSubmit} className="mt-6 space-y-6 text-sm">
+              <div className="space-y-2">
+                <label htmlFor="name" className="font-bella-queta text-white/80">
+                  Name
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  value={formData.name}
+                  onChange={(event) =>
+                    setFormData((prev) => ({ ...prev, name: event.target.value }))
+                  }
+                  className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none transition focus:border-white/60"
+                  placeholder="What should we call you?"
+                  required
+                />
               </div>
 
-              {/* Contact Information */}
-              <div>
-                <h2 className="text-2xl font-bella-queta font-bold text-gray-900 mb-6">
-                  Get in Touch
-                </h2>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-lg font-bella-queta font-bold text-gray-900 mb-2">
-                      Email Us
-                    </h3>
-                    <a href="mailto:kirsten_garcia@dlsu.edu.ph" className="text-[#BE8CC1] font-bella-queta hover:underline block mb-2">
-                      kirsten_garcia@dlsu.edu.ph
-                    </a>
-                    <a href="mailto:anne_zambrano@dlsu.edu.ph" className="text-[#BE8CC1] font-bella-queta hover:underline block">
-                      anne_zambrano@dlsu.edu.ph
-                    </a>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-bella-queta font-bold text-gray-900 mb-4">
-                      Social Links
-                    </h3>
-                    <div className="space-y-2">
-                      <p className="text-gray-600 font-bella-queta text-sm">
-                        Social media links coming soon.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="mt-8 p-4 bg-gray-50 rounded-lg">
-                    <h3 className="text-lg font-bella-queta font-bold text-gray-900 mb-2">
-                      Disclaimer
-                    </h3>
-                    <p className="text-sm text-gray-600 font-bella-queta leading-relaxed">
-                      The Haven is a production thesis project by Communication Arts students from De La Salle University - Manila. All content, including stories and expert insights, are based on real interviews and research conducted as part of the academic project. The website is designed for educational and storytelling purposes.
-                    </p>
-                  </div>
-                </div>
+              <div className="space-y-2">
+                <label htmlFor="email" className="font-bella-queta text-white/80">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(event) =>
+                    setFormData((prev) => ({ ...prev, email: event.target.value }))
+                  }
+                  className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none transition focus:border-white/60"
+                  placeholder="you@example.com"
+                  required
+                />
               </div>
+
+              <div className="space-y-2">
+                <label htmlFor="message" className="font-bella-queta text-white/80">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={6}
+                  value={formData.message}
+                  onChange={(event) =>
+                    setFormData((prev) => ({ ...prev, message: event.target.value }))
+                  }
+                  className="w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none transition focus:border-white/60"
+                  placeholder="Share your thoughts here…"
+                  required
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full rounded-full border border-white/40 bg-white/20 px-6 py-3 text-xs uppercase tracking-[0.4em] text-white transition hover:bg-white/30"
+              >
+                Send message
+              </button>
+
+              {submitted && (
+                <p className="rounded-2xl bg-white/15 px-4 py-3 text-center text-xs uppercase tracking-[0.35em] text-white/70">
+                  Message received. We’ll write back soon.
+                </p>
+              )}
+            </form>
+          </section>
+
+          <aside className="flex flex-col gap-6 rounded-3xl border border-white/15 bg-white/8 p-8 shadow-[0_28px_60px_rgba(5,11,34,0.42)] backdrop-blur">
+            <div>
+              <p className="text-xs uppercase tracking-[0.4em] text-white/55">Email</p>
+              <a
+                href="mailto:kirsten_garcia@dlsu.edu.ph"
+                className="mt-3 block font-bella-queta text-lg text-white transition hover:text-white/80"
+              >
+                kirsten_garcia@dlsu.edu.ph
+              </a>
+              <a
+                href="mailto:anne_zambrano@dlsu.edu.ph"
+                className="mt-2 block font-bella-queta text-lg text-white transition hover:text-white/80"
+              >
+                anne_zambrano@dlsu.edu.ph
+              </a>
             </div>
-          </ScrollAnimation>
+
+            <div className="rounded-2xl border border-white/20 bg-white/12 p-6 text-sm text-white/75">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/55">Social</p>
+              <p className="mt-3">
+                We’re preparing to launch social accounts alongside the magazine release. Stay tuned.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-white/20 bg-white/12 p-6 text-sm text-white/75">
+              <p className="text-xs uppercase tracking-[0.4em] text-white/55">Disclaimer</p>
+              <p className="mt-3 leading-relaxed">
+                The Haven is a production thesis by Communication Arts students from De La Salle
+                University—Manila. Stories, interviews, and visuals stem from original research and
+                are published for educational storytelling.
+              </p>
+            </div>
+          </aside>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

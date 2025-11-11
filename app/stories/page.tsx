@@ -1,184 +1,225 @@
 'use client'
 
-import { useState } from 'react'
+import { useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import Link from 'next/link'
-import PageTransition from '@/components/PageTransition'
 import Navigation from '@/components/Navigation'
-import ScrollAnimation from '@/components/ScrollAnimation'
+import ScrollSnapCarousel from '@/components/ScrollSnapCarousel'
+import TransitionLink from '@/components/TransitionLink'
 
-interface Portal {
+interface StoryPortal {
   id: string
   name: string
-  topic: string
-  color: string
+  theme: string
   summary: string
+  gradient: string
   href: string
 }
 
+const STORY_PORTALS: StoryPortal[] = [
+  {
+    id: 'blair',
+    name: 'Blair',
+    theme: 'Abuse · Repressed Personal Identity',
+    summary:
+      'A maximalist visual essay about refusing perfection and building a home that feels lived-in, messy, and wholly hers.',
+    gradient: 'from-[#000000] via-[#893172] to-[#ECDFD2]',
+    href: '/stories/blair',
+  },
+  {
+    id: 'elijah',
+    name: 'Elijah',
+    theme: 'Mental Health · Financial Precarity',
+    summary:
+      'An intimate vantage point into a boy who longs for silence. Follow the architectural sketch of a retreat he can finally afford.',
+    gradient: 'from-[#213885] via-[#081849] to-[#5F3475]',
+    href: '/stories/elijah',
+  },
+  {
+    id: 'lala',
+    name: 'Lala',
+    theme: 'Religion · Homophobia',
+    summary:
+      'A sculpted narrative about privacy, faith, and the right to claim space in a city that sees too much.',
+    gradient: 'from-[#5F3475] via-[#893172] to-[#ECDFD2]',
+    href: '/stories/lala',
+  },
+]
+
+const RESOURCE_LINKS = [
+  {
+    title: 'View Professional Insights',
+    subtitle: 'Architects · Designers · Psychologists',
+    href: '/stories/professional-insights',
+    gradient: 'from-[#213885] via-[#5F3475] to-[#ECDFD2]',
+  },
+  {
+    title: 'Interviews & Dream Homes',
+    subtitle: 'Audio portraits with ambient renderings',
+    href: '/interviews-dream-homes',
+    gradient: 'from-[#893172] via-[#213885] to-[#081849]',
+  },
+]
+
 export default function StoriesPage() {
   const router = useRouter()
-  const [transitioning, setTransitioning] = useState(false)
-  const [clickedPortal, setClickedPortal] = useState<{ x: number; y: number } | null>(null)
 
-  const portals: Portal[] = [
-    {
-      id: 'blair',
-      name: 'Blair',
-      topic: 'Abuse, Repressed Personal Identity',
-      color: 'from-black via-orange-600 to-orange-400',
-      summary: 'What does it say about a home when you have more than one house, and yet, the feeling of belonging is still out of reach?',
-      href: '/stories/blair'
+  const triggerTransition = useCallback(
+    (href: string) => {
+      const navigate = () => router.push(href)
+      const event = new CustomEvent('global-page-transition', { detail: { navigate } })
+      window.dispatchEvent(event)
     },
-    {
-      id: 'elijah',
-      name: 'Elijah',
-      topic: 'Mental Health, Financial Precarity',
-      color: 'from-blue-500 via-blue-400 to-blue-600',
-      summary: 'Elijah doesn\'t recall a time when he wasn\'t longing to be somewhere else. He imagined a quiet place, where the only sound was the one he allowed.',
-      href: '/stories/elijah'
-    },
-    {
-      id: 'lala',
-      name: 'Lala',
-      topic: 'Religion, Homophobia',
-      color: 'from-green-700 via-amber-600 to-green-500',
-      summary: 'For Lala, home was never a finished book. It was a map still being written, filled with people and places she has yet to love, and be loved by.',
-      href: '/stories/lala'
-    }
-  ]
-
-  const [selectedPortal, setSelectedPortal] = useState<Portal | null>(null)
-
-  const handlePortalClick = (portal: Portal, event: React.MouseEvent<HTMLDivElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect()
-    const x = rect.left + rect.width / 2
-    const y = rect.top + rect.height / 2
-    
-    setSelectedPortal(portal)
-    setClickedPortal({ x, y })
-    setTransitioning(true)
-  }
-
-  const handleTransitionComplete = () => {
-    if (selectedPortal) {
-      router.push(selectedPortal.href)
-    }
-  }
+    [router]
+  )
 
   return (
-    <div className="stories-page-wrapper">
-      {/* Full-screen storytelling canvas - separate from main site */}
-      <div className="stories-canvas-container">
-        {/* Background layer for storytelling */}
-        <div className="stories-background" />
-        
-        {/* Navigation overlay */}
-        <div className="stories-nav-overlay">
-          <Navigation />
-        </div>
-      
-      <PageTransition
-        show={transitioning}
-        onComplete={handleTransitionComplete}
-        direction="from"
-        position={clickedPortal || undefined}
-        useStarfield={true}
-      />
+    <div className="relative min-h-screen overflow-x-hidden bg-[#050b22] text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(140%_120%_at_10%_5%,rgba(137,49,114,0.42),rgba(5,11,34,0.92))]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_95%_0%,rgba(33,56,133,0.45),rgba(5,11,34,0.9))]" />
 
-        {/* Main storytelling content area */}
-        <div className="stories-content">
-          <div className="stories-portal-section">
-            <ScrollAnimation direction="fadeInUp" duration={2000} threshold={0.15}>
-              <h1 className="stories-title">
-                Stories
-              </h1>
-            </ScrollAnimation>
-            
-            <ScrollAnimation direction="fadeInUp" duration={1800} threshold={0.2}>
-              <p className="stories-subtitle">
-                This section features the heart of our exploration, with deeply personal narratives alongside expert analysis. Dive into the lives of individuals like Elijah, Blair, and Lala to understand how past trauma, financial anxiety, and identity struggles are translated into the blueprint of their dream home. Complement these stories with Professional Insights from architects, designers, and psychologists who explain how these emotional needs are met through real-world engineering and design principles.
-              </p>
-            </ScrollAnimation>
+      <Navigation />
 
-            {/* Professional Insights Link */}
-            <ScrollAnimation direction="zoomIn" duration={1500} threshold={0.25}>
-              <div className="mb-12 text-center">
-                <Link 
-                  href="/stories/professional-insights"
-                  className="inline-block px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bella-queta font-bold text-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
+      <main className="relative z-10 mx-auto max-w-6xl px-6 pt-40 pb-24">
+        <header className="text-center">
+          <p className="mb-3 text-sm uppercase tracking-[0.4em] text-white/55">Story Collection</p>
+          <h1 className="mb-5 font-bella-queta text-5xl md:text-6xl lg:text-7xl">Stories</h1>
+          <p className="mx-auto max-w-3xl text-lg text-white/75 md:text-xl">
+            The Haven’s core narratives live here. Walk through the emotional architecture of Blair,
+            Elijah, and Lala—then extend each story through expert insight, interviews, and dream home
+            visualizations.
+          </p>
+        </header>
+
+        <section className="mt-16 rounded-3xl border border-white/15 bg-white/10 p-8 shadow-[0_28px_70px_rgba(5,11,34,0.45)] backdrop-blur">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+              Scroll inside · tap a card to enter
+            </p>
+            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">Narrative Portals</h2>
+          </div>
+
+          <div className="mt-10">
+            <ScrollSnapCarousel
+              ariaLabel="Story portals"
+              items={STORY_PORTALS}
+              renderItem={(portal) => (
+                <article
+                  className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-[2.6rem] border border-white/15 bg-gradient-to-br ${portal.gradient} p-8`}
                 >
-                  View Professional Insights
-                </Link>
-              </div>
-            </ScrollAnimation>
-
-            {/* Interviews & Dream Homes Link */}
-            <ScrollAnimation direction="zoomIn" duration={1500} threshold={0.25}>
-              <div className="mb-20 text-center">
-                <Link 
-                  href="/interviews-dream-homes"
-                  className="inline-block px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 text-white rounded-full font-bella-queta font-bold text-lg hover:from-orange-600 hover:to-pink-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1 duration-300"
-                >
-                  Listen to Interviews & View Dream Homes
-                </Link>
-              </div>
-            </ScrollAnimation>
-
-            <div className="stories-portals-grid">
-              {portals.map((portal, index) => (
-                <ScrollAnimation key={portal.id} direction="zoomIn" duration={1800} threshold={0.2}>
-              <div
-                className="portal-card-wrapper"
-                onClick={(e) => handlePortalClick(portal, e)}
-              >
-                <div 
-                  className="portal-card-inner"
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'rotateY(180deg)'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'rotateY(0deg)'
-                  }}
-                >
-                {/* Front of card */}
-                <div className="portal-card-front">
-                  <div className={`w-full h-full bg-gradient-to-br ${portal.color} flex items-center justify-center relative`}>
-                    {/* Subtle overlay for depth */}
-                    <div className="absolute inset-0 bg-black/20"></div>
-                    <div className="text-center p-6 relative z-10">
-                      <h2 className="text-4xl font-bella-queta font-bold text-white mb-4 drop-shadow-lg">
-                        {portal.name}
-                      </h2>
-                      <p className="text-white/90 text-sm font-bella-queta font-medium">
-                        {portal.topic}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Back of card (summary) */}
-                <div className="portal-card-back">
-                  <div className="text-center">
-                    <h3 className="text-3xl font-bella-queta font-bold text-gray-900 mb-4">
-                      {portal.name}
-                    </h3>
-                    <p className="text-gray-700 font-bella-queta leading-relaxed text-base mb-6">
+                  <div className="relative z-10">
+                    <span className="text-xs uppercase tracking-[0.4em] text-white/70">
+                      {portal.theme}
+                    </span>
+                    <h3 className="mt-4 font-bella-queta text-3xl text-white">{portal.name}</h3>
+                    <p className="mt-4 text-sm leading-relaxed text-white/85">
                       {portal.summary}
                     </p>
-                    <div className="px-6 py-3 bg-[#BE8CC1] text-white rounded-full font-bella-queta font-bold inline-block hover:bg-[#a87bac] transition-colors cursor-pointer">
-                      Enter Story
-                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            </ScrollAnimation>
-          ))}
-            </div>
+                  <button
+                    onClick={() => triggerTransition(portal.href)}
+                    className="relative z-10 mt-8 inline-flex items-center gap-3 self-start rounded-full border border-white/40 px-6 py-3 text-xs uppercase tracking-[0.4em] text-white transition hover:border-white hover:bg-white/10"
+                  >
+                    Enter Story
+                    <svg
+                      className="h-3.5 w-3.5"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    >
+                      <path d="M5 12h14" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                  <div className="absolute inset-0 bg-white/10 opacity-0 transition group-hover:opacity-15" />
+                </article>
+              )}
+            />
           </div>
-        </div>
-      </div>
+        </section>
+
+        <section className="mt-24 space-y-10">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.4em] text-white/55">
+              Extend Each Narrative
+            </p>
+            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">
+              Supporting Chapters
+            </h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {RESOURCE_LINKS.map((resource) => (
+              <TransitionLink
+                key={resource.href}
+                href={resource.href}
+                className={`group relative overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br ${resource.gradient} p-8 shadow-[0_24px_60px_rgba(5,11,34,0.45)] transition transform-gpu hover:-translate-y-1`}
+              >
+                <div className="absolute inset-0 bg-white/10 opacity-0 transition group-hover:opacity-100" />
+                <div className="relative z-10">
+                  <p className="text-xs uppercase tracking-[0.4em] text-white/70">Resource</p>
+                  <h3 className="mt-4 font-bella-queta text-3xl text-white">{resource.title}</h3>
+                  <p className="mt-3 text-sm text-white/85">{resource.subtitle}</p>
+                  <span className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-white">
+                    Open
+                    <svg
+                      className="h-3.5 w-3.5 transition group-hover:translate-x-1"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    >
+                      <path d="M5 12h14" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </div>
+              </TransitionLink>
+            ))}
+          </div>
+        </section>
+
+        <section className="mt-24 rounded-3xl border border-white/15 bg-white/10 p-8 shadow-[0_24px_70px_rgba(5,11,34,0.4)] backdrop-blur">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.4em] text-white/55">
+              How to Navigate
+            </p>
+            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">A reader’s flow</h2>
+          </div>
+          <ul className="mt-8 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                step: '01',
+                title: 'Choose a story portal',
+                body:
+                  'Begin with Blair, Elijah, or Lala. Scroll or tap into the narrative that resonates today.',
+              },
+              {
+                step: '02',
+                title: 'Listen & visualize',
+                body:
+                  'Pair each story with its interview and dream home showcase for a sensory reading experience.',
+              },
+              {
+                step: '03',
+                title: 'Reflect with experts',
+                body:
+                  'Visit Professional Insights to see how design, engineering, and psychology interpret the needs revealed.',
+              },
+            ].map((item) => (
+              <li
+                key={item.step}
+                className="rounded-2xl border border-white/10 bg-white/12 p-6 text-sm leading-relaxed text-white/75"
+              >
+                <p className="text-xs uppercase tracking-[0.4em] text-white/55">
+                  Step {item.step}
+                </p>
+                <h3 className="mt-3 font-bella-queta text-xl text-white">{item.title}</h3>
+                <p className="mt-3">{item.body}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </main>
     </div>
   )
 }
