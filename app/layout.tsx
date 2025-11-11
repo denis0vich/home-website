@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import GlobalPageTransition from '@/components/GlobalPageTransition'
+import PageContentFade from '@/components/PageContentFade'
 
 export const metadata: Metadata = {
   title: 'The Haven - Dream Homes',
@@ -16,7 +17,7 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className="h-full">
         <GlobalPageTransition />
-        {children}
+        <PageContentFade>{children}</PageContentFade>
       </body>
     </html>
   )

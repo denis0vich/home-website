@@ -10,6 +10,9 @@ export default function GalleryPage() {
   const feelsLikeHomeRef = useRef<HTMLDivElement>(null)
   const ourGalleryRef = useRef<HTMLDivElement>(null)
   const isScrolling = useRef(false)
+  const scrollersRef = useRef(
+    new Map<HTMLDivElement, { target: number; rafId: number | null }>()
+  )
 
   // Handle vertical scroll to horizontal carousel conversion
   useEffect(() => {
@@ -23,13 +26,21 @@ export default function GalleryPage() {
       }, duration)
     }
 
+    const stopAllAnimations = () => {
+      scrollersRef.current.forEach((state) => {
+        if (state.rafId !== null) {
+          cancelAnimationFrame(state.rafId)
+          state.rafId = null
+        }
+      })
+      scrollersRef.current.clear()
+    }
+
     const isSectionActive = (element: Element | null) => {
       if (!element) return false
       const rect = element.getBoundingClientRect()
       const windowHeight = window.innerHeight || 0
-      const topThreshold = windowHeight * 0.25
-      const bottomThreshold = windowHeight * 0.75
-      return rect.top <= topThreshold && rect.bottom >= bottomThreshold
+      return rect.top < windowHeight && rect.bottom > 0
     }
 
     const scrollToSiblingSection = (
@@ -62,6 +73,31 @@ export default function GalleryPage() {
       return false
     }
 
+    const animateTo = (container: HTMLDivElement, next: number) => {
+      let state = scrollersRef.current.get(container)
+      if (!state) {
+        state = { target: container.scrollLeft, rafId: null }
+        scrollersRef.current.set(container, state)
+      }
+      state.target = next
+
+      if (state.rafId !== null) return
+
+      const step = () => {
+        const current = container.scrollLeft
+        const diff = state!.target - current
+        if (Math.abs(diff) < 0.5) {
+          container.scrollLeft = state!.target
+          state!.rafId = null
+          return
+        }
+        container.scrollLeft = current + diff * 0.18
+        state!.rafId = requestAnimationFrame(step)
+      }
+
+      state.rafId = requestAnimationFrame(step)
+    }
+
     const handleHorizontalScroll = (container: HTMLDivElement | null, deltaY: number) => {
       if (!container) return { handled: false, edge: null as 'start' | 'end' | null }
 
@@ -72,12 +108,16 @@ export default function GalleryPage() {
       const current = container.scrollLeft
       const atStart = current <= tolerance
       const atEnd = current >= maxScroll - tolerance
-      const step = deltaY
+      let step = deltaY * 1.25
+      if (Math.abs(step) < 35) {
+        step = 35 * Math.sign(deltaY || 1)
+      }
 
       if (deltaY > 0) {
         if (!atEnd) {
-          container.scrollBy({ left: step, behavior: 'smooth' })
-          lockScrolling()
+          const target = Math.min(maxScroll, current + step)
+          animateTo(container, target)
+          lockScrolling(200)
           return { handled: true, edge: null as 'start' | 'end' | null }
         }
         return { handled: false, edge: 'end' as const }
@@ -85,8 +125,9 @@ export default function GalleryPage() {
 
       if (deltaY < 0) {
         if (!atStart) {
-          container.scrollBy({ left: step, behavior: 'smooth' })
-          lockScrolling()
+          const target = Math.max(0, current + step)
+          animateTo(container, target)
+          lockScrolling(200)
           return { handled: true, edge: null as 'start' | 'end' | null }
         }
         return { handled: false, edge: 'start' as const }
@@ -150,6 +191,7 @@ export default function GalleryPage() {
       if (releaseTimeout) {
         window.clearTimeout(releaseTimeout)
       }
+      stopAllAnimations()
     }
   }, [])
 

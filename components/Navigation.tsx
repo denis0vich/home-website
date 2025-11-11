@@ -3,15 +3,24 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { useState } from 'react'
-import PageTransition from './PageTransition'
+import { useCallback, useState } from 'react'
 
 export default function Navigation() {
   const pathname = usePathname()
   const router = useRouter()
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
   const [mousePositions, setMousePositions] = useState<{ [key: string]: { x: number; y: number } }>({})
-  const [transitioning, setTransitioning] = useState(false)
+  const dispatchGlobalTransition = useCallback(
+    (href: string) => {
+      if (pathname === href) return
+      const navigate = () => router.push(href)
+      const event = new CustomEvent('global-page-transition', {
+        detail: { navigate },
+      })
+      window.dispatchEvent(event)
+    },
+    [pathname, router]
+  )
 
   const navItems = [
     { label: 'HOME', href: '/' },
@@ -29,25 +38,7 @@ export default function Navigation() {
     return pathname?.startsWith(href)
   }
 
-  const handleStoriesClick = (e: React.MouseEvent) => {
-    if (pathname === '/stories') return
-    
-    e.preventDefault()
-    setTransitioning(true)
-  }
-
-  const handleTransitionComplete = () => {
-    router.push('/stories')
-    setTransitioning(false)
-  }
-
   return (
-    <>
-      <PageTransition
-        show={transitioning}
-        onComplete={handleTransitionComplete}
-        direction="towards"
-      />
       <nav className="absolute top-0 left-0 right-0 z-50 px-6 py-6">
         <div className="flex items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center">
@@ -75,7 +66,11 @@ export default function Navigation() {
                 href={item.href}
                 className="relative text-white font-bella-queta font-bold text-lg tracking-[0.15em] transition-colors hover:text-white px-4 py-2"
                 style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
-                onClick={item.href === '/stories' ? handleStoriesClick : undefined}
+                onClick={(e) => {
+                  if (pathname === item.href) return
+                  e.preventDefault()
+                  dispatchGlobalTransition(item.href)
+                }}
                 onMouseEnter={() => setHoveredItem(item.href)}
                 onMouseLeave={() => {
                   setHoveredItem(null)
@@ -114,6 +109,5 @@ export default function Navigation() {
         </div>
       </div>
     </nav>
-    </>
   )
 }
