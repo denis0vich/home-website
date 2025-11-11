@@ -6,6 +6,7 @@ import StoryImage from '@/components/StoryImage'
 import StoryAudio from '@/components/StoryAudio'
 import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
+import AudioConsent from '@/components/AudioConsent'
 
 export default function ElijahStoryPage() {
   return (
@@ -17,20 +18,21 @@ export default function ElijahStoryPage() {
       </div>
 
       <div className="story-content-area">
+        <AudioConsent />
         <article className="max-w-4xl mx-auto px-6 py-20">
           {/* Header */}
           <ScrollAnimation direction="fadeInUp" duration={1200}>
-            <header className="mb-16">
-              <div className="mb-4">
-                <span className="text-sm font-bella-queta text-gray-500 uppercase tracking-wider">Subject: Elijah</span>
+            <header className="mb-20">
+              <div className="mb-6">
+                <span className="text-base md:text-lg font-bella-queta text-gray-500 uppercase tracking-wider">Subject: Elijah</span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bella-queta text-gray-900 mb-8 leading-tight">
                 The Vantage Point
               </h1>
-              <p className="text-xl font-bella-queta text-gray-600 mb-2">
+              <p className="text-2xl md:text-3xl font-bella-queta text-gray-600 mb-3">
                 Topic: Mental Health, Financial Precarity
               </p>
-              <p className="text-sm font-bella-queta text-gray-500">
+              <p className="text-base md:text-lg font-bella-queta text-gray-500">
                 Color Palette: Blue colors
               </p>
             </header>
@@ -46,9 +48,9 @@ export default function ElijahStoryPage() {
               particleColors={['#64b5f6', '#90caf9', '#bbdefb']}
               particleIntensity={0.6}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <ScrollAnimation direction="fadeIn">
-                  <p className="text-2xl md:text-3xl leading-relaxed mb-16 italic font-light text-center max-w-3xl mx-auto" style={{ color: 'inherit' }}>
+                  <p className="text-3xl md:text-4xl lg:text-5xl leading-relaxed mb-20 italic font-light text-center max-w-4xl mx-auto" style={{ color: 'inherit', lineHeight: '1.6', fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
                     Elijah doesn't recall a time when he wasn't longing to be somewhere else. He imagined a quiet place, where the only sound was the one he allowed. A world where his only companion was silence. In that place, his heart could finally rest, no longer thrumming with the constant hum of worry beneath his skin. No demands. No responsibilities. He was alone, and in that solitude, he believed he could conquer the world.
                   </p>
                 </ScrollAnimation>
@@ -71,7 +73,7 @@ export default function ElijahStoryPage() {
                   src="/stories-assets/FOR ETHAN.jpg" 
                   alt="Open Eyes to Closed Eyes" 
                 />
-                <StoryAudio src="/audio/Elijah - panalangin piano.mp3" loop={true} volume={0.4} />
+                <StoryAudio src="/audio/Elijah - panalangin piano.mp3" loop={true} volume={0.2} />
 
                 <StoryParagraph>
                   "Mahal! I'm home!" The sound of his wife's voice settled over the rooms as she closed the door.
@@ -89,10 +91,10 @@ export default function ElijahStoryPage() {
                   She hugged him from behind, her weight an everlasting comfort to his presence. He turned around to spin her in a quick, bright circle as he belted out the lyrics, laughing at the sound of his own voice. Cold air seeping from the air conditioner brushed against his arms, making his skin tingle. His feet settled into the ornate, marble tiles under his bare feet. Spending a lifetime with his wife and the family they were building was more than enough. Everything was where it should be, held in perfect, intentional order.
                 </StoryParagraph>
 
-                <StoryAudio src="/audio/Elijah_ Streets of Manila.mp3" loop={true} volume={0.5} />
+                <StoryAudio src="/audio/Elijah_ Streets of Manila.mp3" loop={true} volume={0.25} />
 
                 <ScrollAnimation direction="fadeIn">
-                  <p className="mb-8 text-center text-2xl leading-relaxed font-medium" style={{ color: 'inherit' }}>
+                  <p className="mb-12 text-center text-2xl md:text-3xl lg:text-4xl leading-relaxed font-medium" style={{ color: 'inherit', fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', lineHeight: '1.7' }}>
                     But reality was brighter than the sun.
                   </p>
                 </ScrollAnimation>
@@ -105,7 +107,7 @@ export default function ElijahStoryPage() {
               backgroundColor="#424242"
               particleEffect="none"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   He opened his eyes. The sharp white of his dream dissolved into the chipped melamine countertop, the single, stained electric kettle wobbling on the edge. His kitchen island was a small plastic table, its legs uneven, where he rested his weary elbows. He tore open a packet of instant noodles. The kettle rattled as it boiled.
                 </StoryParagraph>
@@ -125,8 +127,11 @@ export default function ElijahStoryPage() {
               sectionId="elijah-anxiety"
               backgroundColor="#1a237e"
               particleEffect="none"
+              floatingText={['WORRY', 'DEBT', 'FEAR', 'ANXIETY', 'STRESS', 'PRESSURE', 'INSOMNIA', 'EXHAUSTION', 'WHAT IF', 'BILLS', 'TUITION', 'RENT', 'WORRY', 'FEAR', 'ANXIETY']}
+              floatingTextIntensity={0.8}
+              floatingTextDirection="chaotic"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   Elijah reminded himself he was luckier than those who had nothing to eat. His family was there, holding his hand through it all. But the exhaustion that came with having no say in his own life grew steadily. It was as if life had turned into a circus. And, the worst part was that everyone wanted to be part of the show.
                 </StoryParagraph>
@@ -152,7 +157,7 @@ export default function ElijahStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                  <p className="mb-8 text-center text-xl leading-relaxed font-light" style={{ color: 'inherit', opacity: 0.9 }}>
+                  <p className="mb-12 text-center text-2xl md:text-3xl leading-relaxed font-light" style={{ color: 'inherit', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
                     When the noise became too much, he clung to his dreams.
                   </p>
                 </ScrollAnimation>
@@ -167,12 +172,12 @@ export default function ElijahStoryPage() {
               particleColors={['#03a9f4', '#29b6f6', '#4fc3f7', '#81d4fa']}
               particleIntensity={0.7}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryImage 
                   src="/stories-assets/FOR ETHAN(1).jpg" 
                   alt="Sailing at sea" 
                 />
-                <StoryAudio src="/audio/Elijah - sea waves.mp3" loop={true} volume={0.5} />
+                <StoryAudio src="/audio/Elijah - sea waves.mp3" loop={true} volume={0.25} />
 
                 <StoryParagraph>
                   It's not often that Elijah gets to savor the beauty of the wild, blue seas. The sound of the waves crashing on the shore, and the rocks pushing against his feet, made him smile at the serenity. He had always been fascinated with water—how it flows, how it goes, not caring what others would think of it. The saline tang of the sea was prominent in the air. He touched the cold water. It was magic, time travel even, knowing how many had walked in this sea before he was born, and how many would witness its beauty for generations to come.
@@ -195,8 +200,11 @@ export default function ElijahStoryPage() {
               particleEffect="strobe"
               particleColors={['#01579b', '#0277bd', '#0288d1', '#039be5']}
               particleIntensity={1.2}
+              floatingText={['DROWN', 'SUFFOCATE', 'DARK', 'VOID', 'ABYSS', 'DEEP', 'SINK', 'DROWN', 'BLACK', 'VOID', 'SUFFOCATE', 'DEEP']}
+              floatingTextIntensity={1}
+              floatingTextDirection="down"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   They visited a few historical locations in Batangas. When they had free time, Elijah dipped his toes into the water and swam, far, far away from the shore. He never had a vacation. Even during summer break, he had to find odd jobs just to help out at home. Here, while he floated in the depths of the ocean, he stared at the vast skies, wondering if he'd ever get to see bioluminescent algae in the sea. Granted, it was still day, so the sunlight would make it hard to see the cerulean glow of the organisms. Perhaps one day, when he learns to free dive in the islands of Palawan. No worry came to mind. His heart was steady. Until the water began to fill his lungs.
                 </StoryParagraph>
@@ -220,8 +228,11 @@ export default function ElijahStoryPage() {
               sectionId="elijah-dating"
               backgroundColor="#2c2c2c"
               particleEffect="none"
+              floatingText={['REJECTION', 'ALONE', 'SHAME', 'GHOSTED', 'POOR', 'ASHAMED', 'REJECTION', 'ALONE', 'SHAME']}
+              floatingTextIntensity={0.6}
+              floatingTextDirection="chaotic"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   When the world became too loud, Elijah scrolled through photos of minimalist cafes. He liked their stillness, their curated environment. Cafes were clean, controlled, and safe. Outside, the curses and clatter of the street no longer startled him. His skin was used to the heat, the press of strangers' shoulders inside the jeep. His eyes stayed vigilant, wary of what waited beyond each corner.
                 </StoryParagraph>
@@ -252,7 +263,7 @@ export default function ElijahStoryPage() {
               particleColors={['#ffd700', '#ffeb3b', '#fff59d']}
               particleIntensity={0.6}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   His identity was defined by his environment, and he couldn't blame the girls for wanting to pursue men with better prospects. In contrast, his mother, Maricel, had loved him without question. On his first day of college, she'd sewn a loose button onto his polo.
                 </StoryParagraph>
@@ -265,7 +276,7 @@ export default function ElijahStoryPage() {
                   Elijah remembers buying a soft pillow with the money he earned from tutoring his classmates. It wasn't much, just a clean square of comfort, still smelling faintly of detergent. He thought it might replace the tired pillows his parents had long slept on. When he opened their bedroom door, they were already asleep. His father's arm draped over his mother's side, the electric fan humming low. He placed the pillow beside them, careful not to wake them, as he lingered in the doorway. When the stars finally aligned for him, his parents would no longer have to sleep on worn-out mattresses. He kept their pictures in his wallet to inspire him during exam season.
                 </StoryParagraph>
 
-                <StoryAudio src="/audio/Elijah - Gentle Heartbeat Fading In.mp3" loop={true} volume={0.4} />
+                <StoryAudio src="/audio/Elijah - Gentle Heartbeat Fading In.mp3" loop={true} volume={0.2} />
 
                 <StoryParagraph>
                   As a nursing student, science and math became his lifeline. His mastery of numbers, paired with an almost stubborn curiosity about how life worked, placed him among the best in class. All he wanted was to give his mother the home she deserved. And in his mother's own little way, he realized, this was her first time living, too.
@@ -281,13 +292,13 @@ export default function ElijahStoryPage() {
               particleColors={['#03a9f4', '#29b6f6', '#4fc3f7', '#81d4fa']}
               particleIntensity={0.7}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   At night, he sometimes stayed in the library, watching old American movies on the PC. Sleepless in Seattle was his favorite. A film about longing and beginning again. He held onto one line from Tom Hanks' character:
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                  <p className="mb-8 leading-relaxed italic pl-6 border-l-4 border-blue-400 text-lg" style={{ color: 'inherit', opacity: 0.9 }}>
+                  <p className="mb-12 leading-relaxed italic pl-8 border-l-4 border-blue-400 text-2xl md:text-3xl" style={{ color: 'inherit', fontSize: 'clamp(1.5rem, 3vw, 2rem)', lineHeight: '1.8' }}>
                     "I'm gonna get out of bed every morning... and breathe in and out all day long. And then after a while I won't have to remind myself to get out of bed in the morning and breathe in and out."
                   </p>
                 </ScrollAnimation>
@@ -318,7 +329,7 @@ export default function ElijahStoryPage() {
               particleColors={['#ffd700', '#ffeb3b', '#fff59d', '#ffc107']}
               particleIntensity={0.8}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   Elijah felt a sudden ache in his feet. The tiles. In that moment, the exhaustion of his own long commute and late-night studying felt selfish. He saw the truth clearly. It wasn't just him carrying the burden. His mother had been making these agonizing choices for years. His education was a means to an end. It will be his golden ticket to freedom. His love for the irrefutable logic of the universe brought him to the top. He graduated from college with honors and ranked as a topnotcher in the nursing boards. He remembered, then, that what makes humans different from animals is their wisdom. Elijah may be human, but his animalistic hunger to get out of the ghetto was something science could not explain.
                 </StoryParagraph>
@@ -327,7 +338,7 @@ export default function ElijahStoryPage() {
                   Now, standing at the mountain's edge, the cities below gleamed in the sunrise. His friends forced him to go hiking with them. Elijah, looking ahead, understood his true vantage point. His hurdles in his house in Paco were only steps that he needed to surpass. Out of his love for his family and his dreams, he declared a vow. He would keep climbing, one tired, tenacious step at a time.
                 </StoryParagraph>
 
-                <StoryAudio src="/audio/Elijah_ Peaceful.mp3" loop={true} volume={0.5} />
+                <StoryAudio src="/audio/Elijah_ Peaceful.mp3" loop={true} volume={0.25} />
                 <StoryImage 
                   src="/stories-assets/FOR ETHAN(2).jpg" 
                   alt="Field" 

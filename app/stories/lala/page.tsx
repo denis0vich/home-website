@@ -7,6 +7,7 @@ import StoryAudio from '@/components/StoryAudio'
 import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
 import Image from 'next/image'
+import AudioConsent from '@/components/AudioConsent'
 
 export default function LalaStoryPage() {
   return (
@@ -18,20 +19,21 @@ export default function LalaStoryPage() {
       </div>
 
       <div className="story-content-area">
+        <AudioConsent />
         <article className="max-w-4xl mx-auto px-6 py-20">
           {/* Header */}
           <ScrollAnimation direction="fadeInUp" duration={2000}>
-            <header className="mb-20">
-              <div className="mb-4">
-                <span className="text-sm font-bella-queta text-gray-500 uppercase tracking-wider">Subject: Lala</span>
+            <header className="mb-24">
+              <div className="mb-6">
+                <span className="text-base md:text-lg font-bella-queta text-gray-500 uppercase tracking-wider">Subject: Lala</span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bella-queta text-gray-900 mb-8 leading-tight">
                 The Sculpture of Faith
               </h1>
-              <p className="text-xl font-bella-queta text-gray-600 mb-2">
+              <p className="text-2xl md:text-3xl font-bella-queta text-gray-600 mb-3">
                 Topic: Religion, Homophobia
               </p>
-              <p className="text-sm font-bella-queta text-gray-500">
+              <p className="text-base md:text-lg font-bella-queta text-gray-500">
                 Color Palette: Warm Green/Brown
               </p>
             </header>
@@ -45,9 +47,9 @@ export default function LalaStoryPage() {
               backgroundColor="#f5f1e8"
               particleEffect="none"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <ScrollAnimation direction="fadeIn">
-                  <p className="text-2xl md:text-3xl leading-relaxed mb-16 italic font-light text-center max-w-3xl mx-auto" style={{ lineHeight: '1.6', color: 'inherit' }}>
+                  <p className="text-3xl md:text-4xl lg:text-5xl leading-relaxed mb-20 italic font-light text-center max-w-4xl mx-auto" style={{ lineHeight: '1.6', color: 'inherit', fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
                     The road back home is well-traveled, though the wheel drifts elsewhere. In places, people, and fleeting moments, she leaves traces where the search never quite ends. For Lala, home was never a finished book. It was a map still being written, filled with people and places she has yet to love, and be loved by.
                   </p>
                 </ScrollAnimation>
@@ -68,7 +70,7 @@ export default function LalaStoryPage() {
               backgroundColor="#2c2c2c"
               particleEffect="none"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   "There's never been anything normal about us," said a character from the show she was watching. Lala sat on the couch, eating chips, amused. The teenage boy on screen was an alien, trying to survive high school. He looked human, but he knew he wasn't. Lala understood that feeling. Her mother, Kristine, passed by just as two characters were about to kiss. "Can you stop watching that?" she said. "Watch something decent. Not shows about immorality." Glancing at Lala, Kristine rolled her eyes, "And close your legs when you sit. You look like a slut."
                 </StoryParagraph>
@@ -87,7 +89,7 @@ export default function LalaStoryPage() {
               particleColors={['#ffd700', '#ffeb3b', '#fff59d']}
               particleIntensity={0.5}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   One weekend, she went to an amusement park with her friends. They screamed as the roller coaster dropped from its peak, the wind against their faces. For those few minutes, she felt light, untethered. But when the ride stopped, the feeling vanished. Grief returned as quietly as breath. She smiled at her friends, grateful for the laughter that kept her from dwelling too much on her thoughts. Rina, one of her friends, rummaged through her bag to retrieve the movie tickets. She gave one to each of them in their group.
                 </StoryParagraph>
@@ -105,15 +107,18 @@ export default function LalaStoryPage() {
               particleEffect="strobe"
               particleColors={['#ff0000', '#8b0000', '#dc143c']}
               particleIntensity={1.5}
+              floatingText={['REJECTED', 'ALONE', 'HURT', 'REJECTED', 'SHAME', 'ALONE', 'REJECTED', 'HURT', 'SHAME']}
+              floatingTextIntensity={1}
+              floatingTextDirection="chaotic"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <ScrollAnimation direction="fadeIn">
-                  <p className="mb-12 text-center text-xl leading-relaxed font-medium" style={{ color: 'inherit' }}>
+                  <p className="mb-16 text-center text-2xl md:text-3xl lg:text-4xl leading-relaxed font-medium" style={{ color: 'inherit', fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', lineHeight: '1.7' }}>
                     A knock on her door woke her the next morning. Ten a.m. She was supposed to join her family for a trip. "You won't come with us anymore," her mother said from the doorway. Lala blinked, half-asleep. "If you can't follow rules, then stay here." The door slammed.
                   </p>
                 </ScrollAnimation>
 
-                <StoryAudio src="/audio/Lala - Heavy Door Slam .mp3" volume={0.7} fadeIn={false} />
+                <StoryAudio src="/audio/Lala - Heavy Door Slam .mp3" volume={0.25} fadeIn={false} />
 
                 <StoryParagraph>
                   She pressed her forehead to the wood. Lala had studied all night for an exam she was meticulously preparing for. Good morning. Always a good morning in this house.
@@ -127,7 +132,7 @@ export default function LalaStoryPage() {
               backgroundColor="#efebe9"
               particleEffect="none"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   In Aqaba, Jordan, an ancient church once stood, built around the year 300. Long before marble cathedrals, early believers gathered in open spaces: courtyards, gardens, and rooftops. There were no walls to define their faith. It was not where they prayed that mattered, but how they did.
                 </StoryParagraph>
@@ -146,7 +151,7 @@ export default function LalaStoryPage() {
               particleColors={['#ff9800', '#ffb74d', '#ffcc80']}
               particleIntensity={0.4}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   In high school, their school held a play about King Henry VIII and his wives. Lala was assigned Anne Boleyn. She wore a velvet, medieval gown that her mother bought from Quiapo, paired with an intricate pearl necklace. Her line, which she practiced all night was, "I will be your Queen, Your Majesty." The boy playing Henry smirked beneath the dim stage lights and declared, "So it is with our love, for by absence we are parted, yet nevertheless it keeps its fervour." Everyone clapped. No one bothered to include the part where Anne was beheaded.
                 </StoryParagraph>
@@ -156,7 +161,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                  <p className="mb-12 text-center text-xl leading-relaxed font-light italic" style={{ color: 'inherit', opacity: 0.9 }}>
+                  <p className="mb-12 text-center text-xl leading-relaxed font-light italic" style={{ color: 'inherit' }}>
                     If a king could defy God for the woman he wanted, why was she taught to fear hell for simply wanting to love? She would've never fit in God's image. What a shame.
                   </p>
                 </ScrollAnimation>
@@ -168,8 +173,11 @@ export default function LalaStoryPage() {
               sectionId="lala-confession"
               backgroundColor="#000000"
               particleEffect="none"
+              floatingText={['SIN', 'SHAME', 'EVIL', 'UNWORTHY', 'DISGUSTING', 'HELL', 'SIN', 'SHAME', 'EVIL', 'UNWORTHY', 'DISGUSTING']}
+              floatingTextIntensity={0.8}
+              floatingTextDirection="up"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph useTextReveal={true} revealType="word" textRevealDelay={30}>
                   "Bless me, Father, for I have sinned." The words trembled as they left her mouth. Between her and the priest stood a brown wooden grate, separating sinner from savior. Lala's hands were shaking in a prayer position. Beads of sweat formed on her forehead. The dark, guarded atmosphere of the confessional made her want to puke. "I've desired a woman," she whispered. She confessed her most shameful secret. She had fantasized about a woman. She had touched herself while thinking about one.
                 </StoryParagraph>
@@ -196,7 +204,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                  <p className="mb-16 text-4xl md:text-5xl leading-relaxed font-medium text-center" style={{ color: 'inherit' }}>
+                  <p className="mb-20 text-5xl md:text-6xl lg:text-7xl leading-relaxed font-medium text-center" style={{ color: 'inherit', fontSize: 'clamp(3rem, 8vw, 5rem)' }}>
                     Evil.
                   </p>
                 </ScrollAnimation>
@@ -209,7 +217,7 @@ export default function LalaStoryPage() {
               backgroundColor="#1a1a1a"
               particleEffect="none"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   The word was stuck in her head, like a voice. People weren't moral. They were not just tested in the same way. Her mother's best friend's husband, a volunteer at church, had a mistress. Her sister, training to be a nun, cursed behind closed doors. And her mother, her holy, devout mother, once had an affair with their pastor. The family bought their silence. If Lala were going to hell, she wouldn't be alone.
                 </StoryParagraph>
@@ -219,7 +227,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                  <p className="mb-12 text-center text-xl leading-relaxed font-light italic" style={{ color: 'inherit', opacity: 0.8 }}>
+                  <p className="mb-16 text-center text-2xl md:text-3xl lg:text-4xl leading-relaxed font-light italic" style={{ color: 'inherit', fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', lineHeight: '1.7' }}>
                     It was as if they were trying to hide something. After all, a wicked heart, no matter how elusive, stands out in the ordinary.
                   </p>
                 </ScrollAnimation>
@@ -234,7 +242,7 @@ export default function LalaStoryPage() {
               particleColors={['#4caf50', '#81c784', '#a5d6a7']}
               particleIntensity={0.6}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph>
                   Lala had learned to crochet from Jacob, her childhood friend. Everyone thought they'd end up together. Everyone Lala knew was into dating. First loves, first crushes. For her friends, living life to the fullest meant having boyfriends and sneaking out of classrooms to kiss and make out. What she remembered most was the comfort of making something with her hands. The feeling of inserting the needle into different textiles and creating a small or big pattern allowed her to create her own story. When Jacob asked her out at sixteen, she said yes because it seemed easier than saying no. As the new day unfolded, the sun cast its golden light upon the towering skyscrapers. They sat beneath the shade of a tree. Lala inhaled the aroma of freshly brewed coffee drifting from the nearby cafés. The soft, floral scent of the rose bouquet carried a faint sweetness, almost like fruit. A mother and her teenage daughter passed by, laughing softly, and Lala suddenly remembered her own mother's haunting words: "You need to have children. Because if you don't, that's selfish. You became a woman for a reason, to bring life into this world, just like I did when I gave birth to you."
                 </StoryParagraph>
@@ -247,14 +255,14 @@ export default function LalaStoryPage() {
                   Later that night, Lala read The Lady's Guide to Celestial Mechanics by Olivia Waite. Christa was the one who lent it to her. The story of Lucy, an astronomer who found love in another woman, felt both foreign and familiar. When the characters kissed, something inside her stirred.
                 </StoryParagraph>
 
-                <StoryAudio src="/audio/Lala - Flipping page on book.mp3" volume={0.3} fadeIn={false} />
+                <StoryAudio src="/audio/Lala - Flipping page on book.mp3" volume={0.15} fadeIn={false} />
 
                 <StoryParagraph useTextReveal={true} revealType="word" textRevealDelay={25}>
                   She read the page again and again, until she could almost see herself in it. Her hand reached for Christa's in the quiet of the library. Christa pushed her into a corner between the shelves, their lips meeting as if it were their salvation.
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                  <p className="mb-12 text-center text-lg leading-relaxed font-light italic" style={{ color: 'inherit', opacity: 0.8 }}>
+                  <p className="mb-16 text-center text-xl md:text-2xl lg:text-3xl leading-relaxed font-light italic" style={{ color: 'inherit', fontSize: 'clamp(1.25rem, 3vw, 2rem)', lineHeight: '1.7' }}>
                     She immediately closed the book. Some things were better left imagined.
                   </p>
                 </ScrollAnimation>
@@ -267,7 +275,7 @@ export default function LalaStoryPage() {
               backgroundColor="#2c2c2c"
               particleEffect="none"
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph useTextReveal={true} revealType="word" textRevealDelay={35}>
                   Wherever she went, her sin trailed behind her like a shadow. She stopped trying to fit herself into names. Gay, bisexual, non-binary, and all the other labels. She was simply Lala. Someone who loved. Someone who prayed. Someone still trying to hold both worlds steady in her trembling hands.
                 </StoryParagraph>
@@ -295,12 +303,12 @@ export default function LalaStoryPage() {
               particleColors={['#8bc34a', '#aed581', '#c5e1a5', '#dcedc8']}
               particleIntensity={0.7}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 <StoryParagraph useTextReveal={true} revealType="word" textRevealDelay={30}>
                   Now, Lala lives in a condo in the city. From her window, skyscrapers glow like candles in the dusk. The walls are painted white, her guitar leans against the black couch, and her records line the shelves. Her dark furniture is a bold pattern she has committed to. She spreads her curtains open, and Privacy finally feels divine.
                 </StoryParagraph>
 
-                <StoryAudio src="/audio/Lala - Gentle Ambient Piano.mp3" loop={true} volume={0.5} />
+                <StoryAudio src="/audio/Lala - Gentle Ambient Piano.mp3" loop={true} volume={0.25} />
                 <StoryImage 
                   src="/stories-assets/FOR LALA 4.webp" 
                   alt="Dove to symbolize freedom" 
@@ -311,13 +319,13 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                  <p className="mb-16 text-2xl md:text-3xl leading-relaxed font-light text-center max-w-3xl mx-auto italic" style={{ lineHeight: '1.6', color: 'inherit' }}>
+                  <p className="mb-20 text-3xl md:text-4xl lg:text-5xl leading-relaxed font-light text-center max-w-4xl mx-auto italic" style={{ lineHeight: '1.6', color: 'inherit', fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}>
                     The sculpture of faith lives on in the beauty and sorrow of the people and places that we continue to love.
                   </p>
                 </ScrollAnimation>
 
                 <ScrollAnimation direction="fadeInUp">
-                  <p className="mb-6 text-xl leading-relaxed text-center" style={{ color: 'inherit' }}>
+                  <p className="mb-8 text-2xl md:text-3xl leading-relaxed text-center" style={{ color: 'inherit', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
                     And when Lala comes home to His arms one day, home will no longer be a prayer. She will be forgiven.
                   </p>
                 </ScrollAnimation>

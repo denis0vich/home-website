@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import GlobalPageTransition from '@/components/GlobalPageTransition'
 
 export const metadata: Metadata = {
   title: 'The Haven - Dream Homes',
@@ -13,7 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <body className="h-full">{children}</body>
+      <body className="h-full">
+        <GlobalPageTransition />
+        {children}
+      </body>
     </html>
   )
 }

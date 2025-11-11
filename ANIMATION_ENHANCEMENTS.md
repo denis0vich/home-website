@@ -31,7 +31,7 @@ All animations have been completely redesigned to be **scroll-based** rather tha
 - **Enhanced Thresholds**: Default threshold 0.25 for more reliable triggering
 
 ### 4. **Enhanced StoryImage Component**
-- **Longer Animations**: Duration increased to 2000ms for more dramatic reveals
+- **Longer Animations**: Duration increased to 2000ms for more dramatic revealshttps://www.youtube.com/shorts/3jqRs4Mxxaw
 - **Better Hover Effects**: Smoother scale transitions (hover:scale-110)
 - **Larger Spacing**: Increased margin to my-20 (80px) for better separation
 - **Enhanced Captions**: Animated captions with fade-in effect

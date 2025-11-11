@@ -27,28 +27,28 @@ export default function StoryParagraph({
   const isString = typeof children === 'string'
   
   return (
-    <ScrollAnimation 
-      direction="fadeInUp" 
-      duration={duration}
-      threshold={threshold}
-      rootMargin="0px 0px -250px 0px"
-    >
-      <p className={`mb-12 leading-relaxed text-lg ${className}`} style={{ lineHeight: '1.9', color: 'inherit' }}>
-        {useTextReveal && isString ? (
-          <TextReveal 
-            revealType={revealType} 
-            delay={textRevealDelay}
-            duration={textRevealDelay}
-            threshold={0.15}
-            rootMargin="0px 0px -200px 0px"
-          >
-            {children as string}
-          </TextReveal>
-        ) : (
-          children
-        )}
-      </p>
-    </ScrollAnimation>
+        <ScrollAnimation 
+          direction="fadeInUp" 
+          duration={duration}
+          threshold={threshold}
+          rootMargin="0px 0px -250px 0px"
+        >
+          <p className={`mb-16 leading-relaxed text-xl md:text-2xl lg:text-3xl ${className}`} style={{ lineHeight: '2', color: 'inherit', fontSize: 'clamp(1.25rem, 3vw, 1.875rem)' }}>
+            {useTextReveal && isString ? (
+              <TextReveal 
+                revealType={revealType} 
+                delay={textRevealDelay}
+                duration={textRevealDelay}
+                threshold={0.15}
+                rootMargin="0px 0px -200px 0px"
+              >
+                {children as string}
+              </TextReveal>
+            ) : (
+              children
+            )}
+          </p>
+        </ScrollAnimation>
   )
 }
 

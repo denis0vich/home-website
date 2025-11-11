@@ -9,76 +9,148 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const feelsLikeHomeRef = useRef<HTMLDivElement>(null)
   const ourGalleryRef = useRef<HTMLDivElement>(null)
-  const [feelsLikeHomeScroll, setFeelsLikeHomeScroll] = useState(0)
-  const [ourGalleryScroll, setOurGalleryScroll] = useState(0)
   const isScrolling = useRef(false)
 
   // Handle vertical scroll to horizontal carousel conversion
   useEffect(() => {
+    let releaseTimeout: number | undefined
+
+    const lockScrolling = (duration = 220) => {
+      if (releaseTimeout) window.clearTimeout(releaseTimeout)
+      isScrolling.current = true
+      releaseTimeout = window.setTimeout(() => {
+        isScrolling.current = false
+      }, duration)
+    }
+
+    const isSectionActive = (element: Element | null) => {
+      if (!element) return false
+      const rect = element.getBoundingClientRect()
+      const windowHeight = window.innerHeight || 0
+      const topThreshold = windowHeight * 0.25
+      const bottomThreshold = windowHeight * 0.75
+      return rect.top <= topThreshold && rect.bottom >= bottomThreshold
+    }
+
+    const scrollToSiblingSection = (
+      container: HTMLDivElement | null,
+      direction: 'next' | 'prev'
+    ) => {
+      if (!container) return false
+      const section = container.closest('section')
+      if (!section) return false
+
+      const wrapper = section.parentElement
+      if (!wrapper) return false
+
+      let sibling: Element | null =
+        direction === 'next' ? wrapper.nextElementSibling : wrapper.previousElementSibling
+
+      while (sibling) {
+        const targetSection = sibling.querySelector('section')
+        if (targetSection) {
+          ;(targetSection as HTMLElement).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+          lockScrolling(700)
+          return true
+        }
+        sibling = direction === 'next' ? sibling.nextElementSibling : sibling.previousElementSibling
+      }
+
+      return false
+    }
+
+    const handleHorizontalScroll = (container: HTMLDivElement | null, deltaY: number) => {
+      if (!container) return { handled: false, edge: null as 'start' | 'end' | null }
+
+      const maxScroll = container.scrollWidth - container.clientWidth
+      if (maxScroll <= 0) return { handled: false, edge: null as 'start' | 'end' | null }
+
+      const tolerance = 6
+      const current = container.scrollLeft
+      const atStart = current <= tolerance
+      const atEnd = current >= maxScroll - tolerance
+      const step = deltaY
+
+      if (deltaY > 0) {
+        if (!atEnd) {
+          container.scrollBy({ left: step, behavior: 'smooth' })
+          lockScrolling()
+          return { handled: true, edge: null as 'start' | 'end' | null }
+        }
+        return { handled: false, edge: 'end' as const }
+      }
+
+      if (deltaY < 0) {
+        if (!atStart) {
+          container.scrollBy({ left: step, behavior: 'smooth' })
+          lockScrolling()
+          return { handled: true, edge: null as 'start' | 'end' | null }
+        }
+        return { handled: false, edge: 'start' as const }
+      }
+
+      return { handled: false, edge: null as 'start' | 'end' | null }
+    }
+
     const handleWheel = (e: WheelEvent) => {
-      if (isScrolling.current) return
-      
-      const windowHeight = window.innerHeight
-      
-      // Check if we're in the carousel sections
-      const feelsLikeHomeSection = feelsLikeHomeRef.current?.closest('section')
-      const ourGallerySection = ourGalleryRef.current?.closest('section')
-      
-      if (feelsLikeHomeSection) {
-        const rect = feelsLikeHomeSection.getBoundingClientRect()
-        // Check if section is in viewport (with some threshold)
-        if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2) {
+      if (isScrolling.current) {
+        e.preventDefault()
+        e.stopPropagation()
+        return
+      }
+
+      const deltaY = e.deltaY
+      if (deltaY === 0) return
+
+      const sections: Array<{ container: HTMLDivElement | null }> = [
+        { container: feelsLikeHomeRef.current },
+        { container: ourGalleryRef.current },
+      ]
+
+      for (const { container } of sections) {
+        if (!container) continue
+
+        const sectionElement = container.closest('section')
+        if (!isSectionActive(sectionElement)) continue
+
+        const { handled, edge } = handleHorizontalScroll(container, deltaY)
+
+        if (handled) {
           e.preventDefault()
           e.stopPropagation()
-          isScrolling.current = true
-          
-          const scrollContainer = feelsLikeHomeRef.current
-          if (scrollContainer) {
-            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth
-            const scrollAmount = e.deltaY * 0.8 // Adjust speed
-            const currentScroll = scrollContainer.scrollLeft
-            const newScroll = Math.min(Math.max(currentScroll + scrollAmount, 0), maxScroll)
-            
-            scrollContainer.scrollTo({ left: newScroll, behavior: 'smooth' })
-            setFeelsLikeHomeScroll(newScroll)
-          }
-          
-          setTimeout(() => {
-            isScrolling.current = false
-          }, 100)
           return
         }
-      }
-      
-      if (ourGallerySection) {
-        const rect = ourGallerySection.getBoundingClientRect()
-        // Check if section is in viewport (with some threshold)
-        if (rect.top < windowHeight * 0.8 && rect.bottom > windowHeight * 0.2) {
-          e.preventDefault()
-          e.stopPropagation()
-          isScrolling.current = true
-          
-          const scrollContainer = ourGalleryRef.current
-          if (scrollContainer) {
-            const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth
-            const scrollAmount = e.deltaY * 0.8 // Adjust speed
-            const currentScroll = scrollContainer.scrollLeft
-            const newScroll = Math.min(Math.max(currentScroll + scrollAmount, 0), maxScroll)
-            
-            scrollContainer.scrollTo({ left: newScroll, behavior: 'smooth' })
-            setOurGalleryScroll(newScroll)
+
+        if (edge === 'end' && deltaY > 0) {
+          const moved = scrollToSiblingSection(container, 'next')
+          if (moved) {
+            e.preventDefault()
+            e.stopPropagation()
+            return
           }
-          
-          setTimeout(() => {
-            isScrolling.current = false
-          }, 100)
-          return
+        }
+
+        if (edge === 'start' && deltaY < 0) {
+          const moved = scrollToSiblingSection(container, 'prev')
+          if (moved) {
+            e.preventDefault()
+            e.stopPropagation()
+            return
+          }
         }
       }
     }
 
     window.addEventListener('wheel', handleWheel, { passive: false })
-    return () => window.removeEventListener('wheel', handleWheel)
+    return () => {
+      window.removeEventListener('wheel', handleWheel)
+      if (releaseTimeout) {
+        window.clearTimeout(releaseTimeout)
+      }
+    }
   }, [])
 
   // Gallery captions from the docx

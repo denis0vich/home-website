@@ -1,19 +1,22 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import type { CSSProperties } from 'react'
 
 interface ParticleEffectsProps {
   type: 'sparkles' | 'strobe' | 'none'
   intensity?: number
   colors?: string[]
   className?: string
+  style?: CSSProperties
 }
 
 export default function ParticleEffects({ 
   type, 
   intensity = 1, 
   colors = ['#ffffff', '#ffd700', '#ff6b6b'],
-  className = ''
+  className = '',
+  style
 }: ParticleEffectsProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animationFrameRef = useRef<number>()
@@ -25,9 +28,16 @@ export default function ParticleEffects({
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+    canvas.style.position = 'absolute'
+    canvas.style.top = '0'
+    canvas.style.left = '0'
+    canvas.style.width = '100%'
+    canvas.style.height = '100%'
+
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      const rect = canvas.getBoundingClientRect()
+      canvas.width = rect.width || window.innerWidth
+      canvas.height = rect.height || window.innerHeight
     }
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
@@ -122,8 +132,8 @@ export default function ParticleEffects({
   return (
     <canvas
       ref={canvasRef}
-      className={`fixed inset-0 pointer-events-none z-0 ${className}`}
-      style={{ mixBlendMode: 'screen' }}
+      className={`pointer-events-none ${className}`}
+      style={{ mixBlendMode: 'screen', ...style }}
     />
   )
 }

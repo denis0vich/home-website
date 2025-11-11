@@ -35,8 +35,8 @@ export default function ScrollAnimation({
       const elementHeight = rect.height
       
       // Calculate scroll progress: 0 = below viewport, 1 = fully past viewport
-      // Start calculating when element is 400px before entering viewport
-      const triggerStart = viewportHeight + 400
+      // Start calculating closer to viewport to avoid early triggers
+      const triggerStart = viewportHeight + 150
       const triggerEnd = -elementHeight
       
       // Progress from 0 to 1 as element moves through viewport
@@ -46,13 +46,13 @@ export default function ScrollAnimation({
       setScrollProgress(progress)
       
       // Trigger animation based on scroll progress, not just intersection
-      // Start animating at 15% progress (when element is approaching viewport)
-      if (progress > 0.15) {
+      // Start animating a bit later to avoid early reveals
+      if (progress > 0.25) {
         setIsVisible(true)
-        if (progress > 0.15 && !hasAnimated) {
+        if (progress > 0.25 && !hasAnimated) {
           setHasAnimated(true)
         }
-      } else if (progress < 0.05) {
+      } else if (progress < 0.08) {
         // Reset if scrolled back up
         setIsVisible(false)
         setHasAnimated(false)
@@ -76,8 +76,8 @@ export default function ScrollAnimation({
         handleScroll() // Also check immediately
       },
       { 
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5],
-        rootMargin: '-200px 0px -200px 0px'
+        threshold: [0, 0.25, 0.5, 0.75],
+        rootMargin
       }
     )
 
@@ -111,10 +111,13 @@ export default function ScrollAnimation({
 
   // Calculate animation values based on scroll progress for truly scroll-based animation
   const getAnimationStyle = () => {
-    // Use scroll progress to directly control animation (0 to 1)
-    const easedProgress = scrollProgress < 0.15 
-      ? 0 
-      : Math.min(1, Math.pow((scrollProgress - 0.15) / 0.85, 0.6)) // Ease in
+    const activationStart = 0.2
+    const activationFull = 0.7
+    const normalized =
+      (scrollProgress - activationStart) / (activationFull - activationStart)
+    const clamped = Math.max(0, Math.min(1, normalized))
+    // Ease-out cubic for smoother finish but reaches 1 sooner
+    const easedProgress = clamped === 0 ? 0 : 1 - Math.pow(1 - clamped, 3)
     
     const opacity = easedProgress
     const translateY = 24 * (1 - easedProgress)
