@@ -11,7 +11,7 @@ export default function StoriesLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="stories-canvas">
+    <div className="min-h-screen bg-[#050b22] text-white">
       {children}
     </div>
   )

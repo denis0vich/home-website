@@ -8,6 +8,9 @@ export default function AudioConsent() {
   useEffect(() => {
     // Respect prior consent this session
     const enabled = sessionStorage.getItem('audioEnabled') === 'true'
+    if (enabled) {
+      window.dispatchEvent(new CustomEvent('audio:enable'))
+    }
     setVisible(!enabled)
   }, [])
 

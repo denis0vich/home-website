@@ -76,16 +76,21 @@ export default function Home() {
       {/* Content */}
       <div className="relative z-[3]">
         <Navigation />
-        <div className="pointer-events-none flex justify-center py-6">
-          <span className="inline-flex items-center overflow-hidden rounded-full">
-            <span className="relative flex items-center bg-white/12 px-6 pt-3 pb-1 shadow-[0_12px_35px_rgba(5,11,34,0.35)]">
-              <img
-                src="/color-paleutte-1-1-34.png"
-                alt="Decorative divider with lotus symbol"
-                className="h-auto w-full max-w-[520px] opacity-90"
-              />
-            </span>
-          </span>
+        <div className="pointer-events-none flex justify-center pt-20">
+          <div
+            aria-hidden
+            className="relative inline-flex h-16 w-full max-w-[360px]"
+          >
+            <Image
+              src="/color-paleutte-1-1-34.png"
+              alt="Decorative divider with lotus symbol"
+              fill
+              className="object-contain opacity-90"
+              priority
+              unoptimized
+              sizes="(max-width: 768px) 80vw, 360px"
+            />
+          </div>
         </div>
         <Hero />
         

@@ -50,11 +50,17 @@ export default function Navigation() {
             const offsetX = mousePos.x * -0.15
             const offsetY = mousePos.y * -0.15
 
+            const highlightBaseClasses =
+              'absolute left-1/2 top-1/2 z-0 h-[calc(100%+0.75rem)] w-[calc(100%-0.75rem)] rounded-full transition-all duration-75 ease-out'
+            const highlightStateClasses = active
+              ? 'bg-[#909FF0]/85 shadow-[0_8px_24px_rgba(144,159,240,0.35)]'
+              : 'bg-gradient-to-r from-white/50 via-white/25 to-white/50'
+
             return (
               <TransitionLink
                 key={item.href}
                 href={item.href}
-                className="relative px-4 py-2 font-bella-queta text-lg font-bold tracking-[0.15em] text-white transition-colors hover:text-white"
+                className="relative inline-flex items-center justify-center px-3 py-2 font-bella-queta text-lg font-bold tracking-[0.15em] text-white transition-colors hover:text-white"
                 style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
                 onMouseEnter={() => setHoveredItem(item.href)}
                 onMouseLeave={() => {
@@ -71,23 +77,17 @@ export default function Navigation() {
                 }}
               >
                 {(active || hovered) && (
-                  <div
-                    className="absolute left-1/2 top-1/2 z-0 transition-transform duration-75 ease-out"
+                  <span
+                    aria-hidden="true"
+                    className={`${highlightBaseClasses} ${highlightStateClasses}`}
                     style={{
                       transform: `translate(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px))`,
                     }}
-                  >
-                    <Image
-                      src="/line-22-15.svg"
-                      alt=""
-                      width={350}
-                      height={60}
-                      className="h-auto w-auto"
-                      unoptimized
-                    />
-                  </div>
+                  />
                 )}
-                <span className="relative z-10">{item.label}</span>
+                <span className="relative z-10 inline-flex items-center justify-center px-2 py-1">
+                  {item.label}
+                </span>
               </TransitionLink>
             )
           })}

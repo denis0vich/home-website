@@ -45,7 +45,7 @@ export default function Hero() {
 
       {/* Main Content - moves slightly */}
       <div 
-        className="relative z-20 text-center px-6 max-w-5xl mx-auto pt-20"
+        className="relative z-20 text-center px-6 max-w-5xl mx-auto pt-0 md:pt-2 -mt-16 md:-mt-22 lg:-mt-24"
         style={{
           transform: `translate(${mousePosition.x * -0.5}px, ${mousePosition.y * -0.5}px)`,
           transition: 'transform 0.3s ease-out'
