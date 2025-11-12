@@ -77,13 +77,13 @@ export default function ProfessionalInsightsPage() {
 
       <div className="story-content-area">
         <div className="max-w-7xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+          <ScrollAnimation direction="fadeInUp" duration={1200}>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 text-center leading-tight">
               Professional Insights
             </h1>
           </ScrollAnimation>
           
-          <ScrollAnimation direction="fadeInUp" delay={200} duration={1000}>
+          <ScrollAnimation direction="fadeInUp" duration={1000}>
             <p className="text-xl font-bella-queta text-gray-600 mb-16 text-center max-w-3xl mx-auto">
               Expert perspectives from architects, engineers, interior designers, and psychologists on how emotional needs translate into physical spaces.
             </p>
@@ -91,7 +91,7 @@ export default function ProfessionalInsightsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {insights.map((insight, index) => (
-              <ScrollAnimation key={insight.id} direction="zoomIn" delay={300 + (index * 150)} duration={1000}>
+              <ScrollAnimation key={insight.id} direction="zoomIn" duration={1000}>
                 <div
                   onClick={(e) => handleCardClick(insight, e)}
                   className="group cursor-pointer"

@@ -16,7 +16,7 @@ export default function SustainableLivingPage() {
 
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+          <ScrollAnimation direction="fadeInUp" duration={1200}>
             <header className="mb-16">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
                 Sustainable Living
@@ -28,13 +28,13 @@ export default function SustainableLivingPage() {
           </ScrollAnimation>
 
           <div className="prose prose-lg max-w-none">
-            <ScrollAnimation direction="fadeIn" delay={300} duration={1200}>
+            <ScrollAnimation direction="fadeIn" duration={1200}>
               <p className="text-2xl md:text-3xl leading-relaxed text-gray-700 mb-16 italic font-light text-center max-w-3xl mx-auto">
                 Sustainable Living is about building a future that gives back. We explore the critical, often psychological, link between environmental responsibility and personal well-being, showing how small design and lifestyle choices can transform a mere dwelling into an ethical, nature-connected sanctuary in the midst of the concrete jungle.
               </p>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={400}>
+            <ScrollAnimation direction="fadeInUp">
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   The Need for Green
@@ -62,7 +62,7 @@ export default function SustainableLivingPage() {
               </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={500}>
+            <ScrollAnimation direction="fadeInUp">
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   Sanctuary Through the Senses
@@ -99,7 +99,7 @@ export default function SustainableLivingPage() {
               </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={600}>
+            <ScrollAnimation direction="fadeInUp">
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   How can I apply this?

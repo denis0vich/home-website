@@ -15,7 +15,7 @@ export default function InformationDesignPage() {
 
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+          <ScrollAnimation direction="fadeInUp" duration={1200}>
             <header className="mb-16">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
                 Information Design & Autonomy
@@ -27,13 +27,13 @@ export default function InformationDesignPage() {
           </ScrollAnimation>
 
           <div className="prose prose-lg max-w-none">
-            <ScrollAnimation direction="fadeIn" delay={300} duration={1200}>
+            <ScrollAnimation direction="fadeIn" duration={1200}>
               <p className="text-2xl md:text-3xl leading-relaxed text-gray-700 mb-16 italic font-light text-center max-w-3xl mx-auto">
                 Information Design & Autonomy explores the digital landscape where the modern dream home is first conceived. This section analyzes how the architecture of online platforms gives Gen Z a crucial sense of control and self-definition, making the act of curating digital aesthetics an essential part of shaping their identity and future aspirations.
               </p>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={400} duration={1000}>
+            <ScrollAnimation direction="fadeInUp" duration={1000}>
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   The Promise Pins
@@ -44,7 +44,7 @@ export default function InformationDesignPage() {
                 <StoryParagraph delay={600} duration={1000}>
                   But what if that digital mood board, that collection of saved images on Instagram, that detailed Notion dashboard, or that secret board of Scandinavian furniture, isn&apos;t just a fantasy? What if it is, in fact, one of the most powerful, serious tools you possess for identity formation and achieving future stability?
                 </StoryParagraph>
-                <ScrollAnimation direction="fadeIn" delay={700} duration={800}>
+                <ScrollAnimation direction="fadeIn" duration={800}>
                   <p className="mb-8 text-center text-2xl leading-relaxed text-gray-900 font-bold">
                     These digital mood boards are people&apos;s first piece of real estate. It&apos;s the blueprint of their future self.
                   </p>
@@ -52,7 +52,7 @@ export default function InformationDesignPage() {
               </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={800} duration={1000}>
+            <ScrollAnimation direction="fadeInUp" duration={1000}>
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   Curation as Control
@@ -66,7 +66,7 @@ export default function InformationDesignPage() {
                 <StoryParagraph delay={1100} duration={1000}>
                   Design experts Nada Endrissat, Gazi Islam, and Claus Noppeney describe the physical mood board&apos;s power in their research on design coordination, but the concept translates perfectly to the digital space. They found that these aesthetic objects, even when just visual, act as a coordination tool. They can direct and align independent actors (in your case, the disparate parts of your own life: your job, your saving habits, your aesthetic taste) while still maintaining creative freedom.
                 </StoryParagraph>
-                <ScrollAnimation direction="fadeIn" delay={1200} duration={800}>
+                <ScrollAnimation direction="fadeIn" duration={800}>
                   <p className="mb-8 text-center text-xl leading-relaxed text-gray-900 font-bold">
                     Your board isn&apos;t just a collection of wishes, it&apos;s a non-verbal contract with yourself, a balance between the dream life with the resources you currently have.
                   </p>
@@ -77,7 +77,7 @@ export default function InformationDesignPage() {
               </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={600}>
+            <ScrollAnimation direction="fadeInUp">
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   Value-tagging your goals
@@ -94,7 +94,7 @@ export default function InformationDesignPage() {
               </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={700}>
+            <ScrollAnimation direction="fadeInUp">
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   From Pixel to Plan

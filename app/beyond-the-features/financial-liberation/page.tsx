@@ -15,7 +15,7 @@ export default function FinancialLiberationPage() {
 
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
-          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+          <ScrollAnimation direction="fadeInUp" duration={1200}>
             <header className="mb-16">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
                 Financial Liberation
@@ -27,13 +27,13 @@ export default function FinancialLiberationPage() {
           </ScrollAnimation>
 
           <div className="prose prose-lg max-w-none">
-            <ScrollAnimation direction="fadeIn" delay={300} duration={1200}>
+            <ScrollAnimation direction="fadeIn" duration={1200}>
               <p className="text-2xl md:text-3xl leading-relaxed text-gray-700 mb-16 italic font-light text-center max-w-3xl mx-auto">
                 Financial Liberation is the generation&apos;s survival strategy in one of the world&apos;s most competitive and costly urban centers. This section unpacks the financial anxiety of the urban struggle and explores how Gen Z is redefining value, prioritizing time, convenience, and psychological peace over expensive, traditional metrics of homeownership.
               </p>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={400}>
+            <ScrollAnimation direction="fadeInUp">
               <section className="mb-12">
                 <p className="mb-6 leading-relaxed text-gray-700">
                   For everyone&apos;s entire life, everyone has heard one financial truth repeated at every family gathering: &quot;Rent is wasted money.&quot; It&apos;s a generational mantra, a belief that every peso spent on housing that one doesn&apos;t own is money someone is simply throwing away.
@@ -44,7 +44,7 @@ export default function FinancialLiberationPage() {
               </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={500}>
+            <ScrollAnimation direction="fadeInUp">
               <section className="mb-12">
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   The Weight of Tradition

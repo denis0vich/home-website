@@ -16,7 +16,7 @@ export default function ArchitectEngineerPage() {
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
           {/* Header */}
-          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+          <ScrollAnimation direction="fadeInUp" duration={1200}>
             <header className="mb-16">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
                 The Strategic Blueprint: The True Cost of the Filipino Dream Home
@@ -29,13 +29,13 @@ export default function ArchitectEngineerPage() {
 
           {/* Story Content */}
           <div className="prose prose-lg max-w-none">
-            <ScrollAnimation direction="fadeIn" delay={300} duration={1200}>
+            <ScrollAnimation direction="fadeIn" duration={1200}>
               <p className="text-2xl md:text-3xl leading-relaxed text-gray-700 mb-16 italic font-light text-center max-w-3xl mx-auto">
                 The fast-paced routine, accompanied by financial worries of living in Metro Manila, encourages young Filipinos to seek refuge in the promise of the future, away from their existing homes. These scrupulous visions of the future, whether saved on a phone or kept as a constant dream, are much more than just enticing photos. It has saved souls by making people continue to hope.
               </p>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeIn" delay={400} duration={800}>
+            <ScrollAnimation direction="fadeIn" duration={800}>
               <p className="mb-12 text-center text-2xl leading-relaxed text-gray-900 font-medium">
                 They represent the primary goal in a life full of chaos: controlling one&apos;s narrative.
               </p>
@@ -49,7 +49,7 @@ export default function ArchitectEngineerPage() {
               Engineers and architects today are trying to mitigate the rising costs of land and crowding in the city. With this, people in the housing industry including developers must try to address if their consumers&apos; emotional needs are being satisfied by the walls they continuously create. It is not enough to just plaster money, and hope that it maybe adequate to alleviate distress among different homes. The following stories of three individuals —Elijah, who yearns for silence to escape financial problems; Blair, who tries to find a home in the wrong places; and Lala, who needs privacy to escape societal judgment, show how each construction carries a meaning. As true passion for design, architecture, and engineering starts with understanding the heart and soul of every concrete.
             </StoryParagraph>
 
-            <ScrollAnimation direction="fadeInUp" delay={600}>
+            <ScrollAnimation direction="fadeInUp">
             <section className="my-12">
               <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                 Silence and Security: Elijah&apos;s Dream Home
@@ -103,7 +103,7 @@ export default function ArchitectEngineerPage() {
             </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={700}>
+            <ScrollAnimation direction="fadeInUp">
             <section className="my-12">
               <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                 Proximity and Privacy: Lala&apos;s Search for Belonging
@@ -139,7 +139,7 @@ export default function ArchitectEngineerPage() {
             </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={800}>
+            <ScrollAnimation direction="fadeInUp">
             <section className="my-12">
               <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                 The New Definition of Home

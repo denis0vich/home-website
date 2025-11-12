@@ -16,7 +16,7 @@ export default function InteriorDesignerPage() {
       <div className="story-content-area">
         <article className="max-w-4xl mx-auto px-6 py-20">
           {/* Header */}
-          <ScrollAnimation direction="fadeInUp" delay={100} duration={1200}>
+          <ScrollAnimation direction="fadeInUp" duration={1200}>
             <header className="mb-16">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
                 How Interior Design and Psychology Transform Pain into Peace
@@ -29,7 +29,7 @@ export default function InteriorDesignerPage() {
 
           {/* Story Content */}
           <div className="prose prose-lg max-w-none">
-            <ScrollAnimation direction="fadeIn" delay={300} duration={1200}>
+            <ScrollAnimation direction="fadeIn" duration={1200}>
               <p className="text-2xl md:text-3xl leading-relaxed text-gray-700 mb-16 italic font-light text-center max-w-3xl mx-auto">
                 Psychometrician Gabrielle Zambrano defines the critical difference: &quot;A house is the physical structure. A home is the meaning we give to that structure.&quot; This meaning, she explains, is rooted in providing &quot;a sense of safety, belonging, love, memories, and identity.&quot;
               </p>
@@ -39,7 +39,7 @@ export default function InteriorDesignerPage() {
               The process of designing this mental refuge falls to experts like Interior Designer Lucia Da Silva. She asserts, &quot;A home is the personality in the house, the way that the designer and the client collaborate to make it seem or give the personality of the client.&quot; For the young Filipino facing chronic stress from traffic, noise, and the high cost of living, the design process itself becomes a form of therapy, a structured way to turn anxiety and past trauma into a deliberate, supportive environment.
             </StoryParagraph>
 
-            <ScrollAnimation direction="fadeInUp" delay={400}>
+            <ScrollAnimation direction="fadeInUp">
             <section className="my-12">
               <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                 Elijah and Anxiety Reduction
@@ -59,7 +59,7 @@ export default function InteriorDesignerPage() {
             </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={500}>
+            <ScrollAnimation direction="fadeInUp">
             <section className="my-12">
               <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                 Blair and Identity Liberation
@@ -79,7 +79,7 @@ export default function InteriorDesignerPage() {
             </section>
             </ScrollAnimation>
 
-            <ScrollAnimation direction="fadeInUp" delay={600}>
+            <ScrollAnimation direction="fadeInUp">
             <section className="my-12">
               <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                 Lala and Emotional Safety
