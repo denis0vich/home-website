@@ -103,6 +103,36 @@ export default function ScrollSnapCarousel<T>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items.length])
 
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    const handleWheel = (event: WheelEvent) => {
+      const target = containerRef.current
+      if (!target) return
+
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+        return
+      }
+
+      if (!event.cancelable) {
+        return
+      }
+
+      event.preventDefault()
+      target.scrollBy({
+        left: event.deltaY,
+        behavior: 'auto',
+      })
+    }
+
+    container.addEventListener('wheel', handleWheel, { passive: false })
+
+    return () => {
+      container.removeEventListener('wheel', handleWheel)
+    }
+  }, [])
+
   const scrollToIndex = useCallback((index: number) => {
     const container = containerRef.current
     const target = itemRefs.current[index]
@@ -122,21 +152,6 @@ export default function ScrollSnapCarousel<T>({
     if (!canNext) return
     scrollToIndex(Math.min(items.length - 1, activeIndexRef.current + 1))
   }, [canNext, items.length, scrollToIndex])
-
-  const handleWheel = useCallback((event: React.WheelEvent<HTMLDivElement>) => {
-    const container = containerRef.current
-    if (!container) return
-
-    if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
-      return
-    }
-
-    event.preventDefault()
-    container.scrollBy({
-      left: event.deltaY,
-      behavior: 'auto',
-    })
-  }, [])
 
   const indicatorArray = useMemo(() => items.map((_, idx) => idx), [items])
 
@@ -186,7 +201,6 @@ export default function ScrollSnapCarousel<T>({
 
       <div
         ref={containerRef}
-        onWheel={handleWheel}
         className="scrollbar-hide flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 pt-2"
         role="group"
         aria-label={ariaLabel}

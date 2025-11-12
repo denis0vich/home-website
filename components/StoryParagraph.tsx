@@ -33,7 +33,7 @@ export default function StoryParagraph({
           threshold={threshold}
           rootMargin="0px 0px -250px 0px"
         >
-          <p className={`mb-16 leading-relaxed text-xl md:text-2xl lg:text-3xl ${className}`} style={{ lineHeight: '2', color: 'inherit', fontSize: 'clamp(1.25rem, 3vw, 1.875rem)' }}>
+          <p className={`mb-16 leading-relaxed text-lg md:text-xl lg:text-2xl ${className}`} style={{ lineHeight: '2', color: 'inherit', fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)' }}>
             {useTextReveal && isString ? (
               <TextReveal 
                 revealType={revealType} 
