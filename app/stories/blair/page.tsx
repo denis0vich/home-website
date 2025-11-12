@@ -27,8 +27,7 @@ export default function BlairStoryPage() {
           </div>
           <h1 className="font-bella-queta text-5xl md:text-6xl lg:text-7xl">The Architecture of Moving</h1>
           <p className="mt-6 text-lg text-white/80 md:text-xl">
-            What does it say about home when you inherit many houses yet never feel rooted? Blair moves
-            through sanctuaries built by others as she searches for one she can finally claim.
+            The path to a home is never a straight line. Blair wanders through sanctuaries built by others, longing for one she can finally claim.
           </p>
         </header>
         </div>
@@ -39,6 +38,7 @@ export default function BlairStoryPage() {
         </div>
 
         <section className="mt-16">
+          {/* Opening Quote */}
           <StorySection
             sectionId="blair-opening"
             backgroundColor="#130618"
@@ -73,6 +73,7 @@ export default function BlairStoryPage() {
               <StoryImage src="/stories-assets/FOR BLAIR.jpg" alt="Blair's story illustration" />
           </StorySection>
 
+          {/* School Section */}
           <StorySection
             sectionId="blair-school"
             backgroundColor="#2b0f2b"
@@ -98,29 +99,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
           </StorySection>
 
-          <StorySection
-            sectionId="blair-church"
-            backgroundColor="#181a2a"
-            particleEffect="sparkles"
-            particleColors={['#ECDFD2', '#5F3475']}
-            particleIntensity={0.2}
-          >
-              <StoryParagraph>
-                When she opened her eyes, she was no longer in the club. The scent of incense replaced the haze of
-                smoke. Wooden pews creaked beneath her as the church bells tolled. A priest&apos;s voice echoed through
-                the hall. &quot;If you love me, keep my commandments,&quot; he read from John 14:15. Around her, women
-                nodded. The husbands intertwine their fingers with their wives. Each grip was tight. As if they
-                would never let go.
-              </StoryParagraph>
-
-              <StoryParagraph>
-                Blair looked at her parents in front of her. Her father bowed his head; her mother smiled at him
-                with the kind of love that forgives too much. Blair felt nauseous. A woman beside her leaned in
-                and said, &quot;Father&apos;s sermon is so moving today.&quot; Blair smiled faintly and accepted a napkin. If
-                only she knew, Blair thought, how the cross in front of me brings fear, never peace.
-              </StoryParagraph>
-          </StorySection>
-
+          {/* Mansion Section */}
           <StorySection
             sectionId="blair-mansion"
             backgroundColor="#1b1f3d"
@@ -149,6 +128,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
           </StorySection>
 
+          {/* Club Section */}
           <StorySection
             sectionId="blair-club"
             backgroundColor="#05010a"
@@ -168,7 +148,6 @@ export default function BlairStoryPage() {
                 No one will care.&quot;
               </StoryParagraph>
               <StoryImage src="/stories-assets/DISCO BALL.jpg" alt="Disco Ball" />
-              <StoryImage src="/stories-assets/FOR BLAIR 2.jpg" alt="Illustration of Blair's story" />
 
               <StoryParagraph>
                 Blair hesitated, her pulse racing. Then she took a breath. The air burned as it entered her lungs.
@@ -185,6 +164,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
           </StorySection>
 
+          {/* Church Section */}
           <StorySection
             sectionId="blair-church"
             backgroundColor="#181a2a"
@@ -208,6 +188,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
           </StorySection>
 
+          {/* Religion Section */}
           <StorySection
             sectionId="blair-religion"
             backgroundColor="#23132d"
@@ -226,7 +207,7 @@ export default function BlairStoryPage() {
                 scriptures and the Catholic community as a whole thrive on patriarchal concepts that persist to
                 this day, where women will forever be subordinate to men, and the very God we worship follows the
                 same principles of masculine authority. Lewis corroborated this by arguing that God, being the
-                instigator and origin of all things,                 can be understood as the &quot;infinite masculine.&quot; Even if
+                instigator and origin of all things, can be understood as the &quot;infinite masculine.&quot; Even if
                 canonically God is spiritually beyond human concepts such as gender, the very idea that drives the
                 Catholic institution is based on His image.
               </StoryParagraph>
@@ -246,6 +227,39 @@ export default function BlairStoryPage() {
               </StoryParagraph>
           </StorySection>
 
+          {/* Film Section */}
+          <StorySection
+            sectionId="blair-film"
+            backgroundColor="#1a1a2a"
+            particleEffect="sparkles"
+            particleColors={['#ECDFD2', '#893172', '#5F3475']}
+            particleIntensity={0.4}
+            floatingText={['FILM', 'CINEMA', 'PRAYER', 'WORLDS']}
+            floatingTextIntensity={0.35}
+            floatingTextDirection="up"
+          >
+              <StoryParagraph>
+                In the quiet of her room, she turned instead to film. She opened Sculpting in Time by Andrei Tarkovsky, tracing her fingers along its worn spine. Cinema became her new religion. The act of watching, a daily ritual. To transform pain into image, to build worlds from memory and sound, was the closest she came to prayer. The characters she indulged in became her family. She laughed, cried, and fought with them, alongside the demons they battled. When the hero reached rock bottom, Blair imagined herself in their place, wondering if life would still be a worthy opponent or if she, too, would surrender to the villain&apos;s embrace. God knows how many villains she&apos;d face in this lifetime.
+              </StoryParagraph>
+
+              <StoryParagraph>
+                She thought of the homes she&apos;d lived in. Pasay, where their first apartment was warm and noisy, had an industrial-chic design, as her mother called it. The space was lined with exposed concrete walls, black steel beams, and low-hanging bulbs. Her mother called it beautifully imperfect. In a way, it felt like a community. Her mother&apos;s relatives lived nearby, forming a compound of familiar faces. Luxurious still, but not as luxurious as what was to come.
+              </StoryParagraph>
+
+              <StoryParagraph>
+                When they moved to Antipolo, everything changed.
+              </StoryParagraph>
+
+              <StoryParagraph>
+                The new house was larger, whiter, quieter. Its minimalist design was meant to signify success. Clean lines, glass walls, and polished marble floors. Her mother filled it with expensive furniture: Italian sofas, mirrored tables, porcelain vases. It was perfect, almost too perfect. A house curated like a showroom, not lived in.
+              </StoryParagraph>
+
+              <StoryParagraph>
+                Yet the longer they stayed, the more it resembled a shrine to what they&apos;d lost.
+              </StoryParagraph>
+          </StorySection>
+
+          {/* Abuse Section */}
           <StorySection
             sectionId="blair-abuse"
             backgroundColor="#3d0000"
@@ -301,6 +315,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
           </StorySection>
 
+          {/* Isolation Section */}
           <StorySection
             sectionId="blair-isolation"
             backgroundColor="#0b1c2f"
@@ -330,6 +345,7 @@ export default function BlairStoryPage() {
               </ScrollAnimation>
           </StorySection>
 
+          {/* Death Section */}
           <StorySection
             sectionId="blair-death"
             backgroundColor="#08060f"
@@ -354,6 +370,7 @@ export default function BlairStoryPage() {
               </ScrollAnimation>
           </StorySection>
 
+          {/* Hope Section */}
           <StorySection
             sectionId="blair-hope"
             backgroundColor="#452031"
@@ -399,6 +416,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
           </StorySection>
 
+          {/* Conclusion Section */}
           <StorySection
             sectionId="blair-conclusion"
             backgroundColor="#552637"
@@ -425,8 +443,6 @@ export default function BlairStoryPage() {
                 the ability to choose.
               </StoryParagraph>
 
-              <StoryImage src="/stories-assets/LAMP.jpg" alt="Lamp" />
-
               <ScrollAnimation direction="fadeIn">
                 <p className="mb-20 mx-auto max-w-4xl text-center text-3xl font-light italic leading-relaxed" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
                   The whimsical lamp beside her, nestled in silky yellow sheets, waits for its owner. She reaches for
@@ -434,12 +450,7 @@ export default function BlairStoryPage() {
                 </p>
               </ScrollAnimation>
 
-              <div className="my-20">
-                <StoryVideo
-                  src="/videos/blair-dream-home.mp4"
-                  controls
-                />
-              </div>
+              <StoryImage src="/stories-assets/LAMP.jpg" alt="Lamp" />
           </StorySection>
         </section>
 
