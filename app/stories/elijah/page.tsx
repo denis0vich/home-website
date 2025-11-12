@@ -53,7 +53,7 @@ export default function ElijahStoryPage() {
               className={SECTION_CHROME}
             >
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-20 text-center text-3xl font-light italic leading-relaxed text-white md:text-4xl lg:text-5xl" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
+                <p className="mb-20 text-center text-3xl font-light italic leading-relaxed md:text-4xl lg:text-5xl" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)', color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
                   Elijah imagines a place where the only sound is the one he allows. In that solitude his heart could finally rest.
                 </p>
               </ScrollAnimation>
@@ -67,12 +67,26 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-8 text-center text-xl font-light leading-relaxed text-white/80">
+                <p className="mb-8 text-center text-xl font-light leading-relaxed" style={{ color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
                   He closed his eyes.
                 </p>
               </ScrollAnimation>
 
               <StoryImage src="/stories-assets/FOR ETHAN.jpg" alt="Open Eyes to Closed Eyes" />
+              <div className="my-20 relative aspect-video w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40">
+                <video
+                  src="/stories-assets/EYES.mov"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="h-full w-full object-cover"
+                  preload="auto"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <StoryImage src="/stories-assets/FOR ETHAN(1).jpg" alt="Illustration of Elijah's story" />
               <StoryAudio src="/audio/Elijah - panalangin piano.mp3" loop volume={0.5} />
 
               <StoryParagraph>
@@ -94,7 +108,7 @@ export default function ElijahStoryPage() {
               <StoryAudio src="/audio/Elijah_ Streets of Manila.mp3" loop volume={0.5} />
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-12 text-center text-2xl font-medium leading-relaxed text-white md:text-3xl lg:text-4xl" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)' }}>
+                <p className="mb-12 text-center text-2xl font-medium leading-relaxed md:text-3xl lg:text-4xl" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)', color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
                   But reality was brighter than the sun.
                 </p>
               </ScrollAnimation>
@@ -117,8 +131,10 @@ export default function ElijahStoryPage() {
                 Jeepneys screamed below, karaoke blared, curses ricocheted. Every sound hammered into his small room.
               </StoryParagraph>
 
+              <StoryImage src="/stories-assets/FOR ETHAN(2).jpg" alt="Illustration of Elijah's story" />
+
               <StoryParagraph>
-                Inside, his mother’s voice blended with TV static. Heat clung to his skin. This was the rhythm he couldn’t escape.
+                Inside, his mother's voice blended with TV static. Heat clung to his skin. This was the rhythm he couldn't escape.
               </StoryParagraph>
             </StorySection>
 
@@ -144,11 +160,11 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <StoryParagraph>
-                Some mornings he couldn’t open his banking app without his heart racing. He clung to his dream as the only quiet left.
+                Some mornings he couldn't open his banking app without his heart racing. He clung to his dream as the only quiet left.
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-12 text-center text-2xl font-light leading-relaxed text-white/90 md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)' }}>
+                <p className="mb-12 text-center text-2xl font-light leading-relaxed md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)', color: 'inherit', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
                   When the noise became too much, he clung to his dreams.
                 </p>
               </ScrollAnimation>
@@ -165,7 +181,7 @@ export default function ElijahStoryPage() {
               floatingTextDirection="up"
               className={SECTION_CHROME}
             >
-              <StoryImage src="/stories-assets/FOR ETHAN(1).jpg" alt="Sailing at sea" />
+              <StoryImage src="/stories-assets/Sailing sea.jpg" alt="Sailing at sea" />
               <StoryAudio src="/audio/Elijah - sea waves.mp3" loop volume={0.5} />
 
               <StoryParagraph>
@@ -218,6 +234,8 @@ export default function ElijahStoryPage() {
                 Cafés were his sanctuary. Minimalist, quiet, controlled. None of the girls he met there ever saw his home.
               </StoryParagraph>
 
+              <StoryImage src="/stories-assets/FOR ETHAN(1).jpg" alt="Illustration of Elijah's story" />
+
               <StoryParagraph>
                 He cooked sinigang for someone he liked. Karaoke creaked through the floorboards. Days later, she ghosted him.
               </StoryParagraph>
@@ -241,6 +259,8 @@ export default function ElijahStoryPage() {
               <StoryParagraph>
                 His mother loved him without question. She slid a plate of rice toward him. &quot;Kahit wala pa tayong ipon, may lakas ka pa rin dapat.&quot;
               </StoryParagraph>
+
+              <StoryImage src="/stories-assets/FOR ETHAN(2).jpg" alt="Illustration of Elijah's story" />
 
               <StoryParagraph>
                 He bought them a new pillow with tutoring money. He placed it beside his sleeping parents and promised they would rest easier soon.
@@ -269,7 +289,7 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-12 border-l-4 border-cyan-300 pl-6 text-2xl italic leading-relaxed text-white/90 md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)' }}>
+                <p className="mb-12 border-l-4 border-cyan-300 pl-6 text-2xl italic leading-relaxed md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)', color: '#ffd700', textShadow: '0 2px 8px rgba(255, 215, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.8), 0 0 3px rgba(255, 215, 0, 0.6)' }}>
                   &quot;I&apos;m gonna get out of bed every morning... and breathe in and out.&quot;
                 </p>
               </ScrollAnimation>
@@ -303,7 +323,18 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <StoryAudio src="/audio/Elijah_ Peaceful.mp3" loop volume={0.5} />
-              <StoryImage src="/stories-assets/FOR ETHAN(2).jpg" alt="Field" />
+              <StoryImage src="/stories-assets/Elijah_ Field.jpg" alt="Field" />
+
+              <div className="my-20 relative aspect-video w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40">
+                <video
+                  src="/videos/elijah-dream-home.mp4"
+                  controls
+                  className="h-full w-full object-cover"
+                  preload="metadata"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
             </StorySection>
           </section>
         </main>

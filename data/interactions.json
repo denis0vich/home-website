@@ -1,17 +1,5 @@
 {
   "forumPosts": [
-    {
-      "id": "1e9bb385-0f3d-438b-8320-a34234e9b8f6",
-      "name": "i love it",
-      "message": "so much mwa mwa chup chup",
-      "createdAt": "2025-11-12T03:43:24.055Z"
-    },
-    {
-      "id": "0bf6532a-8ead-407f-8b93-ea159d6d0b6f",
-      "name": "test",
-      "message": "test",
-      "createdAt": "2025-11-12T03:43:17.461Z"
-    }
   ],
   "quizResponses": [
     {

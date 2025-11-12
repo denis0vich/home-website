@@ -125,6 +125,28 @@ export default function GalleryPage() {
 
         <section className="mt-20 rounded-3xl border border-white/15 bg-white/5 p-8 shadow-[0_20px_60px_rgba(8,24,73,0.35)] backdrop-blur">
           <div className="mx-auto max-w-4xl text-center">
+            <h2 className="font-bella-queta text-3xl md:text-4xl">Video Reel</h2>
+            <p className="mt-4 text-white/70">
+              Interviews and moments from Life in the Dream Home
+            </p>
+          </div>
+
+          <div className="mt-10">
+            <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40">
+              <video
+                src="/videos/gallery-reel.mov"
+                controls
+                className="h-full w-full object-cover"
+                preload="metadata"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-20 rounded-3xl border border-white/15 bg-white/5 p-8 shadow-[0_20px_60px_rgba(8,24,73,0.35)] backdrop-blur">
+          <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-bella-queta text-3xl md:text-4xl">Feels Like Home</h2>
             <p className="mt-4 text-white/70">
               A portrait series crowdsourced from friends of The Haven. Every gaze, grin, and soft

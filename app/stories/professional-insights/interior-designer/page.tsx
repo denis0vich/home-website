@@ -14,12 +14,12 @@ export default function InteriorDesignerPage() {
       </div>
 
       <div className="story-content-area">
-        <article className="max-w-4xl mx-auto px-6 py-20">
+        <article className="max-w-4xl mx-auto px-6 py-12 pb-20">
           {/* Header */}
           <ScrollAnimation direction="fadeInUp" duration={1200}>
             <header className="mb-16">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bella-queta text-gray-900 mb-6 leading-tight">
-                How Interior Design and Psychology Transform Pain into Peace
+                How Interior Design and Psychology Transform Pain Into Peace
               </h1>
               <p className="text-xl font-bella-queta text-gray-600 mb-6">
                 This article is based on original interviews conducted by the authors with Interior Designer Lucia Da Silva and Psychometrician Gabrielle Zambrano, who provided expert insight into the relationship between mental health, identity, and physical space. This content aligns with the production thesis &quot;Generation Z&apos;s Conceptualization of the &apos;Dream Home&apos;&quot; by Garcia and Zambrano (De La Salle University - Manila, 2025).
@@ -35,7 +35,7 @@ export default function InteriorDesignerPage() {
               </p>
             </ScrollAnimation>
 
-            <StoryParagraph delay={400} duration={1000}>
+            <StoryParagraph>
               The process of designing this mental refuge falls to experts like Interior Designer Lucia Da Silva. She asserts, &quot;A home is the personality in the house, the way that the designer and the client collaborate to make it seem or give the personality of the client.&quot; For the young Filipino facing chronic stress from traffic, noise, and the high cost of living, the design process itself becomes a form of therapy, a structured way to turn anxiety and past trauma into a deliberate, supportive environment.
             </StoryParagraph>
 

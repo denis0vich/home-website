@@ -71,6 +71,8 @@ export default function BlairStoryPage() {
                 backseat, the smell of lavender lingers. She looks at her father&apos;s indifferent eyes and reminds
                 herself: this is what it looks like to have everything.
               </StoryParagraph>
+
+              <StoryImage src="/stories-assets/FOR BLAIR.jpg" alt="Blair's story illustration" />
           </StorySection>
 
           <StorySection
@@ -95,6 +97,29 @@ export default function BlairStoryPage() {
                 smell of bread rising from the bakery section, the soft clatter of cans being placed in the cart.
                 For Blair, it didn&apos;t matter where they shopped. What mattered was her mother&apos;s genuine joy in
                 spending time with Blair, and the way it restored her sense of purpose as a wife and mother.
+              </StoryParagraph>
+          </StorySection>
+
+          <StorySection
+            sectionId="blair-church"
+            backgroundColor="#181a2a"
+            particleEffect="sparkles"
+            particleColors={['#ECDFD2', '#5F3475']}
+            particleIntensity={0.2}
+          >
+              <StoryParagraph>
+                When she opened her eyes, she was no longer in the club. The scent of incense replaced the haze of
+                smoke. Wooden pews creaked beneath her as the church bells tolled. A priest&apos;s voice echoed through
+                the hall. &quot;If you love me, keep my commandments,&quot; he read from John 14:15. Around her, women
+                nodded. The husbands intertwine their fingers with their wives. Each grip was tight. As if they
+                would never let go.
+              </StoryParagraph>
+
+              <StoryParagraph>
+                Blair looked at her parents in front of her. Her father bowed his head; her mother smiled at him
+                with the kind of love that forgives too much. Blair felt nauseous. A woman beside her leaned in
+                and said, &quot;Father&apos;s sermon is so moving today.&quot; Blair smiled faintly and accepted a napkin. If
+                only she knew, Blair thought, how the cross in front of me brings fear, never peace.
               </StoryParagraph>
           </StorySection>
 
@@ -146,7 +171,8 @@ export default function BlairStoryPage() {
               </StoryParagraph>
 
               <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.5} />
-              <StoryImage src="/stories-assets/FOR BLAIR.jpg" alt="Disco Ball" />
+              <StoryImage src="/stories-assets/DISCO BALL.jpg" alt="Disco Ball" />
+              <StoryImage src="/stories-assets/FOR BLAIR 2.jpg" alt="Illustration of Blair's story" />
 
               <StoryParagraph>
                 Blair hesitated, her pulse racing. Then she took a breath. The air burned as it entered her lungs.
@@ -209,6 +235,8 @@ export default function BlairStoryPage() {
                 Catholic institution is based on His image.
               </StoryParagraph>
 
+              <StoryImage src="/stories-assets/FOR BLAIR.jpg" alt="Blair's story illustration" />
+
               <StoryParagraph>
                 She grew up in a household where the father was head of everything: the house, the family, the
                 faith. Her mother&apos;s devotion was measured in sacrifice, her silence mistaken for virtue. In the
@@ -220,52 +248,6 @@ export default function BlairStoryPage() {
                 Blair closed her Bible that night. Her prayers no longer reached the same God she grew up believing
                 in. She wanted to believe in something kinder, something that didn&apos;t ask her to stay small.
               </StoryParagraph>
-          </StorySection>
-
-          <StorySection
-            sectionId="blair-cinema"
-            backgroundColor="#331820"
-            particleEffect="sparkles"
-            particleColors={['#FF8C42', '#ECDFD2', '#5F3475']}
-            particleIntensity={0.35}
-          >
-              <StoryParagraph>
-                In the quiet of her room, she turned instead to film. She opened Sculpting in Time by Andrei
-                Tarkovsky, tracing her fingers along its worn spine. Cinema became her new religion. The act of
-                watching, a daily ritual. To transform pain into image, to build worlds from memory and sound, was
-                the closest she came to prayer. The characters she indulged in became her family. She laughed,
-                cried, and fought with them, alongside the demons they battled. When the hero reached rock bottom,
-                Blair imagined herself in their place, wondering if life would still be a worthy opponent or if she,
-                too, would surrender to the villain&apos;s embrace. God knows how many villains she&apos;d face in this
-                lifetime.
-              </StoryParagraph>
-
-              <StoryParagraph>
-                She thought of the homes she&apos;d lived in. Pasay, where their first apartment was warm and noisy, had
-                an industrial-chic design, as her mother called it. The space was lined with exposed concrete walls,
-                black steel beams, and low-hanging bulbs. Her mother called it beautifully imperfect. In a way, it
-                felt like a community. Her mother&apos;s relatives lived nearby, forming a compound of familiar faces.
-                Luxurious still, but not as luxurious as what was to come.
-              </StoryParagraph>
-
-              <ScrollAnimation direction="fadeIn">
-                <p className="mb-16 text-center text-2xl md:text-3xl lg:text-4xl font-light italic leading-relaxed" style={{ lineHeight: '1.7', fontSize: 'clamp(1.5rem,3.5vw,2.25rem)' }}>
-                  When they moved to Antipolo, everything changed.
-                </p>
-              </ScrollAnimation>
-
-              <StoryParagraph>
-                The new house was larger, whiter, quieter. Its minimalist design was meant to signify success. Clean
-                lines, glass walls, and polished marble floors. Her mother filled it with expensive furniture:
-                Italian sofas, mirrored tables, porcelain vases. It was perfect, almost too perfect. A house curated
-                like a showroom, not lived in.
-              </StoryParagraph>
-
-              <ScrollAnimation direction="fadeIn">
-                <p className="mb-16 text-center text-2xl md:text-3xl lg:text-4xl font-light italic leading-relaxed" style={{ lineHeight: '1.7', fontSize: 'clamp(1.5rem,3.5vw,2.25rem)' }}>
-                  Yet the longer they stayed, the more it resembled a shrine to what they&apos;d lost.
-                </p>
-              </ScrollAnimation>
           </StorySection>
 
           <StorySection
@@ -306,6 +288,8 @@ export default function BlairStoryPage() {
                 Every time her father exploded, they fled to Pasay. A cycle of leaving and returning. The same
                 houses, the same fears. Her body learned to live in halves, never settled, always waiting.
               </StoryParagraph>
+
+              <StoryImage src="/stories-assets/FOR BLAIR 3.jpg" alt="Illustration of Blair's story" />
 
               <StoryParagraph>
                 Blair sat behind the grand staircase, its marble curve cold beneath her palms. From there, she could
@@ -434,7 +418,6 @@ export default function BlairStoryPage() {
                 that cannot be repaid.
               </StoryParagraph>
 
-
               <StoryParagraph>
                 In this country, family is both sanctuary and sentence. To stay is loyalty. To leave is betrayal.
                 Blair knows this contradiction too well. Her longing for freedom must live beside duty, faith, and
@@ -447,7 +430,7 @@ export default function BlairStoryPage() {
                 the ability to choose.
               </StoryParagraph>
 
-              <StoryImage src="/stories-assets/FOR BLAIR 2.jpg" alt="Lamp" />
+              <StoryImage src="/stories-assets/LAMP.jpg" alt="Lamp" />
 
               <ScrollAnimation direction="fadeIn">
                 <p className="mb-20 mx-auto max-w-4xl text-center text-3xl font-light italic leading-relaxed" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
@@ -455,6 +438,17 @@ export default function BlairStoryPage() {
                   the switch, and for the first time, she feels herself moving toward tomorrow.
                 </p>
               </ScrollAnimation>
+
+              <div className="my-20 relative aspect-video w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40">
+                <video
+                  src="/videos/blair-dream-home.mp4"
+                  controls
+                  className="h-full w-full object-cover"
+                  preload="metadata"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
           </StorySection>
         </section>
 

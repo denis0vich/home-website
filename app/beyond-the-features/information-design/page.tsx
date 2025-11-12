@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
+import StoryImage from '@/components/StoryImage'
 import StoryParagraph from '@/components/StoryParagraph'
 
 export default function InformationDesignPage() {
@@ -38,12 +39,16 @@ export default function InformationDesignPage() {
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   The Promise Pins
                 </h2>
-                <StoryParagraph delay={500} duration={1000}>
+                <StoryParagraph>
                   Everyone has been there. It&apos;s midnight, the city noise is too loud, and one&apos;s small apartment feels like it&apos;s shrinking. So, people open Pinterest. They scroll through an endless feed of homes, minimalist concrete walls, and organized, professionally decorated offices. They tap &apos;Save,&apos; &apos;Pin,&apos; or &apos;Add to Collection.&apos; They aren&apos;t just looking at decoration or designs, they are constructing a world that, right now, feels utterly unattainable.
                 </StoryParagraph>
-                <StoryParagraph delay={600} duration={1000}>
+                <StoryParagraph>
                   But what if that digital mood board, that collection of saved images on Instagram, that detailed Notion dashboard, or that secret board of Scandinavian furniture, isn&apos;t just a fantasy? What if it is, in fact, one of the most powerful, serious tools you possess for identity formation and achieving future stability?
                 </StoryParagraph>
+                <StoryImage 
+                  src="/beyond-the-features/pinterest board.png" 
+                  alt="Pinterest mood board example" 
+                />
                 <ScrollAnimation direction="fadeIn" duration={800}>
                   <p className="mb-8 text-center text-2xl leading-relaxed text-gray-900 font-bold">
                     These digital mood boards are people&apos;s first piece of real estate. It&apos;s the blueprint of their future self.
@@ -57,13 +62,13 @@ export default function InformationDesignPage() {
                 <h2 className="text-3xl font-bella-queta font-bold text-gray-900 mb-6">
                   Curation as Control
                 </h2>
-                <StoryParagraph delay={900} duration={1000}>
+                <StoryParagraph>
                   In a hyper-urbanized environment like Metro Manila, Gen Z faces an overwhelming lack of control. You can&apos;t control traffic, you can&apos;t control rent prices, and you certainly can&apos;t control how quickly you climb the career ladder. This immense, external pressure creates a deep psychological need for internal autonomy.
                 </StoryParagraph>
-                <StoryParagraph delay={1000} duration={1000}>
+                <StoryParagraph>
                   This is where the mood board steps in. It gives you immediate, low-stakes control over your entire aesthetic future.
                 </StoryParagraph>
-                <StoryParagraph delay={1100} duration={1000}>
+                <StoryParagraph>
                   Design experts Nada Endrissat, Gazi Islam, and Claus Noppeney describe the physical mood board&apos;s power in their research on design coordination, but the concept translates perfectly to the digital space. They found that these aesthetic objects, even when just visual, act as a coordination tool. They can direct and align independent actors (in your case, the disparate parts of your own life: your job, your saving habits, your aesthetic taste) while still maintaining creative freedom.
                 </StoryParagraph>
                 <ScrollAnimation direction="fadeIn" duration={800}>
@@ -71,7 +76,7 @@ export default function InformationDesignPage() {
                     Your board isn&apos;t just a collection of wishes, it&apos;s a non-verbal contract with yourself, a balance between the dream life with the resources you currently have.
                   </p>
                 </ScrollAnimation>
-                <StoryParagraph delay={1300} duration={1000}>
+                <StoryParagraph>
                   By constantly refining this digital blueprint, you are practicing decision-making. You are deciding: Do I prefer the curved chair or the straight one? Do I value natural light or high technology? These low-pressure choices are a dress rehearsal for the high-stakes decisions you will eventually make when you finally buy that first appliance or sign that first lease. It&apos;s a way to train the brain to know what it truly wants, establishing a visual language that it can carry with it every day.
                 </StoryParagraph>
               </section>

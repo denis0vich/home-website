@@ -63,8 +63,15 @@ export default function StorySection({
       return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
     })
     const luminance = 0.2126 * srgb[0] + 0.7152 * srgb[1] + 0.0722 * srgb[2]
-    // Threshold ~0.5 for switching white/black text
-    return luminance < 0.5 ? '#ffffff' : '#111111'
+    // Lower threshold (0.4 instead of 0.5) to ensure better contrast
+    // For very light backgrounds, use darker text for better readability
+    if (luminance > 0.4) {
+      // Light background - use very dark text
+      return '#0a0a0a'
+    } else {
+      // Dark background - use pure white text (not off-white)
+      return '#ffffff'
+    }
   }, [backgroundColor])
 
   useEffect(() => {

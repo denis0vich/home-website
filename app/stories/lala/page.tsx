@@ -53,7 +53,7 @@ export default function LalaStoryPage() {
               className={SECTION_CHROME}
             >
                 <ScrollAnimation direction="fadeIn">
-                <p className="mb-20 text-center text-3xl font-light italic leading-relaxed text-white md:text-4xl lg:text-5xl" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
+                <p className="mb-20 text-center text-3xl font-light italic leading-relaxed md:text-4xl lg:text-5xl" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)', color: 'inherit', textShadow: '0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(255, 255, 255, 0.2)' }}>
                   The road back home is well-traveled, though the wheel drifts elsewhere. For Lala, home is a map still being written.
                   </p>
                 </ScrollAnimation>
@@ -117,7 +117,7 @@ export default function LalaStoryPage() {
               className={SECTION_CHROME}
             >
                 <ScrollAnimation direction="fadeIn">
-                <p className="mb-16 text-center text-2xl font-medium leading-relaxed text-white md:text-3xl lg:text-4xl" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)' }}>
+                <p className="mb-16 text-center text-2xl font-medium leading-relaxed md:text-3xl lg:text-4xl" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)', color: 'inherit', textShadow: '0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(255, 255, 255, 0.2)' }}>
                   A knock came at ten a.m. &quot;You won&apos;t come with us anymore,&quot; her mother said. &quot;If you can&apos;t follow rules, stay here.&quot; The door slammed.
                   </p>
                 </ScrollAnimation>
@@ -167,7 +167,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                <p className="mb-12 text-center text-xl font-light italic leading-relaxed text-white/85">
+                <p className="mb-12 text-center text-xl font-light italic leading-relaxed" style={{ color: 'inherit', opacity: 0.9, textShadow: '0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(255, 255, 255, 0.2)' }}>
                   If a king could defy God for the woman he wanted, why must she fear hell for simply wanting to love?
                   </p>
                 </ScrollAnimation>
@@ -198,7 +198,7 @@ export default function LalaStoryPage() {
                 She wished them peace. She wondered if forgiveness might find them, even if it no longer came for her.
                 </StoryParagraph>
 
-              <StoryImage src="/stories-assets/FOR LALA 2.webp" alt="Lotus flower growing from mud" />
+              <StoryImage src="/stories-assets/FOR LALA 2.webp" alt="Lala's story illustration" />
             </StorySection>
 
             <StorySection 
@@ -219,7 +219,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                <p className="mb-16 text-center text-2xl font-light italic leading-relaxed text-white/85" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)' }}>
+                <p className="mb-16 text-center text-2xl font-light italic leading-relaxed" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)', color: 'inherit', opacity: 0.9, textShadow: '0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(255, 255, 255, 0.2)' }}>
                   A wicked heart, no matter how elusive, always stands out in the ordinary.
                   </p>
                 </ScrollAnimation>
@@ -249,7 +249,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                <p className="mb-16 text-center text-xl font-light italic leading-relaxed text-white/85" style={{ fontSize: 'clamp(1.25rem,3vw,2rem)' }}>
+                <p className="mb-16 text-center text-xl font-light italic leading-relaxed" style={{ fontSize: 'clamp(1.25rem,3vw,2rem)', color: 'inherit', opacity: 0.9, textShadow: '0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(255, 255, 255, 0.2)' }}>
                   She closed the book. Some things were safer left imagined.
                   </p>
                 </ScrollAnimation>
@@ -268,7 +268,7 @@ export default function LalaStoryPage() {
                 Wherever she went, her sin trailed behind her like a shadow. She was simply Lala—someone who loved, someone who prayed.
                 </StoryParagraph>
 
-              <StoryImage src="/stories-assets/FOR LALA 3.webp" alt="Shackles" />
+              <StoryImage src="/stories-assets/FOR LALA 3.webp" alt="Lala's story illustration" />
 
                 <StoryParagraph>
                 In the Philippines, faith runs thicker than blood. Progress stalls. Love like hers is still called unnatural.
@@ -294,23 +294,36 @@ export default function LalaStoryPage() {
                 Now Lala lives in a condo. Skyscrapers glow like candles at dusk. Her furniture is bold and hers to claim. Privacy finally feels divine.
                 </StoryParagraph>
 
-              <StoryImage src="/stories-assets/FOR LALA 4.webp" alt="Dove to symbolize freedom" />
+              <StoryImage src="/stories-assets/FOR LALA 4.webp" alt="Lala's story illustration" />
 
                 <StoryParagraph>
                 She crochets again, peach yarn looping between her fingers. The pattern is for Christa—the woman who helped her see herself through the lies.
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                <p className="mb-20 text-center text-3xl font-light italic leading-relaxed text-white md:text-4xl lg:text-5xl" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
+                <p className="mb-20 text-center text-3xl font-light italic leading-relaxed md:text-4xl lg:text-5xl" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)', color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
                   The sculpture of faith lives on in the beauty and sorrow of the people we continue to love.
                   </p>
                 </ScrollAnimation>
 
                 <ScrollAnimation direction="fadeInUp">
-                <p className="mb-8 text-center text-2xl leading-relaxed text-white/90 md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)' }}>
+                <p className="mb-8 text-center text-2xl leading-relaxed md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)', color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
                   When Lala comes home to His arms one day, home will no longer be a prayer. She will be forgiven.
-                  </p>
-                </ScrollAnimation>
+                </p>
+              </ScrollAnimation>
+
+                <StoryAudio src="/audio/Lala - Gentle Ambient Piano.mp3" loop volume={0.5} />
+
+                <div className="my-20 relative aspect-video w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40">
+                  <video
+                    src="/videos/lala-dream-home.mp4"
+                    controls
+                    className="h-full w-full object-cover"
+                    preload="metadata"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
             </StorySection>
           </section>
         </main>

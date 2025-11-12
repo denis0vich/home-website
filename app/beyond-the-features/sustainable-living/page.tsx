@@ -116,9 +116,8 @@ export default function SustainableLivingPage() {
                       Look up! If floor space is a luxury right now, start maximizing the vertical plane. Use hanging planters near windows or tiered shelves against walls. Every inch of vertical space you dedicate to greens is an inch that amplifies the biophilic benefits without eating up your limited floor area.
                     </p>
                     <StoryImage 
-                      src="/gallery/feels-like-home/1.png" 
+                      src="/beyond-the-features/Beyond the feature - B. hanging plants.jpeg" 
                       alt="Hanging plants" 
-                      delay={100}
                     />
                   </div>
                   <div>
@@ -128,6 +127,10 @@ export default function SustainableLivingPage() {
                     <p className="leading-relaxed text-gray-700">
                       Stop relying so heavily on expensive, energy-guzzling air conditioning. This is a crucial step towards both environmental and financial liberation. Focus on cross-ventilation, and ensure air can flow freely across the room. Use sheer curtains to filter harsh sun while maintaining air movement, and never block windows or vents with furniture.
                     </p>
+                    <StoryImage 
+                      src="/beyond-the-features/Beyond the feature - cooling.jpeg" 
+                      alt="Passive cooling ventilation" 
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-bella-queta font-bold text-gray-900 mb-3">
@@ -138,14 +141,12 @@ export default function SustainableLivingPage() {
                     </p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
                       <StoryImage 
-                        src="/gallery/feels-like-home/2.png" 
+                        src="/beyond-the-features/Beyond the feature - B. snake plants.jpeg" 
                         alt="Snake plants" 
-                        delay={200}
                       />
                       <StoryImage 
-                        src="/gallery/feels-like-home/3.png" 
+                        src="/beyond-the-features/Beyond the feature - B. peace lilies.jpeg" 
                         alt="Peace lilies" 
-                        delay={300}
                       />
                     </div>
                   </div>
@@ -156,6 +157,10 @@ export default function SustainableLivingPage() {
                     <p className="leading-relaxed text-gray-700">
                       Use reflective surfaces and mirrors, placing them strategically near light sources to bounce natural light deeper into the room. This technique mimics the dynamic movement of light in nature and creates an instant illusion of openness and spaciousness, which helps to fight that claustrophobic urban feeling.
                     </p>
+                    <StoryImage 
+                      src="/beyond-the-features/Beyond the feature - Mirror .jpeg" 
+                      alt="Mirror reflecting natural light" 
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-bella-queta font-bold text-gray-900 mb-3">
