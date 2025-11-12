@@ -105,10 +105,10 @@ export default function ForumPage() {
   }, [])
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#050b22] text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_130%_at_5%_-10%,rgba(236,223,210,0.28),rgba(5,11,34,0.75))]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_95%_0%,rgba(95,52,117,0.32),rgba(5,11,34,0.8))]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_140%_at_50%_120%,rgba(33,56,133,0.25),rgba(5,11,34,0.9))]" />
+    <div className="relative min-h-screen overflow-x-hidden bg-[#050b22] text-white">
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(120%_130%_at_5%_-10%,rgba(236,223,210,0.28),rgba(5,11,34,0.75))]" />
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(120%_120%_at_95%_0%,rgba(95,52,117,0.32),rgba(5,11,34,0.8))]" />
+      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(120%_140%_at_50%_120%,rgba(33,56,133,0.25),rgba(5,11,34,0.9))]" />
 
       <Navigation />
 

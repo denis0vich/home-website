@@ -13,5 +13,36 @@
       "createdAt": "2025-11-12T03:43:17.461Z"
     }
   ],
-  "quizResponses": []
+  "quizResponses": [
+    {
+      "id": "d01cc119-398c-4e9f-ae5e-f291475a92a6",
+      "colorPalette": "Modern Minimalist",
+      "guess": "Earth-core",
+      "createdAt": "2025-11-12T04:41:21.145Z"
+    },
+    {
+      "id": "1b432f21-6c3a-44c1-a2c9-190860ab0d6f",
+      "colorPalette": "Retro (70s Revival)",
+      "guess": "Retro",
+      "createdAt": "2025-11-12T04:41:19.305Z"
+    },
+    {
+      "id": "647089e9-8d38-46dd-8914-baaa20e33abb",
+      "colorPalette": "Cyberpunk",
+      "guess": "Cyberpunk",
+      "createdAt": "2025-11-12T04:41:18.489Z"
+    },
+    {
+      "id": "e9293868-cbf0-4d7c-a576-f0c420c42a5c",
+      "colorPalette": "Earth-Core",
+      "guess": "Japandi",
+      "createdAt": "2025-11-12T04:41:16.201Z"
+    },
+    {
+      "id": "a35169bb-fb4e-48c9-aa5b-ef49d566ebd2",
+      "colorPalette": "Japandi",
+      "guess": "Modern Minimalist",
+      "createdAt": "2025-11-12T04:41:15.393Z"
+    }
+  ]
 }
