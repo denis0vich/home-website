@@ -103,6 +103,11 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
             </StorySection>
 
+            {/* New Lala Illustration after 3 sections */}
+            <div className="mt-12">
+              <StoryImage src="/stories-assets/Lala-new.JPG" alt="Lala's story illustration" />
+            </div>
+
             <StorySection 
               sectionId="lala-rejection"
               backgroundColor="#3d0000"

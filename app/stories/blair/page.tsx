@@ -38,6 +38,11 @@ export default function BlairStoryPage() {
         </header>
         </div>
 
+        {/* New Blair Illustration at the Start */}
+        <div className="mt-16">
+          <StoryImage src="/stories-assets/Blair-new.JPG" alt="Blair's story illustration" />
+        </div>
+
         <section className="mt-16">
           <StorySection
             sectionId="blair-opening"

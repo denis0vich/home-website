@@ -101,7 +101,7 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="absolute left-0 right-0 top-0 z-50 px-6 py-6">
+    <nav data-main-nav className="absolute left-0 right-0 top-0 z-50 px-6 py-6">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <Image
           src="/pennywise-logo-2-4-2-38.png"
