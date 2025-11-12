@@ -76,7 +76,7 @@ export default function ElijahStoryPage() {
               <StoryAudio src="/audio/Elijah - panalangin piano.mp3" loop volume={0.5} />
 
               <StoryParagraph>
-                "Mahal! I'm home!" His wife's voice settled over the rooms as she closed the door.
+                &quot;Mahal! I&apos;m home!&quot; His wife&apos;s voice settled over the rooms as she closed the door.
               </StoryParagraph>
 
               <StoryParagraph>
@@ -84,7 +84,7 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <StoryParagraph>
-                He loved cooking for the people he adored. Apo Hiking Society’s "Panalangin" drifted from the ceiling speakers.
+                He loved cooking for the people he adored. Apo Hiking Society&apos;s &quot;Panalangin&quot; drifted from the ceiling speakers.
               </StoryParagraph>
 
               <StoryParagraph>
@@ -140,7 +140,7 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <StoryParagraph>
-                "Tignan mo si Sevi, naka-abroad na," she sighed. Pressure thumped like a drum.
+                &quot;Tignan mo si Sevi, naka-abroad na,&quot; she sighed. Pressure thumped like a drum.
               </StoryParagraph>
 
               <StoryParagraph>
@@ -239,7 +239,7 @@ export default function ElijahStoryPage() {
               className={SECTION_CHROME}
             >
               <StoryParagraph>
-                His mother loved him without question. She slid a plate of rice toward him. "Kahit wala pa tayong ipon, may lakas ka pa rin dapat."
+                His mother loved him without question. She slid a plate of rice toward him. &quot;Kahit wala pa tayong ipon, may lakas ka pa rin dapat.&quot;
               </StoryParagraph>
 
               <StoryParagraph>
@@ -270,7 +270,7 @@ export default function ElijahStoryPage() {
 
               <ScrollAnimation direction="fadeIn">
                 <p className="mb-12 border-l-4 border-cyan-300 pl-6 text-2xl italic leading-relaxed text-white/90 md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)' }}>
-                  "I'm gonna get out of bed every morning... and breathe in and out."
+                  &quot;I&apos;m gonna get out of bed every morning... and breathe in and out.&quot;
                 </p>
               </ScrollAnimation>
 

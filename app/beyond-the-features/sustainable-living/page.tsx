@@ -43,7 +43,7 @@ export default function SustainableLivingPage() {
                   Living in the hyper-dense, often sensory-overloaded environment of Metro Manila, the pursuit of an ideal space often boils down to a single, essential need: peace. While we typically think of peace in financial or personal terms, science suggests a far deeper, more ancient longing is at work.
                 </p>
                 <p className="mb-6 leading-relaxed text-gray-700">
-                  The term biophilia, coined by psychologist Erich Fromm in 1964, refers to people's innate, evolutionary drive to connect with life and natural systems. Stemming from the Greek words for "life" and "love", this concept explains why a walk through a forest or the sound of the ocean waves can instantly soothe and recenter us. When we cannot escape to nature, the solution is to bring nature into our refuge.
+                  The term biophilia, coined by psychologist Erich Fromm in 1964, refers to people&apos;s innate, evolutionary drive to connect with life and natural systems. Stemming from the Greek words for &quot;life&quot; and &quot;love&quot;, this concept explains why a walk through a forest or the sound of the ocean waves can instantly soothe and recenter us. When we cannot escape to nature, the solution is to bring nature into our refuge.
                 </p>
                 <p className="mb-6 leading-relaxed text-gray-700">
                   Architects and designers have formalized this need into biophilic design, which actively integrates nature into the built environment. As Stephen Kellert, a prominent advocate, wrote, this practice is crucial because it offers profound psychological benefits, including reduced stress and improved cognitive function. Biophilic spaces are not just aesthetically pleasing, they are fundamental to human well-being.
@@ -56,8 +56,8 @@ export default function SustainableLivingPage() {
                   <li><strong>Natural Shapes and Forms:</strong> Incorporating the patterns and motifs found in nature, like the structure of a beehive, the curve of a tree, or the organic shape of leaves.</li>
                   <li><strong>Natural Patterns and Processes:</strong> Focusing on variations and richness, such as the interplay of light and shadow, the way materials age and change over time, and focal points that offer visual contrast and complexity.</li>
                   <li><strong>Light and Space:</strong> Using both natural light and filtered daylight, while also manipulating light to create reflective surfaces and visual shapes that bring movement to the space.</li>
-                  <li><strong>Place-Based Relationships:</strong> Linking the space to the local culture and ecology. This is why people feel a strong connection to local materials and geographical features, leading to the feeling of "homesickness" when away.</li>
-                  <li><strong>Evolved Human-Nature Relationships:</strong> Recreating the evolutionary benefits of nature, such as creating a sense of protection and refuge, or fostering feelings of awe and exploration, within the building's design.</li>
+                  <li><strong>Place-Based Relationships:</strong> Linking the space to the local culture and ecology. This is why people feel a strong connection to local materials and geographical features, leading to the feeling of &quot;homesickness&quot; when away.</li>
+                  <li><strong>Evolved Human-Nature Relationships:</strong> Recreating the evolutionary benefits of nature, such as creating a sense of protection and refuge, or fostering feelings of awe and exploration, within the building&apos;s design.</li>
                 </ul>
               </section>
             </ScrollAnimation>
@@ -68,7 +68,7 @@ export default function SustainableLivingPage() {
                   Sanctuary Through the Senses
                 </h2>
                 <p className="mb-6 leading-relaxed text-gray-700">
-                  For Gen Z battling the intense pressures of adulthood and urban life, embracing biophilic design is a powerful, direct path to building your psychological sanctuary. The benefits of having this design aren't abstract, it's how you feel when you wake up each morning.
+                  For Gen Z battling the intense pressures of adulthood and urban life, embracing biophilic design is a powerful, direct path to building your psychological sanctuary. The benefits of having this design aren&apos;t abstract, it&apos;s how you feel when you wake up each morning.
                 </p>
                 <div className="space-y-6 mb-8">
                   <div>
@@ -76,7 +76,7 @@ export default function SustainableLivingPage() {
                       Natural light for a much happier day.
                     </h3>
                     <p className="leading-relaxed text-gray-700">
-                      Sunlight is a critical regulator for your mood. When your space is flooded with natural light, you're helping your body manage its own clock. Studies show exposure to daylight actually helps lower cortisol (that annoying stress hormone), making your apartment a place of true restoration instead of chronic anxiety.
+                      Sunlight is a critical regulator for your mood. When your space is flooded with natural light, you&apos;re helping your body manage its own clock. Studies show exposure to daylight actually helps lower cortisol (that annoying stress hormone), making your apartment a place of true restoration instead of chronic anxiety.
                     </p>
                   </div>
                   <div>
@@ -105,7 +105,7 @@ export default function SustainableLivingPage() {
                   How can I apply this?
                 </h2>
                 <p className="mb-6 leading-relaxed text-gray-700 font-bold">
-                  You don't need a big budget or a huge space, you just need to be intentional.
+                  You don&apos;t need a big budget or a huge space, you just need to be intentional.
                 </p>
                 <div className="space-y-6">
                   <div>

@@ -122,7 +122,7 @@ export default function BlairStoryPage() {
 
               <StoryParagraph>
                 What she longed for was not another room, not another house. She desired a space that held love,
-                permanently. When a child grows up craving affection, that hunger doesn't fade with age. It
+                permanently. When a child grows up craving affection, that hunger doesn&apos;t fade with age. It
                 transforms, showing up as longing, as rebellion, as the desire to be seen.
               </StoryParagraph>
           </StorySection>
@@ -150,7 +150,7 @@ export default function BlairStoryPage() {
 
               <StoryParagraph>
                 Blair hesitated, her pulse racing. Then she took a breath. The air burned as it entered her lungs.
-                She coughed, then laughed, dizzy and alive. She could finally breathe. The irony wasn't lost on
+                She coughed, then laughed, dizzy and alive. She could finally breathe. The irony wasn&apos;t lost on
                 her. Inside her own home, every breath felt monitored. Here, in the chaos of strangers, in the
                 strange smell of bliss, she tasted liberation.
               </StoryParagraph>
@@ -236,7 +236,7 @@ export default function BlairStoryPage() {
                 the closest she came to prayer. The characters she indulged in became her family. She laughed,
                 cried, and fought with them, alongside the demons they battled. When the hero reached rock bottom,
                 Blair imagined herself in their place, wondering if life would still be a worthy opponent or if she,
-                too, would surrender to the villain's embrace. God knows how many villains she'd face in this
+                too, would surrender to the villain&apos;s embrace. God knows how many villains she&apos;d face in this
                 lifetime.
               </StoryParagraph>
 
@@ -341,7 +341,7 @@ export default function BlairStoryPage() {
                 Every night, she pressed play on a film by Yorgos Lanthimos. His absurd worlds felt familiar, his
                 humor dark and cold. It was easier to live inside them than in her own. She tried to save her father
                 with love, but love could not cure what had already consumed him. So she kept watching, letting the
-                film's chaos blur into her own life until it became indistinguishable.
+                film&apos;s chaos blur into her own life until it became indistinguishable.
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
@@ -389,7 +389,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
 
               <StoryParagraph>
-                In the 1970s, maximalism emerged as a rejection of minimalism's sterile perfection. Bold colors,
+                In the 1970s, maximalism emerged as a rejection of minimalism&apos;s sterile perfection. Bold colors,
                 layered textures, inherited furniture, rooms that felt alive with history. It celebrated personality
                 over polish, a home that told a story rather than hid it.
               </StoryParagraph>
@@ -409,7 +409,7 @@ export default function BlairStoryPage() {
 
               <StoryParagraph>
                 When she looked in the mirror now, she saw someone she recognized. The circles under her eyes no
-                longer made her flinch. The face staring back wasn't her mother's, or the child who hid under the
+                longer made her flinch. The face staring back wasn&apos;t her mother&apos;s, or the child who hid under the
                 staircase. It was her own. Tired, sad, happy—but finally hers.
               </StoryParagraph>
 

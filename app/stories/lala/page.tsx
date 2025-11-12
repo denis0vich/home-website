@@ -77,7 +77,7 @@ export default function LalaStoryPage() {
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
-                "There’s never been anything normal about us," said the boy on TV. Lala smirked. Her mother passed by just as two girls nearly kissed. "Watch something decent," she snapped. "Close your legs—you look like a slut."
+                &quot;There&apos;s never been anything normal about us,&quot; said the boy on TV. Lala smirked. Her mother passed by just as two girls nearly kissed. &quot;Watch something decent,&quot; she snapped. &quot;Close your legs—you look like a slut.&quot;
                 </StoryParagraph>
 
                 <StoryParagraph>
@@ -118,7 +118,7 @@ export default function LalaStoryPage() {
             >
                 <ScrollAnimation direction="fadeIn">
                 <p className="mb-16 text-center text-2xl font-medium leading-relaxed text-white md:text-3xl lg:text-4xl" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)' }}>
-                  A knock came at ten a.m. "You won’t come with us anymore," her mother said. "If you can’t follow rules, stay here." The door slammed.
+                  A knock came at ten a.m. &quot;You won&apos;t come with us anymore,&quot; her mother said. &quot;If you can&apos;t follow rules, stay here.&quot; The door slammed.
                   </p>
                 </ScrollAnimation>
 
@@ -159,7 +159,7 @@ export default function LalaStoryPage() {
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
-                In high school she played Anne Boleyn. She practiced the line all night: "I will be your Queen, Your Majesty."
+                In high school she played Anne Boleyn. She practiced the line all night: &quot;I will be your Queen, Your Majesty.&quot;
                 </StoryParagraph>
 
                 <StoryParagraph>
@@ -183,11 +183,11 @@ export default function LalaStoryPage() {
               className={SECTION_CHROME}
             >
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
-                "Bless me, Father, for I have sinned." Between her and the priest stood a wooden grate. "I’ve desired a woman," she whispered.
+                &quot;Bless me, Father, for I have sinned.&quot; Between her and the priest stood a wooden grate. &quot;I&apos;ve desired a woman,&quot; she whispered.
                 </StoryParagraph>
 
                 <StoryParagraph>
-                "Disgusting," the priest muttered. "Repent, or hell waits for you."
+                &quot;Disgusting,&quot; the priest muttered. &quot;Repent, or hell waits for you.&quot;
                 </StoryParagraph>
 
                 <StoryParagraph>
@@ -211,11 +211,11 @@ export default function LalaStoryPage() {
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
-                The word "evil" clung to her thoughts. Her mother’s friends prayed with pearls and perfume, hiding secrets behind gentle smiles.
+                The word &quot;evil&quot; clung to her thoughts. Her mother&apos;s friends prayed with pearls and perfume, hiding secrets behind gentle smiles.
                 </StoryParagraph>
 
                 <StoryParagraph>
-                Lala crocheted crosses for them. "You’re talented," one said. Another mocked her jeans. Their prayers reeked of judgment.
+                Lala crocheted crosses for them. &quot;You&apos;re talented,&quot; one said. Another mocked her jeans. Their prayers reeked of judgment.
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
