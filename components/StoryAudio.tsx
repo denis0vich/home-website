@@ -224,6 +224,18 @@ export default function StoryAudio({
               })
             }
 
+            // Set start offset for files with silence at the beginning
+            const startOffsets: Record<string, number> = {
+              '/audio/Blair - club music .mp3': 0.250,
+              '/audio/Elijah_ Peaceful.mp3': 0.250,
+              '/audio/Elijah_ Streets of Manila.mp3': 1.260,
+              '/audio/Lala - Heavy Door Slam .mp3': 3.170,
+            }
+            const startOffset = startOffsets[src] || 0
+            if (startOffset > 0) {
+              audio.currentTime = startOffset
+            }
+            
             const playPromise = audio.play()
             if (playPromise !== undefined) {
               await playPromise
@@ -234,6 +246,10 @@ export default function StoryAudio({
             
             // Check if it's actually playing now
             if (!audio.paused) {
+              // Ensure start offset is maintained
+              if (startOffset > 0 && audio.currentTime < startOffset) {
+                audio.currentTime = startOffset
+              }
               console.log('[StoryAudio] Successfully started playing:', src, {
                 paused: audio.paused,
                 readyState: audio.readyState,
@@ -348,13 +364,22 @@ export default function StoryAudio({
       const audio = audioRef.current
       const fadeOutDuration = 1500 // 1.5 seconds fade-out
       
+      // Get start offsets for files with silence at the beginning
+      const startOffsets: Record<string, number> = {
+        '/audio/Blair - club music .mp3': 0.250,
+        '/audio/Elijah_ Peaceful.mp3': 0.250,
+        '/audio/Elijah_ Streets of Manila.mp3': 1.260,
+        '/audio/Lala - Heavy Door Slam .mp3': 3.170,
+      }
+      const startOffset = startOffsets[src] || 0
+      
       if (immediate || !isPlaying || audio.paused) {
         // Immediate stop or already paused
         console.log('[StoryAudio] Stopping audio immediately:', src)
         audio.pause()
         // Only reset currentTime for looping sounds (non-looping should stay at end)
         if (loop) {
-          audio.currentTime = 0
+          audio.currentTime = startOffset // Reset to start offset, not 0
         }
         setIsPlaying(false)
         fadeStartTimeRef.current = null
@@ -400,7 +425,7 @@ export default function StoryAudio({
           audio.pause()
           // Only reset currentTime for looping sounds (non-looping should stay at end)
           if (loop) {
-            audio.currentTime = 0
+            audio.currentTime = startOffset // Reset to start offset, not 0
           }
           audio.volume = startVolume // Reset volume for next play
           setIsPlaying(false)
@@ -587,8 +612,16 @@ export default function StoryAudio({
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleScroll)
       if (audio) {
+        // Get start offsets for files with silence at the beginning
+        const startOffsets: Record<string, number> = {
+          '/audio/Blair - club music .mp3': 0.250,
+          '/audio/Elijah_ Peaceful.mp3': 0.250,
+          '/audio/Elijah_ Streets of Manila.mp3': 1.260,
+          '/audio/Lala - Heavy Door Slam .mp3': 3.170,
+        }
+        const startOffset = startOffsets[src] || 0
         audio.pause()
-        audio.currentTime = 0
+        audio.currentTime = startOffset
       }
     }
   }, [audioEnabled, shouldAutoPlay, loop, volume, fadeIn, threshold, rootMargin, isPlaying])
