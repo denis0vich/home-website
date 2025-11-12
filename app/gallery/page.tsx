@@ -165,7 +165,7 @@ export default function GalleryPage() {
                   className={`group relative h-[420px] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur transition ${
                     isActive ? 'ring-1 ring-white/60' : ''
                   }`}
-                  description={`One face, one room—held softly in the light they call their own. Photograph taken by Anne Nicole Zambrano.`}
+                  description="One face, one room—held softly in the light they call their own."
                   renderOverlay={
                     <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-[#081849]/80 via-[#081849]/30 to-transparent transition-opacity">
                       <div className="p-6">
@@ -174,9 +174,6 @@ export default function GalleryPage() {
                         </p>
                         <p className="mt-2 text-sm font-medium text-white">
                           One face, one room—held softly in the light they call their own.
-                        </p>
-                        <p className="mt-2 text-xs text-white/80">
-                          Photograph taken by Anne Nicole Zambrano.
                         </p>
                       </div>
                     </div>
