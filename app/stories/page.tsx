@@ -60,23 +60,6 @@ const RESOURCE_LINKS = [
   },
 ]
 
-const FLOW_STEPS = [
-  {
-    step: '01',
-    title: 'Choose a story portal',
-    body: 'Begin with Blair, Elijah, or Lala. Scroll or tap into the narrative that resonates today.',
-  },
-  {
-    step: '02',
-    title: 'Visualize',
-    body: 'Explore the dream home showcases to see how each story translates into imagined spaces.',
-  },
-  {
-    step: '03',
-    title: 'Reflect with experts',
-    body: 'Visit Professional Insights to see how design, engineering, and psychology interpret the needs revealed.',
-  },
-]
 
 export default function StoriesPage() {
   const router = useRouter()
@@ -126,8 +109,7 @@ export default function StoriesPage() {
           <div className="pointer-events-none absolute -bottom-24 left-1/3 hidden h-[220px] w-[220px] -rotate-6 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.16),transparent_65%)] blur-3xl md:block" />
 
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/60">Scroll inside · tap a card to enter</p>
-            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">Narrative Portals</h2>
+            <h2 className="font-bella-queta text-3xl md:text-4xl">Narrative Portals</h2>
           </div>
 
           <div className="mt-12">
@@ -168,7 +150,7 @@ export default function StoriesPage() {
             <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">Sound, light, and motion</h2>
             <p className="mt-4 text-sm text-white/80 md:text-base">
               Every narrative uses scroll-triggered audio, gradient-driven atmospheres, and particle systems tuned to its emotional arc.
-              Enable sound to hear custom cues—cold piano chords, club pulses, shattering glass, and gentle heartbeats fade in as you
+              Custom cues—cold piano chords, club pulses, shattering glass, and gentle heartbeats fade in as you
               progress.
             </p>
             <ul className="mt-6 space-y-3 text-sm text-white/70">
@@ -187,21 +169,6 @@ export default function StoriesPage() {
             </ul>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2.5rem] border border-white/15 bg-white/10 p-8 text-sm text-white/80 shadow-[0_24px_70px_rgba(5,11,34,0.45)] backdrop-blur">
-            <div className="pointer-events-none absolute -right-16 top-1/2 hidden h-60 w-60 -translate-y-1/2 rotate-12 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18),transparent_60%)] blur-3xl lg:block" />
-            <p className="text-xs uppercase tracking-[0.4em] text-white/55">When visiting a story</p>
-            <ul className="mt-5 space-y-4">
-              <li>
-                <span className="font-semibold text-white">Enable sound</span> using the floating toggle on first entry.
-              </li>
-              <li>
-                <span className="font-semibold text-white">Scroll steadily</span>—animations and audio cues are tied to intersection thresholds.
-              </li>
-              <li>
-                <span className="font-semibold text-white">Tap images</span> to open the lightbox, and follow portal prompts to explore dream homes.
-              </li>
-            </ul>
-          </div>
         </section>
 
         {/* Supporting resources */}
@@ -235,22 +202,6 @@ export default function StoriesPage() {
           </div>
         </section>
 
-        {/* Reader flow */}
-        <section className="mt-24 rounded-[2.75rem] border border-white/12 bg-white/8 p-10 shadow-[0_24px_90px_rgba(5,11,34,0.45)] backdrop-blur">
-          <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/55">How to Navigate</p>
-            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">A Reader’s Flow</h2>
-          </div>
-          <ul className="mt-10 grid gap-6 md:grid-cols-3">
-            {FLOW_STEPS.map((item) => (
-              <li key={item.step} className="rounded-2xl border border-white/10 bg-white/12 p-6 text-sm leading-relaxed text-white/75">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/55">Step {item.step}</p>
-                <h3 className="mt-3 font-bella-queta text-xl text-white">{item.title}</h3>
-                <p className="mt-3">{item.body}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
       </main>
     </div>
   )

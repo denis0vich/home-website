@@ -30,11 +30,6 @@ export default function BlairStoryPage() {
             What does it say about home when you inherit many houses yet never feel rooted? Blair moves
             through sanctuaries built by others as she searches for one she can finally claim.
           </p>
-          <ScrollAnimation direction="fadeIn" duration={1600} threshold={0.2}>
-            <p className="mt-8 text-sm uppercase tracking-[0.35em] text-white/45">
-              Read slowly · listen closely · breathe with her
-            </p>
-          </ScrollAnimation>
         </header>
         </div>
 

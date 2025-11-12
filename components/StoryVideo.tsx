@@ -32,15 +32,21 @@ export default function StoryVideo({
     const updateDimensions = () => {
       const rect = container.getBoundingClientRect()
       if (rect.width > 0) {
-        // Calculate height based on 16:9 aspect ratio
-        const height = (rect.width * 9) / 16
-        setDimensions({ width: rect.width, height })
+        // Calculate height based on 16:9 aspect ratio, but respect max height
+        const calculatedHeight = (rect.width * 9) / 16
+        const maxHeight = 500 // Max height constraint
+        const height = Math.min(calculatedHeight, maxHeight)
+        const constrainedWidth = height < calculatedHeight ? (height * 16) / 9 : rect.width
         
-        // Force video to have explicit dimensions
-        video.style.width = `${rect.width}px`
+        setDimensions({ width: constrainedWidth, height })
+        
+        // Force video to have explicit dimensions, but don't exceed container
+        video.style.width = `${Math.min(constrainedWidth, rect.width)}px`
         video.style.height = `${height}px`
-        video.style.minWidth = `${rect.width}px`
-        video.style.minHeight = `${height}px`
+        video.style.maxWidth = `${rect.width}px`
+        video.style.maxHeight = `${maxHeight}px`
+        video.style.minWidth = '0'
+        video.style.minHeight = '0'
       }
     }
 
@@ -113,12 +119,14 @@ export default function StoryVideo({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40 ${className}`}
+      className={`relative w-full max-w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40 ${className}`}
       style={{ 
         aspectRatio: '16/9',
         minHeight: '300px',
+        maxHeight: '500px',
         position: 'relative',
-        display: 'block'
+        display: 'block',
+        width: '100%'
       }}
     >
       <video

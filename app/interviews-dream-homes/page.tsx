@@ -2,7 +2,8 @@
 
 import Navigation from '@/components/Navigation'
 import ScrollSnapCarousel from '@/components/ScrollSnapCarousel'
-import Image from 'next/image'
+import StoryVideo from '@/components/StoryVideo'
+import { LightboxImage } from '@/components/ImageLightbox'
 
 interface DreamHome {
   id: string
@@ -11,6 +12,7 @@ interface DreamHome {
   description: string
   images: string[]
   palette: string[]
+  video?: string
 }
 
 const DREAM_HOMES: DreamHome[] = [
@@ -19,9 +21,10 @@ const DREAM_HOMES: DreamHome[] = [
     subject: 'Blair',
     title: 'Maximalist Sanctuary',
     description:
-      'Color, texture, and found objects collide. Blair’s dream is a layered apartment that rejects minimalism and celebrates the people she lets in.',
+      'Color, texture, and found objects collide. Blair&apos;s dream is a layered apartment that rejects minimalism and celebrates the people she lets in.',
     images: ['/stories-assets/FOR BLAIR.jpg', '/stories-assets/FOR BLAIR 2.jpg'],
     palette: ['#893172', '#FF8C42', '#213885', '#ECDFD2'],
+    video: '/videos/blair-dream-home.mp4',
   },
   {
     id: 'elijah-dream',
@@ -35,19 +38,21 @@ const DREAM_HOMES: DreamHome[] = [
       '/stories-assets/FOR ETHAN(2).jpg',
     ],
     palette: ['#ECDFD2', '#CCCACC', '#5F3475', '#213885'],
+    video: '/videos/elijah-dream-home.mp4',
   },
   {
     id: 'lala-dream',
     subject: 'Lala',
     title: 'Private Sanctuary',
     description:
-      'Lala’s dream condo is soft green and gold by day, deep charcoal at night. It’s a place where she can close the door and be wholly herself.',
+      'Lala&apos;s dream condo is soft green and gold by day, deep charcoal at night. It&apos;s a place where she can close the door and be wholly herself.',
     images: [
       '/stories-assets/FOR LALA 2.webp',
       '/stories-assets/FOR LALA 3.webp',
       '/stories-assets/FOR LALA 4.webp',
     ],
     palette: ['#081849', '#213885', '#5F3475', '#ECDFD2'],
+    video: '/videos/lala-dream-home.mp4',
   },
 ]
 
@@ -82,25 +87,28 @@ export default function InterviewsDreamHomesPage() {
               and layout. Glide through the renderings and notice how the palette echoes the subject's
               psychological needs.
             </p>
+            <p className="mx-auto mt-3 text-xs text-white/50">
+              3D Renders by Julian Beatriz Vargas
+            </p>
           </div>
 
           <ScrollSnapCarousel
             ariaLabel="Dream home highlights"
             items={DREAM_HOMES}
-            itemClassName="min-w-[min(420px,85vw)]"
+            itemClassName="min-w-[min(400px,85vw)]"
             renderItem={(home, _index, isActive) => (
-              <article className="group h-full overflow-hidden rounded-[2.6rem] border border-white/20 bg-white/12 shadow-[0_28px_60px_rgba(8,12,40,0.4)] backdrop-blur">
-                <header className="border-b border-white/15 bg-white/10 px-7 py-6">
-                  <p className="text-xs uppercase tracking-[0.4em] text-white/55">
+              <article className="group h-full overflow-hidden rounded-xl border border-white/20 bg-white/12 shadow-[0_16px_40px_rgba(8,12,40,0.3)] backdrop-blur">
+                <header className="border-b border-white/15 bg-white/10 px-4 py-3">
+                  <p className="text-[10px] uppercase tracking-[0.35em] text-white/55">
                     {home.subject}&rsquo;s Vision
                   </p>
-                  <h3 className="mt-2 font-bella-queta text-2xl text-white">{home.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/70">{home.description}</p>
-                  <div className="mt-4 flex items-center gap-2">
+                  <h3 className="mt-1 font-bella-queta text-lg text-white">{home.title}</h3>
+                  <p className="mt-1.5 text-[11px] leading-relaxed text-white/70">{home.description}</p>
+                  <div className="mt-2.5 flex items-center gap-1.5">
                     {home.palette.map((color) => (
                       <span
                         key={color}
-                        className="h-6 w-6 rounded-full border border-white/40 shadow"
+                        className="h-4 w-4 rounded-full border border-white/40 shadow"
                         style={{ backgroundColor: color }}
                         title={color}
                       />
@@ -108,31 +116,44 @@ export default function InterviewsDreamHomesPage() {
                   </div>
                 </header>
 
-                <div className="grid gap-4 p-7">
-                  {home.images.map((image, idx) => (
-                    <figure
-                      key={image}
-                      className="relative h-56 overflow-hidden rounded-2xl border border-white/15 bg-white/5 shadow-lg"
-                    >
-                      <Image
-                        src={image}
-                        alt={`${home.subject} dream home ${idx + 1}`}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 80vw, 420px"
-                        unoptimized
-                      />
-                    </figure>
-                  ))}
+                <div className="flex flex-col gap-3 p-4">
+                  {/* Big 3D Render Video */}
+                  {home.video && (
+                    <div className="w-full">
+                      <div className="mb-2 flex items-center justify-between">
+                        <p className="text-[10px] uppercase tracking-[0.25em] text-white/60">
+                          3D Render
+                        </p>
+                        <p className="text-[10px] text-white/50">
+                          by Julian Beatriz Vargas
+                        </p>
+                      </div>
+                      <div className="w-full">
+                        <StoryVideo
+                          src={home.video}
+                          controls
+                          loop
+                          className="shadow-xl w-full"
+                        />
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Small Static Images Grid */}
+                  <div className="grid grid-cols-2 gap-2">
+                    {home.images.map((image, idx) => (
+                      <div key={image} className="relative w-full" style={{ aspectRatio: '4/3' }}>
+                        <LightboxImage
+                          src={image}
+                          alt={`${home.subject} dream home ${idx + 1}`}
+                          description={`${home.subject}&apos;s dream home visualization - ${home.title}`}
+                          className="h-full w-full"
+                          sizes="(max-width: 768px) 40vw, 180px"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-
-                <footer
-                  className={`px-7 pb-7 ${
-                    isActive ? 'opacity-100' : 'opacity-70'
-                  } text-xs uppercase tracking-[0.4em] text-white/45 transition`}
-                >
-                  Swipe or use the arrows to explore the full dream.
-                </footer>
               </article>
             )}
           />

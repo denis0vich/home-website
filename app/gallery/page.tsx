@@ -148,9 +148,6 @@ export default function GalleryPage() {
               A portrait series crowdsourced from friends of The Haven. Every gaze, grin, and soft
               shadow hints at the emotional architecture that makes a place livable.
             </p>
-            <p className="mt-6 text-xs uppercase tracking-[0.4em] text-white/40">
-              Scroll inside the ribbon · tap a card for a closer look
-            </p>
           </div>
 
           <div className="mt-10">
