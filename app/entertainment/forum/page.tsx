@@ -130,9 +130,19 @@ export default function ForumPage() {
           <section className="mb-20">
             <div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/10 p-10 shadow-[0_28px_90px_rgba(5,11,34,0.45)] backdrop-blur-md">
               <form onSubmit={handleForumSubmit} className="space-y-6">
-                <p className="text-center font-bella-queta text-white/80">
-                  What makes a space feel like home for you?
-                </p>
+                <div className="space-y-4">
+                  <p className="text-center font-bella-queta text-lg text-white/90">
+                    Choose a question to answer:
+                  </p>
+                  <div className="space-y-3 rounded-2xl border border-white/15 bg-white/5 p-4">
+                    <p className="font-bella-queta text-white/80">
+                      <span className="font-semibold text-white">1.</span> What spaces, whether physical or online, make you feel like you have control over your environment?
+                    </p>
+                    <p className="font-bella-queta text-white/80">
+                      <span className="font-semibold text-white">2.</span> What does your home give you that no other place can?
+                    </p>
+                  </div>
+                </div>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="md:col-span-1">
                     <label className="mb-2 block text-sm font-bella-queta text-white/60">
@@ -163,7 +173,7 @@ export default function ForumPage() {
                       }}
                       rows={4}
                       maxLength={800}
-                      placeholder="Share a ritual, a room layout, a scent, or a small hack that keeps you grounded."
+                      placeholder="Answer either question above. Share your experiences, thoughts, or reflections..."
                       className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 font-bella-queta text-white placeholder-white/40 focus:border-[#909FF0] focus:outline-none"
                     />
                   </div>

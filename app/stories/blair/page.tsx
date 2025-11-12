@@ -68,7 +68,7 @@ export default function BlairStoryPage() {
               <StoryParagraph>
                 The loud honk of a car snaps her out of her thoughts. She smiles at her father, waving. His face
                 is a permanent frown. The grey Land Rover tells a story of its own. As Blair slides into the
-                backseat, the smell of lavender lingers. She looks at her father's indifferent eyes and reminds
+                backseat, the smell of lavender lingers. She looks at her father&apos;s indifferent eyes and reminds
                 herself: this is what it looks like to have everything.
               </StoryParagraph>
           </StorySection>
@@ -89,11 +89,11 @@ export default function BlairStoryPage() {
               </StoryParagraph>
 
               <StoryParagraph>
-                Every evening after school, Blair would peek into her mother's room. "Are you ready to go to the
-                grocery?" she'd ask. Her mother would nod, already holding a list. They'd walk the aisles
+                Every evening after school, Blair would peek into her mother&apos;s room. &quot;Are you ready to go to the
+                grocery?&quot; she&apos;d ask. Her mother would nod, already holding a list. They&apos;d walk the aisles
                 together, their small rituals anchoring them: the debate over which brand of rice to buy, the
                 smell of bread rising from the bakery section, the soft clatter of cans being placed in the cart.
-                For Blair, it didn't matter where they shopped. What mattered was her mother's genuine joy in
+                For Blair, it didn&apos;t matter where they shopped. What mattered was her mother&apos;s genuine joy in
                 spending time with Blair, and the way it restored her sense of purpose as a wife and mother.
               </StoryParagraph>
           </StorySection>
@@ -140,9 +140,9 @@ export default function BlairStoryPage() {
               <StoryParagraph>
                 Blair chased that feeling wherever she could find it. The blinding lights of a club, the pulsing
                 beat of a song, the blur of strangers dancing too close. The music filled the hollow places her
-                home could not. "Let's smoke," her friend Yanna said once, pulling her into the bathroom. Yanna
-                laid out a small bag of white powder beside a pack of cigarettes. "Silly, this club's exclusive.
-                No one will care."
+                home could not. &quot;Let&apos;s smoke,&quot; her friend Yanna said once, pulling her into the bathroom. Yanna
+                laid out a small bag of white powder beside a pack of cigarettes. &quot;Silly, this club&apos;s exclusive.
+                No one will care.&quot;
               </StoryParagraph>
 
               <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.5} />
@@ -172,8 +172,8 @@ export default function BlairStoryPage() {
           >
               <StoryParagraph>
                 When she opened her eyes, she was no longer in the club. The scent of incense replaced the haze of
-                smoke. Wooden pews creaked beneath her as the church bells tolled. A priest's voice echoed through
-                the hall. "If you love me, keep my commandments," he read from John 14:15. Around her, women
+                smoke. Wooden pews creaked beneath her as the church bells tolled. A priest&apos;s voice echoed through
+                the hall. &quot;If you love me, keep my commandments,&quot; he read from John 14:15. Around her, women
                 nodded. The husbands intertwine their fingers with their wives. Each grip was tight. As if they
                 would never let go.
               </StoryParagraph>
@@ -181,7 +181,7 @@ export default function BlairStoryPage() {
               <StoryParagraph>
                 Blair looked at her parents in front of her. Her father bowed his head; her mother smiled at him
                 with the kind of love that forgives too much. Blair felt nauseous. A woman beside her leaned in
-                and said, "Father's sermon is so moving today." Blair smiled faintly and accepted a napkin. If
+                and said, &quot;Father&apos;s sermon is so moving today.&quot; Blair smiled faintly and accepted a napkin. If
                 only she knew, Blair thought, how the cross in front of me brings fear, never peace.
               </StoryParagraph>
           </StorySection>
@@ -204,21 +204,21 @@ export default function BlairStoryPage() {
                 scriptures and the Catholic community as a whole thrive on patriarchal concepts that persist to
                 this day, where women will forever be subordinate to men, and the very God we worship follows the
                 same principles of masculine authority. Lewis corroborated this by arguing that God, being the
-                instigator and origin of all things, can be understood as the "infinite masculine." Even if
+                instigator and origin of all things,                 can be understood as the &quot;infinite masculine.&quot; Even if
                 canonically God is spiritually beyond human concepts such as gender, the very idea that drives the
                 Catholic institution is based on His image.
               </StoryParagraph>
 
               <StoryParagraph>
                 She grew up in a household where the father was head of everything: the house, the family, the
-                faith. Her mother's devotion was measured in sacrifice, her silence mistaken for virtue. In the
+                faith. Her mother&apos;s devotion was measured in sacrifice, her silence mistaken for virtue. In the
                 Philippines, religion and family connect so closely that obedience is worshipped. The home becomes
                 a church, the father its priest. And so, even as women suffer, they are told it is holy to endure.
               </StoryParagraph>
 
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={35}>
                 Blair closed her Bible that night. Her prayers no longer reached the same God she grew up believing
-                in. She wanted to believe in something kinder, something that didn't ask her to stay small.
+                in. She wanted to believe in something kinder, something that didn&apos;t ask her to stay small.
               </StoryParagraph>
           </StorySection>
 
@@ -241,10 +241,10 @@ export default function BlairStoryPage() {
               </StoryParagraph>
 
               <StoryParagraph>
-                She thought of the homes she'd lived in. Pasay, where their first apartment was warm and noisy, had
+                She thought of the homes she&apos;d lived in. Pasay, where their first apartment was warm and noisy, had
                 an industrial-chic design, as her mother called it. The space was lined with exposed concrete walls,
                 black steel beams, and low-hanging bulbs. Her mother called it beautifully imperfect. In a way, it
-                felt like a community. Her mother's relatives lived nearby, forming a compound of familiar faces.
+                felt like a community. Her mother&apos;s relatives lived nearby, forming a compound of familiar faces.
                 Luxurious still, but not as luxurious as what was to come.
               </StoryParagraph>
 
@@ -263,7 +263,7 @@ export default function BlairStoryPage() {
 
               <ScrollAnimation direction="fadeIn">
                 <p className="mb-16 text-center text-2xl md:text-3xl lg:text-4xl font-light italic leading-relaxed" style={{ lineHeight: '1.7', fontSize: 'clamp(1.5rem,3.5vw,2.25rem)' }}>
-                  Yet the longer they stayed, the more it resembled a shrine to what they'd lost.
+                  Yet the longer they stayed, the more it resembled a shrine to what they&apos;d lost.
                 </p>
               </ScrollAnimation>
           </StorySection>
@@ -279,20 +279,20 @@ export default function BlairStoryPage() {
             floatingTextDirection="chaotic"
           >
               <StoryParagraph>
-                Blair's father, a surgeon, was rarely home. When he was, the air thickened with his presence. His
-                voice, once a melodic hymn to Blair's ears, grew sharp with exhaustion. Alcohol became his reprieve.
-                Her mother, a girl once, just like Blair, also dreamed.. "You don't need to work," her father had
-                told her years ago. "I'll take care of you." She believed him. Blair's mother did not pursue the
+                Blair&apos;s father, a surgeon, was rarely home. When he was, the air thickened with his presence. His
+                voice, once a melodic hymn to Blair&apos;s ears, grew sharp with exhaustion. Alcohol became his reprieve.
+                Her mother, a girl once, just like Blair, also dreamed.. &quot;You don&apos;t need to work,&quot; her father had
+                told her years ago. &quot;I&apos;ll take care of you.&quot; She believed him. Blair&apos;s mother did not pursue the
                 medical boards anymore, pregnant with her first child. Unfortunately, she miscarried and opted to
-                pursue marriage with Blair's father. It was the practical thing to do. Was it love that bound them
+                pursue marriage with Blair&apos;s father. It was the practical thing to do. Was it love that bound them
                 together? Blair is still unsure.
               </StoryParagraph>
 
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={25}>
                 As the night settled in, Blair followed her mother into the dirty kitchen, the only part of the
                 house that felt alive. The air smelled of garlic and oil. Pans hung unevenly on the tiled wall. A
-                shoe flew past them, hitting the counter. Her father stood there, brimming with anger. "You brat,"
-                he said. "You haven't done anything right." He lunged, but her mother stepped in front of her
+                shoe flew past them, hitting the counter. Her father stood there, brimming with anger. &quot;You brat,&quot;
+                he said. &quot;You haven&apos;t done anything right.&quot; He lunged, but her mother stepped in front of her
                 instinctively. His voice reeked of liquor. Liquor was his God now.
               </StoryParagraph>
 
@@ -309,7 +309,7 @@ export default function BlairStoryPage() {
 
               <StoryParagraph>
                 Blair sat behind the grand staircase, its marble curve cold beneath her palms. From there, she could
-                see her father's hand strike, her mother's body falter. She stayed hidden, small enough to be
+                see her father&apos;s hand strike, her mother&apos;s body falter. She stayed hidden, small enough to be
                 forgotten. Each time her mother emerged, bruises bloomed on her skin. Each time, Blair told herself
                 she would do something next time. But she never did.
               </StoryParagraph>
@@ -317,7 +317,7 @@ export default function BlairStoryPage() {
               <StoryParagraph>
                 Once upon a time, her mother waited for her prince charming in a tall, gleaming tower. The knight
                 climbed the tower and declared his eternal love for her. A rainbow arched across the sky as they
-                rode toward their happily ever after. It broke Blair to see her mother's fairy tale collapse. Maybe
+                rode toward their happily ever after. It broke Blair to see her mother&apos;s fairy tale collapse. Maybe
                 fairy tales were never meant for them.
               </StoryParagraph>
           </StorySection>
@@ -332,7 +332,7 @@ export default function BlairStoryPage() {
               <StoryParagraph>
                 Then came a time for isolation. A much bigger isolation held the whole world still. Her father,
                 working at the hospital, always came home by midnight. The smell of antiseptic clung to his clothes.
-                He drank more, and spoke less. "He's saving lives," her mother would say. "He's tired." But Blair
+                He drank more, and spoke less. &quot;He&apos;s saving lives,&quot; her mother would say. &quot;He&apos;s tired.&quot; But Blair
                 saw the truth between his eyes. He was slipping away from the father she knew when she was a babe.
                 The man who once carried her on his shoulders was surrendering to an irreparable darkness.
               </StoryParagraph>
@@ -358,7 +358,7 @@ export default function BlairStoryPage() {
           >
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
                 It was a Sunday morning when Blair and her family returned from Pasay to Antipolo. Dark clouds hung
-                low, unmoving. The moment they opened the door, a putrid smell filled the air. Blair's stomach
+                low, unmoving. The moment they opened the door, a putrid smell filled the air. Blair&apos;s stomach
                 twisted. Near the staircase lay a hand, gray and still. Her father. He had been dead for three weeks.
               </StoryParagraph>
 
@@ -398,7 +398,7 @@ export default function BlairStoryPage() {
                 Alidad Mahloudji, a London-based interior designer, championed his maximalist philosophy. He believed
                 that beauty lives in balance, that true calm arises when all the senses are alive. Maximalism, he
                 said, is not clutter. It is a collection of memories made visible. Alidad asserts that the idea of
-                putting items or decor is alluring as it creates that "timeless" look. In contrast to a minimalist
+                putting items or decor is alluring as it creates that &quot;timeless&quot; look. In contrast to a minimalist
                 design, the maximalist is not afraid of color or life.
               </StoryParagraph>
 
