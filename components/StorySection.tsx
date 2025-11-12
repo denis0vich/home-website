@@ -1,8 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState, ReactNode, useMemo } from 'react'
+import {
+  useEffect,
+  useRef,
+  useState,
+  ReactNode,
+  useMemo,
+} from 'react'
 import ParticleEffects from './ParticleEffects'
 import FloatingTextEffect from './FloatingTextEffect'
+import { useOptionalStoryAtmosphere } from './StoryAtmosphereProvider'
 
 interface StorySectionProps {
   children: ReactNode
@@ -17,6 +24,7 @@ interface StorySectionProps {
   className?: string
   onEnter?: () => void
   onExit?: () => void
+  contentClassName?: string
 }
 
 export default function StorySection({
@@ -31,11 +39,13 @@ export default function StorySection({
   floatingTextDirection = 'chaotic',
   className = '',
   onEnter,
-  onExit
+  onExit,
+  contentClassName = '',
 }: StorySectionProps) {
   const [isActive, setIsActive] = useState(false)
   const [backgroundOpacity, setBackgroundOpacity] = useState(0)
   const sectionRef = useRef<HTMLDivElement>(null)
+  const atmosphereContext = useOptionalStoryAtmosphere()
 
   // Compute contrast-aware text color based on background luminance
   const textColor = useMemo(() => {
@@ -69,6 +79,7 @@ export default function StorySection({
           if (onEnter && progress > 0.4) {
             onEnter()
           }
+          atmosphereContext?.updateSection(sectionId, progress)
         } else {
           if (progress < 0.2 || !isIntersecting) {
             setIsActive(false)
@@ -133,7 +144,7 @@ export default function StorySection({
       {isActive && floatingText && floatingText.length > 0 && (
         <div
           className="absolute inset-0 overflow-hidden pointer-events-none"
-          style={{ zIndex: -2 }}
+          style={{ zIndex: -1 }}
         >
           <FloatingTextEffect
             words={floatingText}
@@ -144,7 +155,9 @@ export default function StorySection({
       )}
 
       <div className="relative z-10">
-        {children}
+        <div className={`mx-auto w-full max-w-5xl px-6 ${contentClassName}`}>
+          {children}
+        </div>
       </div>
     </section>
   )

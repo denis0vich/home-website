@@ -17,9 +17,10 @@ export default function BlairStoryPage() {
 
       <Navigation />
 
-      <main className="relative z-10 mx-auto max-w-5xl px-6 pt-40 pb-32">
+      <main className="relative z-10 w-full pt-40 pb-32">
         <AudioConsent />
 
+        <div className="mx-auto w-full max-w-5xl px-6">
         <header className="rounded-3xl border border-white/15 bg-white/10 p-10 text-center shadow-[0_24px_70px_rgba(5,11,34,0.55)] backdrop-blur">
           <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-white/65">
             <span className="rounded-full border border-white/25 px-4 py-2">Subject: Blair</span>
@@ -37,6 +38,7 @@ export default function BlairStoryPage() {
             </p>
           </ScrollAnimation>
         </header>
+        </div>
 
         <section className="mt-16">
           <StorySection
@@ -49,7 +51,6 @@ export default function BlairStoryPage() {
             floatingTextIntensity={0.35}
             floatingTextDirection="up"
           >
-            <div className="mx-auto max-w-5xl px-6">
               <ScrollAnimation direction="fadeIn">
                 <p className="mb-20 text-center text-3xl md:text-4xl lg:text-5xl font-light italic leading-relaxed" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
                   What does it say about a home when you have more than one house, and yet, the feeling of
@@ -70,7 +71,6 @@ export default function BlairStoryPage() {
                 backseat, the smell of lavender lingers. She looks at her father's indifferent eyes and reminds
                 herself: this is what it looks like to have everything.
               </StoryParagraph>
-            </div>
           </StorySection>
 
           <StorySection
@@ -80,7 +80,6 @@ export default function BlairStoryPage() {
             particleColors={['#ff9e45', '#ffcd80', '#ffe0b2']}
             particleIntensity={0.4}
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 Blair believes that true success is immeasurable. But when the report card lands on her desk, the
                 numbers feel divine. Sparks flood her eyes. Later that day, at school, she passes a group of med
@@ -97,7 +96,6 @@ export default function BlairStoryPage() {
                 For Blair, it didn't matter where they shopped. What mattered was her mother's genuine joy in
                 spending time with Blair, and the way it restored her sense of purpose as a wife and mother.
               </StoryParagraph>
-            </div>
           </StorySection>
 
           <StorySection
@@ -107,7 +105,6 @@ export default function BlairStoryPage() {
             particleColors={['#CCE0FF', '#ECDFD2', '#5F3475']}
             particleIntensity={0.35}
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 Their home in Antipolo was a dream others might envy. A six-bedroom mansion perched on a hill,
                 surrounded by tall trees and guarded gates. The neighborhood was peaceful, detached, and safe.
@@ -121,14 +118,13 @@ export default function BlairStoryPage() {
                 reach. Her world was a gilded cage, a constraining piece of gold strapped around her neck.
               </StoryParagraph>
 
-              <StoryAudio src="/audio/Blair - Cold, High-Pitched Piano Chord .mp3" volume={0.2} fadeIn={false} />
+              <StoryAudio src="/audio/Blair - Cold, High-Pitched Piano Chord .mp3" volume={0.5} fadeIn={false} />
 
               <StoryParagraph>
                 What she longed for was not another room, not another house. She desired a space that held love,
                 permanently. When a child grows up craving affection, that hunger doesn't fade with age. It
                 transforms, showing up as longing, as rebellion, as the desire to be seen.
               </StoryParagraph>
-            </div>
           </StorySection>
 
           <StorySection
@@ -141,7 +137,6 @@ export default function BlairStoryPage() {
             floatingTextIntensity={1.4}
             floatingTextDirection="chaotic"
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 Blair chased that feeling wherever she could find it. The blinding lights of a club, the pulsing
                 beat of a song, the blur of strangers dancing too close. The music filled the hollow places her
@@ -150,7 +145,7 @@ export default function BlairStoryPage() {
                 No one will care."
               </StoryParagraph>
 
-              <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.3} />
+              <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.5} />
               <StoryImage src="/stories-assets/FOR BLAIR.jpg" alt="Disco Ball" />
 
               <StoryParagraph>
@@ -166,7 +161,6 @@ export default function BlairStoryPage() {
                 The same air that carries euphoria can also carry sorrow. For Blair, each inhale was temporary
                 relief; each exhale, a release of everything she could not control.
               </StoryParagraph>
-            </div>
           </StorySection>
 
           <StorySection
@@ -176,7 +170,6 @@ export default function BlairStoryPage() {
             particleColors={['#ECDFD2', '#5F3475']}
             particleIntensity={0.2}
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 When she opened her eyes, she was no longer in the club. The scent of incense replaced the haze of
                 smoke. Wooden pews creaked beneath her as the church bells tolled. A priest's voice echoed through
@@ -191,7 +184,6 @@ export default function BlairStoryPage() {
                 and said, "Father's sermon is so moving today." Blair smiled faintly and accepted a napkin. If
                 only she knew, Blair thought, how the cross in front of me brings fear, never peace.
               </StoryParagraph>
-            </div>
           </StorySection>
 
           <StorySection
@@ -199,7 +191,6 @@ export default function BlairStoryPage() {
             backgroundColor="#23132d"
             particleEffect="none"
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 C.S. Lewis, a British author and theologian, once wrote about theologians who believed that things
                 are right only because God commanded them, not because they are inherently good. He found belief to
@@ -229,7 +220,6 @@ export default function BlairStoryPage() {
                 Blair closed her Bible that night. Her prayers no longer reached the same God she grew up believing
                 in. She wanted to believe in something kinder, something that didn't ask her to stay small.
               </StoryParagraph>
-            </div>
           </StorySection>
 
           <StorySection
@@ -239,7 +229,6 @@ export default function BlairStoryPage() {
             particleColors={['#FF8C42', '#ECDFD2', '#5F3475']}
             particleIntensity={0.35}
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 In the quiet of her room, she turned instead to film. She opened Sculpting in Time by Andrei
                 Tarkovsky, tracing her fingers along its worn spine. Cinema became her new religion. The act of
@@ -277,7 +266,6 @@ export default function BlairStoryPage() {
                   Yet the longer they stayed, the more it resembled a shrine to what they'd lost.
                 </p>
               </ScrollAnimation>
-            </div>
           </StorySection>
 
           <StorySection
@@ -290,7 +278,6 @@ export default function BlairStoryPage() {
             floatingTextIntensity={1.2}
             floatingTextDirection="chaotic"
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 Blair's father, a surgeon, was rarely home. When he was, the air thickened with his presence. His
                 voice, once a melodic hymn to Blair's ears, grew sharp with exhaustion. Alcohol became his reprieve.
@@ -309,7 +296,7 @@ export default function BlairStoryPage() {
                 instinctively. His voice reeked of liquor. Liquor was his God now.
               </StoryParagraph>
 
-              <StoryAudio src="/audio/Blair - Shattering Sound.mp3" volume={0.25} fadeIn={false} />
+              <StoryAudio src="/audio/Blair - Shattering Sound.mp3" volume={0.5} fadeIn={false} />
 
               <StoryParagraph>
                 Blair froze. She wanted to scream, to run, to disappear.
@@ -333,7 +320,6 @@ export default function BlairStoryPage() {
                 rode toward their happily ever after. It broke Blair to see her mother's fairy tale collapse. Maybe
                 fairy tales were never meant for them.
               </StoryParagraph>
-            </div>
           </StorySection>
 
           <StorySection
@@ -343,7 +329,6 @@ export default function BlairStoryPage() {
             particleColors={['#5F3475', '#213885']}
             particleIntensity={0.25}
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 Then came a time for isolation. A much bigger isolation held the whole world still. Her father,
                 working at the hospital, always came home by midnight. The smell of antiseptic clung to his clothes.
@@ -364,7 +349,6 @@ export default function BlairStoryPage() {
                   Press play. Press stop. The end.
                 </p>
               </ScrollAnimation>
-            </div>
           </StorySection>
 
           <StorySection
@@ -372,7 +356,6 @@ export default function BlairStoryPage() {
             backgroundColor="#08060f"
             particleEffect="none"
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
                 It was a Sunday morning when Blair and her family returned from Pasay to Antipolo. Dark clouds hung
                 low, unmoving. The moment they opened the door, a putrid smell filled the air. Blair's stomach
@@ -390,7 +373,6 @@ export default function BlairStoryPage() {
                   A house is a house. A house is not a home.
                 </p>
               </ScrollAnimation>
-            </div>
           </StorySection>
 
           <StorySection
@@ -400,7 +382,6 @@ export default function BlairStoryPage() {
             particleColors={['#FF8C42', '#ECDFD2', '#5F3475']}
             particleIntensity={0.5}
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 Months passed. The mansion remained spotless, haunted by what was gone. The walls gleamed, the air
                 unmoving. In the silence of moving forward, Blair began to rebuild her sense of home. For staying in
@@ -437,7 +418,6 @@ export default function BlairStoryPage() {
                 of retro music playing. A room where she could breathe freely, surrounded by reminders of life rather
                 than its absence.
               </StoryParagraph>
-            </div>
           </StorySection>
 
           <StorySection
@@ -447,7 +427,6 @@ export default function BlairStoryPage() {
             particleColors={['#ffd700', '#ffeb3b', '#fff59d', '#ffc107']}
             particleIntensity={0.6}
           >
-            <div className="mx-auto max-w-5xl px-6">
               <StoryParagraph>
                 In spite of this, as she imagined it, she knew she could not leave. Her mother and brother still
                 lived in the old house, carrying what remained. Blair felt indebted to them, tied by something
@@ -455,7 +434,6 @@ export default function BlairStoryPage() {
                 that cannot be repaid.
               </StoryParagraph>
 
-              <StoryAudio src="/audio/Blair - Melancholic Filipino Ballad.mp3" loop volume={0.25} />
 
               <StoryParagraph>
                 In this country, family is both sanctuary and sentence. To stay is loyalty. To leave is betrayal.
@@ -477,10 +455,10 @@ export default function BlairStoryPage() {
                   the switch, and for the first time, she feels herself moving toward tomorrow.
                 </p>
               </ScrollAnimation>
-            </div>
           </StorySection>
         </section>
 
+        <div className="mx-auto w-full max-w-5xl px-6">
         <section className="mt-28 rounded-3xl border border-white/15 bg-white/10 p-8 shadow-[0_28px_70px_rgba(5,11,34,0.55)] backdrop-blur">
           <h2 className="text-center font-bella-queta text-3xl text-white">Continue the journey</h2>
           <p className="mt-3 text-center text-white/75">
@@ -512,6 +490,7 @@ export default function BlairStoryPage() {
             </TransitionLink>
           </div>
         </section>
+        </div>
       </main>
     </div>
   )

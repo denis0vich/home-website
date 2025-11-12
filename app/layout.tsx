@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import GlobalPageTransition from '@/components/GlobalPageTransition'
+import { AudioExperienceProvider } from '@/components/AudioExperienceProvider'
 import PageContentFade from '@/components/PageContentFade'
 import { ImageLightboxProvider } from '@/components/ImageLightbox'
 
@@ -18,8 +19,10 @@ export default function RootLayout({
     <html lang="en" className="h-full">
       <body className="h-full">
         <ImageLightboxProvider>
-          <GlobalPageTransition />
-          <PageContentFade>{children}</PageContentFade>
+          <AudioExperienceProvider>
+            <GlobalPageTransition />
+            <PageContentFade>{children}</PageContentFade>
+          </AudioExperienceProvider>
         </ImageLightboxProvider>
       </body>
     </html>

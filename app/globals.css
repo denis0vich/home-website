@@ -13,6 +13,15 @@
 }
 
 @font-face {
+  font-family: 'EB Garamond';
+  src: url('/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype-variations'),
+       url('/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Roboto Serif';
   src: url('/fonts/roboto-serif.ttf') format('truetype');
   font-weight: 100 900;
@@ -71,6 +80,10 @@ h1, h2, h3, h4, h5, h6,
 .font-bella-queta {
   font-family: var(--font-family-bella-queta), var(--font-family-eb-garamond), serif !important;
 }
+
+  .font-eb-garamond {
+    font-family: var(--font-family-eb-garamond), 'EB Garamond', serif !important;
+  }
 
 @layer utilities {
   .text-balance {
@@ -407,5 +420,97 @@ h1, h2, h3, h4, h5, h6,
 /* Smooth image reveals with hover effects */
 .story-content-area img {
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-aurora-layer {
+  z-index: -5;
+  background:
+    radial-gradient(circle at 20% 25%, var(--story-aurora-color-1, rgba(236, 223, 210, 0.45)) 0%, transparent 60%),
+    radial-gradient(circle at 80% 28%, var(--story-aurora-color-2, rgba(137, 49, 114, 0.45)) 0%, transparent 58%),
+    radial-gradient(circle at 55% 78%, var(--story-aurora-color-3, rgba(33, 56, 133, 0.42)) 0%, transparent 60%);
+  filter: blur(45px) saturate(120%);
+  mix-blend-mode: screen;
+  animation: story-aurora-pan 18s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.story-beam-layer {
+  position: relative;
+  overflow: hidden;
+  mix-blend-mode: screen;
+  z-index: -4;
+}
+
+.story-beam-layer::before {
+  content: '';
+  position: absolute;
+  top: -25%;
+  bottom: -25%;
+  left: calc(50% + var(--story-beam-offset, 0vw));
+  width: var(--story-beam-width, 30vw);
+  background: linear-gradient(90deg, transparent 0%, var(--story-beam-color, rgba(236,223,210,0.3)) 45%, transparent 100%);
+  transform: rotate(var(--story-beam-tilt, -14deg));
+  filter: blur(22px);
+  opacity: var(--story-beam-fade, 0.35);
+  animation: story-beam-shift 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.story-glow-layer {
+  z-index: -3;
+  background: radial-gradient(60% 55% at 50% 52%, var(--story-glow-color, rgba(236, 223, 210, 0.25)) 0%, transparent 100%);
+  filter: blur(35px);
+  mix-blend-mode: screen;
+  animation: story-glow-pulse 12s ease-in-out infinite alternate;
+}
+
+.story-noise-layer {
+  z-index: -2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.22'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+  mix-blend-mode: soft-light;
+  animation: story-noise-move 22s linear infinite;
+}
+
+.story-vignette-layer {
+  z-index: -1;
+  background: radial-gradient(circle at center, transparent calc(56% * var(--story-vignette-feather, 0.6)), var(--story-vignette-color, rgba(5,11,34,0.85)) 100%);
+  pointer-events: none;
+}
+
+@keyframes story-aurora-pan {
+  from {
+    transform: translate3d(-2%, -1%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(2%, 3%, 0) scale(1.03);
+  }
+}
+
+@keyframes story-beam-shift {
+  from {
+    transform: rotate(calc(var(--story-beam-tilt, -14deg) - 3deg)) translateX(-3%);
+  }
+  to {
+    transform: rotate(calc(var(--story-beam-tilt, -14deg) + 3deg)) translateX(3%);
+  }
+}
+
+@keyframes story-glow-pulse {
+  from {
+    filter: blur(28px);
+  }
+  to {
+    filter: blur(36px);
+  }
+}
+
+@keyframes story-noise-move {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position: 200px 200px, -200px -200px;
+  }
 }
 

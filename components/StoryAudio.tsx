@@ -14,12 +14,12 @@ interface StoryAudioProps {
 
 export default function StoryAudio({ 
   src, 
-  autoPlay = false, 
+  autoPlay = true, 
   loop = false,
-  volume = 0.25, // Reduced default volume (was 0.5) - quieter overall
+  volume = 0.5,
   fadeIn = true,
-  threshold = 0.25,
-  rootMargin = '0px 0px -400px 0px'
+  threshold = 0.2,
+  rootMargin = '0px 0px -150px 0px'
 }: StoryAudioProps) {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [hasStarted, setHasStarted] = useState(false)
@@ -29,21 +29,10 @@ export default function StoryAudio({
   const isActiveRef = useRef<boolean>(false)
   const fadeInStartTimeRef = useRef<number | null>(null)
   const fadeInCompleteRef = useRef<boolean>(false)
+  const isVisibleRef = useRef<boolean>(false)
 
   // Auto-play ambient sounds (when loop is true) or when autoPlay is explicitly set
   const shouldAutoPlay = autoPlay || loop
-
-  // Handle global audio consent event to re-attempt playback
-  useEffect(() => {
-    const handler = () => {
-      if (!audioRef.current) return
-      // Attempt to (re)play and mark as started so scroll-based volume can take over
-      audioRef.current.play().catch(() => {})
-      setHasStarted(true)
-    }
-    window.addEventListener('audio:enable', handler)
-    return () => window.removeEventListener('audio:enable', handler)
-  }, [])
 
   // Calculate volume based on distance from viewport center
   // Volume decreases as you scroll away from the audio source
@@ -125,36 +114,51 @@ export default function StoryAudio({
       rafIdRef.current = requestAnimationFrame(rafUpdate)
     }
 
+    const beginPlayback = (resume = false) => {
+      if (!audioRef.current) return
+
+      if (!resume) {
+        if (fadeIn) {
+          fadeInStartTimeRef.current = Date.now()
+          fadeInCompleteRef.current = false
+          audio.volume = 0
+        } else {
+          fadeInCompleteRef.current = true
+          const rect = containerRef.current?.getBoundingClientRect()
+          if (rect) {
+            const viewportHeight = window.innerHeight
+            const viewportCenter = viewportHeight / 2
+            const elementCenter = rect.top + rect.height / 2
+            const distanceFromCenter = Math.abs(elementCenter - viewportCenter)
+            audio.volume = calculateVolume(distanceFromCenter, viewportHeight)
+          } else {
+            audio.volume = volume * 0.5
+          }
+        }
+      }
+
+      audio
+        .play()
+        .then(() => {
+          if (!resume) {
+            setHasStarted(true)
+          }
+          startVolumeTracking()
+        })
+        .catch(() => {
+          // Auto-play might still be blocked; wait for explicit user interaction
+        })
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
+        const isVisible =
+          entry.isIntersecting && entry.intersectionRatio > 0.15
+        isVisibleRef.current = isVisible
+
         // Start audio when scrolled into view
-        if (entry.isIntersecting && !hasStarted && shouldAutoPlay) {
-          if (fadeIn) {
-            fadeInStartTimeRef.current = Date.now()
-            fadeInCompleteRef.current = false
-            audio.volume = 0
-          } else {
-            fadeInCompleteRef.current = true // Skip fade-in
-            // Set initial volume based on current scroll position
-            const rect = containerRef.current?.getBoundingClientRect()
-            if (rect) {
-              const viewportHeight = window.innerHeight
-              const viewportCenter = viewportHeight / 2
-              const elementCenter = rect.top + (rect.height / 2)
-              const distanceFromCenter = Math.abs(elementCenter - viewportCenter)
-              audio.volume = calculateVolume(distanceFromCenter, viewportHeight)
-            } else {
-              audio.volume = volume * 0.5 // Default to half volume if position unknown
-            }
-          }
-          
-          // Start playing
-          audio.play().catch(() => {
-            // Auto-play might be blocked, that's okay
-          })
-          
-          setHasStarted(true)
-          startVolumeTracking() // Start continuous volume tracking
+        if (isVisible && !hasStarted && shouldAutoPlay) {
+          beginPlayback(false)
         }
         
         // Handle when scrolling out of view
@@ -166,9 +170,33 @@ export default function StoryAudio({
       { threshold, rootMargin }
     )
 
+    const handleAudioEnable = () => {
+      if (!shouldAutoPlay || !isVisibleRef.current) return
+      if (!audioRef.current) return
+      beginPlayback(hasStarted)
+    }
+
+    const handleAudioDisable = () => {
+      if (!audioRef.current) return
+      audioRef.current.pause()
+      isActiveRef.current = false
+      if (rafIdRef.current) {
+        cancelAnimationFrame(rafIdRef.current)
+        rafIdRef.current = null
+      }
+      if (!loop) {
+        setHasStarted(false)
+      }
+      fadeInStartTimeRef.current = null
+      fadeInCompleteRef.current = false
+    }
+
     if (containerRef.current) {
       observer.observe(containerRef.current)
     }
+
+    window.addEventListener('audio:enable', handleAudioEnable)
+    window.addEventListener('audio:disable', handleAudioDisable)
 
     // Listen to scroll/resize for responsive volume updates
     const handleScroll = () => {
@@ -190,6 +218,8 @@ export default function StoryAudio({
       if (containerRef.current) {
         observer.unobserve(containerRef.current)
       }
+      window.removeEventListener('audio:enable', handleAudioEnable)
+      window.removeEventListener('audio:disable', handleAudioDisable)
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleScroll)
       // Cleanup: stop audio when component unmounts
@@ -201,7 +231,11 @@ export default function StoryAudio({
   }, [shouldAutoPlay, hasStarted, loop, volume, fadeIn, threshold, rootMargin])
 
   return (
-    <div ref={containerRef} className="hidden">
+    <div
+      ref={containerRef}
+      className="sr-only"
+      aria-hidden="true"
+    >
       <audio
         ref={audioRef}
         src={src}
