@@ -134,7 +134,7 @@ export default function GalleryPage() {
 
           <div className="mt-10">
             <StoryVideo
-              src="/videos/gallery-reel.mov"
+              src="/videos/gallery-reel.mp4"
               controls
             />
           </div>
@@ -268,47 +268,6 @@ export default function GalleryPage() {
           })}
         </section>
 
-        <section className="mt-24 rounded-3xl border border-white/10 bg-[#050f2f]/60 p-10 shadow-[0_20px_60px_rgba(8,24,73,0.45)] backdrop-blur">
-          <div className="mx-auto flex flex-col items-center gap-8 text-center md:flex-row md:text-left">
-            <div className="flex-1 space-y-4">
-              <p className="text-sm uppercase tracking-[0.4em] text-white/45">MICRO DOCU</p>
-              <h2 className="font-bella-queta text-3xl md:text-4xl">Life in the Dream Home</h2>
-              <p className="text-white/75">
-                A short visual essay about rituals, light, and the way sound travels through a space we love.
-                Keep the volume low and let the ambient track sit with you.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-4 md:justify-start">
-                <TransitionLink
-                  href="/entertainment"
-                  className="rounded-full border border-white/30 px-6 py-2 text-sm uppercase tracking-[0.3em] text-white transition hover:border-white hover:bg-white/10"
-                >
-                  Take the home quiz
-                </TransitionLink>
-                <TransitionLink
-                  href="/contact"
-                  className="rounded-full bg-white/90 px-6 py-2 text-sm uppercase tracking-[0.3em] text-[#5F3475] transition hover:bg-white"
-                >
-                  Tell us your story
-                </TransitionLink>
-              </div>
-            </div>
-
-            <div className="flex-1">
-              <div className="relative">
-                <StoryVideo
-                  src="/videos/life-in-the-dream-home.mov"
-                  autoPlay
-                  muted
-                  loop
-                />
-                <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/55 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/80 backdrop-blur z-10">
-                  <span>Ambient on</span>
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#ECDFD2]" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   )

@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface StoryVideoProps {
   src: string
@@ -21,65 +21,74 @@ export default function StoryVideo({
 }: StoryVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
 
   useEffect(() => {
     const video = videoRef.current
     const container = containerRef.current
     if (!video || !container) return
 
-    // Force video to be visible and properly sized
-    const ensureVideoVisible = () => {
+    // Calculate and set container dimensions
+    const updateDimensions = () => {
       const rect = container.getBoundingClientRect()
-      if (rect.width > 0 && rect.height > 0) {
-        // Ensure video fills container
-        video.style.position = 'absolute'
-        video.style.top = '0'
-        video.style.left = '0'
-        video.style.width = '100%'
-        video.style.height = '100%'
-        video.style.objectFit = 'cover'
-        video.style.display = 'block'
-        video.style.visibility = 'visible'
-        video.style.opacity = '1'
+      if (rect.width > 0) {
+        // Calculate height based on 16:9 aspect ratio
+        const height = (rect.width * 9) / 16
+        setDimensions({ width: rect.width, height })
+        
+        // Force video to have explicit dimensions
+        video.style.width = `${rect.width}px`
+        video.style.height = `${height}px`
+        video.style.minWidth = `${rect.width}px`
+        video.style.minHeight = `${height}px`
       }
     }
 
-    ensureVideoVisible()
-    
-    // Handle video loading events
+    // Initial calculation
+    updateDimensions()
+
+    // Handle video metadata loaded
     const handleLoadedMetadata = () => {
-      ensureVideoVisible()
+      updateDimensions()
+      // Ensure video is visible
+      if (video.videoWidth > 0 && video.videoHeight > 0) {
+        video.style.display = 'block'
+        video.style.visibility = 'visible'
+      }
     }
 
-    const handleCanPlay = () => {
-      ensureVideoVisible()
+    const handleLoadedData = () => {
+      updateDimensions()
     }
 
     video.addEventListener('loadedmetadata', handleLoadedMetadata)
-    video.addEventListener('canplay', handleCanPlay)
+    video.addEventListener('loadeddata', handleLoadedData)
     
-    // Also check periodically
-    const checkInterval = setInterval(ensureVideoVisible, 100)
-
     // Update on resize
-    window.addEventListener('resize', ensureVideoVisible)
+    const resizeObserver = new ResizeObserver(() => {
+      updateDimensions()
+    })
+    resizeObserver.observe(container)
+
+    window.addEventListener('resize', updateDimensions)
 
     return () => {
-      clearInterval(checkInterval)
-      window.removeEventListener('resize', ensureVideoVisible)
+      resizeObserver.disconnect()
+      window.removeEventListener('resize', updateDimensions)
       video.removeEventListener('loadedmetadata', handleLoadedMetadata)
-      video.removeEventListener('canplay', handleCanPlay)
+      video.removeEventListener('loadeddata', handleLoadedData)
     }
   }, [src])
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40"
+      className={`relative w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40 ${className}`}
       style={{ 
-        aspectRatio: '16/9', 
-        minHeight: '200px',
-        position: 'relative'
+        aspectRatio: '16/9',
+        minHeight: '300px',
+        position: 'relative',
+        display: 'block'
       }}
     >
       <video
@@ -90,18 +99,17 @@ export default function StoryVideo({
         loop={loop}
         controls={controls}
         playsInline
-        className={`${className}`}
         preload={autoPlay ? 'auto' : 'metadata'}
         style={{ 
-          position: 'absolute',
-          top: 0,
-          left: 0,
           width: '100%',
           height: '100%',
-          objectFit: 'cover',
+          objectFit: 'contain',
           display: 'block',
           visibility: 'visible',
-          opacity: 1
+          opacity: 1,
+          backgroundColor: '#000',
+          position: 'relative',
+          zIndex: 1
         }}
       >
         Your browser does not support the video tag.
@@ -109,4 +117,3 @@ export default function StoryVideo({
     </div>
   )
 }
-
