@@ -23,7 +23,6 @@ export default function StoryAudio({
   rootMargin = '0px 0px -150px 0px'
 }: StoryAudioProps) {
   const audioRef = useRef<HTMLAudioElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const rafIdRef = useRef<number | null>(null)
   const fadeStartTimeRef = useRef<number | null>(null)
@@ -39,11 +38,11 @@ export default function StoryAudio({
     return Math.max(0, Math.min(1, volumeMultiplier * volume))
   }
 
-  useEffect(() => {
+    useEffect(() => {
     console.log('[StoryAudio] Component mounted/updated:', src, { audioEnabled, shouldAutoPlay, isPlaying })
     
-    if (!audioRef.current || !containerRef.current) {
-      console.log('[StoryAudio] Missing refs:', { hasAudioRef: !!audioRef.current, hasContainerRef: !!containerRef.current })
+    if (!audioRef.current) {
+      console.log('[StoryAudio] Missing audio ref:', { hasAudioRef: !!audioRef.current })
       return
     }
 
@@ -54,9 +53,16 @@ export default function StoryAudio({
 
     // Update volume based on scroll position
     const updateVolume = () => {
-      if (!isMounted || !audioRef.current || !containerRef.current || audio.paused) return
+      if (!isMounted || !audioRef.current) return
+      
+      // Don't update if paused (unless it's a looping sound that should be playing)
+      if (audio.paused && (!loop || !isPlaying)) return
 
-      const rect = containerRef.current.getBoundingClientRect()
+      // Use parent element for position calculation (the visible StorySection)
+      const parentElement = audioRef.current.parentElement
+      if (!parentElement) return
+      
+      const rect = parentElement.getBoundingClientRect()
       const viewportHeight = window.innerHeight
       const viewportCenter = viewportHeight / 2
       const elementCenter = rect.top + (rect.height / 2)
@@ -69,8 +75,8 @@ export default function StoryAudio({
         const fadeDuration = 2000
         const elapsed = Date.now() - fadeStartTimeRef.current
         const fadeProgress = Math.min(elapsed / fadeDuration, 1)
-        // For looped audio, fade from 60% to full volume
-        const minVolume = loop ? volume * 0.6 : 0
+        // For looped audio, fade from 80% to full volume
+        const minVolume = loop ? volume * 0.8 : 0
         const fadeRange = volume - minVolume
         targetVolume = Math.min(targetVolume, minVolume + (fadeProgress * fadeRange))
         
@@ -79,17 +85,41 @@ export default function StoryAudio({
         }
       }
       
-      // For looped audio, ensure minimum volume (60% of base volume)
+      // For looped audio, ensure minimum volume (80% of base volume)
+      // This is CRITICAL - looped audio should always be audible
       if (loop) {
-        targetVolume = Math.max(targetVolume, volume * 0.6)
+        const minVolume = volume * 0.8
+        targetVolume = Math.max(targetVolume, minVolume)
+        // Force minimum volume immediately if it's too low
+        if (audio.volume < minVolume * 0.9) {
+          audio.volume = minVolume
+          console.log('[StoryAudio] Enforcing minimum volume for loop:', src, { enforcedVolume: minVolume, was: audio.volume })
+        }
       }
       
-      // Smooth volume transition
+      // Smooth volume transition (but don't reduce looped audio below minimum)
       const currentVolume = audio.volume
+      if (loop) {
+        const minVolume = volume * 0.8
+        targetVolume = Math.max(targetVolume, minVolume)
+      }
+      
       if (Math.abs(currentVolume - targetVolume) > 0.01) {
         audio.volume = currentVolume + (targetVolume - currentVolume) * 0.1
       } else {
         audio.volume = targetVolume
+      }
+      
+      // Log if volume is suspiciously low
+      if (loop && audio.volume < 0.1 && isPlaying) {
+        console.error('[StoryAudio] Volume very low for looped audio!', src, { 
+          volume: audio.volume, 
+          targetVolume, 
+          distanceFromCenter,
+          minExpected: volume * 0.8
+        })
+        // Force it back up
+        audio.volume = volume * 0.8
       }
 
       // Pause non-looping sounds when far away
@@ -138,22 +168,24 @@ export default function StoryAudio({
           fadeStartTimeRef.current = Date.now()
           // For looped audio, start with a minimum volume, then fade in
           if (loop) {
-            audio.volume = volume * 0.6 // Start at 60% for loops
+            audio.volume = volume * 0.8 // Start at 80% for loops
           } else {
             audio.volume = 0
           }
         } else {
-          const rect = containerRef.current?.getBoundingClientRect()
-          if (rect) {
+          const parentElement = audioRef.current.parentElement
+          if (parentElement) {
+            const rect = parentElement.getBoundingClientRect()
             const viewportHeight = window.innerHeight
             const viewportCenter = viewportHeight / 2
             const elementCenter = rect.top + rect.height / 2
             const distanceFromCenter = Math.abs(elementCenter - viewportCenter)
             const calculatedVol = calculateVolume(distanceFromCenter, viewportHeight)
-            // For looped audio, ensure minimum volume
-            audio.volume = loop ? Math.max(calculatedVol, volume * 0.6) : calculatedVol
+            // For looped audio, ensure minimum volume (80% of base)
+            audio.volume = loop ? Math.max(calculatedVol, volume * 0.8) : calculatedVol
           } else {
-            audio.volume = volume
+            // For looped audio without rect, use 80% minimum
+            audio.volume = loop ? volume * 0.8 : volume
           }
         }
 
@@ -169,18 +201,98 @@ export default function StoryAudio({
           })
         }
 
-        const playPromise = audio.play()
-        if (playPromise !== undefined) {
-          await playPromise
-          console.log('[StoryAudio] Successfully started playing:', src, {
-            paused: audio.paused,
-            readyState: audio.readyState,
-            volume: audio.volume,
-            currentTime: audio.currentTime
-          })
-          setIsPlaying(true)
-          startVolumeTracking()
+        // Try playing - handle browser quirks where play() resolves but doesn't actually start
+        const tryPlay = async () => {
+          try {
+            // Ensure audio is ready
+            if (audio.readyState < 2) {
+              await new Promise<void>((resolve) => {
+                const handleCanPlay = () => {
+                  audio.removeEventListener('canplay', handleCanPlay)
+                  resolve()
+                }
+                audio.addEventListener('canplay', handleCanPlay)
+                audio.load()
+              })
+            }
+
+            const playPromise = audio.play()
+            if (playPromise !== undefined) {
+              await playPromise
+            }
+            
+            // Wait a moment for audio to actually start progressing
+            await new Promise(resolve => setTimeout(resolve, 100))
+            
+            // Check if it's actually playing now
+            if (!audio.paused) {
+              console.log('[StoryAudio] Successfully started playing:', src, {
+                paused: audio.paused,
+                readyState: audio.readyState,
+                volume: audio.volume,
+                currentTime: audio.currentTime,
+                muted: audio.muted,
+                src: audio.src,
+                duration: audio.duration
+              })
+              
+              // Double-check volume is set correctly
+              if (loop && audio.volume < volume * 0.8) {
+                audio.volume = volume * 0.8
+                console.log('[StoryAudio] Adjusted volume to minimum:', audio.volume)
+              }
+              
+              setIsPlaying(true)
+              startVolumeTracking()
+              
+              // Verify it's still playing after a moment
+              setTimeout(() => {
+                if (audioRef.current) {
+                  const stillPlaying = !audioRef.current.paused && audioRef.current.currentTime > 0
+                  console.log('[StoryAudio] Playback verification:', src, {
+                    paused: audioRef.current.paused,
+                    volume: audioRef.current.volume,
+                    currentTime: audioRef.current.currentTime,
+                    muted: audioRef.current.muted,
+                    stillPlaying
+                  })
+                  if (!stillPlaying && audioRef.current.paused) {
+                    console.error('[StoryAudio] Audio paused unexpectedly, attempting to resume:', src)
+                    audioRef.current.play().catch(err => console.error('[StoryAudio] Resume failed:', err))
+                  } else if (!stillPlaying) {
+                    // Audio says it's playing but currentTime isn't progressing - force restart
+                    console.warn('[StoryAudio] Audio not progressing, forcing restart:', src)
+                    audioRef.current.currentTime = 0
+                    audioRef.current.play().catch(err => console.error('[StoryAudio] Restart failed:', err))
+                  }
+                }
+              }, 500)
+            } else {
+              throw new Error('Audio play() resolved but audio is still paused')
+            }
+          } catch (playError: any) {
+            // If autoplay is blocked, try muted first then unmute
+            if (playError.name === 'NotAllowedError') {
+              console.log('[StoryAudio] Autoplay blocked, trying muted first:', src)
+              audio.muted = true
+              await audio.play()
+              // Wait a moment then unmute
+              setTimeout(() => {
+                if (audioRef.current) {
+                  audioRef.current.muted = false
+                  console.log('[StoryAudio] Unmuted audio:', src)
+                }
+              }, 200)
+              setIsPlaying(true)
+              startVolumeTracking()
+            } else {
+              console.error('[StoryAudio] Playback failed:', src, playError)
+              throw playError
+            }
+          }
         }
+        
+        await tryPlay()
       } catch (err: any) {
         console.error('[StoryAudio] Playback failed:', src, err, {
           name: err?.name,
@@ -235,6 +347,7 @@ export default function StoryAudio({
     }
 
     // Intersection Observer for scroll-based triggering
+    // Observe the parent element (the visible StorySection) instead of a hidden container
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0]
@@ -249,7 +362,7 @@ export default function StoryAudio({
           isPlaying
         })
 
-        const isVisible = entry.isIntersecting && entry.intersectionRatio > Math.min(threshold, 0.05)
+        const isVisible = entry.isIntersecting && entry.intersectionRatio > threshold
 
         if (isVisible && shouldAutoPlay && audioEnabled && !isPlaying) {
           console.log('[StoryAudio] Triggering playback:', src, { isVisible, shouldAutoPlay, audioEnabled, isPlaying })
@@ -258,21 +371,26 @@ export default function StoryAudio({
           // Let volume fade naturally, don't stop immediately
         }
       },
-      { threshold: [0, 0.05, 0.1, 0.2, 0.5, 1.0], rootMargin: '0px 0px 0px 0px' }
+      { threshold: threshold, rootMargin: rootMargin }
     )
 
-    if (containerRef.current) {
-      console.log('[StoryAudio] Observing container:', src, containerRef.current)
-      observer.observe(containerRef.current)
+    // Observe the parent element (the StorySection) instead of a hidden container
+    const parentElement = audioRef.current?.parentElement
+    if (parentElement) {
+      console.log('[StoryAudio] Observing parent element:', src, parentElement)
+      observer.observe(parentElement)
     } else {
-      console.log('[StoryAudio] No container to observe:', src)
+      console.log('[StoryAudio] No parent element to observe:', src)
     }
 
     // Handle audio enable/disable events
     const handleAudioEnable = () => {
       console.log('[StoryAudio] Audio enabled event received:', src)
-      if (shouldAutoPlay && containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect()
+      if (shouldAutoPlay && audioRef.current) {
+        const parentElement = audioRef.current.parentElement
+        if (!parentElement) return
+        
+        const rect = parentElement.getBoundingClientRect()
         const viewportHeight = window.innerHeight
         const viewportWidth = window.innerWidth
         const isInView = rect.top < viewportHeight && rect.bottom > 0 && rect.left < viewportWidth && rect.right > 0
@@ -285,9 +403,9 @@ export default function StoryAudio({
           const visibleHeight = Math.max(0, visibleBottom - visibleTop)
           const intersectionRatio = rect.height > 0 ? visibleHeight / rect.height : 0
           
-          console.log('[StoryAudio] Audio enable intersection:', src, { intersectionRatio, threshold: Math.min(threshold, 0.05) })
+          console.log('[StoryAudio] Audio enable intersection:', src, { intersectionRatio, threshold })
           
-          if (intersectionRatio > Math.min(threshold, 0.05)) {
+          if (intersectionRatio > threshold) {
             console.log('[StoryAudio] Audio enable passed, playing:', src)
             setTimeout(() => playAudio(), 100)
           }
@@ -304,12 +422,18 @@ export default function StoryAudio({
 
     // Initial check if audio is already enabled and element is visible
     const checkInitialVisibility = () => {
-      if (!containerRef.current) {
-        console.log('[StoryAudio] No container for initial check:', src)
+      if (!audioRef.current) {
+        console.log('[StoryAudio] No audio ref for initial check:', src)
         return
       }
       
-      const rect = containerRef.current.getBoundingClientRect()
+      const parentElement = audioRef.current.parentElement
+      if (!parentElement) {
+        console.log('[StoryAudio] No parent element for initial check:', src)
+        return
+      }
+      
+      const rect = parentElement.getBoundingClientRect()
       const viewportHeight = window.innerHeight
       const viewportWidth = window.innerWidth
       const isInView = rect.top < viewportHeight && rect.bottom > 0 && rect.left < viewportWidth && rect.right > 0
@@ -328,9 +452,9 @@ export default function StoryAudio({
         const visibleHeight = Math.max(0, visibleBottom - visibleTop)
         const intersectionRatio = rect.height > 0 ? visibleHeight / rect.height : 0
         
-        console.log('[StoryAudio] Calculated intersection ratio:', src, { intersectionRatio, threshold: Math.min(threshold, 0.05) })
+        console.log('[StoryAudio] Calculated intersection ratio:', src, { intersectionRatio, threshold })
         
-        if (intersectionRatio > Math.min(threshold, 0.05)) {
+        if (intersectionRatio > threshold) {
           console.log('[StoryAudio] Initial visibility passed, playing:', src)
           setTimeout(() => playAudio(), 100)
         }
@@ -359,9 +483,10 @@ export default function StoryAudio({
       if (rafIdRef.current) {
         cancelAnimationFrame(rafIdRef.current)
       }
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current)
-      }
+            const parentElement = audioRef.current?.parentElement
+            if (parentElement) {
+              observer.unobserve(parentElement)
+            }
       window.removeEventListener('audio:enable', handleAudioEnable)
       window.removeEventListener('audio:disable', handleAudioDisable)
       window.removeEventListener('scroll', handleScroll)
@@ -374,26 +499,14 @@ export default function StoryAudio({
   }, [audioEnabled, shouldAutoPlay, loop, volume, fadeIn, threshold, rootMargin, isPlaying])
 
   return (
-    <div
-      ref={containerRef}
-      className="sr-only"
-      aria-hidden="true"
-      style={{ 
-        position: 'relative',
-        width: '100%',
-        height: '100px',
-        pointerEvents: 'none',
-        visibility: 'hidden',
-        overflow: 'hidden'
-      }}
-    >
-      <audio
-        ref={audioRef}
-        src={src}
-        loop={loop}
-        preload="auto"
-        crossOrigin="anonymous"
-      />
-    </div>
+    <audio
+      ref={audioRef}
+      src={src}
+      loop={loop}
+      preload="auto"
+      crossOrigin="anonymous"
+      className="hidden"
+      style={{ display: 'none' }}
+    />
   )
 }
