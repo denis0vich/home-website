@@ -51,17 +51,36 @@ export default function AudioConsent() {
     )
   }
 
+  console.log('[AudioConsent] Rendering:', { audioEnabled, promptVisible })
+
   return (
-    <div className="fixed bottom-6 right-6 z-[60] flex flex-col items-end gap-2 text-white">
+    <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-2 text-white pointer-events-auto">
       <button
-        onClick={audioEnabled ? disableAudio : enableAudio}
-        className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm uppercase tracking-[0.18em] shadow-lg backdrop-blur transition 
+        type="button"
+        onClick={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+          console.log('[AudioConsent] Button clicked, current state:', audioEnabled)
+          if (audioEnabled) {
+            console.log('[AudioConsent] Disabling audio')
+            disableAudio()
+          } else {
+            console.log('[AudioConsent] Enabling audio')
+            enableAudio()
+          }
+        }}
+        onMouseDown={(e) => {
+          e.preventDefault()
+          e.stopPropagation()
+        }}
+        className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm uppercase tracking-[0.18em] shadow-lg backdrop-blur transition pointer-events-auto cursor-pointer
           ${
             audioEnabled
               ? 'border-white/20 bg-white/90 text-[#050b22] hover:bg-white'
               : 'border-white/30 bg-black/65 text-white hover:bg-black/80'
           }`}
         aria-label={audioEnabled ? 'Disable immersive sound' : 'Enable immersive sound'}
+        style={{ pointerEvents: 'auto', zIndex: 9999 }}
       >
         {audioEnabled ? 'Sound On · Tap to Mute' : 'Sound Off · Tap to Enable'}
       </button>

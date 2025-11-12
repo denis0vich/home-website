@@ -163,6 +163,10 @@ export default function BlairStoryPage() {
             floatingTextIntensity={1.4}
             floatingTextDirection="chaotic"
           >
+              <div style={{ position: 'relative', minHeight: '100px' }}>
+                <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.5} />
+              </div>
+              
               <StoryParagraph>
                 Blair chased that feeling wherever she could find it. The blinding lights of a club, the pulsing
                 beat of a song, the blur of strangers dancing too close. The music filled the hollow places her
@@ -170,8 +174,6 @@ export default function BlairStoryPage() {
                 laid out a small bag of white powder beside a pack of cigarettes. &quot;Silly, this club&apos;s exclusive.
                 No one will care.&quot;
               </StoryParagraph>
-
-              <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.5} />
               <StoryImage src="/stories-assets/DISCO BALL.jpg" alt="Disco Ball" />
               <StoryImage src="/stories-assets/FOR BLAIR 2.jpg" alt="Illustration of Blair's story" />
 

@@ -49,20 +49,48 @@ export default function StoryVideo({
 
     // Handle video metadata loaded
     const handleLoadedMetadata = () => {
+      console.log('[StoryVideo] Metadata loaded:', src, {
+        videoWidth: video.videoWidth,
+        videoHeight: video.videoHeight,
+        readyState: video.readyState,
+        networkState: video.networkState
+      })
       updateDimensions()
       // Ensure video is visible
       if (video.videoWidth > 0 && video.videoHeight > 0) {
         video.style.display = 'block'
         video.style.visibility = 'visible'
+        video.style.opacity = '1'
       }
     }
 
     const handleLoadedData = () => {
+      console.log('[StoryVideo] Data loaded:', src)
       updateDimensions()
+    }
+
+    const handleError = (e: Event) => {
+      console.error('[StoryVideo] Video error:', src, {
+        error: video.error,
+        code: video.error?.code,
+        message: video.error?.message,
+        networkState: video.networkState,
+        readyState: video.readyState
+      })
+    }
+
+    const handleCanPlay = () => {
+      console.log('[StoryVideo] Can play:', src)
+      updateDimensions()
+      video.style.display = 'block'
+      video.style.visibility = 'visible'
+      video.style.opacity = '1'
     }
 
     video.addEventListener('loadedmetadata', handleLoadedMetadata)
     video.addEventListener('loadeddata', handleLoadedData)
+    video.addEventListener('error', handleError)
+    video.addEventListener('canplay', handleCanPlay)
     
     // Update on resize
     const resizeObserver = new ResizeObserver(() => {
@@ -77,6 +105,8 @@ export default function StoryVideo({
       window.removeEventListener('resize', updateDimensions)
       video.removeEventListener('loadedmetadata', handleLoadedMetadata)
       video.removeEventListener('loadeddata', handleLoadedData)
+      video.removeEventListener('error', handleError)
+      video.removeEventListener('canplay', handleCanPlay)
     }
   }, [src])
 

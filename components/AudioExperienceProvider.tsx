@@ -48,22 +48,32 @@ export function AudioExperienceProvider({
   }, [])
 
   const enableAudio = useCallback(() => {
+    console.log('[AudioExperienceProvider] Enabling audio')
     try {
       window.sessionStorage.setItem('audioConsent', 'granted')
       window.sessionStorage.setItem('audioEnabled', 'true')
-    } catch {}
+    } catch (e) {
+      console.error('[AudioExperienceProvider] Failed to save to sessionStorage:', e)
+    }
     setAudioEnabled(true)
     setPromptVisible(false)
-    window.dispatchEvent(new Event('audio:enable'))
+    const event = new Event('audio:enable')
+    window.dispatchEvent(event)
+    console.log('[AudioExperienceProvider] Dispatched audio:enable event')
   }, [])
 
   const disableAudio = useCallback(() => {
+    console.log('[AudioExperienceProvider] Disabling audio')
     try {
       window.sessionStorage.setItem('audioConsent', 'denied')
       window.sessionStorage.setItem('audioEnabled', 'false')
-    } catch {}
+    } catch (e) {
+      console.error('[AudioExperienceProvider] Failed to save to sessionStorage:', e)
+    }
     setAudioEnabled(false)
-    window.dispatchEvent(new Event('audio:disable'))
+    const event = new Event('audio:disable')
+    window.dispatchEvent(event)
+    console.log('[AudioExperienceProvider] Dispatched audio:disable event')
   }, [])
 
   const dismissPrompt = useCallback(() => {
