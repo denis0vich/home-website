@@ -7,7 +7,6 @@ import StoryAudio from '@/components/StoryAudio'
 import StoryVideo from '@/components/StoryVideo'
 import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
-import AudioConsent from '@/components/AudioConsent'
 import TransitionLink from '@/components/TransitionLink'
 
 export default function BlairStoryPage() {
@@ -19,8 +18,6 @@ export default function BlairStoryPage() {
       <Navigation />
 
       <main className="relative z-10 w-full pt-40 pb-32">
-        <AudioConsent />
-
         <div className="mx-auto w-full max-w-5xl px-6">
         <header className="rounded-3xl border border-white/15 bg-white/10 p-10 text-center shadow-[0_24px_70px_rgba(5,11,34,0.55)] backdrop-blur">
           <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-white/65">

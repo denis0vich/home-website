@@ -96,7 +96,8 @@ export default function GalleryPage() {
 
   const getCaptionFor = useCallback((itemNumber: number) => {
     const caption = GALLERY_CAPTIONS[itemNumber - 1]
-    return caption ?? ''
+    if (!caption) return ''
+    return `${caption} Photograph taken by Anne Nicole Zambrano.`
   }, [])
 
   const handleGroupActiveChange = useCallback((groupId: string, index: number) => {
@@ -167,14 +168,18 @@ export default function GalleryPage() {
                   className={`group relative h-[420px] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur transition ${
                     isActive ? 'ring-1 ring-white/60' : ''
                   }`}
+                  description={`One face, one room—held softly in the light they call their own. Photograph taken by Anne Nicole Zambrano.`}
                   renderOverlay={
                     <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-[#081849]/80 via-[#081849]/30 to-transparent transition-opacity">
                       <div className="p-6">
-                        <p className="font-bella-queta text-lg uppercase tracking-[0.35em] text-white/70">
+                        <p className="font-bella-queta text-lg uppercase tracking-[0.35em] text-white">
                           HOME {index + 1}
                         </p>
-                        <p className="mt-2 text-sm text-white/60">
+                        <p className="mt-2 text-sm font-medium text-white">
                           One face, one room—held softly in the light they call their own.
+                        </p>
+                        <p className="mt-2 text-xs text-white/80">
+                          Photograph taken by Anne Nicole Zambrano.
                         </p>
                       </div>
                     </div>
@@ -235,7 +240,7 @@ export default function GalleryPage() {
                         src={`/gallery/our-gallery/house${itemNumber}.jpg`}
                         alt={`Home ${itemNumber} from Our Gallery`}
                         sizes="(max-width: 768px) 80vw, (max-width: 1200px) 360px, 440px"
-                        description={GALLERY_CAPTIONS[itemNumber - 1]}
+                        description={`${GALLERY_CAPTIONS[itemNumber - 1]} Photograph taken by Anne Nicole Zambrano.`}
                         className={`group relative h-[340px] w-full overflow-hidden rounded-[2.2rem] border border-white/12 bg-white/5 transition ${
                           isActive ? 'ring-1 ring-white/60' : ''
                         }`}
@@ -245,7 +250,7 @@ export default function GalleryPage() {
                               isActive ? 'opacity-100' : 'opacity-70'
                             }`}
                           >
-                            <p className="text-sm text-white/80">
+                            <p className="text-sm font-medium text-white">
                               {GALLERY_CAPTIONS[itemNumber - 1]?.substring(0, 98)}…
                             </p>
                           </div>
@@ -255,10 +260,10 @@ export default function GalleryPage() {
                   />
 
                   <div className="mt-8 flex flex-col items-center gap-4 text-center">
-                    <div className="w-full max-w-3xl rounded-2xl border border-white/10 bg-white/6 px-6 py-5 text-white/80">
-                      <p className="text-sm leading-relaxed">{activeCaption}</p>
+                    <div className="w-full max-w-3xl rounded-2xl border border-white/20 bg-white/10 px-6 py-5 shadow-lg">
+                      <p className="text-base leading-relaxed text-white font-medium">{activeCaption}</p>
                     </div>
-                    <p className="text-xs uppercase tracking-[0.4em] text-white/45">
+                    <p className="text-xs uppercase tracking-[0.4em] text-white/60">
                       {activeIndex + 1} / {group.items.length}
                     </p>
                   </div>

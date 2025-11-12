@@ -4,6 +4,8 @@ import GlobalPageTransition from '@/components/GlobalPageTransition'
 import { AudioExperienceProvider } from '@/components/AudioExperienceProvider'
 import PageContentFade from '@/components/PageContentFade'
 import { ImageLightboxProvider } from '@/components/ImageLightbox'
+import Footer from '@/components/Footer'
+import StickyNav from '@/components/StickyNav'
 
 export const metadata: Metadata = {
   title: 'The Haven - Dream Homes',
@@ -21,7 +23,9 @@ export default function RootLayout({
         <ImageLightboxProvider>
           <AudioExperienceProvider>
             <GlobalPageTransition />
+            <StickyNav />
             <PageContentFade>{children}</PageContentFade>
+            <Footer />
           </AudioExperienceProvider>
         </ImageLightboxProvider>
       </body>

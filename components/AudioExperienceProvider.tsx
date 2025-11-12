@@ -31,20 +31,19 @@ export function AudioExperienceProvider({
   const [ready, setReady] = useState(false)
 
   useEffect(() => {
+    // Auto-enable audio - no prompt needed
     try {
-      const storedConsent = window.sessionStorage.getItem('audioConsent')
-      const legacyFlag = window.sessionStorage.getItem('audioEnabled')
-      if (storedConsent === 'granted' || legacyFlag === 'true') {
-        setAudioEnabled(true)
-        setPromptVisible(false)
-      } else {
-        setPromptVisible(true)
-      }
-    } catch {
-      setPromptVisible(true)
-    } finally {
-      setReady(true)
+      window.sessionStorage.setItem('audioConsent', 'granted')
+      window.sessionStorage.setItem('audioEnabled', 'true')
+    } catch (e) {
+      console.error('[AudioExperienceProvider] Failed to save to sessionStorage:', e)
     }
+    setAudioEnabled(true)
+    setPromptVisible(false)
+    setReady(true)
+    // Dispatch enable event immediately
+    const event = new Event('audio:enable')
+    window.dispatchEvent(event)
   }, [])
 
   const enableAudio = useCallback(() => {

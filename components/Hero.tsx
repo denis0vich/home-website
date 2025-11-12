@@ -19,7 +19,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section data-hero className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute inset-0 z-10 pointer-events-none">
         {/* Decorative lines on the right */}

@@ -7,7 +7,6 @@ import StoryAudio from '@/components/StoryAudio'
 import StoryVideo from '@/components/StoryVideo'
 import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
-import AudioConsent from '@/components/AudioConsent'
 
 const SECTION_CHROME =
   'rounded-[2.75rem] border border-white/12 backdrop-blur-sm overflow-hidden shadow-[0_28px_90px_rgba(5,11,34,0.45)]'
@@ -21,8 +20,6 @@ export default function LalaStoryPage() {
       <div className="relative z-[5]">
         <Navigation />
         <main className="relative w-full pt-36 pb-28">
-        <AudioConsent />
-
           <div className="mx-auto w-full max-w-5xl px-6">
             <ScrollAnimation direction="fadeInUp" duration={1800}>
               <header className="rounded-3xl border border-white/15 bg-white/10 p-10 text-center shadow-[0_24px_70px_rgba(5,11,34,0.55)] backdrop-blur">

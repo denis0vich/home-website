@@ -24,6 +24,7 @@ export default function StoryAudio({
 }: StoryAudioProps) {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const hasPlayedRef = useRef<boolean>(false) // Track if non-looping sounds have played
   const rafIdRef = useRef<number | null>(null)
   const fadeStartTimeRef = useRef<number | null>(null)
   const { audioEnabled } = useAudioExperience()
@@ -122,14 +123,25 @@ export default function StoryAudio({
         audio.volume = volume * 0.8
       }
 
-      // Pause non-looping sounds when far away
-      if (!loop && targetVolume < 0.01 && distanceFromCenter > viewportHeight * 1.5) {
-        audio.pause()
-        setIsPlaying(false)
-        if (rafIdRef.current) {
-          cancelAnimationFrame(rafIdRef.current)
-          rafIdRef.current = null
+      // Pause sounds when far away from viewport
+      if (targetVolume < 0.01 && distanceFromCenter > viewportHeight * 1.5) {
+        if (!loop) {
+          // Non-looping: stop when far away
+          audio.pause()
+          setIsPlaying(false)
+          if (rafIdRef.current) {
+            cancelAnimationFrame(rafIdRef.current)
+            rafIdRef.current = null
+          }
+        } else {
+          // Looping: pause when far away, but keep ready to resume
+          if (!audio.paused) {
+            audio.pause()
+          }
         }
+      } else if (loop && audio.paused && isPlaying && targetVolume > 0.01) {
+        // Resume looping audio if it was paused but should be playing
+        audio.play().catch(err => console.error('[StoryAudio] Resume failed:', err))
       }
     }
 
@@ -336,9 +348,14 @@ export default function StoryAudio({
 
     const stopAudio = () => {
       if (audioRef.current) {
+        console.log('[StoryAudio] Stopping audio:', src)
         audio.pause()
-        audio.currentTime = 0
+        // Only reset currentTime for looping sounds (non-looping should stay at end)
+        if (loop) {
+          audio.currentTime = 0
+        }
         setIsPlaying(false)
+        fadeStartTimeRef.current = null
       }
       if (rafIdRef.current) {
         cancelAnimationFrame(rafIdRef.current)
@@ -364,11 +381,31 @@ export default function StoryAudio({
 
         const isVisible = entry.isIntersecting && entry.intersectionRatio > threshold
 
-        if (isVisible && shouldAutoPlay && audioEnabled && !isPlaying) {
-          console.log('[StoryAudio] Triggering playback:', src, { isVisible, shouldAutoPlay, audioEnabled, isPlaying })
-          playAudio()
-        } else if (!entry.isIntersecting && !loop && isPlaying) {
-          // Let volume fade naturally, don't stop immediately
+        if (isVisible && shouldAutoPlay && audioEnabled) {
+          if (!loop && hasPlayedRef.current) {
+            // Non-looping sounds: only play once, don't replay
+            return
+          }
+          if (!isPlaying) {
+            console.log('[StoryAudio] Triggering playback:', src, { isVisible, shouldAutoPlay, audioEnabled, isPlaying, hasPlayed: hasPlayedRef.current })
+            playAudio()
+            if (!loop) {
+              hasPlayedRef.current = true
+            }
+          }
+        } else if (!isVisible && isPlaying) {
+          // Stop audio when section is no longer visible
+          if (!loop) {
+            // Non-looping sounds: stop immediately when out of view
+            console.log('[StoryAudio] Section out of view, stopping non-looping audio:', src)
+            stopAudio()
+          } else {
+            // Looping sounds: stop when completely out of view (intersectionRatio is 0)
+            if (entry.intersectionRatio === 0) {
+              console.log('[StoryAudio] Section completely out of view, stopping looping audio:', src)
+              stopAudio()
+            }
+          }
         }
       },
       { threshold: threshold, rootMargin: rootMargin }

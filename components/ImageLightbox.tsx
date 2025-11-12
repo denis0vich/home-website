@@ -178,9 +178,11 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
                 </div>
 
                 {image.description && (
-                  <p className="rounded-2xl border border-white/25 bg-white/10 p-4 text-sm leading-relaxed text-white/75">
-                    {image.description}
-                  </p>
+                  <div className="rounded-2xl border border-white/30 bg-white/15 p-5 shadow-lg">
+                    <p className="text-base leading-relaxed text-white font-medium">
+                      {image.description}
+                    </p>
+                  </div>
                 )}
               </div>
             </div>
