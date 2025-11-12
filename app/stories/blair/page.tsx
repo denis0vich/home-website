@@ -136,12 +136,11 @@ export default function BlairStoryPage() {
                 Blair felt a heaviness she could never name.
               </StoryParagraph>
 
+              <StoryAudio src="/audio/Blair - Cold, High-Pitched Piano Chord .mp3" volume={0.5} fadeIn={false} />
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={40}>
                 Blair knew of opulence. She lived inside it, breathed it. Every wish, every comfort, within
                 reach. Her world was a gilded cage, a constraining piece of gold strapped around her neck.
               </StoryParagraph>
-
-              <StoryAudio src="/audio/Blair - Cold, High-Pitched Piano Chord .mp3" volume={0.5} fadeIn={false} />
 
               <StoryParagraph>
                 What she longed for was not another room, not another house. She desired a space that held love,
@@ -160,10 +159,7 @@ export default function BlairStoryPage() {
             floatingTextIntensity={1.4}
             floatingTextDirection="chaotic"
           >
-              <div style={{ position: 'relative', minHeight: '100px' }}>
-                <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.5} />
-              </div>
-              
+              <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.5} />
               <StoryParagraph>
                 Blair chased that feeling wherever she could find it. The blinding lights of a club, the pulsing
                 beat of a song, the blur of strangers dancing too close. The music filled the hollow places her
@@ -270,6 +266,7 @@ export default function BlairStoryPage() {
                 together? Blair is still unsure.
               </StoryParagraph>
 
+              <StoryAudio src="/audio/Blair - Shattering Sound.mp3" volume={0.5} fadeIn={false} />
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={25}>
                 As the night settled in, Blair followed her mother into the dirty kitchen, the only part of the
                 house that felt alive. The air smelled of garlic and oil. Pans hung unevenly on the tiled wall. A
@@ -277,8 +274,6 @@ export default function BlairStoryPage() {
                 he said. &quot;You haven&apos;t done anything right.&quot; He lunged, but her mother stepped in front of her
                 instinctively. His voice reeked of liquor. Liquor was his God now.
               </StoryParagraph>
-
-              <StoryAudio src="/audio/Blair - Shattering Sound.mp3" volume={0.5} fadeIn={false} />
 
               <StoryParagraph>
                 Blair froze. She wanted to scream, to run, to disappear.

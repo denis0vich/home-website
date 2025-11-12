@@ -119,13 +119,12 @@ export default function LalaStoryPage() {
               floatingTextDirection="chaotic"
               className={SECTION_CHROME}
             >
+              <StoryAudio src="/audio/Lala - Heavy Door Slam .mp3" volume={0.6} fadeIn={false} />
                 <ScrollAnimation direction="fadeIn">
                 <p className="mb-16 text-center text-2xl font-medium leading-relaxed md:text-3xl lg:text-4xl" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)', color: 'inherit', textShadow: '0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(255, 255, 255, 0.2)' }}>
                   A knock came at ten a.m. &quot;You won&apos;t come with us anymore,&quot; her mother said. &quot;If you can&apos;t follow rules, stay here.&quot; The door slammed.
                   </p>
                 </ScrollAnimation>
-
-              <StoryAudio src="/audio/Lala - Heavy Door Slam .mp3" volume={0.6} fadeIn={false} />
 
                 <StoryParagraph>
                 Lala pressed her forehead to the wood. She’d studied all night. Good morning. Always a good morning in this house.
@@ -244,7 +243,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <StoryParagraph>
-                Later she read The Lady’s Guide to Celestial Mechanics. Christa lent it to her. When the characters kissed, something inside her stirred.
+                Later she read The Lady's Guide to Celestial Mechanics. Christa lent it to her. When the characters kissed, something inside her stirred.
                 </StoryParagraph>
 
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={25}>
@@ -314,8 +313,6 @@ export default function LalaStoryPage() {
                   When Lala comes home to His arms one day, home will no longer be a prayer. She will be forgiven.
                 </p>
               </ScrollAnimation>
-
-                <StoryAudio src="/audio/Lala - Gentle Ambient Piano.mp3" loop volume={0.5} />
 
                 <div className="my-20">
                   <StoryVideo

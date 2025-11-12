@@ -159,7 +159,6 @@ export default function GalleryPage() {
                 <LightboxImage
                   src={item.src}
                   alt={item.alt}
-                  description={item.alt}
                   priority={index < 3}
                   sizes="(max-width: 768px) 80vw, 420px"
                   className={`group relative h-[420px] w-full overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur transition ${
@@ -169,10 +168,10 @@ export default function GalleryPage() {
                   renderOverlay={
                     <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-[#081849]/80 via-[#081849]/30 to-transparent transition-opacity">
                       <div className="p-6">
-                        <p className="font-bella-queta text-lg uppercase tracking-[0.35em] text-white">
+                        <p className="font-bella-queta text-lg uppercase tracking-[0.35em] text-white" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)' }}>
                           HOME {index + 1}
                         </p>
-                        <p className="mt-2 text-sm font-medium text-white">
+                        <p className="mt-2 text-sm font-medium text-white" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)' }}>
                           One face, one room—held softly in the light they call their own.
                         </p>
                       </div>
@@ -244,7 +243,7 @@ export default function GalleryPage() {
                               isActive ? 'opacity-100' : 'opacity-70'
                             }`}
                           >
-                            <p className="text-sm font-medium text-white">
+                            <p className="text-sm font-medium text-white" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.9)' }}>
                               {GALLERY_CAPTIONS[itemNumber - 1]?.substring(0, 98)}…
                             </p>
                           </div>

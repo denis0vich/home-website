@@ -27,6 +27,7 @@ export default function StoryAudio({
   const hasPlayedRef = useRef<boolean>(false) // Track if non-looping sounds have played
   const rafIdRef = useRef<number | null>(null)
   const fadeStartTimeRef = useRef<number | null>(null)
+  const fadeOutIntervalRef = useRef<NodeJS.Timeout | null>(null)
   const { audioEnabled } = useAudioExperience()
 
   const shouldAutoPlay = autoPlay || loop
@@ -123,21 +124,16 @@ export default function StoryAudio({
         audio.volume = volume * 0.8
       }
 
-      // Pause sounds when far away from viewport
-      if (targetVolume < 0.01 && distanceFromCenter > viewportHeight * 1.5) {
-        if (!loop) {
-          // Non-looping: stop when far away
-          audio.pause()
-          setIsPlaying(false)
-          if (rafIdRef.current) {
-            cancelAnimationFrame(rafIdRef.current)
-            rafIdRef.current = null
-          }
-        } else {
-          // Looping: pause when far away, but keep ready to resume
-          if (!audio.paused) {
-            audio.pause()
-          }
+      // Stop sounds when far away from viewport (more aggressive stopping)
+      if (distanceFromCenter > viewportHeight * 1.2 || targetVolume < 0.01) {
+        // If section is far away or volume should be zero, fade out the audio smoothly
+        if (isPlaying) {
+          console.log('[StoryAudio] Section far from viewport, fading out audio:', src, { 
+            distanceFromCenter, 
+            viewportHeight, 
+            targetVolume 
+          })
+          stopAudio(false) // Fade out smoothly
         }
       } else if (loop && audio.paused && isPlaying && targetVolume > 0.01) {
         // Resume looping audio if it was paused but should be playing
@@ -346,9 +342,15 @@ export default function StoryAudio({
       }
     }
 
-    const stopAudio = () => {
-      if (audioRef.current) {
-        console.log('[StoryAudio] Stopping audio:', src)
+    const stopAudio = (immediate = false) => {
+      if (!audioRef.current) return
+      
+      const audio = audioRef.current
+      const fadeOutDuration = 1500 // 1.5 seconds fade-out
+      
+      if (immediate || !isPlaying || audio.paused) {
+        // Immediate stop or already paused
+        console.log('[StoryAudio] Stopping audio immediately:', src)
         audio.pause()
         // Only reset currentTime for looping sounds (non-looping should stay at end)
         if (loop) {
@@ -356,11 +358,60 @@ export default function StoryAudio({
         }
         setIsPlaying(false)
         fadeStartTimeRef.current = null
+        if (rafIdRef.current) {
+          cancelAnimationFrame(rafIdRef.current)
+          rafIdRef.current = null
+        }
+        return
       }
-      if (rafIdRef.current) {
-        cancelAnimationFrame(rafIdRef.current)
-        rafIdRef.current = null
+      
+      // Fade out smoothly
+      console.log('[StoryAudio] Fading out audio:', src)
+      
+      // Clear any existing fade-out interval
+      if (fadeOutIntervalRef.current) {
+        clearInterval(fadeOutIntervalRef.current)
+        fadeOutIntervalRef.current = null
       }
+      
+      const fadeOutStartTime = Date.now()
+      const startVolume = audio.volume
+      
+      fadeOutIntervalRef.current = setInterval(() => {
+        if (!audioRef.current || !isMounted) {
+          if (fadeOutIntervalRef.current) {
+            clearInterval(fadeOutIntervalRef.current)
+            fadeOutIntervalRef.current = null
+          }
+          return
+        }
+        
+        const elapsed = Date.now() - fadeOutStartTime
+        const fadeProgress = Math.min(elapsed / fadeOutDuration, 1)
+        const targetVolume = startVolume * (1 - fadeProgress)
+        
+        audio.volume = Math.max(0, targetVolume)
+        
+        if (fadeProgress >= 1) {
+          if (fadeOutIntervalRef.current) {
+            clearInterval(fadeOutIntervalRef.current)
+            fadeOutIntervalRef.current = null
+          }
+          audio.pause()
+          // Only reset currentTime for looping sounds (non-looping should stay at end)
+          if (loop) {
+            audio.currentTime = 0
+          }
+          audio.volume = startVolume // Reset volume for next play
+          setIsPlaying(false)
+          fadeStartTimeRef.current = null
+          if (rafIdRef.current) {
+            cancelAnimationFrame(rafIdRef.current)
+            rafIdRef.current = null
+          }
+          console.log('[StoryAudio] Audio faded out completely:', src)
+        }
+      }, 16) // ~60fps update rate
     }
 
     // Intersection Observer for scroll-based triggering
@@ -395,17 +446,19 @@ export default function StoryAudio({
           }
         } else if (!isVisible && isPlaying) {
           // Stop audio when section is no longer visible
-          if (!loop) {
-            // Non-looping sounds: stop immediately when out of view
-            console.log('[StoryAudio] Section out of view, stopping non-looping audio:', src)
-            stopAudio()
-          } else {
-            // Looping sounds: stop when completely out of view (intersectionRatio is 0)
-            if (entry.intersectionRatio === 0) {
-              console.log('[StoryAudio] Section completely out of view, stopping looping audio:', src)
-              stopAudio()
-            }
-          }
+          // For both looping and non-looping: stop when intersectionRatio drops below threshold
+          // Use fade-out for smooth crossfade
+          console.log('[StoryAudio] Section out of view, fading out audio:', src, { 
+            intersectionRatio: entry.intersectionRatio, 
+            threshold, 
+            loop 
+          })
+          stopAudio(false) // Fade out smoothly
+        } else if (!entry.isIntersecting && isPlaying) {
+          // Also stop if completely out of viewport (not intersecting at all)
+          // Use fade-out for smooth crossfade
+          console.log('[StoryAudio] Section completely out of viewport, fading out audio:', src)
+          stopAudio(false) // Fade out smoothly
         }
       },
       { threshold: threshold, rootMargin: rootMargin }
@@ -519,11 +572,16 @@ export default function StoryAudio({
       isMounted = false
       if (rafIdRef.current) {
         cancelAnimationFrame(rafIdRef.current)
+        rafIdRef.current = null
       }
-            const parentElement = audioRef.current?.parentElement
-            if (parentElement) {
-              observer.unobserve(parentElement)
-            }
+      if (fadeOutIntervalRef.current) {
+        clearInterval(fadeOutIntervalRef.current)
+        fadeOutIntervalRef.current = null
+      }
+      const parentElement = audioRef.current?.parentElement
+      if (parentElement) {
+        observer.unobserve(parentElement)
+      }
       window.removeEventListener('audio:enable', handleAudioEnable)
       window.removeEventListener('audio:disable', handleAudioDisable)
       window.removeEventListener('scroll', handleScroll)

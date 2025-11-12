@@ -79,8 +79,8 @@ export default function ElijahStoryPage() {
                   loop
                 />
               </div>
-              <StoryImage src="/stories-assets/FOR ETHAN(1).jpg" alt="Illustration of Elijah's story" />
               <StoryAudio src="/audio/Elijah - panalangin piano.mp3" loop volume={0.5} />
+              <StoryImage src="/stories-assets/FOR ETHAN(1).jpg" alt="Illustration of Elijah's story" />
 
               <StoryParagraph>
                 &quot;Mahal! I&apos;m home!&quot; His wife&apos;s voice settled over the rooms as she closed the door.
@@ -98,8 +98,6 @@ export default function ElijahStoryPage() {
                 She hugged him from behind. He spun her, laughing. Cold air brushed his arms. The life he wanted sparkled around them.
               </StoryParagraph>
 
-              <StoryAudio src="/audio/Elijah_ Streets of Manila.mp3" loop volume={0.5} />
-
               <ScrollAnimation direction="fadeIn">
                 <p className="mb-12 text-center text-2xl font-medium leading-relaxed md:text-3xl lg:text-4xl" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)', color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
                   But reality was brighter than the sun.
@@ -116,6 +114,7 @@ export default function ElijahStoryPage() {
               floatingTextDirection="chaotic"
               className={SECTION_CHROME}
             >
+              <StoryAudio src="/audio/Elijah_ Streets of Manila.mp3" loop volume={0.5} />
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
                 He opened his eyes. The dream collapsed into chipped counters and a wobbling electric kettle.
               </StoryParagraph>
@@ -174,8 +173,8 @@ export default function ElijahStoryPage() {
               floatingTextDirection="up"
               className={SECTION_CHROME}
             >
-              <StoryImage src="/stories-assets/Sailing sea.jpg" alt="Sailing at sea" />
               <StoryAudio src="/audio/Elijah - sea waves.mp3" loop volume={0.5} />
+              <StoryImage src="/stories-assets/Sailing sea.jpg" alt="Sailing at sea" />
 
               <StoryParagraph>
                 The sea welcomed him. Waves crashed, salt filled the air. For a moment he belonged to nothing but water and sky.
@@ -253,13 +252,12 @@ export default function ElijahStoryPage() {
                 His mother loved him without question. She slid a plate of rice toward him. &quot;Kahit wala pa tayong ipon, may lakas ka pa rin dapat.&quot;
               </StoryParagraph>
 
+              <StoryAudio src="/audio/Elijah - Gentle Heartbeat Fading In.mp3" loop volume={0.4} />
               <StoryImage src="/stories-assets/FOR ETHAN(2).jpg" alt="Illustration of Elijah's story" />
 
               <StoryParagraph>
                 He bought them a new pillow with tutoring money. He placed it beside his sleeping parents and promised they would rest easier soon.
               </StoryParagraph>
-
-              <StoryAudio src="/audio/Elijah - Gentle Heartbeat Fading In.mp3" loop volume={0.4} />
 
               <StoryParagraph>
                 Science and math became his lifeline. He wanted to give his mother the home she deserved.
@@ -311,11 +309,10 @@ export default function ElijahStoryPage() {
                 Elijah understood the weight wasn’t his alone. His mother had carried it long before him. His education was their ticket out.
               </StoryParagraph>
 
+              <StoryAudio src="/audio/Elijah_ Peaceful.mp3" loop volume={0.5} />
               <StoryParagraph>
                 On the mountain, dawn painted the city gold. He vowed to keep climbing, one tired, tenacious step at a time.
               </StoryParagraph>
-
-              <StoryAudio src="/audio/Elijah_ Peaceful.mp3" loop volume={0.5} />
               <StoryImage src="/stories-assets/Elijah_ Field.jpg" alt="Field" />
 
               <div className="my-20">
