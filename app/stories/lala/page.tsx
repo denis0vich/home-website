@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import StoryImage from '@/components/StoryImage'
 import StoryAudio from '@/components/StoryAudio'
+import StoryVideo from '@/components/StoryVideo'
 import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
 import AudioConsent from '@/components/AudioConsent'
@@ -314,15 +315,11 @@ export default function LalaStoryPage() {
 
                 <StoryAudio src="/audio/Lala - Gentle Ambient Piano.mp3" loop volume={0.5} />
 
-                <div className="my-20 relative aspect-video w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40">
-                  <video
+                <div className="my-20">
+                  <StoryVideo
                     src="/videos/lala-dream-home.mp4"
                     controls
-                    className="h-full w-full object-cover"
-                    preload="metadata"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
+                  />
                 </div>
             </StorySection>
           </section>

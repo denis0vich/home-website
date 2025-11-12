@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import StoryImage from '@/components/StoryImage'
 import StoryAudio from '@/components/StoryAudio'
+import StoryVideo from '@/components/StoryVideo'
 import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
 import AudioConsent from '@/components/AudioConsent'
@@ -73,18 +74,13 @@ export default function ElijahStoryPage() {
               </ScrollAnimation>
 
               <StoryImage src="/stories-assets/FOR ETHAN.jpg" alt="Open Eyes to Closed Eyes" />
-              <div className="my-20 relative aspect-video w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40">
-                <video
+              <div className="my-20">
+                <StoryVideo
                   src="/stories-assets/EYES.mov"
                   autoPlay
                   muted
                   loop
-                  playsInline
-                  className="h-full w-full object-cover"
-                  preload="auto"
-                >
-                  Your browser does not support the video tag.
-                </video>
+                />
               </div>
               <StoryImage src="/stories-assets/FOR ETHAN(1).jpg" alt="Illustration of Elijah's story" />
               <StoryAudio src="/audio/Elijah - panalangin piano.mp3" loop volume={0.5} />
@@ -325,15 +321,11 @@ export default function ElijahStoryPage() {
               <StoryAudio src="/audio/Elijah_ Peaceful.mp3" loop volume={0.5} />
               <StoryImage src="/stories-assets/Elijah_ Field.jpg" alt="Field" />
 
-              <div className="my-20 relative aspect-video w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40">
-                <video
+              <div className="my-20">
+                <StoryVideo
                   src="/videos/elijah-dream-home.mp4"
                   controls
-                  className="h-full w-full object-cover"
-                  preload="metadata"
-                >
-                  Your browser does not support the video tag.
-                </video>
+                />
               </div>
             </StorySection>
           </section>

@@ -2,6 +2,7 @@
 
 import Navigation from '@/components/Navigation'
 import ScrollSnapCarousel from '@/components/ScrollSnapCarousel'
+import StoryVideo from '@/components/StoryVideo'
 import TransitionLink from '@/components/TransitionLink'
 import { LightboxImage } from '@/components/ImageLightbox'
 import { useCallback, useState } from 'react'
@@ -132,16 +133,10 @@ export default function GalleryPage() {
           </div>
 
           <div className="mt-10">
-            <div className="relative aspect-video w-full overflow-hidden rounded-2xl border border-white/15 bg-black/40">
-              <video
-                src="/videos/gallery-reel.mov"
-                controls
-                className="h-full w-full object-cover"
-                preload="metadata"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
+            <StoryVideo
+              src="/videos/gallery-reel.mov"
+              controls
+            />
           </div>
         </section>
 
@@ -299,19 +294,14 @@ export default function GalleryPage() {
             </div>
 
             <div className="flex-1">
-              <div className="relative aspect-video overflow-hidden rounded-2xl border border-white/15 bg-black/40 shadow-lg">
-                <video
+              <div className="relative">
+                <StoryVideo
                   src="/videos/life-in-the-dream-home.mov"
                   autoPlay
                   muted
                   loop
-                  playsInline
-                  className="h-full w-full object-cover"
-                  preload="auto"
-                >
-                  Your browser does not support the video tag.
-                </video>
-                <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/55 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/80 backdrop-blur">
+                />
+                <div className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full bg-black/55 px-4 py-2 text-xs uppercase tracking-[0.35em] text-white/80 backdrop-blur z-10">
                   <span>Ambient on</span>
                   <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#ECDFD2]" />
                 </div>
