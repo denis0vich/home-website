@@ -127,7 +127,7 @@ export default function GalleryPage() {
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-bella-queta text-3xl md:text-4xl">Video Reel</h2>
             <p className="mt-4 text-white/70">
-              Interviews and moments from Life in the Dream Home
+              Moments from Life in the Dream Home
             </p>
           </div>
 

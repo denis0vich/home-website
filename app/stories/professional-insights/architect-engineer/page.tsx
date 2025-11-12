@@ -41,13 +41,13 @@ export default function ArchitectEngineerPage() {
               </p>
             </ScrollAnimation>
 
-            <StoryParagraph>
+            <p className="mb-6 leading-relaxed text-gray-900" style={{ color: '#000000', textShadow: 'none' }}>
               The Haven traverses how people build their sense of home, revealing that fantasizing about having a dream home is less about its actual size and more about its power to act as a mentally safe space. As Architect Tanya Kriselle S. Chua explains, a house is simply &quot;a structure that shelters people from the elements,&quot; giving basic privacy. In complete contrast, a home is &quot;where people live, grow, and fulfill the human needs that are above mere survival and security. Home is where people find belongingness and self-actualization.&quot;
-            </StoryParagraph>
+            </p>
 
-            <StoryParagraph>
+            <p className="mb-6 leading-relaxed text-gray-900" style={{ color: '#000000', textShadow: 'none' }}>
               Engineers and architects today are trying to mitigate the rising costs of land and crowding in the city. With this, people in the housing industry including developers must try to address if their consumers&apos; emotional needs are being satisfied by the walls they continuously create. It is not enough to just plaster money, and hope that it maybe adequate to alleviate distress among different homes. The following stories of three individuals —Elijah, who yearns for silence to escape financial problems; Blair, who tries to find a home in the wrong places; and Lala, who needs privacy to escape societal judgment, show how each construction carries a meaning. As true passion for design, architecture, and engineering starts with understanding the heart and soul of every concrete.
-            </StoryParagraph>
+            </p>
 
             <ScrollAnimation direction="fadeInUp">
             <section className="my-12">

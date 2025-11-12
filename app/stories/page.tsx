@@ -53,8 +53,8 @@ const RESOURCE_LINKS = [
     gradient: 'from-[#213885] via-[#5F3475] to-[#ECDFD2]',
   },
   {
-    title: 'Interviews & Dream Homes',
-    subtitle: 'Audio portraits with ambient renderings',
+    title: 'Dream Homes',
+    subtitle: 'Visual renderings of imagined spaces',
     href: '/interviews-dream-homes',
     gradient: 'from-[#893172] via-[#213885] to-[#081849]',
   },
@@ -68,8 +68,8 @@ const FLOW_STEPS = [
   },
   {
     step: '02',
-    title: 'Listen & visualize',
-    body: 'Pair each story with its interview and dream home showcase for a sensory reading experience.',
+    title: 'Visualize',
+    body: 'Explore the dream home showcases to see how each story translates into imagined spaces.',
   },
   {
     step: '03',
@@ -198,7 +198,7 @@ export default function StoriesPage() {
                 <span className="font-semibold text-white">Scroll steadily</span>—animations and audio cues are tied to intersection thresholds.
               </li>
               <li>
-                <span className="font-semibold text-white">Tap images</span> to open the lightbox, and follow portal prompts to explore interviews and dream homes.
+                <span className="font-semibold text-white">Tap images</span> to open the lightbox, and follow portal prompts to explore dream homes.
               </li>
             </ul>
           </div>

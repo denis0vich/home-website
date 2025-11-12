@@ -35,9 +35,9 @@ export default function InteriorDesignerPage() {
               </p>
             </ScrollAnimation>
 
-            <StoryParagraph>
+            <p className="mb-6 leading-relaxed text-gray-900" style={{ color: '#000000', textShadow: 'none' }}>
               The process of designing this mental refuge falls to experts like Interior Designer Lucia Da Silva. She asserts, &quot;A home is the personality in the house, the way that the designer and the client collaborate to make it seem or give the personality of the client.&quot; For the young Filipino facing chronic stress from traffic, noise, and the high cost of living, the design process itself becomes a form of therapy, a structured way to turn anxiety and past trauma into a deliberate, supportive environment.
-            </StoryParagraph>
+            </p>
 
             <ScrollAnimation direction="fadeInUp">
             <section className="my-12">
