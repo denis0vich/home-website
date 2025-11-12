@@ -30,9 +30,29 @@ export default function StoryAudio({
   const fadeInStartTimeRef = useRef<number | null>(null)
   const fadeInCompleteRef = useRef<boolean>(false)
   const isVisibleRef = useRef<boolean>(false)
+  const audioEnabledRef = useRef<boolean>(false)
 
   // Auto-play ambient sounds (when loop is true) or when autoPlay is explicitly set
   const shouldAutoPlay = autoPlay || loop
+
+  // Check if audio is enabled on mount and when it changes
+  useEffect(() => {
+    const checkAudioEnabled = () => {
+      try {
+        const storedConsent = window.sessionStorage.getItem('audioConsent')
+        const legacyFlag = window.sessionStorage.getItem('audioEnabled')
+        audioEnabledRef.current = storedConsent === 'granted' || legacyFlag === 'true'
+      } catch {
+        audioEnabledRef.current = false
+      }
+    }
+    
+    checkAudioEnabled()
+    
+    // Check periodically in case it changes
+    const interval = setInterval(checkAudioEnabled, 500)
+    return () => clearInterval(interval)
+  }, [])
 
   // Calculate volume based on distance from viewport center
   // Volume decreases as you scroll away from the audio source
@@ -137,17 +157,39 @@ export default function StoryAudio({
         }
       }
 
-      audio
-        .play()
-        .then(() => {
-          if (!resume) {
-            setHasStarted(true)
-          }
-          startVolumeTracking()
-        })
-        .catch(() => {
-          // Auto-play might still be blocked; wait for explicit user interaction
-        })
+      // Ensure audio is loaded before playing
+      if (audio.readyState < 2) {
+        // Audio not loaded yet, wait for it
+        audio.addEventListener('canplay', () => {
+          audio.play()
+            .then(() => {
+              if (!resume) {
+                setHasStarted(true)
+              }
+              startVolumeTracking()
+            })
+            .catch((err) => {
+              // Auto-play might still be blocked; wait for explicit user interaction
+              console.debug('Audio playback blocked:', err)
+            })
+        }, { once: true })
+        
+        // Load the audio
+        audio.load()
+      } else {
+        // Audio is ready, play immediately
+        audio.play()
+          .then(() => {
+            if (!resume) {
+              setHasStarted(true)
+            }
+            startVolumeTracking()
+          })
+          .catch((err) => {
+            // Auto-play might still be blocked; wait for explicit user interaction
+            console.debug('Audio playback blocked:', err)
+          })
+      }
     }
 
     const observer = new IntersectionObserver(
@@ -156,8 +198,8 @@ export default function StoryAudio({
           entry.isIntersecting && entry.intersectionRatio > 0.15
         isVisibleRef.current = isVisible
 
-        // Start audio when scrolled into view
-        if (isVisible && !hasStarted && shouldAutoPlay) {
+        // Start audio when scrolled into view (only if audio is enabled)
+        if (isVisible && !hasStarted && shouldAutoPlay && audioEnabledRef.current) {
           beginPlayback(false)
         }
         
@@ -171,12 +213,18 @@ export default function StoryAudio({
     )
 
     const handleAudioEnable = () => {
-      if (!shouldAutoPlay || !isVisibleRef.current) return
-      if (!audioRef.current) return
-      beginPlayback(hasStarted)
+      audioEnabledRef.current = true
+      // If element is visible and should play, start playback
+      if (shouldAutoPlay && isVisibleRef.current && !hasStarted) {
+        beginPlayback(false)
+      } else if (shouldAutoPlay && hasStarted && audioRef.current && audioRef.current.paused) {
+        // Resume if it was paused
+        beginPlayback(true)
+      }
     }
 
     const handleAudioDisable = () => {
+      audioEnabledRef.current = false
       if (!audioRef.current) return
       audioRef.current.pause()
       isActiveRef.current = false
@@ -193,6 +241,34 @@ export default function StoryAudio({
 
     if (containerRef.current) {
       observer.observe(containerRef.current)
+      
+      // Check if element is already visible when observer is set up
+      // This handles the case where audio is enabled before scrolling
+      const checkInitialVisibility = () => {
+        if (!containerRef.current || !audioRef.current) return
+        const rect = containerRef.current.getBoundingClientRect()
+        const viewportHeight = window.innerHeight
+        const isInView = rect.top < viewportHeight && rect.bottom > 0
+        
+        if (isInView && !hasStarted && shouldAutoPlay && audioEnabledRef.current) {
+          // Calculate intersection ratio manually
+          const visibleTop = Math.max(rect.top, 0)
+          const visibleBottom = Math.min(rect.bottom, viewportHeight)
+          const visibleHeight = Math.max(0, visibleBottom - visibleTop)
+          const intersectionRatio = visibleHeight / rect.height
+          
+          if (intersectionRatio > 0.15) {
+            isVisibleRef.current = true
+            // Small delay to ensure audio element is ready
+            setTimeout(() => {
+              beginPlayback(false)
+            }, 100)
+          }
+        }
+      }
+      
+      // Check after a short delay to ensure everything is initialized
+      setTimeout(checkInitialVisibility, 300)
     }
 
     window.addEventListener('audio:enable', handleAudioEnable)
