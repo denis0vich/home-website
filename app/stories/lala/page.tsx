@@ -351,6 +351,10 @@ export default function LalaStoryPage() {
                 <StoryParagraph>
                 Now, Lala lives in a condo in the city. From her window, skyscrapers glow like candles in the dusk. The walls are painted white, her guitar leans against the black couch, and her records line the shelves. Her dark furniture is a bold pattern she has committed to. She spreads her curtains open, and privacy finally feels divine.
                 </StoryParagraph>
+
+                <StoryParagraph>
+                The minimalist space, softened by touches of darkness, reflects how Lala sees herself. Others may never see her as pure. She sculpts the shape of purity on her own terms. Faith lives in her spirit, soul, and body. Her haven, painted in alabaster, stands as a temple filled with grace.
+                </StoryParagraph>
             </StorySection>
 
             {/* Freedom Section */}
