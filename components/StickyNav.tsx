@@ -89,7 +89,7 @@ export default function StickyNav() {
         key={item.href}
         href={item.href}
         className={`relative inline-flex items-center justify-center px-2 py-1 font-bella-queta font-bold tracking-[0.15em] text-white transition-colors hover:text-white ${
-          isMobile ? 'text-sm w-full justify-start' : 'text-xs'
+          isMobile ? 'text-xs w-full justify-start py-1.5' : 'text-xs'
         } ${active ? 'text-white' : 'text-white/80'}`}
         onClick={() => isMobile && setMobileMenuOpen(false)}
       >
@@ -106,7 +106,7 @@ export default function StickyNav() {
           : '-translate-y-full opacity-0 pointer-events-none'
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-3 md:px-4 py-1.5 md:py-2">
         <TransitionLink href="/" className="flex items-center">
           <Image
             src="/pennywise-logo-2-4-2-38.png"
@@ -114,7 +114,7 @@ export default function StickyNav() {
             width={80}
             height={26}
             priority
-            className="h-auto w-auto"
+            className="h-auto w-auto scale-75 md:scale-100 origin-left"
           />
         </TransitionLink>
         
@@ -127,23 +127,23 @@ export default function StickyNav() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden relative z-50 flex flex-col items-center justify-center w-7 h-7 space-y-1 text-white focus:outline-none"
+          className="md:hidden relative z-50 flex flex-col items-center justify-center w-6 h-6 space-y-0.5 text-white focus:outline-none"
           aria-label="Toggle menu"
           aria-expanded={mobileMenuOpen}
         >
           <span
-            className={`block w-4 h-0.5 bg-white transition-all duration-300 ${
-              mobileMenuOpen ? 'rotate-45 translate-y-1' : ''
+            className={`block w-3.5 h-0.5 bg-white transition-all duration-300 ${
+              mobileMenuOpen ? 'rotate-45 translate-y-0.5' : ''
             }`}
           />
           <span
-            className={`block w-4 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-3.5 h-0.5 bg-white transition-all duration-300 ${
               mobileMenuOpen ? 'opacity-0' : ''
             }`}
           />
           <span
-            className={`block w-4 h-0.5 bg-white transition-all duration-300 ${
-              mobileMenuOpen ? '-rotate-45 -translate-y-1' : ''
+            className={`block w-3.5 h-0.5 bg-white transition-all duration-300 ${
+              mobileMenuOpen ? '-rotate-45 -translate-y-0.5' : ''
             }`}
           />
         </button>
@@ -155,7 +155,7 @@ export default function StickyNav() {
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col items-start justify-start px-4 py-3 space-y-2">
+        <div className="flex flex-col items-start justify-start px-3 py-2 space-y-1">
           {NAV_ITEMS.map((item) => renderNavItem(item, true))}
         </div>
       </div>
