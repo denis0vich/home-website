@@ -22,7 +22,7 @@ export default function ArchitectEngineerPage() {
                 The Strategic Blueprint: The True Cost of the Filipino Dream Home
               </h1>
               <p className="text-xl font-bella-queta text-gray-600 mb-6">
-                This article is based on interviews conducted by The Haven&apos;s authors with Engr. John Kelly Josue and Architect Tanya Kriselle S. Chua, who provided the technical and design expertise used throughout this analysis. This content aligns with the production thesis &quot;Generation Z&apos;s Conceptualization of the &apos;Dream Home&apos;&quot; by Garcia and Zambrano (De La Salle University - Manila, 2025).
+                This article is based on interviews conducted by The Haven&apos;s authors with Engr. John Kelly Josue and Architect Tanya Kriselle S. Chua, who provided the technical and design expertise used throughout this analysis.
               </p>
             </header>
           </ScrollAnimation>
@@ -46,7 +46,7 @@ export default function ArchitectEngineerPage() {
             </p>
 
             <p className="mb-6 leading-relaxed text-gray-900" style={{ color: '#000000', textShadow: 'none' }}>
-              Engineers and architects today are trying to mitigate the rising costs of land and crowding in the city. With this, people in the housing industry including developers must try to address if their consumers&apos; emotional needs are being satisfied by the walls they continuously create. It is not enough to just plaster money, and hope that it maybe adequate to alleviate distress among different homes. The following stories of three individuals —Elijah, who yearns for silence to escape financial problems; Blair, who tries to find a home in the wrong places; and Lala, who needs privacy to escape societal judgment, show how each construction carries a meaning. As true passion for design, architecture, and engineering starts with understanding the heart and soul of every concrete.
+              Engineers and architects today are trying to mitigate the rising costs of land and crowding in the city. With this, people in the housing industry including developers must try to address if their consumers&apos; emotional needs are being statisfied by the walls they continuously create. It is not enough to just plaster money, and hope that it maybe adequate to alleviate distress among different homes. The following stories of three individuals —Elijah, who yearns for silence to escape financial problems; Blair, who tries to find a home in the wrong places; and Lala, who needs privacy to escape societal judgment, show how each construction carries a meaning. As true passion for design, architecture, and engineering starts with understanding the heart and soul of every concrete.
             </p>
 
             <ScrollAnimation direction="fadeInUp">
@@ -154,7 +154,7 @@ export default function ArchitectEngineerPage() {
               </p>
 
               <p className="mb-6 leading-relaxed text-gray-700">
-                Creatives and intellectuals, such as architects and engineers became partners in turning the occupant&apos;s deepest needs into a physical reality. Self-fulfillment is no longer unattainable with turning traditional design principles into environments that bring color to life.                 For the Filipino generation facing the &quot;Jarring Present,&quot; the home is the culmination of self-worth: a strategic blueprint for surviving the current moment while building a stable, calm future.
+                Creatives and intellectuals, such as architects and engineers became partners in turning the occupant&apos;s deepest needs into a physical reality. Self-fulfillment is no longer unattainable with turning traditional design principles into environments that bring color to life. For the Filipino generation facing the &quot;Jarring Present,&quot; the home is the culmination of self-worth: a strategic blueprint for surviving the current moment while building a stable, calm future.
               </p>
             </section>
             </ScrollAnimation>
@@ -164,4 +164,3 @@ export default function ArchitectEngineerPage() {
     </div>
   )
 }
-

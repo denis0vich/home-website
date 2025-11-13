@@ -22,7 +22,7 @@ export default function InteriorDesignerPage() {
                 How Interior Design and Psychology Transform Pain Into Peace
               </h1>
               <p className="text-xl font-bella-queta text-gray-600 mb-6">
-                This article is based on original interviews conducted by the authors with Interior Designer Lucia Da Silva and Psychometrician Gabrielle Zambrano, who provided expert insight into the relationship between mental health, identity, and physical space. This content aligns with the production thesis &quot;Generation Z&apos;s Conceptualization of the &apos;Dream Home&apos;&quot; by Garcia and Zambrano (De La Salle University - Manila, 2025).
+                This article is based on original interviews conducted by the authors with Interior Designer Lucia Da Silva and Psychometrician Gabrielle Zambrano, who provided expert insight into the relationship between mental health, identity, and physical space.
               </p>
             </header>
           </ScrollAnimation>
@@ -54,7 +54,7 @@ export default function InteriorDesignerPage() {
               </p>
 
               <p className="mb-6 leading-relaxed text-gray-700">
-                Da Silva suggests designing core elements, like flooring, to be &quot;timeless&quot; so they don&apos;t require expensive, large scale replacement. This stability in the foundation allows the client to rearrange the more visible, changeable elements, like furniture or wall coverings, to achieve a sense of freedom without major financial outlay.                 This approach ensures the space remains financially and emotionally manageable while the client works toward that stable future self.
+                Da Silva suggests designing core elements, like flooring, to be &quot;timeless&quot; so they don&apos;t require expensive, large scale replacement. This stability in the foundation allows the client to rearrange the more visible, changeable elements, like furniture or wall coverings, to achieve a sense of freedom without major financial outlay. This  approach ensures the space remains financially and emotionally manageable while the client works toward that stable future self.
               </p>
             </section>
             </ScrollAnimation>
@@ -74,7 +74,7 @@ export default function InteriorDesignerPage() {
               </p>
 
               <p className="mb-6 leading-relaxed text-gray-700">
-                This freedom is structural. By using open layouts, Blair can continually redefine the function of the space without costly renovations. The home becomes a collaborative partner in self discovery, where the physical environment is always ready to align with the client&apos;s shifting needs and preferences. Da Silva notes that the definition of liberation is highly personal, depending on whether the client desires a minimalist calm or a bold, expressive style.                 Ultimately, the design must ensure that Blair feels liberated to express themselves freely, rejecting the need to seek outside approval.
+                This freedom is structural. By using open layouts, Blair can continually redefine the function of the space without costly renovations. The home becomes a collaborative partner in self discovery, where the physical environment is always ready to align with the client&apos;s shifting needs and preferences. Da Silva notes that the definition of liberation is highly personal, depending on whether the client desires a minimalist calm or a bold, expressive style. Ultimately, the design must ensure that Blair feels liberated to express themselves freely, rejecting the need to seek outside approval.
               </p>
             </section>
             </ScrollAnimation>
@@ -106,7 +106,7 @@ export default function InteriorDesignerPage() {
               </p>
 
               <p className="mb-6 leading-relaxed text-gray-700">
-                Ultimately, the process of defining the dream home, its aesthetics, its colors, its organization, is an act of self worth. It gives the young professional a specific, compelling target to work toward, acting as an anchor in a chaotic world.                 Zambrano advises, &quot;Always have specific, manageable, attainable, realistic and timely goals. Do not compare your life to someone else&apos;s because your situation is not the same with other people.&quot;
+                Ultimately, the process of defining the dream home, its aesthetics, its colors, its organization, is an act of self worth. It gives the young professional a specific, compelling target to work toward, acting as an anchor in a chaotic world. Zambrano advises, &quot;Always have specific, manageable, attainable, realistic and timely goals. Do not compare your life to someone else&apos;s because your situation is not the same with other people.&quot;
               </p>
             </section>
             </ScrollAnimation>
@@ -116,4 +116,3 @@ export default function InteriorDesignerPage() {
     </div>
   )
 }
-
