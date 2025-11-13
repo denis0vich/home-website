@@ -278,7 +278,7 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <StoryParagraph>
-                A few days later, she ghosted him. He replayed the night, asking himself, May ipis ba na gumapang sa lamesa? Longing for love as a poor man was death sentence. He replayed the night, asking himself, May ipis ba na gumapang sa lamesa?
+                A few days later, she ghosted him. He replayed the night, asking himself, May ipis ba na gumapang sa lamesa? Longing for love as a poor man was a death sentence.
               </StoryParagraph>
 
               <StoryParagraph>
