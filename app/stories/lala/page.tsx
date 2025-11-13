@@ -92,11 +92,11 @@ export default function LalaStoryPage() {
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
-                One weekend, she went to an amusement park with her friends. They screamed as the roller coaster dropped from its peak, the wind against their faces. For those few minutes, she felt light, untethered. But when the ride stopped, the feeling vanished. Grief returned as quietly as breath. She smiled at her friends, grateful for the laughter that kept her from dwelling too much on her thoughts. Rina, one of her friends, rummaged through her bag to retrieve the movie tickets. She gave one to each of them in their group.
+                One weekend, she went to an amusement park with her friends. They screamed as the roller coaster dropped from its peak, the wind against their faces. For those few minutes, she felt light, untethered. But when the ride stopped, the feeling vanished. Grief returned as quietly as breath.
                 </StoryParagraph>
 
                 <StoryParagraph>
-                Lala smiled, grateful for her friends&apos; thoughtfulness. It was inevitable that her mother would not allow her to go. But for a moment, the scent of coffee between them was enough to feel like freedom.
+                Later, at a nearby coffee shop, Lala smiled, grateful for the laughter that kept her from dwelling too much on her thoughts. Rina rummaged through her bag and handed out movie tickets to everyone. Lala accepted hers, touched by her friends&apos; thoughtfulness. She knew it was inevitable that her mother wouldn&apos;t allow her to go. Even so, the scent of coffee between them was enough to feel like freedom.
                 </StoryParagraph>
             </StorySection>
 
@@ -159,7 +159,7 @@ export default function LalaStoryPage() {
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
-                In high school, their school held a play about King Henry VIII and his wives. Lala was assigned Anne Boleyn. She wore a velvet, medieval gown that her mother bought from Quiapo, paired with an intricate pearl necklace. Her line, which she practiced all night was, &quot;I will be your Queen, Your Majesty.&quot; The boy playing Henry smirked beneath the dim stage lights and declared, &quot;So it is with our love, for by absence we are parted, yet nevertheless it keeps its fervour.&quot; Everyone clapped. No one bothered to include the part where Anne was beheaded.
+                In high school, their school held a play about King Henry VIII and his wives. Lala was assigned the role of Anne Boleyn. She wore a velvet, medieval gown that her mother bought from Quiapo, paired with an intricate pearl necklace. Her line, which she practiced all night was, &quot;I will be your Queen, Your Majesty.&quot; The boy playing Henry smirked beneath the dim stage lights and declared, &quot;So it is with our love, for by absence we are parted, yet nevertheless it keeps its fervour.&quot; Everyone clapped. No one bothered to include the part where Anne was beheaded.
                 </StoryParagraph>
 
                 <StoryParagraph>
@@ -236,7 +236,11 @@ export default function LalaStoryPage() {
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
-                Lala had learned to crochet from Jacob, her childhood friend. Everyone thought they&apos;d end up together. Everyone Lala knew was into dating. First loves, first crushes. For her friends, living life to the fullest meant having boyfriends and sneaking out of classrooms to kiss and make out. What she remembered most was the comfort of making something with her hands. The feeling of inserting the needle into different textiles and creating a small or big pattern allowed her to create her own story. When Jacob asked her out at sixteen, she said yes because it seemed easier than saying no. As the new day unfolded, the sun cast its golden light upon the towering skyscrapers. They sat beneath the shade of a tree. Lala inhaled the aroma of freshly brewed coffee drifting from the nearby cafés. The soft, floral scent of the rose bouquet carried a faint sweetness, almost like fruit. A mother and her teenage daughter passed by, laughing softly, and Lala suddenly remembered her own mother&apos;s haunting words: &quot;You need to have children. Because if you don&apos;t, that&apos;s selfish. You became a woman for a reason, to bring life into this world, just like I did when I gave birth to you.&quot;
+                Lala had learned to crochet from Jacob, her childhood friend. Everyone thought they&apos;d end up together. Most of the people she knew were into dating. First loves, first crushes. For her friends, living life to the fullest meant having boyfriends and sneaking out of classrooms to kiss and make out. What she remembered most was the comfort of making something with her hands. The feeling of inserting the needle into different textiles and creating a small or big pattern allowed her to create her own story. When Jacob asked her out at sixteen, she said yes because it seemed easier than saying no.
+                </StoryParagraph>
+
+                <StoryParagraph>
+                As the new day unfolded, the sun cast its golden light upon the towering skyscrapers. They sat beneath the shade of a tree. Lala inhaled the aroma of freshly brewed coffee drifting from the nearby cafés. The soft, floral scent of the rose bouquet carried a faint sweetness, almost like fruit. A mother and her teenage daughter passed by, laughing softly, and Lala suddenly remembered her own mother&apos;s haunting words: &quot;You need to have children. Because if you don&apos;t, that&apos;s selfish. You became a woman for a reason, to bring life into this world, just like I did when I gave birth to you.&quot;
                 </StoryParagraph>
 
                 <StoryParagraph>
@@ -317,7 +321,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <StoryParagraph>
-                The word was stuck in her head, like a voice. People weren&apos;t moral. They were not just tested in the same way. Her mother&apos;s best friend&apos;s husband, a volunteer at church, had a mistress. Her sister, training to be a nun, cursed behind closed doors. And her mother, her holy, devout mother, once had an affair with their pastor. The family bought their silence. If Lala were going to hell, she wouldn&apos;t be alone.
+                The word was stuck in her head, like a voice. People were not moral. They were not just tested in the same way. Her mother&apos;s best friend&apos;s husband, a volunteer at church, had a mistress. Her sister, training to be a nun, cursed behind closed doors. And her mother, her holy, devout mother, once had an affair with their pastor. The family bought their silence. If Lala were going to hell, she wouldn&apos;t be alone.
                 </StoryParagraph>
 
                 <StoryParagraph>
@@ -345,7 +349,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <StoryParagraph>
-                Now, Lala lives in a condo in the city. From her window, skyscrapers glow like candles in the dusk. The walls are painted white, her guitar leans against the black couch, and her records line the shelves. Her dark furniture is a bold pattern she has committed to. She spreads her curtains open, and Privacy finally feels divine.
+                Now, Lala lives in a condo in the city. From her window, skyscrapers glow like candles in the dusk. The walls are painted white, her guitar leans against the black couch, and her records line the shelves. Her dark furniture is a bold pattern she has committed to. She spreads her curtains open, and privacy finally feels divine.
                 </StoryParagraph>
             </StorySection>
 

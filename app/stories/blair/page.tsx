@@ -83,7 +83,7 @@ export default function BlairStoryPage() {
           >
               <StoryParagraph>
                 Blair believes that true success is immeasurable. But when the report card lands on her desk, the
-                numbers feel divine. Sparks flood her eyes. Later that day, at school, she passes a group of med
+                numbers feel divine. Sparks flood her eyes. Later that day, at school, she passes by a group of med
                 students in white coats, their laughter bright and confident. The stethoscopes around their
                 necks glint under the light. She smiles, remembering how her mother once dreamed of being one of
                 them.
@@ -108,11 +108,7 @@ export default function BlairStoryPage() {
             particleIntensity={0.35}
           >
               <StoryParagraph>
-                Their home in Antipolo was a dream others might envy. A six-bedroom mansion perched on a hill,
-                surrounded by tall trees and guarded gates. The neighborhood was peaceful, detached, and safe.
-                Every morning, sunlight poured through glass walls. Chandeliers glimmered above the dining table,
-                and the air always smelled faintly of clean linen and pastries. Somehow, in all that brightness,
-                Blair felt a heaviness she could never name.
+                Their home in Antipolo was a dream others might envy. A six-bedroom mansion perched on a hill, surrounded by tall trees and guarded gates. The neighborhood was peaceful, detached, and safe. Every morning, sunlight poured through glass walls. Chandeliers glimmered above the dining table, and the air always smelled faintly of clean linen and pastries. Somehow, the exquisite place still brought her a vacant ache she had no words for.
               </StoryParagraph>
 
               <StoryAudio src="/audio/Blair - Cold, High-Pitched Piano Chord .mp3" volume={0.5} fadeIn={false} />
@@ -195,9 +191,7 @@ export default function BlairStoryPage() {
             particleEffect="none"
           >
               <StoryParagraph>
-                C.S. Lewis, a British author and theologian, once wrote about theologians who believed that things
-                are right only because God commanded them, not because they are inherently good. He found belief to
-                be dangerous, perceiving the possibility that God could be a tyrant.
+                C.S. Lewis, a British author and theologian, reflected on the view held by other theologians who believed that things are only right because God commanded them, not because they are inherently good. He found belief to be dangerous, perceiving the possibility that God could be a tyrant.
               </StoryParagraph>
 
               <StoryParagraph>
@@ -205,17 +199,18 @@ export default function BlairStoryPage() {
                 was always a man who started something revolutionary, while the intellect and wisdom of women who
                 did just as much remained only as a brief echo. God, perhaps, has no defined gender, but the
                 scriptures and the Catholic community as a whole thrive on patriarchal concepts that persist to
-                this day, where women will forever be subordinate to men, and the very God we worship follows the
-                same principles of masculine authority. Lewis corroborated this by arguing that God, being the
-                instigator and origin of all things, can be understood as the &quot;infinite masculine.&quot; Even if
-                canonically God is spiritually beyond human concepts such as gender, the very idea that drives the
-                Catholic institution is based on His image.
+                this day, where women will forever be subordinate to men, and the very God people worship follows the
+                same principles of masculine authority.
+              </StoryParagraph>
+
+              <StoryParagraph>
+                Lewis corroborated this by arguing that God, being the instigator and origin of all things, can be understood as the &quot;infinite masculine.&quot; Even if canonically God is spiritually beyond human concepts such as gender, the very idea that drives the Catholic institution is based on His image.
               </StoryParagraph>
 
               <StoryImage src="/stories-assets/FOR BLAIR.jpg" alt="Blair's story illustration" />
 
               <StoryParagraph>
-                She grew up in a household where the father was head of everything: the house, the family, the
+                Blair grew up in a household where the father was head of everything: the house, the family, the
                 faith. Her mother&apos;s devotion was measured in sacrifice, her silence mistaken for virtue. In the
                 Philippines, religion and family connect so closely that obedience is worshipped. The home becomes
                 a church, the father its priest. And so, even as women suffer, they are told it is holy to endure.
@@ -255,7 +250,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
 
               <StoryParagraph>
-                Yet the longer they stayed, the more it resembled a shrine to what they&apos;d lost.
+              The longer they stayed, the more it resembled a shrine to what they&apos;d lost.
               </StoryParagraph>
           </StorySection>
 
@@ -272,12 +267,11 @@ export default function BlairStoryPage() {
           >
               <StoryParagraph>
                 Blair&apos;s father, a surgeon, was rarely home. When he was, the air thickened with his presence. His
-                voice, once a melodic hymn to Blair&apos;s ears, grew sharp with exhaustion. Alcohol became his reprieve.
-                Her mother, a girl once, just like Blair, also dreamed.. &quot;You don&apos;t need to work,&quot; her father had
-                told her years ago. &quot;I&apos;ll take care of you.&quot; She believed him. Blair&apos;s mother did not pursue the
-                medical boards anymore, pregnant with her first child. Unfortunately, she miscarried and opted to
-                pursue marriage with Blair&apos;s father. It was the practical thing to do. Was it love that bound them
-                together? Blair is still unsure.
+                voice, once a melodic hymn to Blair&apos;s ears, grew sharp with exhaustion. Alcohol became his reprieve. Her mother, once a girl like Blair, had dreamed of a life far different from this.
+              </StoryParagraph>
+
+              <StoryParagraph>
+                &quot;You don&apos;t need to work,&quot; her father had told her mother years ago. &quot;I&apos;ll take care of you.&quot; She believed him. Blair&apos;s mother did not pursue the medical boards anymore, pregnant with her first child. Unfortunately, she miscarried and opted to pursue marriage with Blair&apos;s father. It was the practical thing to do. Was it love that bound them together? Blair is still unsure.
               </StoryParagraph>
 
               <StoryAudio src="/audio/Blair - Shattering Sound.mp3" volume={0.5} fadeIn={false} />
@@ -303,13 +297,12 @@ export default function BlairStoryPage() {
               <StoryParagraph>
                 Blair sat behind the grand staircase, its marble curve cold beneath her palms. From there, she could
                 see her father&apos;s hand strike, her mother&apos;s body falter. She stayed hidden, small enough to be
-                forgotten. Each time her mother emerged, bruises bloomed on her skin. Each time, Blair told herself
-                she would do something next time. But she never did.
+                forgotten. Each time her mother emerged, bruises bloomed on her skin. Time and again, Blair swore she would act. Time and again, she did not.
               </StoryParagraph>
 
               <StoryParagraph>
-                Once upon a time, her mother waited for her prince charming in a tall, gleaming tower. The knight
-                climbed the tower and declared his eternal love for her. A rainbow arched across the sky as they
+                Once upon a time, her mother waited for her prince charming in a secluded, looming tower. The knight
+                climbed to its highest spire and declared his eternal love for her. A rainbow arched across the sky as they
                 rode toward their happily ever after. It broke Blair to see her mother&apos;s fairy tale collapse. Maybe
                 fairy tales were never meant for them.
               </StoryParagraph>
@@ -324,8 +317,11 @@ export default function BlairStoryPage() {
             particleIntensity={0.25}
           >
               <StoryParagraph>
-                Then came a time for isolation. A much bigger isolation held the whole world still. Her father,
-                working at the hospital, always came home by midnight. The smell of antiseptic clung to his clothes.
+                And then came a time of isolation, one that stretched beyond the walls of any tower, touching every corner of the world.
+              </StoryParagraph>
+
+              <StoryParagraph>
+                Her father, working at the hospital, always came home by midnight. The smell of antiseptic clung to his clothes.
                 He drank more, and spoke less. &quot;He&apos;s saving lives,&quot; her mother would say. &quot;He&apos;s tired.&quot; But Blair
                 saw the truth between his eyes. He was slipping away from the father she knew when she was a babe.
                 The man who once carried her on his shoulders was surrendering to an irreparable darkness.
@@ -379,15 +375,15 @@ export default function BlairStoryPage() {
             particleIntensity={0.5}
           >
               <StoryParagraph>
-                Months passed. The mansion remained spotless, haunted by what was gone. The walls gleamed, the air
+                The days drifted past. The mansion remained spotless, haunted by what was gone. The walls gleamed, the air
                 unmoving. In the silence of moving forward, Blair began to rebuild her sense of home. For staying in
                 the past meant never being home.
               </StoryParagraph>
 
               <StoryParagraph>
-                In the 1970s, maximalism emerged as a rejection of minimalism&apos;s sterile perfection. Bold colors,
-                layered textures, inherited furniture, rooms that felt alive with history. It celebrated personality
-                over polish, a home that told a story rather than hid it.
+                In the 1970s, maximalism emerged as a rejection of minimalism&apos;s immaculate perfection. Bold colors,
+                layered textures, inherited furniture, rooms that felt alive with history. It celebrated liveliness
+                over impeccability, a home that told a story rather than hid it.
               </StoryParagraph>
 
               <StoryParagraph>
@@ -395,7 +391,7 @@ export default function BlairStoryPage() {
                 that beauty lives in balance, that true calm arises when all the senses are alive. Maximalism, he
                 said, is not clutter. It is a collection of memories made visible. Alidad asserts that the idea of
                 putting items or decor is alluring as it creates that &quot;timeless&quot; look. In contrast to a minimalist
-                design, the maximalist is not afraid of color or life.
+                design, the maximalist is not afraid of color and vibrancy.
               </StoryParagraph>
 
               <StoryParagraph>
@@ -432,9 +428,8 @@ export default function BlairStoryPage() {
               </StoryParagraph>
 
               <StoryParagraph>
-                In this country, family is both sanctuary and sentence. To stay is loyalty. To leave is betrayal.
-                Blair knows this contradiction too well. Her longing for freedom must live beside duty, faith, and
-                grief.
+                In this country, family is both sanctuary and duty. To stay is loyalty. To leave is betrayal.
+                Blair knows this contradiction too well. Her longing for freedom must live beside obligation and loss.
               </StoryParagraph>
 
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={35}>
@@ -445,8 +440,7 @@ export default function BlairStoryPage() {
 
               <ScrollAnimation direction="fadeIn">
                 <p className="mb-20 mx-auto max-w-4xl text-center text-3xl font-light italic leading-relaxed" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
-                  The whimsical lamp beside her, nestled in silky yellow sheets, waits for its owner. She reaches for
-                  the switch, and for the first time, she feels herself moving toward tomorrow.
+                  The whimsical lamp flickers beside her bed. Wrapped in silky yellow sheets, she reaches for the switch. For the first time, she steps through the rooms of tomorrow.
                 </p>
               </ScrollAnimation>
 
