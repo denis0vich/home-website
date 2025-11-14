@@ -343,7 +343,7 @@ export default function ElijahStoryPage() {
               </ScrollAnimation>
 
               <StoryParagraph>
-                The grand interiors of their school library and the cozy cafés in the evening gave him solace. He mentally took note of the interiors she admired, details he would someday incorporate into his dream home. It wasn&apos;t about just obtaining luxury, but about the freedom and time that came with stability. When he finally had his dream home, he wanted a proper backyard. Like the ones he saw in Stranger Things on Netflix, where the characters could run and lounge freely. He imagined his children playing in the grass, soaking in the sun. To raise a family in these suffocatingly urban, tiny spaces was, somehow, an act against nature. He needed room for them to simply be.
+                The grand interiors of their school library and the cozy cafés in the evening gave him solace. He mentally took note of the interiors he admired, details he would someday incorporate into his dream home. It wasn&apos;t about just obtaining luxury, but about the freedom and time that came with stability. When he finally had his dream home, he wanted a proper backyard. Like the ones he saw in Stranger Things on Netflix, where the characters could run and lounge freely. He imagined his children playing in the grass, soaking in the sun. To raise a family in these suffocatingly urban, tiny spaces was, somehow, an act against nature. He needed room for them to simply be.
               </StoryParagraph>
 
               <StoryParagraph>
