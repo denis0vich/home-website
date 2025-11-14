@@ -345,7 +345,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <StoryParagraph>
-                Unlike in other countries, like the United States, homophobia exists, but people are allowed more room to breathe, to exist as they are. Here, love between two women is still forbidden by law. Same-sex marriage remains unrecognized. And the irony persists. Spain, the very nation that once conquered this land, has long granted the rights that the Philippines still withholds.
+                Unlike in other countries, like the United States, homophobia exists, but people are allowed more room to breathe, to exist as they are. Across the Philippine landscape, love between two women is not a crime. However, it continues to face widespread discouragement. Same-sex marriage remains unrecognized. And the irony persists. Spain, the very nation that once conquered this land, has long granted the rights that the Philippines still withholds.
                 </StoryParagraph>
 
                 <StoryParagraph>
