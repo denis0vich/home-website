@@ -105,47 +105,43 @@ export default function ForumPage() {
   }, [])
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#050b22] text-white">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(120%_130%_at_5%_-10%,rgba(236,223,210,0.28),rgba(5,11,34,0.75))]" />
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(120%_120%_at_95%_0%,rgba(95,52,117,0.32),rgba(5,11,34,0.8))]" />
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(120%_140%_at_50%_120%,rgba(33,56,133,0.25),rgba(5,11,34,0.9))]" />
-
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       <Navigation />
 
       <main className="relative z-10 mx-auto max-w-7xl px-6 pt-40 pb-32">
-        <ScrollAnimation direction="fadeIn" delay={200}>
-          <h1 className="mb-4 text-center font-bella-queta text-5xl text-white md:text-6xl">
+        <ScrollAnimation direction="fadeIn" duration={500}>
+          <h1 className="mb-4 text-center font-bella-queta text-5xl text-gray-800 md:text-6xl">
             Community Forum
           </h1>
         </ScrollAnimation>
 
-        <ScrollAnimation direction="fadeInUp" delay={300}>
-          <p className="mx-auto mb-16 max-w-3xl text-center font-bella-queta text-xl text-white/80">
+        <ScrollAnimation direction="fadeIn" duration={500}>
+          <p className="mx-auto mb-16 max-w-3xl text-center font-bella-queta text-xl text-gray-700">
             Share your story with the community—every note helps someone else feel less alone. Connect
             through shared struggles, dream home blueprints, and cost-saving strategies for urban living.
           </p>
         </ScrollAnimation>
 
-        <ScrollAnimation direction="fadeInUp" delay={400}>
+        <ScrollAnimation direction="fadeIn" duration={500}>
           <section className="mb-20">
-            <div className="mx-auto max-w-3xl rounded-3xl border border-white/10 bg-white/10 p-10 shadow-[0_28px_90px_rgba(5,11,34,0.45)] backdrop-blur-md">
+            <div className="mx-auto max-w-3xl rounded-3xl border border-gray-200 bg-white/80 p-10 shadow-sm backdrop-blur-sm">
               <form onSubmit={handleForumSubmit} className="space-y-6">
                 <div className="space-y-4">
-                  <p className="text-center font-bella-queta text-lg text-white/90">
+                  <p className="text-center font-bella-queta text-lg text-gray-800">
                     Choose a question to answer:
                   </p>
-                  <div className="space-y-3 rounded-2xl border border-white/15 bg-white/5 p-4">
-                    <p className="font-bella-queta text-white/80">
-                      <span className="font-semibold text-white">1.</span> What spaces, whether physical or online, make you feel like you have control over your environment?
+                  <div className="space-y-3 rounded-2xl border border-gray-200 bg-white/60 p-4">
+                    <p className="font-bella-queta text-gray-700">
+                      <span className="font-semibold text-gray-800">1.</span> What spaces, whether physical or online, make you feel like you have control over your environment?
                     </p>
-                    <p className="font-bella-queta text-white/80">
-                      <span className="font-semibold text-white">2.</span> What does your home give you that no other place can?
+                    <p className="font-bella-queta text-gray-700">
+                      <span className="font-semibold text-gray-800">2.</span> What does your home give you that no other place can?
                     </p>
                   </div>
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="md:col-span-1">
-                    <label className="mb-2 block text-sm font-bella-queta text-white/60">
+                    <label className="mb-2 block text-sm font-bella-queta text-gray-700">
                       Your name (optional)
                     </label>
                     <input
@@ -157,11 +153,11 @@ export default function ForumPage() {
                         setForumError(null)
                       }}
                       placeholder="Anonymous"
-                      className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 font-bella-queta text-white placeholder-white/40 focus:border-[#909FF0] focus:outline-none"
+                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 font-bella-queta text-gray-800 placeholder-gray-400 focus:border-[#BE8CC1] focus:outline-none"
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="mb-2 block text-sm font-bella-queta text-white/60">
+                    <label className="mb-2 block text-sm font-bella-queta text-gray-700">
                       Share your thoughts
                     </label>
                     <textarea
@@ -174,17 +170,17 @@ export default function ForumPage() {
                       rows={4}
                       maxLength={800}
                       placeholder="Answer either question above. Share your experiences, thoughts, or reflections..."
-                      className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 font-bella-queta text-white placeholder-white/40 focus:border-[#909FF0] focus:outline-none"
+                      className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 font-bella-queta text-gray-800 placeholder-gray-400 focus:border-[#BE8CC1] focus:outline-none"
                     />
                   </div>
                 </div>
                 {forumError && (
-                  <p className="rounded-xl border border-red-500/20 bg-red-500/10 px-4 py-3 text-sm font-bella-queta text-red-200">
+                  <p className="rounded-xl border border-red-300 bg-red-50 px-4 py-3 text-sm font-bella-queta text-red-700">
                     {forumError}
                   </p>
                 )}
                 {forumMessage && (
-                  <p className="rounded-xl border border-emerald-400/25 bg-emerald-400/10 px-4 py-3 text-sm font-bella-queta text-emerald-200">
+                  <p className="rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm font-bella-queta text-emerald-700">
                     {forumMessage}
                   </p>
                 )}
@@ -199,12 +195,12 @@ export default function ForumPage() {
                 </div>
               </form>
 
-              <div className="mt-10 border-t border-white/10 pt-8">
-                <h3 className="mb-4 font-bella-queta text-xl text-white">Latest Voices</h3>
+              <div className="mt-10 border-t border-gray-200 pt-8">
+                <h3 className="mb-4 font-bella-queta text-xl text-gray-800">Latest Voices</h3>
                 {isForumLoading ? (
-                  <p className="text-sm font-bella-queta text-white/60">Loading conversations…</p>
+                  <p className="text-sm font-bella-queta text-gray-600">Loading conversations…</p>
                 ) : forumPosts.length === 0 ? (
-                  <p className="text-sm font-bella-queta text-white/60">
+                  <p className="text-sm font-bella-queta text-gray-600">
                     No entries yet—be the first to sketch what home feels like.
                   </p>
                 ) : (
@@ -212,17 +208,17 @@ export default function ForumPage() {
                     {forumPosts.map((post, idx) => (
                       <li
                         key={`${post.id ?? 'post'}-${idx}`}
-                        className="rounded-2xl border border-white/12 bg-white/5 p-5 shadow-[0_18px_60px_rgba(5,11,34,0.45)] backdrop-blur"
+                        className="rounded-2xl border border-gray-200 bg-white/60 p-5 shadow-sm backdrop-blur-sm"
                       >
                         <div className="mb-2 flex items-center justify-between gap-4">
-                          <p className="font-bella-queta font-semibold text-white">
+                          <p className="font-bella-queta font-semibold text-gray-800">
                             {post.name || 'Anonymous'}
                           </p>
-                          <p className="text-xs font-bella-queta uppercase tracking-[0.25em] text-white/40">
+                          <p className="text-xs font-bella-queta uppercase tracking-[0.25em] text-gray-500">
                             {formatTimestamp(post.createdAt)}
                           </p>
                         </div>
-                        <p className="font-bella-queta leading-relaxed text-white/80">{post.message}</p>
+                        <p className="font-bella-queta leading-relaxed text-gray-700">{post.message}</p>
                       </li>
                     ))}
                   </ul>

@@ -691,7 +691,7 @@ export default function StoryLayout({
 }) {
   return (
     <StoryAtmosphereProvider initialSectionId="default">
-      <div className="relative min-h-screen overflow-hidden bg-[#050b22] text-white">
+      <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
         <GlobalAtmosphereLayers />
 
         <div className="relative z-10 font-eb-garamond">

@@ -59,35 +59,32 @@ const DREAM_HOMES: DreamHome[] = [
 export default function InterviewsDreamHomesPage() {
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#081849] text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_120%_at_0%_0%,rgba(137,49,114,0.25),rgba(8,24,73,0.85))]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_95%_0%,rgba(33,56,133,0.35),rgba(8,24,73,0.85))]" />
-
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       <Navigation />
 
       <main className="relative z-10 mx-auto max-w-6xl px-6 pt-36 pb-24">
         <header className="text-center">
-          <p className="mb-3 text-sm uppercase tracking-[0.35em] text-white/55">
+          <p className="mb-3 text-sm uppercase tracking-[0.35em] text-gray-600">
             Visualizations
           </p>
-          <h1 className="mb-4 font-bella-queta text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mb-4 font-bella-queta text-5xl md:text-6xl lg:text-7xl text-gray-800">
             Dream Homes
           </h1>
-          <p className="mx-auto max-w-3xl text-lg text-white/75 md:text-xl">
+          <p className="mx-auto max-w-3xl text-lg text-gray-700 md:text-xl">
             Drift through the imagined rooms rendered in light, palette, and texture.
           </p>
         </header>
 
         <section className="mt-16 space-y-16">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/55">Rendered Intentions</p>
-            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">Dream Home Showcases</h2>
-            <p className="mx-auto mt-4 max-w-3xl text-white/70">
+            <p className="text-xs uppercase tracking-[0.4em] text-gray-600">Rendered Intentions</p>
+            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl text-gray-800">Dream Home Showcases</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-gray-700">
               Each visualization is a collaborative translation of stories into light, texture,
               and layout. Glide through the renderings and notice how the palette echoes the subject's
               psychological needs.
             </p>
-            <p className="mx-auto mt-3 text-xs text-white/50">
+            <p className="mx-auto mt-3 text-xs text-gray-500">
               3D Renders by Julian Beatriz Vargas
             </p>
           </div>
@@ -97,18 +94,18 @@ export default function InterviewsDreamHomesPage() {
             items={DREAM_HOMES}
             itemClassName="min-w-[min(400px,85vw)]"
             renderItem={(home, _index, isActive) => (
-              <article className="group h-full overflow-hidden rounded-xl border border-white/20 bg-white/12 shadow-[0_16px_40px_rgba(8,12,40,0.3)] backdrop-blur">
-                <header className="border-b border-white/15 bg-white/10 px-4 py-3">
-                  <p className="text-[10px] uppercase tracking-[0.35em] text-white/55">
+              <article className="group h-full overflow-hidden rounded-xl border border-gray-200 bg-white/80 shadow-sm backdrop-blur-sm">
+                <header className="border-b border-gray-200 bg-white/60 px-4 py-3">
+                  <p className="text-[10px] uppercase tracking-[0.35em] text-gray-600">
                     {home.subject}&rsquo;s Vision
                   </p>
-                  <h3 className="mt-1 font-bella-queta text-lg text-white">{home.title}</h3>
-                  <p className="mt-1.5 text-[11px] leading-relaxed text-white/70">{home.description}</p>
+                  <h3 className="mt-1 font-bella-queta text-lg text-gray-800">{home.title}</h3>
+                  <p className="mt-1.5 text-[11px] leading-relaxed text-gray-700">{home.description}</p>
                   <div className="mt-2.5 flex items-center gap-1.5">
                     {home.palette.map((color) => (
                       <span
                         key={color}
-                        className="h-4 w-4 rounded-full border border-white/40 shadow"
+                        className="h-4 w-4 rounded-full border border-gray-300 shadow"
                         style={{ backgroundColor: color }}
                         title={color}
                       />
@@ -121,10 +118,10 @@ export default function InterviewsDreamHomesPage() {
                   {home.video && (
                     <div className="w-full">
                       <div className="mb-2 flex items-center justify-between">
-                        <p className="text-[10px] uppercase tracking-[0.25em] text-white/60">
+                        <p className="text-[10px] uppercase tracking-[0.25em] text-gray-600">
                           3D Render
                         </p>
-                        <p className="text-[10px] text-white/50">
+                        <p className="text-[10px] text-gray-500">
                           by Julian Beatriz Vargas
                         </p>
                       </div>

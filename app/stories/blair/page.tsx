@@ -11,22 +11,19 @@ import TransitionLink from '@/components/TransitionLink'
 
 export default function BlairStoryPage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#050b22] text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(130%_110%_at_0%_-10%,rgba(137,49,114,0.45),rgba(5,11,34,0.9))]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_100%_0%,rgba(33,56,133,0.4),rgba(5,11,34,0.92))]" />
-
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       <Navigation />
 
       <main className="relative z-10 w-full pt-40 pb-32">
         <div className="mx-auto w-full max-w-5xl px-6">
-        <header className="rounded-3xl border border-white/15 bg-white/10 p-10 text-center shadow-[0_24px_70px_rgba(5,11,34,0.55)] backdrop-blur">
-          <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-white/65">
-            <span className="rounded-full border border-white/25 px-4 py-2">Subject: Blair</span>
-            <span className="rounded-full border border-white/25 px-4 py-2">Abuse · Repressed Identity</span>
-            <span className="rounded-full border border-white/25 px-4 py-2">Maximalist Sanctuary</span>
+        <header className="rounded-3xl border border-gray-200 bg-white/80 p-10 text-center shadow-sm backdrop-blur-sm">
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-gray-600">
+            <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Subject: Blair</span>
+            <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Abuse · Repressed Identity</span>
+            <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Maximalist Sanctuary</span>
           </div>
-          <h1 className="font-bella-queta text-5xl md:text-6xl lg:text-7xl">The Architecture of Moving</h1>
-          <p className="mt-6 text-lg text-white/80 md:text-xl">
+          <h1 className="font-bella-queta text-5xl md:text-6xl lg:text-7xl text-gray-800">The Architecture of Moving</h1>
+          <p className="mt-6 text-lg text-gray-700 md:text-xl">
             The path to a home is never a straight line. Blair wanders through sanctuaries built by others, longing for one she can finally claim.
           </p>
         </header>
@@ -41,22 +38,16 @@ export default function BlairStoryPage() {
           {/* Opening Quote */}
           <StorySection
             sectionId="blair-opening"
-            backgroundColor="#130618"
-            particleEffect="sparkles"
-            particleColors={['#ECDFD2', '#893172', '#FF8C42']}
-            particleIntensity={0.45}
-            floatingText={['MOVE', 'BELONG', 'HOME', 'SEARCH']}
-            floatingTextIntensity={0.35}
-            floatingTextDirection="up"
+            backgroundColor="#f5f1e8"
           >
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-20 text-center text-3xl md:text-4xl lg:text-5xl font-light italic leading-relaxed" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
+                <p className="mb-20 text-center text-3xl md:text-4xl lg:text-5xl font-light italic leading-relaxed text-gray-800" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
                   What does it say about a home when you have more than one house, and yet, the feeling of
                   belonging is still out of reach?
                 </p>
               </ScrollAnimation>
 
-              <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
+              <StoryParagraph>
                 Blair seems to have it all. Staring at herself in the mirror, she adjusts the sleeves of her
                 white school uniform. She turns once, noticing the wrinkles of her skirt that graze her toes.
                 The light from her stained-glass window passes over the silver cross on her bedside table. She
@@ -76,10 +67,7 @@ export default function BlairStoryPage() {
           {/* School Section */}
           <StorySection
             sectionId="blair-school"
-            backgroundColor="#2b0f2b"
-            particleEffect="sparkles"
-            particleColors={['#ff9e45', '#ffcd80', '#ffe0b2']}
-            particleIntensity={0.4}
+            backgroundColor="#fff8e1"
           >
               <StoryParagraph>
                 Blair believes that true success is immeasurable. But when the report card lands on her desk, the
@@ -102,10 +90,7 @@ export default function BlairStoryPage() {
           {/* Mansion Section */}
           <StorySection
             sectionId="blair-mansion"
-            backgroundColor="#1b1f3d"
-            particleEffect="sparkles"
-            particleColors={['#CCE0FF', '#ECDFD2', '#5F3475']}
-            particleIntensity={0.35}
+            backgroundColor="#e8eaf6"
           >
               <StoryParagraph>
                 Their home in Antipolo was a dream others might envy. A six-bedroom mansion perched on a hill, surrounded by tall trees and guarded gates. The neighborhood was peaceful, detached, and safe. Every morning, sunlight poured through glass walls. Chandeliers glimmered above the dining table, and the air always smelled faintly of clean linen and pastries. Somehow, the exquisite place still brought her a vacant ache she had no words for.
@@ -127,13 +112,7 @@ export default function BlairStoryPage() {
           {/* Club Section */}
           <StorySection
             sectionId="blair-club"
-            backgroundColor="#05010a"
-            particleEffect="strobe"
-            particleColors={['#ff6b6b', '#4ecdc4', '#ffe66d', '#ff6b9d', '#a8e6cf']}
-            particleIntensity={2.2}
-            floatingText={['ESCAPE', 'FREEDOM', 'DANCE', 'ALIVE', 'ESCAPE', 'FEEL', 'BREATH']}
-            floatingTextIntensity={1.4}
-            floatingTextDirection="chaotic"
+            backgroundColor="#fce4ec"
           >
               <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.5} />
               <StoryParagraph>
@@ -163,10 +142,7 @@ export default function BlairStoryPage() {
           {/* Church Section */}
           <StorySection
             sectionId="blair-church"
-            backgroundColor="#181a2a"
-            particleEffect="sparkles"
-            particleColors={['#ECDFD2', '#5F3475']}
-            particleIntensity={0.2}
+            backgroundColor="#f3e5f5"
           >
               <StoryParagraph>
                 When she opened her eyes, she was no longer in the club. The scent of incense replaced the haze of
@@ -187,8 +163,7 @@ export default function BlairStoryPage() {
           {/* Religion Section */}
           <StorySection
             sectionId="blair-religion"
-            backgroundColor="#23132d"
-            particleEffect="none"
+            backgroundColor="#f0e8e0"
           >
               <StoryParagraph>
                 C.S. Lewis, a British author and theologian, reflected on the view held by other theologians who believed that things are only right because God commanded them, not because they are inherently good. He found belief to be dangerous, perceiving the possibility that God could be a tyrant.
@@ -225,13 +200,7 @@ export default function BlairStoryPage() {
           {/* Film Section */}
           <StorySection
             sectionId="blair-film"
-            backgroundColor="#1a1a2a"
-            particleEffect="sparkles"
-            particleColors={['#ECDFD2', '#893172', '#5F3475']}
-            particleIntensity={0.4}
-            floatingText={['FILM', 'CINEMA', 'PRAYER', 'WORLDS']}
-            floatingTextIntensity={0.35}
-            floatingTextDirection="up"
+            backgroundColor="#efebe9"
           >
               <StoryParagraph>
                 In the quiet of her room, she turned instead to film. She opened Sculpting in Time by Andrei Tarkovsky, tracing her fingers along its worn spine. Cinema became her new religion. The act of watching, a daily ritual. To transform pain into image, to build worlds from memory and sound, was the closest she came to prayer. The characters she indulged in became her family. She laughed, cried, and fought with them, alongside the demons they battled. When the hero reached rock bottom, Blair imagined herself in their place, wondering if life would still be a worthy opponent or if she, too, would surrender to the villain&apos;s embrace. God knows how many villains she&apos;d face in this lifetime.
@@ -257,13 +226,7 @@ export default function BlairStoryPage() {
           {/* Abuse Section */}
           <StorySection
             sectionId="blair-abuse"
-            backgroundColor="#3d0000"
-            particleEffect="strobe"
-            particleColors={['#ff0000', '#8b0000', '#dc143c']}
-            particleIntensity={1.5}
-            floatingText={['FEAR', 'ANGER', 'HURT', 'PAIN', 'ABUSE', 'DANGER', 'CRY']}
-            floatingTextIntensity={1.2}
-            floatingTextDirection="chaotic"
+            backgroundColor="#fce4ec"
           >
               <StoryParagraph>
                 Blair&apos;s father, a surgeon, was rarely home. When he was, the air thickened with his presence. His
@@ -311,10 +274,7 @@ export default function BlairStoryPage() {
           {/* Isolation Section */}
           <StorySection
             sectionId="blair-isolation"
-            backgroundColor="#0b1c2f"
-            particleEffect="sparkles"
-            particleColors={['#5F3475', '#213885']}
-            particleIntensity={0.25}
+            backgroundColor="#e3f2fd"
           >
               <StoryParagraph>
                 And then came a time of isolation, one that stretched beyond the walls of any tower, touching every corner of the world.
@@ -335,7 +295,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-12 text-center text-lg font-light italic leading-relaxed" style={{ opacity: 0.8 }}>
+                <p className="mb-12 text-center text-lg font-light italic leading-relaxed text-gray-700">
                   Press play. Press stop. The end.
                 </p>
               </ScrollAnimation>
@@ -344,10 +304,9 @@ export default function BlairStoryPage() {
           {/* Death Section */}
           <StorySection
             sectionId="blair-death"
-            backgroundColor="#08060f"
-            particleEffect="none"
+            backgroundColor="#f3e5f5"
           >
-              <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
+              <StoryParagraph>
                 It was a Sunday morning when Blair and her family returned from Pasay to Antipolo. Dark clouds hung
                 low, unmoving. The moment they opened the door, a putrid smell filled the air. Blair&apos;s stomach
                 twisted. Near the staircase lay a hand, gray and still. Her father. He had been dead for three weeks.
@@ -360,7 +319,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-20 mx-auto max-w-3xl text-center text-3xl font-medium leading-relaxed" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
+                <p className="mb-20 mx-auto max-w-3xl text-center text-3xl font-medium leading-relaxed text-gray-800" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
                   A house is a house. A house is not a home.
                 </p>
               </ScrollAnimation>
@@ -369,10 +328,7 @@ export default function BlairStoryPage() {
           {/* Hope Section */}
           <StorySection
             sectionId="blair-hope"
-            backgroundColor="#452031"
-            particleEffect="sparkles"
-            particleColors={['#FF8C42', '#ECDFD2', '#5F3475']}
-            particleIntensity={0.5}
+            backgroundColor="#fff3e0"
           >
               <StoryParagraph>
                 The days drifted past. The mansion remained spotless, haunted by what was gone. The walls gleamed, the air
@@ -415,10 +371,7 @@ export default function BlairStoryPage() {
           {/* Conclusion Section */}
           <StorySection
             sectionId="blair-conclusion"
-            backgroundColor="#552637"
-            particleEffect="sparkles"
-            particleColors={['#ffd700', '#ffeb3b', '#fff59d', '#ffc107']}
-            particleIntensity={0.6}
+            backgroundColor="#fff8e1"
           >
               <StoryParagraph>
                 In spite of this, as she imagined it, she knew she could not leave. Her mother and brother still
@@ -439,7 +392,7 @@ export default function BlairStoryPage() {
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-20 mx-auto max-w-4xl text-center text-3xl font-light italic leading-relaxed" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
+                <p className="mb-20 mx-auto max-w-4xl text-center text-3xl font-light italic leading-relaxed text-gray-800" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
                   The whimsical lamp flickers beside her bed. Wrapped in silky yellow sheets, she reaches for the switch. For the first time, she steps through the rooms of tomorrow.
                 </p>
               </ScrollAnimation>
@@ -449,33 +402,31 @@ export default function BlairStoryPage() {
         </section>
 
         <div className="mx-auto w-full max-w-5xl px-6">
-        <section className="mt-28 rounded-3xl border border-white/15 bg-white/10 p-8 shadow-[0_28px_70px_rgba(5,11,34,0.55)] backdrop-blur">
-          <h2 className="text-center font-bella-queta text-3xl text-white">Continue the journey</h2>
-          <p className="mt-3 text-center text-white/75">
+        <section className="mt-28 rounded-3xl border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
+          <h2 className="text-center font-bella-queta text-3xl text-gray-800">Continue the journey</h2>
+          <p className="mt-3 text-center text-gray-700">
             Follow the rest of the trilogy to understand how religion, finances, and identity shape the haven each
             protagonist longs for.
           </p>
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <TransitionLink
               href="/stories/elijah"
-              className="group relative overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-br from-[#213885] via-[#081849] to-[#5F3475] p-6 shadow-[0_20px_50px_rgba(5,11,34,0.55)] transition hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm transition hover:-translate-y-1"
             >
-              <div className="absolute inset-0 bg-white/10 opacity-0 transition group-hover:opacity-20" />
               <div className="relative z-10">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/70">Next</p>
-                <h3 className="mt-3 font-bella-queta text-2xl text-white">Elijah · The Vantage Point</h3>
-                <p className="mt-2 text-sm text-white/80">Longing for quiet, mapping a minimalist retreat in the city.</p>
+                <p className="text-xs uppercase tracking-[0.4em] text-gray-600">Next</p>
+                <h3 className="mt-3 font-bella-queta text-2xl text-gray-800">Elijah · The Vantage Point</h3>
+                <p className="mt-2 text-sm text-gray-700">Longing for quiet, mapping a minimalist retreat in the city.</p>
               </div>
             </TransitionLink>
             <TransitionLink
               href="/stories/lala"
-              className="group relative overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-br from-[#5F3475] via-[#893172] to-[#ECDFD2] p-6 shadow-[0_20px_50px_rgba(5,11,34,0.55)] transition hover:-translate-y-1"
+              className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white/80 p-6 shadow-sm transition hover:-translate-y-1"
             >
-              <div className="absolute inset-0 bg-white/10 opacity-0 transition group-hover:opacity-20" />
               <div className="relative z-10">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/70">Also read</p>
-                <h3 className="mt-3 font-bella-queta text-2xl text-white">Lala · The Sculpture of Faith</h3>
-                <p className="mt-2 text-sm text-white/80">Rewriting devotion with privacy, softness, and chosen family.</p>
+                <p className="text-xs uppercase tracking-[0.4em] text-gray-600">Also read</p>
+                <h3 className="mt-3 font-bella-queta text-2xl text-gray-800">Lala · The Sculpture of Faith</h3>
+                <p className="mt-2 text-sm text-gray-700">Rewriting devotion with privacy, softness, and chosen family.</p>
               </div>
             </TransitionLink>
           </div>

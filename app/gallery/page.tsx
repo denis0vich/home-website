@@ -138,10 +138,10 @@ export default function GalleryPage() {
           </div>
         </section>
 
-        <section className="mt-20 rounded-3xl border border-white/15 bg-white/5 p-8 shadow-[0_20px_60px_rgba(8,24,73,0.35)] backdrop-blur">
+        <section className="mt-20 rounded-3xl border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-bella-queta text-3xl md:text-4xl">Feels Like Home</h2>
-            <p className="mt-4 text-white/70">
+            <h2 className="font-bella-queta text-3xl md:text-4xl text-gray-800">Feels Like Home</h2>
+            <p className="mt-4 text-gray-700">
               A portrait series crowdsourced from friends of The Haven. Every gaze, grin, and soft
               shadow hints at the emotional architecture that makes a place livable.
             </p>
@@ -179,16 +179,16 @@ export default function GalleryPage() {
             />
           </div>
 
-          <div className="mt-6 text-center text-sm text-white/60">
+          <div className="mt-6 text-center text-sm text-gray-600">
             Portrait {activeFeelsIndex + 1} of {FEELS_LIKE_HOME_ITEMS.length}
           </div>
         </section>
 
         <section className="mt-24 space-y-20">
           <div className="text-center">
-            <p className="text-sm uppercase tracking-[0.4em] text-white/45">HOMES ACROSS METRO MANILA</p>
-            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">Our Gallery</h2>
-            <p className="mx-auto mt-4 max-w-3xl text-white/75">
+            <p className="text-sm uppercase tracking-[0.4em] text-gray-600">HOMES ACROSS METRO MANILA</p>
+            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl text-gray-800">Our Gallery</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-gray-700">
               Move through the chapters below to follow how home shifts—from rooms of ritual to guarded streets,
               and finally to balconies that drink the skyline.
             </p>
@@ -202,7 +202,7 @@ export default function GalleryPage() {
             return (
               <section
                 key={group.id}
-                className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/4 p-8 shadow-[0_20px_60px_rgba(8,24,73,0.45)] backdrop-blur"
+                className="relative overflow-hidden rounded-3xl border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm"
               >
                 <div
                   className="pointer-events-none absolute inset-0"
@@ -215,8 +215,8 @@ export default function GalleryPage() {
 
                 <div className="relative z-10">
                   <div className="mx-auto mb-8 max-w-4xl text-center">
-                    <h3 className="font-bella-queta text-2xl md:text-3xl">{group.title}</h3>
-                    <p className="mt-3 text-white/70">{group.description}</p>
+                    <h3 className="font-bella-queta text-2xl md:text-3xl text-gray-800">{group.title}</h3>
+                    <p className="mt-3 text-gray-700">{group.description}</p>
                   </div>
 
                   <ScrollSnapCarousel
@@ -250,10 +250,10 @@ export default function GalleryPage() {
                   />
 
                   <div className="mt-8 flex flex-col items-center gap-4 text-center">
-                    <div className="w-full max-w-3xl rounded-2xl border border-white/20 bg-white/10 px-6 py-5 shadow-lg">
-                      <p className="text-base leading-relaxed text-white font-medium">{activeCaption}</p>
+                    <div className="w-full max-w-3xl rounded-2xl border border-gray-200 bg-white/60 px-6 py-5 shadow-sm">
+                      <p className="text-base leading-relaxed text-gray-800 font-medium">{activeCaption}</p>
                     </div>
-                    <p className="text-xs uppercase tracking-[0.4em] text-white/60">
+                    <p className="text-xs uppercase tracking-[0.4em] text-gray-600">
                       {activeIndex + 1} / {group.items.length}
                     </p>
                   </div>

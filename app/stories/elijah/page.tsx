@@ -9,29 +9,26 @@ import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
 
 const SECTION_CHROME =
-  'rounded-[2.75rem] border border-white/12 backdrop-blur-sm overflow-hidden shadow-[0_28px_90px_rgba(5,11,34,0.45)]'
+  'rounded-[2.75rem] border border-gray-200 backdrop-blur-sm overflow-hidden shadow-sm'
 
 export default function ElijahStoryPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#050b22] text-white">
-      <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(120%_140%_at_0%_-20%,rgba(163,208,255,0.18),rgba(8,24,73,0))]" />
-      <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(120%_140%_at_90%_-10%,rgba(33,56,133,0.22),rgba(8,24,73,0))]" />
-
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       <div className="relative z-[5]">
         <Navigation />
         <main className="relative w-full pt-36 pb-28">
           <div className="mx-auto w-full max-w-5xl px-6">
-            <ScrollAnimation direction="fadeInUp" duration={1200}>
-              <header className="rounded-3xl border border-white/15 bg-white/10 p-10 text-center shadow-[0_24px_70px_rgba(5,11,34,0.55)] backdrop-blur">
-                <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-white/70">
-                  <span className="rounded-full border border-white/25 px-4 py-2">Subject: Elijah</span>
-                  <span className="rounded-full border border-white/25 px-4 py-2">Mental Health · Financial Precarity</span>
-                  <span className="rounded-full border border-white/25 px-4 py-2">Blues &amp; Golds</span>
+            <ScrollAnimation direction="fadeIn" duration={500}>
+              <header className="rounded-3xl border border-gray-200 bg-white/80 p-10 text-center shadow-sm backdrop-blur-sm">
+                <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-gray-600">
+                  <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Subject: Elijah</span>
+                  <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Mental Health · Financial Precarity</span>
+                  <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Blues &amp; Golds</span>
                 </div>
-                <h1 className="text-5xl font-bella-queta text-white md:text-6xl lg:text-7xl">
+                <h1 className="text-5xl font-bella-queta text-gray-800 md:text-6xl lg:text-7xl">
                   The Vantage Point
                 </h1>
-                <p className="mt-6 text-lg text-white/80 md:text-xl">
+                <p className="mt-6 text-lg text-gray-700 md:text-xl">
                   When does the road to quietude begin to appear? Follow Ethan&apos;s climb from restless nights toward a horizon of peace.
                 </p>
               </header>
@@ -43,12 +40,6 @@ export default function ElijahStoryPage() {
             <StorySection
               sectionId="elijah-opening"
               backgroundColor="#e3f2fd"
-              particleEffect="sparkles"
-              particleColors={['#64b5f6', '#90caf9', '#bbdefb']}
-              particleIntensity={0.6}
-              floatingText={['STILLNESS', 'REST', 'QUIET', 'BREATHE']}
-              floatingTextIntensity={0.4}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
               <StoryParagraph>
@@ -64,7 +55,7 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-8 text-center text-xl font-light leading-relaxed" style={{ color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
+                <p className="mb-8 text-center text-xl font-light leading-relaxed text-gray-800">
                   He closes his eyes.
                 </p>
               </ScrollAnimation>
@@ -84,12 +75,6 @@ export default function ElijahStoryPage() {
             <StorySection
               sectionId="elijah-dream"
               backgroundColor="#e3f2fd"
-              particleEffect="sparkles"
-              particleColors={['#64b5f6', '#90caf9', '#bbdefb']}
-              particleIntensity={0.6}
-              floatingText={['DREAM', 'HOME', 'LOVE', 'PEACE']}
-              floatingTextIntensity={0.4}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
               <StoryAudio src="/audio/Elijah - panalangin piano.mp3" loop volume={0.5} />
@@ -112,7 +97,7 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-12 text-center text-2xl font-medium leading-relaxed md:text-3xl lg:text-4xl" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)', color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
+                <p className="mb-12 text-center text-2xl font-medium leading-relaxed md:text-3xl lg:text-4xl text-gray-800" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)' }}>
                   But reality was brighter than the sun.
                 </p>
               </ScrollAnimation>
@@ -121,15 +106,11 @@ export default function ElijahStoryPage() {
             {/* Reality Section */}
             <StorySection
               sectionId="elijah-reality"
-              backgroundColor="#424242"
-              particleEffect="none"
-              floatingText={['MANILA', 'NOISE', 'HEAT', 'KARAOKE']}
-              floatingTextIntensity={0.6}
-              floatingTextDirection="chaotic"
+              backgroundColor="#f0e8e0"
               className={SECTION_CHROME}
             >
               <StoryAudio src="/audio/Elijah_ Streets of Manila.mp3" loop volume={0.5} />
-              <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
+              <StoryParagraph>
                 He opened his eyes. The sharp white of his dream dissolved into the chipped melamine countertop, the single, stained electric kettle wobbling on the edge. His kitchen island was a small plastic table, its legs uneven, where he rested his weary elbows. He tore open a packet of instant noodles. The kettle rattled as it boiled.
               </StoryParagraph>
 
@@ -147,11 +128,7 @@ export default function ElijahStoryPage() {
             {/* Anxiety Section */}
             <StorySection
               sectionId="elijah-anxiety"
-              backgroundColor="#1a237e"
-              particleEffect="none"
-              floatingText={['WORRY', 'DEBT', 'FEAR', 'ANXIETY', 'STRESS', 'PRESSURE', 'INSOMNIA', 'EXHAUSTION', 'WHAT IF', 'BILLS', 'TUITION', 'RENT', 'WORRY', 'FEAR', 'ANXIETY']}
-              floatingTextIntensity={0.8}
-              floatingTextDirection="chaotic"
+              backgroundColor="#e3f2fd"
               className={SECTION_CHROME}
             >
               <StoryParagraph>
@@ -179,7 +156,7 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-12 text-center text-2xl font-light leading-relaxed md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)', color: 'inherit', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
+                <p className="mb-12 text-center text-2xl font-light leading-relaxed md:text-3xl text-gray-800" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)' }}>
                   When the noise became too much, he clung to his dreams.
                 </p>
               </ScrollAnimation>
@@ -188,13 +165,7 @@ export default function ElijahStoryPage() {
             {/* Sea Section */}
             <StorySection
               sectionId="elijah-beach"
-              backgroundColor="#0277bd"
-              particleEffect="sparkles"
-              particleColors={['#03a9f4', '#29b6f6', '#4fc3f7', '#81d4fa']}
-              particleIntensity={0.7}
-              floatingText={['SEA', 'FLOAT', 'CALM', 'BLUE']}
-              floatingTextIntensity={0.55}
-              floatingTextDirection="up"
+              backgroundColor="#e1f5fe"
               className={SECTION_CHROME}
             >
               <StoryAudio src="/audio/Elijah - sea waves.mp3" loop volume={0.5} />
@@ -220,13 +191,7 @@ export default function ElijahStoryPage() {
             {/* Ocean Calm Section */}
             <StorySection
               sectionId="elijah-ocean"
-              backgroundColor="#01579b"
-              particleEffect="sparkles"
-              particleColors={['#0277bd', '#0288d1', '#039be5']}
-              particleIntensity={0.6}
-              floatingText={['INFINITE', 'UNIVERSE', 'CALM', 'PEACE']}
-              floatingTextIntensity={0.5}
-              floatingTextDirection="up"
+              backgroundColor="#e1f5fe"
               className={SECTION_CHROME}
             >
               <StoryParagraph>
@@ -237,13 +202,7 @@ export default function ElijahStoryPage() {
             {/* Drowning Section */}
             <StorySection
               sectionId="elijah-drowning"
-              backgroundColor="#000051"
-              particleEffect="strobe"
-              particleColors={['#01579b', '#0277bd', '#0288d1', '#039be5']}
-              particleIntensity={1.2}
-              floatingText={['DROWN', 'SUFFOCATE', 'DARK', 'VOID', 'ABYSS', 'DEEP']}
-              floatingTextIntensity={1}
-              floatingTextDirection="down"
+              backgroundColor="#fce4ec"
               className={SECTION_CHROME}
             >
               <StoryParagraph>
@@ -258,11 +217,7 @@ export default function ElijahStoryPage() {
             {/* Cafe/Dating Section */}
             <StorySection
               sectionId="elijah-dating"
-              backgroundColor="#2c2c2c"
-              particleEffect="none"
-              floatingText={['GHOSTED', 'CAFE', 'QUIET', 'MASK']}
-              floatingTextIntensity={0.55}
-              floatingTextDirection="chaotic"
+              backgroundColor="#f0e8e0"
               className={SECTION_CHROME}
             >
               <StoryParagraph>
@@ -292,12 +247,6 @@ export default function ElijahStoryPage() {
             <StorySection
               sectionId="elijah-mother"
               backgroundColor="#fff8e1"
-              particleEffect="sparkles"
-              particleColors={['#ffd700', '#ffeb3b', '#fff59d']}
-              particleIntensity={0.6}
-              floatingText={['CARE', 'HOME', 'MOTHER', 'WARMTH']}
-              floatingTextIntensity={0.5}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
               <StoryParagraph>
@@ -324,12 +273,6 @@ export default function ElijahStoryPage() {
             <StorySection
               sectionId="elijah-dream-home"
               backgroundColor="#e1f5fe"
-              particleEffect="sparkles"
-              particleColors={['#03a9f4', '#29b6f6', '#4fc3f7', '#81d4fa']}
-              particleIntensity={0.7}
-              floatingText={['MINIMAL', 'LIGHT', 'CALM', 'ZEN']}
-              floatingTextIntensity={0.55}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
               <StoryParagraph>
@@ -337,7 +280,7 @@ export default function ElijahStoryPage() {
               </StoryParagraph>
 
               <ScrollAnimation direction="fadeIn">
-                <p className="mb-12 border-l-4 border-cyan-300 pl-6 text-2xl italic leading-relaxed md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)', color: '#ffd700', textShadow: '0 2px 8px rgba(255, 215, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.8), 0 0 3px rgba(255, 215, 0, 0.6)' }}>
+                <p className="mb-12 border-l-4 border-cyan-300 pl-6 text-2xl italic leading-relaxed md:text-3xl text-gray-800" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)' }}>
                   &quot;I&apos;m gonna get out of bed every morning... and breathe in and out all day long. And then after a while I won&apos;t have to remind myself to get out of bed in the morning and breathe in and out.&quot;
                 </p>
               </ScrollAnimation>
@@ -363,12 +306,6 @@ export default function ElijahStoryPage() {
             <StorySection
               sectionId="elijah-understanding"
               backgroundColor="#fff3e0"
-              particleEffect="sparkles"
-              particleColors={['#ffd700', '#ffeb3b', '#fff59d', '#ffc107']}
-              particleIntensity={0.7}
-              floatingText={['TRUTH', 'BURDEN', 'EDUCATION', 'TICKET']}
-              floatingTextIntensity={0.6}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
               <StoryParagraph>
@@ -380,12 +317,6 @@ export default function ElijahStoryPage() {
             <StorySection
               sectionId="elijah-hope"
               backgroundColor="#fffde7"
-              particleEffect="sparkles"
-              particleColors={['#ffd700', '#ffeb3b', '#fff59d', '#ffc107']}
-              particleIntensity={0.8}
-              floatingText={['CLIMB', 'SUNRISE', 'VOW', 'FREEDOM']}
-              floatingTextIntensity={0.6}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
               <StoryParagraph>

@@ -53,22 +53,19 @@ const TAKEAWAYS = [
 
 export default function BeyondFeaturesPage() {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#050b22] text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_10%_-10%,rgba(95,52,117,0.45),rgba(5,11,34,0.9))]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(110%_120%_at_95%_-5%,rgba(33,56,133,0.55),rgba(5,11,34,0.95))]" />
-
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       <Navigation />
 
       <main className="relative z-10 mx-auto max-w-6xl px-6 pt-40 pb-24">
         <header className="text-center">
-          <p className="mb-3 text-sm uppercase tracking-[0.4em] text-white/60">
+          <p className="mb-3 text-sm uppercase tracking-[0.4em] text-gray-600">
             Supporting Essays
           </p>
-          <h1 className="mb-5 font-bella-queta text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mb-5 font-bella-queta text-5xl md:text-6xl lg:text-7xl text-gray-800">
             Beyond the Features
           </h1>
-          <p className="mx-auto max-w-3xl text-lg text-white/75 md:text-xl">
-            Three longform essays extend The Haven’s core stories. Move from personal testimony into the
+          <p className="mx-auto max-w-3xl text-lg text-gray-700 md:text-xl">
+            Three longform essays extend The Haven's core stories. Move from personal testimony into the
             frameworks—digital autonomy, sustainability, and finance—that shape the Gen Z sanctuary.
           </p>
         </header>
@@ -78,22 +75,21 @@ export default function BeyondFeaturesPage() {
             <TransitionLink
               key={feature.id}
               href={feature.href}
-              className={`group relative overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-br ${feature.gradient} p-8 shadow-[0_30px_70px_rgba(5,11,34,0.5)] transition transform-gpu hover:-translate-y-1.5`}
+              className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm transition transform-gpu hover:-translate-y-1.5"
             >
-              <div className="absolute inset-0 bg-white/10 opacity-0 transition group-hover:opacity-15" />
               <div className="relative z-10 flex h-full flex-col justify-between">
                 <div>
-                  <span className="text-xs uppercase tracking-[0.4em] text-white/70">
+                  <span className="text-xs uppercase tracking-[0.4em] text-gray-600">
                     {feature.eyebrow}
                   </span>
-                  <h2 className="mt-3 font-bella-queta text-2xl text-white">
+                  <h2 className="mt-3 font-bella-queta text-2xl text-gray-800">
                     {feature.title}
                   </h2>
-                  <p className="mt-4 text-sm leading-relaxed text-white/85">
+                  <p className="mt-4 text-sm leading-relaxed text-gray-700">
                     {feature.summary}
                   </p>
                 </div>
-                <span className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-white">
+                <span className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.4em] text-[#BE8CC1]">
                   Read essay
                   <svg
                     className="h-3.5 w-3.5 transition group-hover:translate-x-1"
@@ -111,10 +107,10 @@ export default function BeyondFeaturesPage() {
           ))}
         </section>
 
-        <section className="mt-24 rounded-3xl border border-white/15 bg-white/10 p-8 shadow-[0_24px_60px_rgba(5,11,34,0.45)] backdrop-blur">
+        <section className="mt-24 rounded-3xl border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/60">Why it matters</p>
-            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">
+            <p className="text-xs uppercase tracking-[0.4em] text-gray-600">Why it matters</p>
+            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl text-gray-800">
               How to use these features
             </h2>
           </div>
@@ -122,9 +118,9 @@ export default function BeyondFeaturesPage() {
             {TAKEAWAYS.map((item) => (
               <li
                 key={item.title}
-                className="rounded-2xl border border-white/15 bg-white/12 p-6 text-sm leading-relaxed text-white/80"
+                className="rounded-2xl border border-gray-200 bg-white/60 p-6 text-sm leading-relaxed text-gray-700"
               >
-                <h3 className="font-bella-queta text-xl text-white">{item.title}</h3>
+                <h3 className="font-bella-queta text-xl text-gray-800">{item.title}</h3>
                 <p className="mt-3">{item.body}</p>
               </li>
             ))}

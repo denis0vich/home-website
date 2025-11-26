@@ -135,15 +135,15 @@ export default function StoriesPage() {
 
         {/* Audio & visual note */}
         <section className="mt-24 grid gap-8 lg:grid-cols-[1fr_380px] lg:items-center">
-          <div className="rounded-[2.5rem] border border-white/15 bg-white/10 p-8 shadow-[0_24px_70px_rgba(5,11,34,0.45)] backdrop-blur">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/55">Immersive Design</p>
-            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">Sound, light, and motion</h2>
-            <p className="mt-4 text-sm text-white/80 md:text-base">
+          <div className="rounded-[2.5rem] border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
+            <p className="text-xs uppercase tracking-[0.4em] text-gray-600">Immersive Design</p>
+            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl text-gray-800">Sound, light, and motion</h2>
+            <p className="mt-4 text-sm text-gray-700 md:text-base">
               Every narrative uses scroll-triggered audio, gradient-driven atmospheres, and particle systems tuned to its emotional arc.
               Custom cues—cold piano chords, club pulses, shattering glass, and gentle heartbeats fade in as you
               progress.
             </p>
-            <ul className="mt-6 space-y-3 text-sm text-white/70">
+            <ul className="mt-6 space-y-3 text-sm text-gray-700">
               <li className="flex items-start gap-3">
                 <span className="mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-[#ffd54f]" />
                 Blair: maximalist gradients shift from black cosmos to club neon and hopeful golds.
@@ -164,8 +164,8 @@ export default function StoriesPage() {
         {/* Supporting resources */}
         <section className="mt-24 space-y-10">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/55">Extend Each Narrative</p>
-            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl">Supporting Chapters</h2>
+            <p className="text-xs uppercase tracking-[0.4em] text-gray-600">Extend Each Narrative</p>
+            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl text-gray-800">Supporting Chapters</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {RESOURCE_LINKS.map((resource) => (

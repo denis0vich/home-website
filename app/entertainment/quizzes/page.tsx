@@ -233,17 +233,13 @@ export default function QuizzesPage() {
   }, [])
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#050b22] text-white">
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(120%_130%_at_5%_-10%,rgba(236,223,210,0.28),rgba(5,11,34,0.75))]" />
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(120%_120%_at_95%_0%,rgba(95,52,117,0.32),rgba(5,11,34,0.8))]" />
-      <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(120%_140%_at_50%_120%,rgba(33,56,133,0.25),rgba(5,11,34,0.9))]" />
-
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       <Navigation />
 
       <main className="relative z-10 mx-auto max-w-7xl px-6 pt-40 pb-32">
-        <h1 className="mb-4 text-center font-bella-queta text-5xl text-white md:text-6xl">Quizzes</h1>
+        <h1 className="mb-4 text-center font-bella-queta text-5xl text-gray-800 md:text-6xl">Quizzes</h1>
 
-        <p className="mx-auto mb-16 max-w-3xl text-center font-bella-queta text-xl text-white/80">
+        <p className="mx-auto mb-16 max-w-3xl text-center font-bella-queta text-xl text-gray-700">
           Take our quizzes to reveal the core psychological drivers that are shaping your personal
           sanctuary, and learn what your needs for Silence or Expression truly mean for your ideal living
           space.
@@ -251,14 +247,14 @@ export default function QuizzesPage() {
 
         <section className="mb-20">
             <div className="mb-12">
-              <h2 className="text-center font-bella-queta text-2xl font-bold text-white">
+              <h2 className="text-center font-bella-queta text-2xl font-bold text-gray-800">
                 Choose Your Color
               </h2>
-              <p className="mx-auto mt-4 max-w-3xl text-center font-bella-queta text-sm uppercase tracking-[0.35em] text-white/80">
+              <p className="mx-auto mt-4 max-w-3xl text-center font-bella-queta text-sm uppercase tracking-[0.35em] text-gray-700">
                 &quot;What aesthetic or style does this palette represent?&quot;
               </p>
-              <div className="mx-auto mt-6 max-w-4xl rounded-3xl border border-white/10 bg-white/10 p-6 shadow-[0_26px_80px_rgba(5,11,34,0.45)] backdrop-blur">
-                <p className="text-center font-bella-queta text-sm text-white/90">
+              <div className="mx-auto mt-6 max-w-4xl rounded-3xl border border-gray-200 bg-white/80 p-6 shadow-sm backdrop-blur-sm">
+                <p className="text-center font-bella-queta text-sm text-gray-800">
                   Quiz mechanics: tap a palette, pick from the answer bank, then type or tweak before submitting.
                   After every guess we reveal the correct profile so you can learn on the spot.
                 </p>
@@ -266,7 +262,7 @@ export default function QuizzesPage() {
                   {COLOR_OPTIONS.map((option) => (
                     <span
                       key={option}
-                      className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bella-queta uppercase tracking-[0.3em] text-white/90"
+                      className="rounded-full border border-gray-300 bg-pink-50 px-4 py-2 text-xs font-bella-queta uppercase tracking-[0.3em] text-gray-700"
                     >
                       {option}
                     </span>
@@ -281,13 +277,13 @@ export default function QuizzesPage() {
                   return (
                     <article
                       key={round.id}
-                      className="group relative overflow-hidden rounded-3xl border border-white/12 bg-white/10 p-6 shadow-[0_24px_70px_rgba(5,11,34,0.5)] backdrop-blur"
+                      className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white/80 p-6 shadow-sm backdrop-blur-sm"
                     >
-                      <span className="absolute right-6 top-6 text-xs font-bella-queta uppercase tracking-[0.35em] text-white/70">
+                      <span className="absolute right-6 top-6 text-xs font-bella-queta uppercase tracking-[0.35em] text-gray-600">
                         #{index + 1}
                       </span>
                       <div className="flex flex-col gap-4">
-                        <div className="relative overflow-hidden rounded-2xl border border-white/15">
+                        <div className="relative overflow-hidden rounded-2xl border border-gray-200">
                           <Image
                             src={round.image}
                             alt={`Color palette ${index + 1}`}
@@ -299,15 +295,15 @@ export default function QuizzesPage() {
                           />
                         </div>
                         <div>
-                          <p className="font-bella-queta text-sm uppercase tracking-[0.35em] text-white/80">
+                          <p className="font-bella-queta text-sm uppercase tracking-[0.35em] text-gray-600">
                             Palette
                           </p>
-                          <p className="mt-1 font-bella-queta text-base text-white">
+                          <p className="mt-1 font-bella-queta text-base text-gray-800">
                             {round.palette.join(' • ')}
                           </p>
                         </div>
                         <div>
-                          <p className="font-bella-queta text-sm uppercase tracking-[0.35em] text-white/80">
+                          <p className="font-bella-queta text-sm uppercase tracking-[0.35em] text-gray-600">
                             Possible Answers
                           </p>
                           <div className="mt-2 flex flex-wrap gap-2">
@@ -319,7 +315,7 @@ export default function QuizzesPage() {
                                 className={`rounded-full border px-4 py-1 text-xs font-bella-queta transition ${
                                   state.selectedOption === option
                                     ? 'border-[#BE8CC1] bg-[#BE8CC1]/20 text-white'
-                                    : 'border-white/10 text-white/85 hover:border-[#BE8CC1] hover:bg-[#BE8CC1]/15 hover:text-white'
+                                    : 'border-gray-300 text-gray-700 hover:border-[#BE8CC1] hover:bg-[#BE8CC1]/15 hover:text-gray-800'
                                 }`}
                               >
                                 {option}
@@ -328,17 +324,17 @@ export default function QuizzesPage() {
                           </div>
                         </div>
                         <div>
-                          <label className="mb-2 block text-sm font-bella-queta text-white/85">
+                          <label className="mb-2 block text-sm font-bella-queta text-gray-700">
                             Type your answer
                           </label>
                           <input
                             value={state.value}
                             onChange={(event) => handleColorInputChange(index, event.target.value)}
                             placeholder="e.g., Japandi"
-                            className="w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 font-bella-queta text-white placeholder-white/40 focus:border-[#909FF0] focus:outline-none"
+                            className="w-full rounded-xl border border-gray-300 bg-white px-4 py-3 font-bella-queta text-gray-800 placeholder-gray-400 focus:border-[#BE8CC1] focus:outline-none"
                           />
                           {state.error && (
-                            <p className="mt-2 text-xs font-bella-queta text-red-300">{state.error}</p>
+                            <p className="mt-2 text-xs font-bella-queta text-red-600">{state.error}</p>
                           )}
                         </div>
                         <button
@@ -349,16 +345,16 @@ export default function QuizzesPage() {
                           Reveal Answer
                         </button>
                         {state.showFeedback && (
-                          <div className="space-y-3 rounded-2xl border border-white/15 bg-white/10 p-5 font-bella-queta text-sm text-white/95">
-                            <p className="text-xs uppercase tracking-[0.35em] text-white/80">
+                          <div className="space-y-3 rounded-2xl border border-gray-200 bg-white/60 p-5 font-bella-queta text-sm text-gray-800">
+                            <p className="text-xs uppercase tracking-[0.35em] text-gray-600">
                               {isCorrect ? 'Correct!' : 'Here&apos;s the correct profile'}
                             </p>
-                            <p className="text-lg font-semibold text-white">Right Answer: {round.answer}</p>
-                            <p className="text-white/95">{round.description}</p>
-                            <p className="text-white/95">
+                            <p className="text-lg font-semibold text-gray-800">Right Answer: {round.answer}</p>
+                            <p className="text-gray-700">{round.description}</p>
+                            <p className="text-gray-700">
                               <strong>Why it&apos;s used:</strong> {round.why}
                             </p>
-                            <p className="text-white/95">
+                            <p className="text-gray-700">
                               <strong>Emotion:</strong> {round.emotion}
                             </p>
                           </div>
@@ -369,30 +365,30 @@ export default function QuizzesPage() {
                 })}
               </div>
 
-              <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-white/12 bg-white/10 p-6 text-center shadow-[0_20px_70px_rgba(5,11,34,0.45)] backdrop-blur">
-                <p className="text-sm font-bella-queta uppercase tracking-[0.35em] text-white/85">
+              <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-gray-200 bg-white/80 p-6 text-center shadow-sm backdrop-blur-sm">
+                <p className="text-sm font-bella-queta uppercase tracking-[0.35em] text-gray-800">
                   Community Picks
                 </p>
                 {colorSummaryError && (
-                  <p className="mt-4 text-xs font-bella-queta text-red-300">{colorSummaryError}</p>
+                  <p className="mt-4 text-xs font-bella-queta text-red-600">{colorSummaryError}</p>
                 )}
                 {!colorSummaryError && paletteBreakdown.length === 0 ? (
-                  <p className="mt-4 font-bella-queta text-sm text-white/85">
+                  <p className="mt-4 font-bella-queta text-sm text-gray-700">
                     Be the first to submit—your guesses will light up the leaderboard.
                   </p>
                 ) : (
                   <div className="mt-4 space-y-2">
                     {paletteBreakdown.slice(0, 5).map(([palette, count], idx) => (
-                      <p key={`${palette}-${idx}`} className="font-bella-queta text-white/95">
-                        <span className="font-semibold text-white">{palette}</span>{' '}
-                        <span className="text-sm text-white/80">
+                      <p key={`${palette}-${idx}`} className="font-bella-queta text-gray-800">
+                        <span className="font-semibold text-gray-800">{palette}</span>{' '}
+                        <span className="text-sm text-gray-600">
                           · {count} {count === 1 ? 'vote' : 'votes'}
                         </span>
                       </p>
                     ))}
                   </div>
                 )}
-                <p className="mt-4 text-xs font-bella-queta uppercase tracking-[0.35em] text-white/80">
+                <p className="mt-4 text-xs font-bella-queta uppercase tracking-[0.35em] text-gray-600">
                   {totalColorResponses} {totalColorResponses === 1 ? 'color entry logged' : 'color entries logged'}
                 </p>
               </div>
