@@ -108,24 +108,21 @@ export default function GalleryPage() {
   }, [])
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-[#081849] text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_10%_10%,rgba(95,52,117,0.28),rgba(8,24,73,0.65))]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_70%_at_80%_0%,rgba(236,223,210,0.25),rgba(8,24,73,0.0))]" />
-
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       <Navigation />
 
       <main className="relative z-10 mx-auto max-w-7xl px-6 pt-36 pb-24">
         <header className="text-center">
-          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-white/55">VISUAL ARCHIVE</p>
-          <h1 className="mb-6 font-bella-queta text-5xl md:text-6xl lg:text-7xl">Gallery</h1>
-          <p className="mx-auto max-w-3xl text-lg text-white/75 md:text-xl">
-            How do we see “home” when we freeze it in time? This gallery threads together portraits,
+          <p className="mb-4 text-sm uppercase tracking-[0.35em] text-gray-600">VISUAL ARCHIVE</p>
+          <h1 className="mb-6 font-bella-queta text-5xl md:text-6xl lg:text-7xl text-gray-800">Gallery</h1>
+          <p className="mx-auto max-w-3xl text-lg text-gray-700 md:text-xl">
+            How do we see "home" when we freeze it in time? This gallery threads together portraits,
             facades, and vantage points from Metro Manila—each frame a clue to how we build refuge,
             perform identity, and carve out breath in dense cities.
           </p>
         </header>
 
-        <section className="mt-20 rounded-3xl border border-white/15 bg-white/5 p-8 shadow-[0_20px_60px_rgba(8,24,73,0.35)] backdrop-blur">
+        <section className="mt-20 rounded-3xl border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-bella-queta text-3xl md:text-4xl">Video Reel</h2>
             <p className="mt-4 text-white/70">

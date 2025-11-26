@@ -7,8 +7,6 @@ import {
   ReactNode,
   useMemo,
 } from 'react'
-import ParticleEffects from './ParticleEffects'
-import FloatingTextEffect from './FloatingTextEffect'
 import { useOptionalStoryAtmosphere } from './StoryAtmosphereProvider'
 
 interface StorySectionProps {
@@ -127,39 +125,15 @@ export default function StorySection({
     >
       {/* Background color overlay within section bounds */}
       <div
-        className="pointer-events-none absolute inset-0 transition-opacity duration-1000 ease-out"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-500 ease-out"
         style={{
           zIndex: -3,
           backgroundColor,
-          opacity: isActive ? Math.min(0.25, backgroundOpacity * 0.25) : 0,
+          opacity: isActive ? 1 : 0,
           mixBlendMode: 'normal'
         }}
       />
 
-      {/* Particle effects anchored to section */}
-      {isActive && particleEffect !== 'none' && (
-        <ParticleEffects
-          type={particleEffect}
-          colors={particleColors}
-          intensity={particleIntensity}
-          className="absolute inset-0"
-          style={{ zIndex: -4 }}
-        />
-      )}
-
-      {/* Floating text effects */}
-      {isActive && floatingText && floatingText.length > 0 && (
-        <div
-          className="absolute inset-0 overflow-hidden pointer-events-none"
-          style={{ zIndex: -1 }}
-        >
-          <FloatingTextEffect
-            words={floatingText}
-            intensity={floatingTextIntensity}
-            direction={floatingTextDirection}
-          />
-        </div>
-      )}
 
       <div className="relative z-10">
         <div className={`mx-auto w-full max-w-5xl px-6 ${contentClassName}`}>

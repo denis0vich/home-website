@@ -74,29 +74,19 @@ export default function StoriesPage() {
   )
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#050b22] text-white">
-      {/* Global atmospheric layers */}
-      <div className="pointer-events-none absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(160%_140%_at_8%_-20%,rgba(137,49,114,0.45),rgba(5,11,34,0.92))]" />
-        <div className="absolute inset-0 bg-[radial-gradient(140%_140%_at_92%_-10%,rgba(33,56,133,0.42),rgba(5,11,34,0.9))]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(236,223,210,0.18)_0%,rgba(8,24,73,0.72)_55%,rgba(5,11,34,0.95)_100%)] mix-blend-soft-light" />
-        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.12),transparent_55%)]" />
-        <div className="absolute inset-0 opacity-35 bg-[radial-gradient(circle_at_80%_15%,rgba(255,169,224,0.18),transparent_58%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.08)_0%,rgba(255,255,255,0)_40%)]" />
-      </div>
-
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       <Navigation />
 
       <main className="relative z-10 mx-auto max-w-6xl px-6 pt-40 pb-28">
         {/* Hero */}
         <section className="text-center">
-          <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-6 py-2 text-xs uppercase tracking-[0.45em] text-white/70 backdrop-blur">
+          <div className="inline-flex items-center gap-3 rounded-full border border-gray-300 bg-pink-50 px-6 py-2 text-xs uppercase tracking-[0.45em] text-gray-600 backdrop-blur-sm">
             <span>Story Collection</span>
           </div>
-          <h1 className="mt-6 font-bella-queta text-5xl md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 font-bella-queta text-5xl md:text-6xl lg:text-7xl text-gray-800">
             Stories That Build Sanctuary
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-white/80 md:text-xl">
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700 md:text-xl">
             Enter the immersive trilogy of Blair, Elijah, and Lala—three dream homes imagined from
             trauma, longing, and faith. Each portal leads to scroll-triggered soundscapes, particle-driven
             atmospheres, and companion interviews that extend their worlds.
@@ -104,7 +94,7 @@ export default function StoriesPage() {
         </section>
 
         {/* Narrative portals */}
-        <section className="relative mt-20 rounded-[2.75rem] border border-white/12 bg-white/8 p-10 shadow-[0_30px_120px_rgba(5,11,34,0.55)] backdrop-blur">
+        <section className="relative mt-20 rounded-[2.75rem] border border-gray-200 bg-white/80 p-10 shadow-sm backdrop-blur-sm">
           <div className="pointer-events-none absolute -top-24 right-10 hidden h-[220px] w-[220px] rotate-12 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.22),transparent_65%)] blur-3xl md:block" />
           <div className="pointer-events-none absolute -bottom-24 left-1/3 hidden h-[220px] w-[220px] -rotate-6 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.16),transparent_65%)] blur-3xl md:block" />
 

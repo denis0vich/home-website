@@ -1,7 +1,6 @@
 'use client'
 
 import ScrollAnimation from './ScrollAnimation'
-import TextReveal from './TextReveal'
 import { ReactNode, useEffect, useRef, useState } from 'react'
 
 interface StoryParagraphProps {
@@ -17,17 +16,14 @@ interface StoryParagraphProps {
 export default function StoryParagraph({ 
   children, 
   className = '',
-  duration = 1800,
-  threshold = 0.25,
+  duration = 500,
+  threshold = 0.2,
   useTextReveal = false,
   revealType = 'word',
   textRevealDelay = 20
 }: StoryParagraphProps) {
-  // Check if children is a string
-  const isString = typeof children === 'string'
   const paragraphRef = useRef<HTMLParagraphElement>(null)
-  const [textShadow, setTextShadow] = useState<string>('')
-  const [textColor, setTextColor] = useState<string>('inherit')
+  const [textColor, setTextColor] = useState<string>('#333333')
 
   useEffect(() => {
     if (!paragraphRef.current) return
@@ -44,55 +40,36 @@ export default function StoryParagraph({
       // Calculate luminance
       const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
       
-      // If inherited color is dark (on light background), use white instead
+      // Set appropriate text color based on background
       if (luminance < 0.5) {
-        // Dark text on light background - force white text
+        // Dark background - use light text
         setTextColor('#ffffff')
-        setTextShadow('0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)')
       } else {
-        // Light text on dark background - keep inherited color
-        setTextColor('inherit')
-        setTextShadow('0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)')
+        // Light background - use dark text
+        setTextColor('#333333')
       }
-    } else {
-      // Fallback: assume dark background with light text
-      setTextColor('inherit')
-      setTextShadow('0 2px 10px rgba(255, 255, 255, 0.4), 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.8)')
     }
   }, [])
   
   return (
-        <ScrollAnimation 
-          direction="fadeInUp" 
-          duration={duration}
-          threshold={threshold}
-          rootMargin="0px 0px -250px 0px"
-        >
-          <p 
-            ref={paragraphRef}
-            className={`mb-16 leading-relaxed text-lg md:text-xl lg:text-2xl ${className}`} 
-            style={{ 
-              lineHeight: '2', 
-              color: textColor,
-              fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)', 
-              textShadow: textShadow || '0 2px 10px rgba(255, 255, 255, 0.4), 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 2px rgba(0, 0, 0, 0.8)'
-            }}
-          >
-            {useTextReveal && isString ? (
-              <TextReveal 
-                revealType={revealType} 
-                delay={textRevealDelay}
-                duration={textRevealDelay}
-                threshold={0.15}
-                rootMargin="0px 0px -200px 0px"
-              >
-                {children as string}
-              </TextReveal>
-            ) : (
-              children
-            )}
-          </p>
-        </ScrollAnimation>
+    <ScrollAnimation 
+      direction="fadeIn" 
+      duration={duration}
+      threshold={threshold}
+      rootMargin="0px 0px -100px 0px"
+    >
+      <p 
+        ref={paragraphRef}
+        className={`mb-16 leading-relaxed text-lg md:text-xl lg:text-2xl ${className}`} 
+        style={{ 
+          lineHeight: '2', 
+          color: textColor,
+          fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)'
+        }}
+      >
+        {children}
+      </p>
+    </ScrollAnimation>
   )
 }
 

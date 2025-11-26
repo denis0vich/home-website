@@ -6,22 +6,18 @@ import TransitionLink from '@/components/TransitionLink'
 
 export default function EntertainmentPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#050b22] text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_130%_at_5%_-10%,rgba(236,223,210,0.28),rgba(5,11,34,0.75))]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_120%_at_95%_0%,rgba(95,52,117,0.32),rgba(5,11,34,0.8))]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_140%_at_50%_120%,rgba(33,56,133,0.25),rgba(5,11,34,0.9))]" />
-
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       <Navigation />
 
       <main className="relative z-10 mx-auto max-w-7xl px-6 pt-40 pb-32">
-        <ScrollAnimation direction="fadeIn" delay={200}>
-          <h1 className="mb-4 text-center font-bella-queta text-5xl text-white md:text-6xl">
+        <ScrollAnimation direction="fadeIn" duration={500}>
+          <h1 className="mb-4 text-center font-bella-queta text-5xl text-gray-800 md:text-6xl">
             Entertainment & User Interaction
           </h1>
         </ScrollAnimation>
 
-        <ScrollAnimation direction="fadeInUp" delay={300}>
-          <p className="mx-auto mb-16 max-w-3xl text-center font-bella-queta text-xl text-white/80">
+        <ScrollAnimation direction="fadeIn" duration={500}>
+          <p className="mx-auto mb-16 max-w-3xl text-center font-bella-queta text-xl text-gray-700">
             Engage with others in the Community Forum to share your own struggles, dream home blueprints, and
             cost-saving strategies for urban living. Take our Quizzes to reveal the core psychological drivers that are
             shaping your personal sanctuary, and learn what your needs for Silence or Expression truly mean for your
@@ -30,13 +26,13 @@ export default function EntertainmentPage() {
         </ScrollAnimation>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <ScrollAnimation direction="fadeInUp" delay={400}>
+          <ScrollAnimation direction="fadeIn" duration={500}>
             <TransitionLink
               href="/entertainment/forum"
-              className="group block rounded-3xl border border-white/10 bg-white/10 p-10 shadow-[0_28px_90px_rgba(5,11,34,0.45)] backdrop-blur-md transition-all hover:border-[#BE8CC1]/50 hover:bg-white/15"
+              className="group block rounded-3xl border border-gray-200 bg-white/80 p-10 shadow-sm backdrop-blur-sm transition-all hover:border-[#BE8CC1]/50 hover:bg-white/90"
             >
-              <h2 className="mb-4 font-bella-queta text-3xl font-bold text-white">Community Forum</h2>
-              <p className="mb-6 font-bella-queta text-white/80">
+              <h2 className="mb-4 font-bella-queta text-3xl font-bold text-gray-800">Community Forum</h2>
+              <p className="mb-6 font-bella-queta text-gray-700">
                 Share your story with the community—every note helps someone else feel less alone. Connect
                 through shared struggles, dream home blueprints, and cost-saving strategies for urban living.
               </p>
@@ -47,13 +43,13 @@ export default function EntertainmentPage() {
             </TransitionLink>
           </ScrollAnimation>
 
-          <ScrollAnimation direction="fadeInUp" delay={500}>
+          <ScrollAnimation direction="fadeIn" duration={500}>
             <TransitionLink
               href="/entertainment/quizzes"
-              className="group block rounded-3xl border border-white/10 bg-white/10 p-10 shadow-[0_28px_90px_rgba(5,11,34,0.45)] backdrop-blur-md transition-all hover:border-[#BE8CC1]/50 hover:bg-white/15"
+              className="group block rounded-3xl border border-gray-200 bg-white/80 p-10 shadow-sm backdrop-blur-sm transition-all hover:border-[#BE8CC1]/50 hover:bg-white/90"
             >
-              <h2 className="mb-4 font-bella-queta text-3xl font-bold text-white">Quizzes</h2>
-              <p className="mb-6 font-bella-queta text-white/80">
+              <h2 className="mb-4 font-bella-queta text-3xl font-bold text-gray-800">Quizzes</h2>
+              <p className="mb-6 font-bella-queta text-gray-700">
                 Take our quizzes to reveal the core psychological drivers that are shaping your personal
                 sanctuary, and learn what your needs for Silence or Expression truly mean for your ideal living
                 space.

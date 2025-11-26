@@ -54,17 +54,16 @@ export default function Navigation() {
     const highlightBaseClasses =
       'absolute left-1/2 top-1/2 z-0 h-[calc(100%+0.75rem)] w-[calc(100%-0.75rem)] rounded-full transition-all duration-75 ease-out'
     const highlightStateClasses = active
-      ? 'bg-[#909FF0]/85 shadow-[0_8px_24px_rgba(144,159,240,0.35)]'
-      : 'bg-gradient-to-r from-white/50 via-white/25 to-white/50'
+      ? 'bg-[#BE8CC1]/30 shadow-[0_8px_24px_rgba(190,140,193,0.25)]'
+      : 'bg-gradient-to-r from-gray-100/50 via-gray-100/25 to-gray-100/50'
 
     return (
       <TransitionLink
         key={item.href}
         href={item.href}
-        className={`relative inline-flex items-center justify-center px-3 py-2 font-bella-queta font-bold tracking-[0.15em] text-white transition-colors hover:text-white ${
+        className={`relative inline-flex items-center justify-center px-3 py-2 font-bella-queta font-bold tracking-[0.15em] text-gray-800 transition-colors hover:text-gray-900 ${
           isMobile ? 'text-base w-full justify-start' : 'text-lg'
         }`}
-        style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.5)' }}
         onClick={() => isMobile && setMobileMenuOpen(false)}
         onMouseEnter={() => !isMobile && setHoveredItem(item.href)}
         onMouseLeave={() => {
@@ -120,22 +119,22 @@ export default function Navigation() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden relative z-50 flex flex-col items-center justify-center w-10 h-10 space-y-1.5 text-white focus:outline-none"
+          className="md:hidden relative z-50 flex flex-col items-center justify-center w-10 h-10 space-y-1.5 text-gray-800 focus:outline-none"
           aria-label="Toggle menu"
           aria-expanded={mobileMenuOpen}
         >
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
               mobileMenuOpen ? 'rotate-45 translate-y-2' : ''
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
               mobileMenuOpen ? 'opacity-0' : ''
             }`}
           />
           <span
-            className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+            className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
               mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
             }`}
           />
@@ -144,7 +143,7 @@ export default function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 z-40 bg-[#050b22]/95 backdrop-blur-md transition-transform duration-300 md:hidden ${
+        className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-md transition-transform duration-300 md:hidden ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

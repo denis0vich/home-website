@@ -9,33 +9,42 @@ import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
 
 const SECTION_CHROME =
-  'rounded-[2.75rem] border border-white/12 backdrop-blur-sm overflow-hidden shadow-[0_28px_90px_rgba(5,11,34,0.45)]'
+  'rounded-[2.75rem] border border-gray-200 backdrop-blur-sm overflow-hidden shadow-sm'
 
 export default function LalaStoryPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-[#050b22] text-white">
-      <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(130%_160%_at_0%_-10%,rgba(245,237,220,0.18),rgba(8,24,73,0))]" />
-      <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(120%_150%_at_90%_-15%,rgba(200,230,201,0.16),rgba(8,24,73,0))]" />
+    <div className="relative min-h-screen bg-[#faf8f5] text-gray-800">
       
       <div className="relative z-[5]">
         <Navigation />
         <main className="relative w-full pt-36 pb-28">
           <div className="mx-auto w-full max-w-5xl px-6">
-            <ScrollAnimation direction="fadeInUp" duration={1800}>
-              <header className="rounded-3xl border border-white/15 bg-white/10 p-10 text-center shadow-[0_24px_70px_rgba(5,11,34,0.55)] backdrop-blur">
-                <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-white/70">
-                  <span className="rounded-full border border-white/25 px-4 py-2">Subject: Lala</span>
-                  <span className="rounded-full border border-white/25 px-4 py-2">Religion · Homophobia</span>
-                  <span className="rounded-full border border-white/25 px-4 py-2">Warm Greens &amp; Browns</span>
+            <ScrollAnimation direction="fadeIn" duration={500}>
+              <header className="rounded-3xl border border-gray-200 bg-white/80 p-10 text-center shadow-sm backdrop-blur-sm">
+                <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-gray-600">
+                  <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Subject: Lala</span>
+                  <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Religion · Homophobia</span>
+                  <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Warm Greens &amp; Browns</span>
               </div>
-                <h1 className="text-5xl font-bella-queta text-white md:text-6xl lg:text-7xl">
+                <h1 className="text-5xl font-bella-queta text-gray-800 md:text-6xl lg:text-7xl">
                 The Sculpture of Faith
               </h1>
-                <p className="mt-6 text-lg text-white/80 md:text-xl">
+                <p className="mt-6 text-lg text-gray-700 md:text-xl">
                   The road back home is well-traveled, though the wheel drifts elsewhere. In places, people, and fleeting moments, she leaves traces where the search never quite ends. For Lala, home was never a finished book. It was a map still being written, filled with people and places she has yet to love, and be loved by.
               </p>
             </header>
           </ScrollAnimation>
+          
+          {/* About The Haven */}
+          <div className="mt-12">
+            <ScrollAnimation direction="fadeIn" duration={500}>
+              <div className="rounded-3xl border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed text-center max-w-4xl mx-auto">
+                  The Haven is an interactive digital magazine that uses creative nonfiction and visual media to show how lived adversities shape Gen Z&apos;s concept of home, proving that their future dwellings are unique, customized psychological sanctuaries built to reflect their pursuit of personal autonomy and identity expression.
+                </p>
+              </div>
+            </ScrollAnimation>
+          </div>
           </div>
 
           <section className="mt-16 space-y-12">
@@ -43,15 +52,9 @@ export default function LalaStoryPage() {
             <StorySection 
               sectionId="lala-opening"
               backgroundColor="#f5f1e8"
-              particleEffect="sparkles"
-              particleColors={['#d6c7aa', '#f7e4c3', '#b39374']}
-              particleIntensity={0.45}
-              floatingText={['DEVOTION', 'PROCESSION', 'CANDLE', 'PRAYER']}
-              floatingTextIntensity={0.35}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
-              <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
+              <StoryParagraph>
                 The cathedral across the trees came to light, its imposing brown and orange hues complementing the greenery of the town. In daylight, it was a symbol of devotion. At night, it looked unorthodox. The house of faith turned into something hollow, its white cross shining above like an eye that watched but never wept. Women in ivory dresses walked inside carrying candles and baskets of flowers. Another feast, another celebration. Catholic churches loved their saints. Lala looked away. She preferred All Souls&apos; Day.
                 </StoryParagraph>
 
@@ -63,11 +66,7 @@ export default function LalaStoryPage() {
             {/* Judgment Section */}
             <StorySection 
               sectionId="lala-judgment"
-              backgroundColor="#2c2c2c"
-              particleEffect="none"
-              floatingText={['JUDGMENT', 'CONTROL', 'IMAGE', 'RULES']}
-              floatingTextIntensity={0.55}
-              floatingTextDirection="chaotic"
+              backgroundColor="#f0e8e0"
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
@@ -83,12 +82,6 @@ export default function LalaStoryPage() {
             <StorySection 
               sectionId="lala-friends"
               backgroundColor="#fff8e1"
-              particleEffect="sparkles"
-              particleColors={['#ffd700', '#ffeb3b', '#fff59d']}
-              particleIntensity={0.5}
-              floatingText={['JOY', 'LAUGHTER', 'ESCAPE', 'BRIEF']}
-              floatingTextIntensity={0.45}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
@@ -108,13 +101,7 @@ export default function LalaStoryPage() {
             {/* Rejection Section */}
             <StorySection 
               sectionId="lala-rejection"
-              backgroundColor="#3d0000"
-              particleEffect="strobe"
-              particleColors={['#ff0000', '#8b0000', '#dc143c']}
-              particleIntensity={1.5}
-              floatingText={['REJECTED', 'ALONE', 'HURT', 'SHAME']}
-              floatingTextIntensity={1}
-              floatingTextDirection="chaotic"
+              backgroundColor="#fce4ec"
               className={SECTION_CHROME}
             >
               <StoryAudio src="/audio/Lala - Heavy Door Slam .mp3" volume={0.6} fadeIn={false} />
@@ -131,10 +118,6 @@ export default function LalaStoryPage() {
             <StorySection 
               sectionId="lala-faith-history"
               backgroundColor="#efebe9"
-              particleEffect="none"
-              floatingText={['HERITAGE', 'STONE', 'RITUAL', 'HISTORY']}
-              floatingTextIntensity={0.35}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
@@ -150,12 +133,6 @@ export default function LalaStoryPage() {
             <StorySection 
               sectionId="lala-play"
               backgroundColor="#fff3e0"
-              particleEffect="sparkles"
-              particleColors={['#ff9800', '#ffb74d', '#ffcc80']}
-              particleIntensity={0.4}
-              floatingText={['STAGE', 'ROLE', 'CROWN', 'VOICE']}
-              floatingTextIntensity={0.4}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
@@ -167,7 +144,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                <p className="mb-12 text-center text-xl font-light italic leading-relaxed" style={{ color: 'inherit', opacity: 0.9, textShadow: '0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(255, 255, 255, 0.2)' }}>
+                <p className="mb-12 text-center text-xl font-light italic leading-relaxed text-gray-700">
                   If a king could defy God for the woman he wanted, why was she taught to fear hell for simply wanting to love? She would&apos;ve never fit in God&apos;s image. What a shame.
                   </p>
                 </ScrollAnimation>
@@ -177,12 +154,6 @@ export default function LalaStoryPage() {
             <StorySection 
               sectionId="lala-beggar"
               backgroundColor="#fff8e1"
-              particleEffect="sparkles"
-              particleColors={['#ffd700', '#ffeb3b', '#fff59d']}
-              particleIntensity={0.4}
-              floatingText={['STREET', 'COMPASSION', 'DREAM', 'REAL']}
-              floatingTextIntensity={0.4}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
@@ -205,11 +176,7 @@ export default function LalaStoryPage() {
             {/* Prayer Group Section */}
             <StorySection 
               sectionId="lala-prayer-group"
-              backgroundColor="#1a1a1a"
-              particleEffect="none"
-              floatingText={['ROSARY', 'GOSSIP', 'PERFUME', 'MASK']}
-              floatingTextIntensity={0.5}
-              floatingTextDirection="chaotic"
+              backgroundColor="#f3e5f5"
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
@@ -217,7 +184,7 @@ export default function LalaStoryPage() {
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                <p className="mb-16 text-center text-2xl font-light italic leading-relaxed" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)', color: 'inherit', opacity: 0.9, textShadow: '0 2px 8px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(255, 255, 255, 0.2)' }}>
+                <p className="mb-16 text-center text-2xl font-light italic leading-relaxed text-gray-700" style={{ fontSize: 'clamp(1.5rem,3.5vw,2.25rem)' }}>
                   It was as if they were trying to hide something. After all, a wicked heart, no matter how elusive, stands out in the ordinary.
                   </p>
                 </ScrollAnimation>
@@ -227,12 +194,6 @@ export default function LalaStoryPage() {
             <StorySection 
               sectionId="lala-jacob"
               backgroundColor="#e8f5e9"
-              particleEffect="sparkles"
-              particleColors={['#4caf50', '#81c784', '#a5d6a7']}
-              particleIntensity={0.5}
-              floatingText={['CROCHET', 'COMFORT', 'COFFEE', 'ROSE']}
-              floatingTextIntensity={0.4}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
@@ -252,19 +213,13 @@ export default function LalaStoryPage() {
             <StorySection 
               sectionId="lala-library"
               backgroundColor="#e8f5e9"
-              particleEffect="sparkles"
-              particleColors={['#4caf50', '#81c784', '#a5d6a7']}
-              particleIntensity={0.6}
-              floatingText={['DISCOVERY', 'SOFTNESS', 'HOPE', 'GENTLE']}
-              floatingTextIntensity={0.45}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
                 <StoryParagraph>
                 Later that night, Lala read The Lady&apos;s Guide to Celestial Mechanics by Olivia Waite. Christa was the one who lent it to her. The story of Lucy, an astronomer who found love in another woman, felt both foreign and familiar. When the characters kissed, something inside her stirred.
                 </StoryParagraph>
 
-              <StoryParagraph useTextReveal revealType="word" textRevealDelay={25}>
+              <StoryParagraph>
                 She read the page again and again, until she could almost see herself in it. Her hand reached for Christa&apos;s in the quiet of the library. Christa pushed her into a corner between the shelves, their lips meeting as if it were their salvation.
                 </StoryParagraph>
 
@@ -276,15 +231,11 @@ export default function LalaStoryPage() {
             {/* Confession Section */}
             <StorySection 
               sectionId="lala-confession"
-              backgroundColor="#000000"
-              particleEffect="none"
-              floatingText={['SIN', 'SHAME', 'EVIL', 'UNWORTHY', 'DISGUSTING', 'HELL', 'SIN', 'SHAME', 'EVIL', 'UNWORTHY', 'DISGUSTING']}
-              floatingTextIntensity={0.8}
-              floatingTextDirection="up"
+              backgroundColor="#fce4ec"
               className={SECTION_CHROME}
             >
               <StoryAudio src="/audio/Lala - confession.mp3" volume={0.6} fadeIn={false} />
-              <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
+              <StoryParagraph>
                 &quot;Bless me, Father, for I have sinned.&quot; The words trembled as they left her mouth. Between her and the priest stood a brown wooden grate, separating sinner from savior. Lala&apos;s hands were shaking in a prayer position. Beads of sweat formed on her forehead. The dark, guarded atmosphere of the confessional made her want to puke. &quot;I&apos;ve desired a woman,&quot; she whispered. She confessed her most shameful secret. She had fantasized about a woman. She had touched herself while thinking about one.
                 </StoryParagraph>
 
@@ -304,11 +255,7 @@ export default function LalaStoryPage() {
             {/* Lotus Section */}
             <StorySection 
               sectionId="lala-lotus"
-              backgroundColor="#1a1a1a"
-              particleEffect="none"
-              floatingText={['PRAYER', 'EVIL', 'UNWORTHY', 'SHADOW']}
-              floatingTextIntensity={0.5}
-              floatingTextDirection="chaotic"
+              backgroundColor="#f3e5f5"
               className={SECTION_CHROME}
             >
               <StoryImage src="/stories-assets/FOR LALA 2.webp" alt="Lotus flower growing from mud" />
@@ -332,11 +279,7 @@ export default function LalaStoryPage() {
             {/* Shackles Section */}
             <StorySection 
               sectionId="lala-shackles"
-              backgroundColor="#2c2c2c"
-              particleEffect="none"
-              floatingText={['LAW', 'LABELS', 'SHADOW', 'VOICE']}
-              floatingTextIntensity={0.55}
-              floatingTextDirection="up"
+              backgroundColor="#f0e8e0"
               className={SECTION_CHROME}
             >
               <StoryImage src="/stories-assets/FOR LALA 3.webp" alt="Shackles" />
@@ -361,27 +304,21 @@ export default function LalaStoryPage() {
             <StorySection 
               sectionId="lala-freedom"
               backgroundColor="#f1f8e9"
-              particleEffect="sparkles"
-              particleColors={['#8bc34a', '#aed581', '#c5e1a5', '#dcedc8']}
-              particleIntensity={0.7}
-              floatingText={['PRIVACY', 'CHOICE', 'FREEDOM', 'LIGHT']}
-              floatingTextIntensity={0.55}
-              floatingTextDirection="up"
               className={SECTION_CHROME}
             >
               <StoryImage src="/stories-assets/FOR LALA 4.webp" alt="Dove to symbolize freedom" />
-              <StoryParagraph useTextReveal revealType="word" textRevealDelay={30}>
+              <StoryParagraph>
                 She crochets again, a peach flower pattern resting in her lap. It was meant for Christa. A woman who made her see herself through the lies.
                 </StoryParagraph>
 
                 <ScrollAnimation direction="fadeIn">
-                <p className="mb-20 text-center text-3xl font-light italic leading-relaxed md:text-4xl lg:text-5xl" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)', color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
+                <p className="mb-20 text-center text-3xl font-light italic leading-relaxed md:text-4xl lg:text-5xl text-gray-800" style={{ lineHeight: '1.6', fontSize: 'clamp(1.75rem,4vw,3rem)' }}>
                   The sculpture of faith lives on in the beauty and sorrow of the people, and places that we continue to love.
                   </p>
                 </ScrollAnimation>
 
-                <ScrollAnimation direction="fadeInUp">
-                <p className="mb-8 text-center text-2xl leading-relaxed md:text-3xl" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)', color: '#ffffff', textShadow: '0 1px 3px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.9)' }}>
+                <ScrollAnimation direction="fadeIn">
+                <p className="mb-8 text-center text-2xl leading-relaxed md:text-3xl text-gray-800" style={{ fontSize: 'clamp(1.5rem,3vw,2rem)' }}>
                   And when Lala comes home to His arms one day, home will no longer be a prayer. She will be forgiven.
                 </p>
               </ScrollAnimation>

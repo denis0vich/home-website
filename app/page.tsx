@@ -23,7 +23,7 @@ export default function Home() {
   }, [])
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#050b22]">
+    <main className="relative min-h-screen overflow-hidden bg-[#faf8f5]">
       {/* Base background - house illustration - moves slowest */}
       <div 
         className="fixed inset-0 z-0"
@@ -94,33 +94,32 @@ export default function Home() {
         </div>
         <Hero />
         
+        {/* About The Haven */}
+        <section className="relative z-20 py-16">
+          <div className="relative mx-auto max-w-6xl overflow-hidden border border-gray-200 bg-white/80 p-10 shadow-sm rounded-2xl">
+            <p className="relative z-10 text-gray-700 text-lg md:text-xl font-bella-queta leading-relaxed text-center">
+              The Haven is an interactive digital magazine that uses creative nonfiction and visual media to show how lived adversities shape Gen Z&apos;s concept of home, proving that their future dwellings are unique, customized psychological sanctuaries built to reflect their pursuit of personal autonomy and identity expression.
+            </p>
+          </div>
+        </section>
+
         {/* Brief Introduction */}
         <section className="relative z-20 py-16">
-          <div className="relative mx-auto max-w-6xl overflow-hidden border border-white/20 bg-white/10 p-10 shadow-[0_35px_90px_rgba(5,11,34,0.55)]">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(160%_140%_at_10%_-20%,rgba(137,49,114,0.45),rgba(8,24,73,0))]" />
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(160%_140%_at_90%_-10%,rgba(33,56,133,0.4),rgba(8,24,73,0))]" />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(236,223,210,0.12)_0%,rgba(8,24,73,0.85)_50%,rgba(137,49,114,0.12)_100%)]" />
-            <p className="relative z-10 text-white text-lg md:text-xl font-bella-queta leading-relaxed text-center drop-shadow-[0_10px_30px_rgba(5,11,34,0.55)]">
+          <div className="relative mx-auto max-w-6xl overflow-hidden border border-gray-200 bg-white/80 p-10 shadow-sm rounded-2xl">
+            <p className="relative z-10 text-gray-700 text-lg md:text-xl font-bella-queta leading-relaxed text-center">
               The constant noise of the city, financial pressure, and the struggle to define personal identity make the simple act of &quot;going home&quot; feel incredibly complex. Welcome to The Haven, an exploration of how our deepest emotional wells, forged by anxiety, trauma, and aspiration, become the true foundation of our perfect sanctuary. Here, we analyze how mindful design combats sensory overload, how financial clarity engineers inner peace, and how architecture can be a powerful act of self-reclamation. Join us as we move beyond superficial features and floor plans to discover the true, psychological meaning of being home.
             </p>
           </div>
-          <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-48"
-            style={{
-              background:
-                'linear-gradient(180deg, rgba(5,11,34,0) 0%, rgba(5,11,34,0.55) 50%, rgba(5,11,34,1) 100%)',
-            }}
-          />
         </section>
 
         <div className="relative z-10">
-          <div className="bg-[#050b22]">
+          <div className="bg-[#faf8f5]">
             <FeaturedStories />
             <BeyondFeaturesPreview />
           </div>
         </div>
 
-        <div className="relative z-10 bg-[#050b22]">
+        <div className="relative z-10 bg-[#faf8f5]">
         {/* CTA Section */}
         <section className="relative z-20 py-20 px-6">
           <div className="max-w-4xl mx-auto text-center space-y-8">
