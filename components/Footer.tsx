@@ -5,7 +5,6 @@ import TransitionLink from './TransitionLink'
 const FOOTER_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Articles', href: '/stories' },
-  { label: 'Sections', href: '/beyond-the-features' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },

@@ -97,7 +97,7 @@ export default function GalleryPage() {
   const getCaptionFor = useCallback((itemNumber: number) => {
     const caption = GALLERY_CAPTIONS[itemNumber - 1]
     if (!caption) return ''
-    return `${caption} Photograph taken by Anne Nicole Zambrano.`
+    return caption
   }, [])
 
   const handleGroupActiveChange = useCallback((groupId: string, index: number) => {
@@ -201,6 +201,9 @@ export default function GalleryPage() {
               Move through the chapters below to follow how home shifts—from rooms of ritual to guarded streets,
               and finally to balconies that drink the skyline.
             </p>
+            <p className="mx-auto mt-6 text-sm text-gray-600 italic">
+              Photograph taken by Anne Nicole Zambrano.
+            </p>
           </div>
 
           {GALLERY_GROUPS.map((group) => {
@@ -237,7 +240,7 @@ export default function GalleryPage() {
                       const images = group.items.map(num => ({
                         src: `/gallery/our-gallery/house${num}.jpg`,
                         alt: `Home ${num} from Our Gallery`,
-                        description: `${GALLERY_CAPTIONS[num - 1]} Photograph taken by Anne Nicole Zambrano.`
+                        description: GALLERY_CAPTIONS[num - 1] || ''
                       }))
                       return (
                       <LightboxImage
@@ -245,7 +248,7 @@ export default function GalleryPage() {
                         src={`/gallery/our-gallery/house${itemNumber}.jpg`}
                         alt={`Home ${itemNumber} from Our Gallery`}
                         sizes="(max-width: 768px) 80vw, (max-width: 1200px) 360px, 440px"
-                        description={`${GALLERY_CAPTIONS[itemNumber - 1]} Photograph taken by Anne Nicole Zambrano.`}
+                        description={GALLERY_CAPTIONS[itemNumber - 1] || ''}
                         images={images}
                         currentIndex={index}
                         className={`group relative h-[340px] w-full overflow-hidden rounded-[2.2rem] border border-white/12 bg-white/5 transition ${

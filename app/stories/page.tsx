@@ -94,20 +94,21 @@ export default function StoriesPage() {
         </section>
 
         {/* Narrative portals */}
-        <section className="relative mt-20 rounded-[2.75rem] border border-gray-200 bg-white/80 p-10 shadow-sm backdrop-blur-sm">
+        <section className="relative mt-20 rounded-[2.75rem] border border-gray-200 bg-white/80 p-12 md:p-16 shadow-sm backdrop-blur-sm">
           <div className="pointer-events-none absolute -top-24 right-10 hidden h-[220px] w-[220px] rotate-12 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.22),transparent_65%)] blur-3xl md:block" />
           <div className="pointer-events-none absolute -bottom-24 left-1/3 hidden h-[220px] w-[220px] -rotate-6 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.16),transparent_65%)] blur-3xl md:block" />
 
-          <div className="text-center">
+          <div className="text-center mb-16">
             <h2 className="font-bella-queta text-3xl md:text-4xl">Narrative Portals</h2>
           </div>
 
-          <div className="mt-12">
+          <div className="mt-8">
             <ScrollSnapCarousel
               ariaLabel="Story portals"
               items={STORY_PORTALS}
+              className="[&_.scrollbar-hide]:overflow-x-hidden"
               renderItem={(portal) => (
-                <article className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-[2.8rem] border border-white/15 bg-gradient-to-br ${portal.gradient} p-9 shadow-[0_24px_60px_rgba(5,11,34,0.6)] transition-transform duration-500 ease-out hover:-translate-y-1.5`}>
+                <article className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-[2.8rem] border border-white/15 bg-gradient-to-br ${portal.gradient} p-10 md:p-12 shadow-[0_24px_60px_rgba(5,11,34,0.6)] transition-transform duration-500 ease-out hover:-translate-y-1.5`}>
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.24),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="absolute inset-0 bg-white/10 opacity-0 transition group-hover:opacity-15" />
 

@@ -103,35 +103,36 @@ export default function ScrollSnapCarousel<T>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [items.length])
 
-  useEffect(() => {
-    const container = containerRef.current
-    if (!container) return
+  // Disabled scroll-based navigation - using arrows only
+  // useEffect(() => {
+  //   const container = containerRef.current
+  //   if (!container) return
 
-    const handleWheel = (event: WheelEvent) => {
-      const target = containerRef.current
-      if (!target) return
+  //   const handleWheel = (event: WheelEvent) => {
+  //     const target = containerRef.current
+  //     if (!target) return
 
-      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
-        return
-      }
+  //     if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) {
+  //       return
+  //     }
 
-      if (!event.cancelable) {
-        return
-      }
+  //     if (!event.cancelable) {
+  //       return
+  //     }
 
-      event.preventDefault()
-      target.scrollBy({
-        left: event.deltaY,
-        behavior: 'auto',
-      })
-    }
+  //     event.preventDefault()
+  //     target.scrollBy({
+  //       left: event.deltaY,
+  //       behavior: 'auto',
+  //     })
+  //   }
 
-    container.addEventListener('wheel', handleWheel, { passive: false })
+  //   container.addEventListener('wheel', handleWheel, { passive: false })
 
-    return () => {
-      container.removeEventListener('wheel', handleWheel)
-    }
-  }, [])
+  //   return () => {
+  //     container.removeEventListener('wheel', handleWheel)
+  //   }
+  // }, [])
 
   const scrollToIndex = useCallback((index: number) => {
     const container = containerRef.current
@@ -157,42 +158,42 @@ export default function ScrollSnapCarousel<T>({
 
   return (
     <div className={`relative ${className}`}>
-      <div className="absolute inset-y-0 left-0 flex items-center">
+      <div className="absolute inset-y-0 left-0 z-20 flex items-center -translate-x-4 md:-translate-x-6">
         <button
           type="button"
           onClick={handlePrev}
           disabled={!canPrev}
-          className="group rounded-full bg-white/10 p-3 text-white shadow-lg transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-40"
+          className="group rounded-full bg-gray-800/90 backdrop-blur-sm p-4 text-white shadow-xl transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-gray-800/90"
           aria-label="Scroll previous"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 transition group-hover:-translate-x-0.5"
+            className="h-6 w-6 transition group-hover:-translate-x-0.5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={1.6}
+            strokeWidth={2}
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
       </div>
 
-      <div className="absolute inset-y-0 right-0 flex items-center">
+      <div className="absolute inset-y-0 right-0 z-20 flex items-center translate-x-4 md:translate-x-6">
         <button
           type="button"
           onClick={handleNext}
           disabled={!canNext}
-          className="group rounded-full bg-white/10 p-3 text-white shadow-lg transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-40"
+          className="group rounded-full bg-gray-800/90 backdrop-blur-sm p-4 text-white shadow-xl transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-gray-800/90"
           aria-label="Scroll next"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5 transition group-hover:translate-x-0.5"
+            className="h-6 w-6 transition group-hover:translate-x-0.5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={1.6}
+            strokeWidth={2}
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
@@ -201,9 +202,10 @@ export default function ScrollSnapCarousel<T>({
 
       <div
         ref={containerRef}
-        className="scrollbar-hide flex snap-x snap-mandatory gap-6 overflow-x-auto pb-6 pt-2"
+        className="scrollbar-hide flex snap-x snap-mandatory gap-8 md:gap-10 overflow-x-auto pb-6 pt-2"
         role="group"
         aria-label={ariaLabel}
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {items.map((item, index) => (
           <div
@@ -212,7 +214,7 @@ export default function ScrollSnapCarousel<T>({
               itemRefs.current[index] = node
             }}
             className={`relative flex-shrink-0 snap-center ${itemClassName}`}
-            style={{ minWidth: 'min(320px, 72vw)' }}
+            style={{ minWidth: 'min(340px, 75vw)' }}
             onClick={() => onItemClick?.(item, index)}
           >
             {renderItem(item, index, activeIndexState === index)}

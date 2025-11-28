@@ -8,7 +8,6 @@ import TransitionLink from './TransitionLink'
 const NAV_ITEMS = [
   { label: 'HOME', href: '/' },
   { label: 'ARTICLES', href: '/stories' },
-  { label: 'SECTIONS', href: '/beyond-the-features' },
   { label: 'GALLERY', href: '/gallery' },
   { label: 'ABOUT', href: '/about' },
   { label: 'CONTACT', href: '/contact' },
