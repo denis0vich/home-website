@@ -195,7 +195,7 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
                   {canGoPrevious && (
                     <button
                       onClick={goToPrevious}
-                      className="absolute left-0 top-1/2 -translate-x-4 -translate-y-1/2 z-20 rounded-full bg-white/10 p-3 text-white shadow-lg transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-40"
+                      className="absolute left-0 top-1/2 -translate-x-2 md:-translate-x-4 -translate-y-1/2 z-20 rounded-full bg-gray-800/90 backdrop-blur-sm p-3 md:p-4 text-white shadow-xl transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-30"
                       aria-label="Previous image"
                     >
                       <svg
@@ -215,7 +215,7 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
                   {canGoNext && (
                     <button
                       onClick={goToNext}
-                      className="absolute right-0 top-1/2 translate-x-4 -translate-y-1/2 z-20 rounded-full bg-white/10 p-3 text-white shadow-lg transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-40"
+                      className="absolute right-0 top-1/2 translate-x-2 md:translate-x-4 -translate-y-1/2 z-20 rounded-full bg-gray-800/90 backdrop-blur-sm p-3 md:p-4 text-white shadow-xl transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-30"
                       aria-label="Next image"
                     >
                       <svg
@@ -244,7 +244,7 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
                       alt={image.alt ?? ''}
                       width={image.width ?? Math.round(displayWidth)}
                       height={image.height ?? Math.round(displayHeight)}
-                      className="h-full w-full object-contain"
+                      className="h-full w-full object-contain object-center"
                       priority
                     />
                   </div>
@@ -329,12 +329,12 @@ export function LightboxImage({
       onClick={handleOpen}
       className={`relative block cursor-zoom-in overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/10 text-left transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#ECDFD2] focus-visible:ring-offset-transparent ${className ?? ''}`}
     >
-      <div className="relative h-full w-full">
+      <div className="relative h-full w-full flex items-center justify-center">
         <Image
           src={src}
           alt={alt ?? ''}
           fill
-          className="object-cover transition duration-700 group-hover:scale-[1.03]"
+          className="object-cover object-center transition duration-700 group-hover:scale-[1.03]"
           sizes={sizes}
           priority={priority}
         />
