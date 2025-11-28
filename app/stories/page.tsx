@@ -94,34 +94,34 @@ export default function StoriesPage() {
         </section>
 
         {/* Narrative portals */}
-        <section className="relative mt-20 rounded-[2.75rem] border border-gray-200 bg-white/80 p-12 md:p-16 shadow-sm backdrop-blur-sm">
+        <section className="relative mt-20 rounded-[2.75rem] border border-gray-200 bg-white/80 p-6 md:p-12 lg:p-16 shadow-sm backdrop-blur-sm">
           <div className="pointer-events-none absolute -top-24 right-10 hidden h-[220px] w-[220px] rotate-12 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.22),transparent_65%)] blur-3xl md:block" />
           <div className="pointer-events-none absolute -bottom-24 left-1/3 hidden h-[220px] w-[220px] -rotate-6 rounded-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.16),transparent_65%)] blur-3xl md:block" />
 
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <h2 className="font-bella-queta text-3xl md:text-4xl">Narrative Portals</h2>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8 md:mt-12 px-4 md:px-0">
             <ScrollSnapCarousel
               ariaLabel="Story portals"
               items={STORY_PORTALS}
-              className="[&_.scrollbar-hide]:overflow-x-hidden"
-              itemClassName="min-w-[min(320px,80vw)] max-w-[min(380px,85vw)]"
+              className="[&_.scrollbar-hide]:overflow-x-auto"
+              itemClassName="min-w-[min(260px,70vw)] max-w-[min(280px,75vw)] md:min-w-[min(300px,28vw)] md:max-w-[min(320px,30vw)]"
               renderItem={(portal) => (
-                <article className={`group relative flex h-[500px] md:h-[550px] flex-col justify-between overflow-hidden rounded-[2.8rem] border border-white/15 bg-gradient-to-br ${portal.gradient} p-10 md:p-12 transition-transform duration-500 ease-out hover:-translate-y-1.5`}>
+                <article className={`group relative flex h-[450px] md:h-[520px] flex-col justify-between overflow-hidden rounded-[2.8rem] border border-white/15 bg-gradient-to-br ${portal.gradient} p-6 md:p-8 lg:p-10 transition-transform duration-500 ease-out hover:-translate-y-1.5`}>
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.24),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="absolute inset-0 bg-white/10 opacity-0 transition group-hover:opacity-15" />
 
                   <div className="relative z-10">
                     <span className="text-xs uppercase tracking-[0.4em] text-white/70">{portal.theme}</span>
-                    <h3 className="mt-5 font-bella-queta text-3xl text-white">{portal.name}</h3>
-                    <p className="mt-5 text-sm leading-relaxed text-white/85">{portal.summary}</p>
+                    <h3 className="mt-4 font-bella-queta text-2xl md:text-3xl text-white">{portal.name}</h3>
+                    <p className="mt-4 text-sm leading-relaxed text-white/85">{portal.summary}</p>
                   </div>
 
                   <button
                     onClick={() => triggerTransition(portal.href)}
-                    className="relative z-10 mt-10 inline-flex items-center gap-3 self-start rounded-full border border-white/40 px-6 py-3 text-xs uppercase tracking-[0.4em] text-white transition hover:border-white hover:bg-white/10"
+                    className="relative z-10 mt-8 inline-flex items-center gap-3 self-start rounded-full border border-white/40 px-5 py-2.5 text-xs uppercase tracking-[0.4em] text-white transition hover:border-white hover:bg-white/10"
                   >
                     Enter Story
                     <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -133,34 +133,6 @@ export default function StoriesPage() {
               )}
             />
           </div>
-        </section>
-
-        {/* Audio & visual note */}
-        <section className="mt-24 grid gap-8 lg:grid-cols-[1fr_380px] lg:items-center">
-          <div className="rounded-[2.5rem] border border-gray-200 bg-white/80 p-8 shadow-sm backdrop-blur-sm">
-            <p className="text-xs uppercase tracking-[0.4em] text-gray-600">Immersive Design</p>
-            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl text-gray-800">Sound, light, and motion</h2>
-            <p className="mt-4 text-sm text-gray-700 md:text-base">
-              Every narrative uses scroll-triggered audio, gradient-driven atmospheres, and particle systems tuned to its emotional arc.
-              Custom cues—cold piano chords, club pulses, shattering glass, and gentle heartbeats fade in as you
-              progress.
-            </p>
-            <ul className="mt-6 space-y-3 text-sm text-gray-700">
-              <li className="flex items-start gap-3">
-                <span className="mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-[#ffd54f]" />
-                Blair: maximalist gradients shift from black cosmos to club neon and hopeful golds.
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-[#81d4fa]" />
-                Elijah: deep blues pulse with city noise, then open to sea foam turquoise and sunrise amber.
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-[#c5e1a5]" />
-                Lala: cathedral ambers slide into scarlet confessionals before softening into botanical greens.
-              </li>
-            </ul>
-          </div>
-
         </section>
 
         {/* Supporting resources */}

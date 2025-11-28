@@ -158,17 +158,17 @@ export default function ScrollSnapCarousel<T>({
 
   return (
     <div className={`relative ${className}`}>
-      <div className="absolute inset-y-0 left-0 z-20 flex items-center -translate-x-4 md:-translate-x-6">
+      <div className="absolute inset-y-0 left-0 z-20 flex items-center translate-x-2 md:-translate-x-4 lg:-translate-x-6">
         <button
           type="button"
           onClick={handlePrev}
           disabled={!canPrev}
-          className="group rounded-full bg-gray-800/90 backdrop-blur-sm p-4 text-white shadow-xl transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-gray-800/90"
+          className="group rounded-full bg-gray-800/90 backdrop-blur-sm min-w-[44px] min-h-[44px] flex items-center justify-center p-3 md:p-4 text-white shadow-xl transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-gray-800/90 touch-manipulation"
           aria-label="Scroll previous"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 transition group-hover:-translate-x-0.5"
+            className="h-5 w-5 md:h-6 md:w-6 transition group-hover:-translate-x-0.5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -179,17 +179,17 @@ export default function ScrollSnapCarousel<T>({
         </button>
       </div>
 
-      <div className="absolute inset-y-0 right-0 z-20 flex items-center translate-x-4 md:translate-x-6">
+      <div className="absolute inset-y-0 right-0 z-20 flex items-center -translate-x-2 md:translate-x-4 lg:translate-x-6">
         <button
           type="button"
           onClick={handleNext}
           disabled={!canNext}
-          className="group rounded-full bg-gray-800/90 backdrop-blur-sm p-4 text-white shadow-xl transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-gray-800/90"
+          className="group rounded-full bg-gray-800/90 backdrop-blur-sm min-w-[44px] min-h-[44px] flex items-center justify-center p-3 md:p-4 text-white shadow-xl transition hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-gray-800/90 touch-manipulation"
           aria-label="Scroll next"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 transition group-hover:translate-x-0.5"
+            className="h-5 w-5 md:h-6 md:w-6 transition group-hover:translate-x-0.5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -202,7 +202,7 @@ export default function ScrollSnapCarousel<T>({
 
       <div
         ref={containerRef}
-        className="scrollbar-hide flex snap-x snap-mandatory gap-8 md:gap-10 overflow-x-auto pb-6 pt-2"
+        className="scrollbar-hide flex snap-x snap-mandatory gap-4 md:gap-6 lg:gap-8 overflow-x-auto pb-6 pt-2"
         role="group"
         aria-label={ariaLabel}
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
