@@ -58,7 +58,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="text-gray-700 text-xl md:text-2xl font-bella-queta font-normal leading-relaxed max-w-4xl mx-auto mb-10">
-          Discover inspiring stories of real homes, expert insights, and practical wisdom for creating your perfect living.
+          Discover how futures are imagined, one home at a time.
         </p>
 
         {/* CTA Buttons */}

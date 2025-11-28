@@ -3,7 +3,6 @@
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import FeaturedStories from '@/components/FeaturedStories'
-import BeyondFeaturesPreview from '@/components/BeyondFeaturesPreview'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
@@ -115,7 +114,6 @@ export default function Home() {
         <div className="relative z-10">
           <div className="bg-[#faf8f5]">
             <FeaturedStories />
-            <BeyondFeaturesPreview />
           </div>
         </div>
 

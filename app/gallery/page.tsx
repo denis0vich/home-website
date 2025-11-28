@@ -152,7 +152,13 @@ export default function GalleryPage() {
               ariaLabel="Feels like home portraits"
               items={FEELS_LIKE_HOME_ITEMS}
               onActiveChange={setActiveFeelsIndex}
-              renderItem={(item, index, isActive) => (
+              renderItem={(item, index, isActive) => {
+                const images = FEELS_LIKE_HOME_ITEMS.map(img => ({
+                  src: img.src,
+                  alt: img.alt,
+                  description: "One face, one room—held softly in the light they call their own."
+                }))
+                return (
                 <LightboxImage
                   src={item.src}
                   alt={item.alt}
@@ -162,6 +168,8 @@ export default function GalleryPage() {
                     isActive ? 'ring-1 ring-white/60' : ''
                   }`}
                   description="One face, one room—held softly in the light they call their own."
+                  images={images}
+                  currentIndex={index}
                   renderOverlay={
                     <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-[#081849]/80 via-[#081849]/30 to-transparent transition-opacity">
                       <div className="p-6">
@@ -175,7 +183,8 @@ export default function GalleryPage() {
                     </div>
                   }
                 />
-              )}
+                )
+              }}
             />
           </div>
 
@@ -224,13 +233,21 @@ export default function GalleryPage() {
                     items={group.items}
                     onActiveChange={(index) => handleGroupActiveChange(group.id, index)}
                     itemClassName="min-w-[min(360px,80vw)]"
-                    renderItem={(itemNumber, index, isActive) => (
+                    renderItem={(itemNumber, index, isActive) => {
+                      const images = group.items.map(num => ({
+                        src: `/gallery/our-gallery/house${num}.jpg`,
+                        alt: `Home ${num} from Our Gallery`,
+                        description: `${GALLERY_CAPTIONS[num - 1]} Photograph taken by Anne Nicole Zambrano.`
+                      }))
+                      return (
                       <LightboxImage
                         key={itemNumber}
                         src={`/gallery/our-gallery/house${itemNumber}.jpg`}
                         alt={`Home ${itemNumber} from Our Gallery`}
                         sizes="(max-width: 768px) 80vw, (max-width: 1200px) 360px, 440px"
                         description={`${GALLERY_CAPTIONS[itemNumber - 1]} Photograph taken by Anne Nicole Zambrano.`}
+                        images={images}
+                        currentIndex={index}
                         className={`group relative h-[340px] w-full overflow-hidden rounded-[2.2rem] border border-white/12 bg-white/5 transition ${
                           isActive ? 'ring-1 ring-white/60' : ''
                         }`}
@@ -246,7 +263,8 @@ export default function GalleryPage() {
                           </div>
                         }
                       />
-                    )}
+                      )
+                    }}
                   />
 
                   <div className="mt-8 flex flex-col items-center gap-4 text-center">

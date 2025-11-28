@@ -3,7 +3,6 @@
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import StoryImage from '@/components/StoryImage'
-import StoryAudio from '@/components/StoryAudio'
 import StoryVideo from '@/components/StoryVideo'
 import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
@@ -77,7 +76,6 @@ export default function ElijahStoryPage() {
               backgroundColor="#e3f2fd"
               className={SECTION_CHROME}
             >
-              <StoryAudio src="/audio/Elijah - panalangin piano.mp3" loop volume={0.5} />
               <StoryImage src="/stories-assets/FOR ETHAN(1).jpg" alt="Illustration of Elijah's story" />
 
               <StoryParagraph>
@@ -109,7 +107,6 @@ export default function ElijahStoryPage() {
               backgroundColor="#f0e8e0"
               className={SECTION_CHROME}
             >
-              <StoryAudio src="/audio/Elijah_ Streets of Manila.mp3" loop volume={0.5} />
               <StoryParagraph>
                 He opened his eyes. The sharp white of his dream dissolved into the chipped melamine countertop, the single, stained electric kettle wobbling on the edge. His kitchen island was a small plastic table, its legs uneven, where he rested his weary elbows. He tore open a packet of instant noodles. The kettle rattled as it boiled.
               </StoryParagraph>
@@ -168,7 +165,6 @@ export default function ElijahStoryPage() {
               backgroundColor="#e1f5fe"
               className={SECTION_CHROME}
             >
-              <StoryAudio src="/audio/Elijah - sea waves.mp3" loop volume={0.5} />
               <StoryImage src="/stories-assets/Sailing sea.jpg" alt="Sailing at sea" />
 
               <StoryParagraph>
@@ -261,7 +257,6 @@ export default function ElijahStoryPage() {
                 Elijah remembers buying a soft pillow with the money he earned from tutoring his classmates. It wasn&apos;t much, just a clean square of comfort, still smelling faintly of detergent. He thought it might replace the tired pillows his parents had long slept on. When he opened their bedroom door, they were already asleep. His father&apos;s arm draped over his mother&apos;s side, the electric fan humming low. He placed the pillow beside them, careful not to wake them, as he lingered in the doorway. When the stars finally aligned for him, his parents would no longer have to sleep on worn-out mattresses. He kept their pictures in his wallet to inspire him during exam season.
               </StoryParagraph>
 
-              <StoryAudio src="/audio/Elijah - Gentle Heartbeat Fading In.mp3" loop volume={0.4} />
               <StoryImage src="/stories-assets/FOR ETHAN(2).jpg" alt="Illustration of Elijah's story" />
 
               <StoryParagraph>
@@ -323,7 +318,6 @@ export default function ElijahStoryPage() {
                 Now, standing at the mountain&apos;s edge, the cities below gleamed in the sunrise. His friends forced him to go hiking with them. Elijah, looking ahead, understood his true vantage point. His hurdles in his house in Paco were only steps that he needed to surpass. Out of his love for his family and his dreams, he declared a vow. He would keep climbing, one tired, tenacious step at a time.
               </StoryParagraph>
 
-              <StoryAudio src="/audio/Elijah_ Peaceful.mp3" loop volume={0.5} />
               <StoryImage src="/stories-assets/Elijah_ Field.jpg" alt="Field" />
 
               <div className="my-20">

@@ -21,12 +21,12 @@ const VALUES = [
   {
     title: 'Mission',
     body:
-      'Document and narrativize the emotional architecture of the Filipino home—moving past square footage to reveal how memory, aspiration, and routine shape belonging.',
+      'To listen, to narrate, and to reveal how Filipinos build homes through imagination before they build them in the world, uncovering the hopes, pressures, and social realities that guide these dreams. Through these stories, The Haven seeks to spark awareness and inspire futures where belonging is possible for everyone.',
   },
   {
     title: 'Vision',
     body:
-      'Build a digital sanctuary where “home” is defined by peace, autonomy, and emotional stability. The Haven invites shared vulnerability so we can design futures together.',
+      'The Haven builds a community of dreamers where anyone, no matter their background, can imagine their own dream home. It starts with a digital space that collects and shares these stories, creating a place where people can see themselves, connect through their experiences, and find inspiration in the way others define home.',
   },
 ]
 
@@ -59,28 +59,8 @@ export default function AboutPage() {
           </p>
         </header>
 
-        <section className="mt-16 grid gap-8 md:grid-cols-[1.4fr_0.8fr]">
-          <article className="rounded-3xl border border-white/40 bg-white/70 p-8 shadow-[0_20px_50px_rgba(137,49,114,0.12)] backdrop-blur">
-            <h2 className="font-bella-queta text-3xl text-[#081849]">Project Overview</h2>
-            <div className="mt-5 space-y-4 text-[#2f2f3a]/85">
-              <p>
-                The Haven builds a community of dreamers where anyone can imagine their own sanctuary. It is an
-                ongoing digital space that collects testimony, design insight, and emotional artifacts so readers can
-                see themselves reflected and feel less alone in the process of building a home.
-              </p>
-              <p>
-                Conceived by Communication Arts students Anne Nicole Zambrano and Kirsten Jewel Garcia, the project
-                merges rigorous research with sensorial storytelling. Each narrative is paired with expert guidance so
-                that the dream feels actionable.
-              </p>
-              <p>
-                We believe that documenting the dream makes the future tangible. By archiving how a generation
-                defines safety and belonging, The Haven invites readers to co-design what comes next.
-              </p>
-            </div>
-          </article>
-
-          <aside className="grid gap-4 rounded-3xl border border-white/35 bg-white/65 p-6 text-sm text-[#2f2f3a]/75 shadow-[0_16px_40px_rgba(33,56,133,0.14)] backdrop-blur">
+        <section className="mt-16">
+          <aside className="grid gap-4 rounded-3xl border border-white/35 bg-white/65 p-6 text-sm text-[#2f2f3a]/75 shadow-[0_16px_40px_rgba(33,56,133,0.14)] backdrop-blur max-w-2xl mx-auto">
             {TIMELINE.map((entry) => (
               <div key={entry.label} className="rounded-2xl border border-white/40 bg-white/70 p-4">
                 <p className="text-xs uppercase tracking-[0.35em] text-[#5F3475]">{entry.label}</p>

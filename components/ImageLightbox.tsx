@@ -23,7 +23,7 @@ interface LightboxImage {
 }
 
 interface ImageLightboxContextValue {
-  open: (image: LightboxImage) => void
+  open: (image: LightboxImage, images?: LightboxImage[], currentIndex?: number) => void
 }
 
 const ImageLightboxContext = createContext<ImageLightboxContextValue | null>(null)
@@ -38,23 +38,48 @@ export function useImageLightbox() {
 
 export function ImageLightboxProvider({ children }: { children: ReactNode }) {
   const [image, setImage] = useState<LightboxImage | null>(null)
+  const [images, setImages] = useState<LightboxImage[]>([])
+  const [currentIndex, setCurrentIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
   const [viewport, setViewport] = useState({ width: 0, height: 0 })
   const lastFocusRef = useRef<HTMLElement | null>(null)
   const closeButtonRef = useRef<HTMLButtonElement | null>(null)
   const overlayRef = useRef<HTMLDivElement | null>(null)
 
-  const open = useCallback((nextImage: LightboxImage) => {
+  const open = useCallback((nextImage: LightboxImage, imageCollection?: LightboxImage[], index?: number) => {
     if (!lastFocusRef.current && typeof document !== 'undefined') {
       lastFocusRef.current = document.activeElement as HTMLElement
     }
     setImage(nextImage)
+    setImages(imageCollection || [])
+    setCurrentIndex(index ?? 0)
     setIsOpen(true)
   }, [])
 
   const close = useCallback(() => {
     setIsOpen(false)
+    setImages([])
+    setCurrentIndex(0)
   }, [])
+
+  const goToPrevious = useCallback(() => {
+    if (images.length > 0 && currentIndex > 0) {
+      const newIndex = currentIndex - 1
+      setCurrentIndex(newIndex)
+      setImage(images[newIndex])
+    }
+  }, [images, currentIndex])
+
+  const goToNext = useCallback(() => {
+    if (images.length > 0 && currentIndex < images.length - 1) {
+      const newIndex = currentIndex + 1
+      setCurrentIndex(newIndex)
+      setImage(images[newIndex])
+    }
+  }, [images, currentIndex])
+
+  const canGoPrevious = images.length > 0 && currentIndex > 0
+  const canGoNext = images.length > 0 && currentIndex < images.length - 1
 
   useEffect(() => {
     if (!isOpen) {
@@ -69,6 +94,12 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         close()
+      }
+      if (event.key === 'ArrowLeft' && canGoPrevious) {
+        goToPrevious()
+      }
+      if (event.key === 'ArrowRight' && canGoNext) {
+        goToNext()
       }
       if (event.key === 'Tab' && overlayRef.current && closeButtonRef.current) {
         const focusable = overlayRef.current.querySelectorAll<HTMLElement>(
@@ -105,7 +136,7 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
       window.removeEventListener('resize', updateViewport)
       document.body.style.overflow = originalOverflow
     }
-  }, [isOpen, close])
+  }, [isOpen, close, canGoPrevious, canGoNext, goToPrevious, goToNext])
 
   const contextValue = useMemo(() => ({ open }), [open])
 
@@ -159,22 +190,64 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
                   </button>
                 </header>
 
-                <div
-                  className="relative mx-auto overflow-hidden rounded-3xl border border-white/20 bg-white/10 shadow-[0_30px_80px_rgba(5,11,34,0.65)]"
-                  style={{
-                    width: Math.max(240, displayWidth),
-                    height: Math.max(240, displayHeight),
-                    transition: 'width 120ms ease, height 120ms ease',
-                  }}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt ?? ''}
-                    width={image.width ?? Math.round(displayWidth)}
-                    height={image.height ?? Math.round(displayHeight)}
-                    className="h-full w-full object-contain"
-                    priority
-                  />
+                <div className="relative mx-auto" style={{ width: Math.max(240, displayWidth), height: Math.max(240, displayHeight) }}>
+                  {/* Previous Arrow */}
+                  {canGoPrevious && (
+                    <button
+                      onClick={goToPrevious}
+                      className="absolute left-0 top-1/2 -translate-x-4 -translate-y-1/2 z-20 rounded-full bg-white/10 p-3 text-white shadow-lg transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-40"
+                      aria-label="Previous image"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.6}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                  )}
+
+                  {/* Next Arrow */}
+                  {canGoNext && (
+                    <button
+                      onClick={goToNext}
+                      className="absolute right-0 top-1/2 translate-x-4 -translate-y-1/2 z-20 rounded-full bg-white/10 p-3 text-white shadow-lg transition hover:bg-white/25 disabled:cursor-not-allowed disabled:opacity-40"
+                      aria-label="Next image"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={1.6}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  )}
+
+                  <div
+                    className="relative overflow-hidden rounded-3xl border border-white/20 bg-white/10 shadow-[0_30px_80px_rgba(5,11,34,0.65)]"
+                    style={{
+                      width: Math.max(240, displayWidth),
+                      height: Math.max(240, displayHeight),
+                      transition: 'width 120ms ease, height 120ms ease',
+                    }}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt ?? ''}
+                      width={image.width ?? Math.round(displayWidth)}
+                      height={image.height ?? Math.round(displayHeight)}
+                      className="h-full w-full object-contain"
+                      priority
+                    />
+                  </div>
                 </div>
 
                 {image.description && (
@@ -205,6 +278,8 @@ interface LightboxImageProps {
   renderOverlay?: ReactNode
   priority?: boolean
   sizes?: string
+  images?: LightboxImage[]
+  currentIndex?: number
 }
 
 export function LightboxImage({
@@ -218,6 +293,8 @@ export function LightboxImage({
   renderOverlay,
   priority,
   sizes,
+  images,
+  currentIndex,
 }: LightboxImageProps) {
   const { open } = useImageLightbox()
 
@@ -225,7 +302,7 @@ export function LightboxImage({
     onClick?.()
 
     if (typeof window !== 'undefined' && (!width || !height)) {
-      open({ src, alt, description })
+      open({ src, alt, description }, images, currentIndex)
       const preload = new window.Image()
       preload.src = src
       preload.onload = () => {
@@ -235,16 +312,16 @@ export function LightboxImage({
           description,
           width: preload.naturalWidth,
           height: preload.naturalHeight,
-        })
+        }, images, currentIndex)
       }
       preload.onerror = () => {
-        open({ src, alt, description })
+        open({ src, alt, description }, images, currentIndex)
       }
       return
     }
 
-    open({ src, alt, description, width, height })
-  }, [open, src, alt, description, width, height, onClick])
+    open({ src, alt, description, width, height }, images, currentIndex)
+  }, [open, src, alt, description, width, height, onClick, images, currentIndex])
 
   return (
     <button

@@ -3,7 +3,6 @@
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import StoryImage from '@/components/StoryImage'
-import StoryAudio from '@/components/StoryAudio'
 import StoryVideo from '@/components/StoryVideo'
 import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
@@ -96,7 +95,6 @@ export default function BlairStoryPage() {
                 Their home in Antipolo was a dream others might envy. A six-bedroom mansion perched on a hill, surrounded by tall trees and guarded gates. The neighborhood was peaceful, detached, and safe. Every morning, sunlight poured through glass walls. Chandeliers glimmered above the dining table, and the air always smelled faintly of clean linen and pastries. Somehow, the exquisite place still brought her a vacant ache she had no words for.
               </StoryParagraph>
 
-              <StoryAudio src="/audio/Blair - Cold, High-Pitched Piano Chord .mp3" volume={0.5} fadeIn={false} />
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={40}>
                 Blair knew of opulence. She lived inside it, breathed it. Every wish, every comfort, within
                 reach. Her world was a gilded cage, a constraining piece of gold strapped around her neck.
@@ -114,7 +112,6 @@ export default function BlairStoryPage() {
             sectionId="blair-club"
             backgroundColor="#fce4ec"
           >
-              <StoryAudio src="/audio/Blair - club music .mp3" loop volume={0.5} />
               <StoryParagraph>
                 Blair chased that feeling wherever she could find it. The blinding lights of a club, the pulsing
                 beat of a song, the blur of strangers dancing too close. The music filled the hollow places her
@@ -237,7 +234,6 @@ export default function BlairStoryPage() {
                 &quot;You don&apos;t need to work,&quot; her father had told her mother years ago. &quot;I&apos;ll take care of you.&quot; She believed him. Blair&apos;s mother did not pursue the medical boards anymore, pregnant with her first child. Unfortunately, she miscarried and opted to pursue marriage with Blair&apos;s father. It was the practical thing to do. Was it love that bound them together? Blair is still unsure.
               </StoryParagraph>
 
-              <StoryAudio src="/audio/Blair - Shattering Sound.mp3" volume={0.5} fadeIn={false} />
               <StoryParagraph useTextReveal revealType="word" textRevealDelay={25}>
                 As the night settled in, Blair followed her mother into the dirty kitchen, the only part of the
                 house that felt alive. The air smelled of garlic and oil. Pans hung unevenly on the tiled wall. A

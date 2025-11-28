@@ -3,7 +3,6 @@
 import Navigation from '@/components/Navigation'
 import ScrollAnimation from '@/components/ScrollAnimation'
 import StoryImage from '@/components/StoryImage'
-import StoryAudio from '@/components/StoryAudio'
 import StoryVideo from '@/components/StoryVideo'
 import StoryParagraph from '@/components/StoryParagraph'
 import StorySection from '@/components/StorySection'
@@ -104,7 +103,6 @@ export default function LalaStoryPage() {
               backgroundColor="#fce4ec"
               className={SECTION_CHROME}
             >
-              <StoryAudio src="/audio/Lala - Heavy Door Slam .mp3" volume={0.6} fadeIn={false} />
                 <StoryParagraph>
                 A knock on her door woke her the next morning. Ten a.m. She was supposed to join her family for a trip. &quot;You won&apos;t come with us anymore,&quot; her mother said from the doorway. Lala blinked, half-asleep. &quot;If you can&apos;t follow rules, then stay here.&quot; The door slammed.
                 </StoryParagraph>
@@ -234,7 +232,6 @@ export default function LalaStoryPage() {
               backgroundColor="#fce4ec"
               className={SECTION_CHROME}
             >
-              <StoryAudio src="/audio/Lala - confession.mp3" volume={0.6} fadeIn={false} />
               <StoryParagraph>
                 &quot;Bless me, Father, for I have sinned.&quot; The words trembled as they left her mouth. Between her and the priest stood a brown wooden grate, separating sinner from savior. Lala&apos;s hands were shaking in a prayer position. Beads of sweat formed on her forehead. The dark, guarded atmosphere of the confessional made her want to puke. &quot;I&apos;ve desired a woman,&quot; she whispered. She confessed her most shameful secret. She had fantasized about a woman. She had touched herself while thinking about one.
                 </StoryParagraph>
