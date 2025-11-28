@@ -107,8 +107,9 @@ export default function StoriesPage() {
               ariaLabel="Story portals"
               items={STORY_PORTALS}
               className="[&_.scrollbar-hide]:overflow-x-hidden"
+              itemClassName="min-w-[min(320px,80vw)] max-w-[min(380px,85vw)]"
               renderItem={(portal) => (
-                <article className={`group relative flex h-full flex-col justify-between overflow-hidden rounded-[2.8rem] border border-white/15 bg-gradient-to-br ${portal.gradient} p-10 md:p-12 shadow-[0_24px_60px_rgba(5,11,34,0.6)] transition-transform duration-500 ease-out hover:-translate-y-1.5`}>
+                <article className={`group relative flex h-[500px] md:h-[550px] flex-col justify-between overflow-hidden rounded-[2.8rem] border border-white/15 bg-gradient-to-br ${portal.gradient} p-10 md:p-12 transition-transform duration-500 ease-out hover:-translate-y-1.5`}>
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.24),transparent_55%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   <div className="absolute inset-0 bg-white/10 opacity-0 transition group-hover:opacity-15" />
 

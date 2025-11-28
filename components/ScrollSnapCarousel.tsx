@@ -214,7 +214,7 @@ export default function ScrollSnapCarousel<T>({
               itemRefs.current[index] = node
             }}
             className={`relative flex-shrink-0 snap-center ${itemClassName}`}
-            style={{ minWidth: 'min(340px, 75vw)' }}
+            style={itemClassName ? {} : { minWidth: 'min(340px, 75vw)' }}
             onClick={() => onItemClick?.(item, index)}
           >
             {renderItem(item, index, activeIndexState === index)}
