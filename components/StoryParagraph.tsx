@@ -40,7 +40,7 @@ export default function StoryParagraph({
         style={{ 
           lineHeight: '2', 
           color: textColor,
-          fontSize: 'clamp(1.125rem, 2.5vw, 1.5rem)'
+          fontSize: 'clamp(1.2375rem, 2.75vw, 1.65rem)' /* 110% of original */
         }}
       >
         {children}

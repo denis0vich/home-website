@@ -59,6 +59,10 @@
   font-family: 'Roboto Serif', serif;
 }
 
+html {
+  font-size: 110%; /* Increase base font size by 10% */
+}
+
 body {
   overflow-x: hidden;
   /* Light pastel background */
