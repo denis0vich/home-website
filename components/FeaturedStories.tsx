@@ -28,10 +28,10 @@ export default function FeaturedStories() {
       />
       <section className="relative z-20 py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bella-queta text-white text-center mb-6 drop-shadow-2xl">
+          <h2 className="text-4xl md:text-5xl font-bella-queta text-gray-800 text-center mb-6">
             Featured Stories
           </h2>
-          <p className="text-white/90 text-center max-w-3xl mx-auto mb-12 text-lg font-bella-queta drop-shadow-lg">
+          <p className="text-gray-700 text-center max-w-3xl mx-auto mb-12 text-lg font-bella-queta">
             This section features the heart of our exploration, with deeply personal narratives alongside expert analysis. Dive into the lives of individuals like Elijah, Blair, and Lala to understand how past trauma, financial anxiety, and identity struggles are translated into the blueprint of their dream home.
           </p>
           <div className="text-center">

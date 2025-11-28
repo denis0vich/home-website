@@ -49,6 +49,7 @@ export default function Navigation() {
     const mousePos = mousePositions[item.href] || { x: 0, y: 0 }
     const offsetX = mousePos.x * -0.15
     const offsetY = mousePos.y * -0.15
+    const isHomePage = pathname === '/'
 
     const highlightBaseClasses =
       'absolute left-1/2 top-1/2 z-0 h-[calc(100%+0.75rem)] w-[calc(100%-0.75rem)] rounded-full transition-all duration-75 ease-out'
@@ -56,11 +57,15 @@ export default function Navigation() {
       ? 'bg-[#BE8CC1]/30 shadow-[0_8px_24px_rgba(190,140,193,0.25)]'
       : 'bg-gradient-to-r from-gray-100/50 via-gray-100/25 to-gray-100/50'
 
+    const textColorClass = isHomePage 
+      ? 'text-white transition-colors hover:text-white/90' 
+      : 'text-gray-800 transition-colors hover:text-gray-900'
+
     return (
       <TransitionLink
         key={item.href}
         href={item.href}
-        className={`relative inline-flex items-center justify-center px-3 py-2 font-bella-queta font-bold tracking-[0.15em] text-gray-800 transition-colors hover:text-gray-900 ${
+        className={`relative inline-flex items-center justify-center px-3 py-2 font-bella-queta font-bold tracking-[0.15em] ${textColorClass} ${
           isMobile ? 'text-base w-full justify-start' : 'text-lg'
         }`}
         onClick={() => isMobile && setMobileMenuOpen(false)}
@@ -118,24 +123,26 @@ export default function Navigation() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden relative z-50 flex flex-col items-center justify-center w-10 h-10 space-y-1.5 text-gray-800 focus:outline-none"
+          className={`md:hidden relative z-50 flex flex-col items-center justify-center w-10 h-10 space-y-1.5 focus:outline-none ${
+            pathname === '/' ? 'text-white' : 'text-gray-800'
+          }`}
           aria-label="Toggle menu"
           aria-expanded={mobileMenuOpen}
         >
           <span
-            className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
-              mobileMenuOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
+            className={`block w-6 h-0.5 transition-all duration-300 ${
+              pathname === '/' ? 'bg-white' : 'bg-gray-800'
+            } ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}
           />
           <span
-            className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
-              mobileMenuOpen ? 'opacity-0' : ''
-            }`}
+            className={`block w-6 h-0.5 transition-all duration-300 ${
+              pathname === '/' ? 'bg-white' : 'bg-gray-800'
+            } ${mobileMenuOpen ? 'opacity-0' : ''}`}
           />
           <span
-            className={`block w-6 h-0.5 bg-gray-800 transition-all duration-300 ${
-              mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
+            className={`block w-6 h-0.5 transition-all duration-300 ${
+              pathname === '/' ? 'bg-white' : 'bg-gray-800'
+            } ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}
           />
         </button>
       </div>

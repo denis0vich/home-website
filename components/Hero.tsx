@@ -52,12 +52,12 @@ export default function Hero() {
         }}
       >
         {/* Main Title */}
-        <h1 className="text-6xl md:text-7xl lg:text-[140px] font-bella-queta font-normal text-gray-800 leading-[108%] tracking-[0.04em] mb-6">
+        <h1 className="text-6xl md:text-7xl lg:text-[140px] font-bella-queta font-normal text-white leading-[108%] tracking-[0.04em] mb-6 drop-shadow-2xl">
           Where Dreams Meet Home
         </h1>
 
         {/* Subtitle */}
-        <p className="text-gray-700 text-xl md:text-2xl font-bella-queta font-normal leading-relaxed max-w-4xl mx-auto mb-10">
+        <p className="text-white text-xl md:text-2xl font-bella-queta font-normal leading-relaxed max-w-4xl mx-auto mb-10 drop-shadow-lg">
           Discover how futures are imagined, one home at a time.
         </p>
 
