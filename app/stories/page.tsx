@@ -87,9 +87,7 @@ export default function StoriesPage() {
             Stories That Build Sanctuary
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700 md:text-xl">
-            Enter the immersive trilogy of Blair, Elijah, and Lala—three dream homes imagined from
-            trauma, longing, and faith. Each portal leads to scroll-triggered soundscapes, particle-driven
-            atmospheres, and companion interviews that extend their worlds.
+            Discover the sanctuaries of Blair, Elijah, and Lala. Each one is a refuge crafted from memory, feeling, and meaning.
           </p>
         </section>
 
@@ -138,8 +136,10 @@ export default function StoriesPage() {
         {/* Supporting resources */}
         <section className="mt-24 space-y-10">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.4em] text-gray-600">Extend Each Narrative</p>
-            <h2 className="mt-3 font-bella-queta text-3xl md:text-4xl text-gray-800">Supporting Chapters</h2>
+            <h2 className="font-bella-queta text-3xl md:text-4xl text-gray-800">Dive deeper into The Haven</h2>
+            <p className="mt-3 mx-auto max-w-2xl text-lg text-gray-700 md:text-xl">
+              Trace the lines that bring your future home to life.
+            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {RESOURCE_LINKS.map((resource) => (
