@@ -16,11 +16,6 @@ export default function BlairStoryPage() {
       <main className="relative z-10 w-full pt-40 pb-32">
         <div className="mx-auto w-full max-w-5xl px-6">
         <header className="rounded-3xl border border-gray-200 bg-white/80 p-10 text-center shadow-sm backdrop-blur-sm">
-          <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-gray-600">
-            <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Subject: Blair</span>
-            <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Abuse · Repressed Identity</span>
-            <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Maximalist Sanctuary</span>
-          </div>
           <h1 className="font-bella-queta text-5xl md:text-6xl lg:text-7xl text-gray-800">The Architecture of Moving</h1>
           <p className="mt-6 text-lg text-gray-700 md:text-xl">
             The path to a home is never a straight line. Blair wanders through sanctuaries built by others, longing for one she can finally claim.

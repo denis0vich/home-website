@@ -20,11 +20,6 @@ export default function LalaStoryPage() {
           <div className="mx-auto w-full max-w-5xl px-6">
             <ScrollAnimation direction="fadeIn" duration={500}>
               <header className="rounded-3xl border border-gray-200 bg-white/80 p-10 text-center shadow-sm backdrop-blur-sm">
-                <div className="mb-6 flex flex-wrap items-center justify-center gap-3 text-xs uppercase tracking-[0.35em] text-gray-600">
-                  <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Subject: Lala</span>
-                  <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Religion · Homophobia</span>
-                  <span className="rounded-full border border-gray-300 px-4 py-2 bg-pink-50">Warm Greens &amp; Browns</span>
-              </div>
                 <h1 className="text-5xl font-bella-queta text-gray-800 md:text-6xl lg:text-7xl">
                 The Sculpture of Faith
               </h1>
