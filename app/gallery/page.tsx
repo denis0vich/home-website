@@ -202,7 +202,7 @@ export default function GalleryPage() {
               and finally to balconies that drink the skyline.
             </p>
             <p className="mx-auto mt-6 text-sm text-gray-600 italic">
-              Photograph taken by Anne Nicole Zambrano.
+              All photographs taken by Anne Nicole Zambrano.
             </p>
           </div>
 
