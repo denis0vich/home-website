@@ -109,9 +109,9 @@ export default function AboutPage() {
 
         <section className="mt-24 rounded-3xl border border-white/35 bg-white/55 p-8 text-center shadow-[0_24px_60px_rgba(8,24,73,0.2)] backdrop-blur">
           <p className="text-xs uppercase tracking-[0.35em] text-[#5F3475]">Next step</p>
-          <h2 className="mt-3 font-bella-queta text-3xl text-[#081849]">Dive deeper into the thesis</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-[#2f2f3a]/80">
-            Explore the full production blueprint—frameworks, methodologies, and advisory voices—in the project hub.
+          <h2 className="font-bella-queta text-3xl text-[#081849]">Dive deeper into The Haven</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-[#2f2f3a]/80">
+            Trace the lines that bring your future home to life.
           </p>
           <TransitionLink
             href="/about-the-project"
