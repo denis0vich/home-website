@@ -389,6 +389,13 @@ export default function BlairStoryPage() {
               </ScrollAnimation>
 
               <StoryImage src="/stories-assets/LAMP.jpg" alt="Lamp" />
+
+              <div className="mt-12">
+                <StoryVideo
+                  src="/videos/blair-dream-home.mp4"
+                  controls
+                />
+              </div>
           </StorySection>
         </section>
 
