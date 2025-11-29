@@ -40,13 +40,16 @@ export default function StoryVideo({
         
         setDimensions({ width: constrainedWidth, height })
         
-        // Force video to have explicit dimensions, but don't exceed container
-        video.style.width = `${Math.min(constrainedWidth, rect.width)}px`
+        // Force video to have explicit dimensions, but don't exceed container, and center it
+        const finalWidth = Math.min(constrainedWidth, rect.width)
+        video.style.width = `${finalWidth}px`
         video.style.height = `${height}px`
         video.style.maxWidth = `${rect.width}px`
         video.style.maxHeight = `${maxHeight}px`
         video.style.minWidth = '0'
         video.style.minHeight = '0'
+        video.style.marginLeft = 'auto'
+        video.style.marginRight = 'auto'
       }
     }
 
@@ -125,7 +128,9 @@ export default function StoryVideo({
         minHeight: '300px',
         maxHeight: '500px',
         position: 'relative',
-        display: 'block',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         width: '100%'
       }}
     >
@@ -139,8 +144,8 @@ export default function StoryVideo({
         playsInline
         preload={autoPlay ? 'auto' : 'metadata'}
         style={{ 
-          width: '100%',
-          height: '100%',
+          width: dimensions.width || '100%',
+          height: dimensions.height || '100%',
           objectFit: 'contain',
           display: 'block',
           visibility: 'visible',
