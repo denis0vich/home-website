@@ -169,67 +169,6 @@ export default function AboutTheProjectPage() {
           </div>
         </section>
 
-        <section className="mt-20 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <article className="rounded-3xl border border-white/30 bg-white/65 p-8 shadow-[0_20px_40px_rgba(8,24,73,0.15)] backdrop-blur">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#5F3475]">Methodology</p>
-            <h2 className="mt-3 font-bella-queta text-3xl text-[#081849]">
-              Three lives, three in-depth interviews
-            </h2>
-            <p className="mt-4 text-[#2f2f3a]/80">
-              We conducted purposive interviews (45–60 minutes) via Zoom with Gen Z individuals
-              whose home lives reflect the spectrum of instability, ritual, and identity work present
-              in the Philippines today.
-            </p>
-
-            <ul className="mt-6 grid gap-4 rounded-2xl border border-white/40 bg-white/70 p-6 text-sm text-[#2f2f3a]/90 md:grid-cols-3">
-              {PARTICIPANTS.map((participant) => (
-                <li key={participant.name}>
-                  <p className="font-bella-queta text-lg text-[#081849]">
-                    {participant.name}
-                  </p>
-                  <p className="text-xs uppercase tracking-[0.3em] text-[#5F3475]">
-                    {participant.age} · Gen Z
-                  </p>
-                  <p className="mt-2 leading-relaxed">{participant.theme}</p>
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-6 rounded-2xl border border-white/35 bg-white/75 p-6 text-sm leading-relaxed text-[#2f2f3a]/80">
-              Each creative nonfiction story is paired with expert commentary from civil engineering,
-              architecture, interior design, and psychology professionals to ground emotional needs in
-              actionable design insights.
-            </div>
-          </article>
-
-          <aside className="rounded-3xl border border-white/30 bg-white/60 p-8 shadow-[0_20px_40px_rgba(137,49,114,0.18)] backdrop-blur">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#5F3475]">Expert Board</p>
-            <h3 className="mt-3 font-bella-queta text-2xl text-[#081849]">Advisory Voices</h3>
-            <ul className="mt-5 space-y-4 text-sm leading-relaxed text-[#2f2f3a]/80">
-              {EXPERTS.map((expert) => (
-                <li key={expert}>{expert}</li>
-              ))}
-            </ul>
-
-            <div className="mt-8 rounded-2xl border border-white/40 bg-white/70 p-6 text-sm text-[#2f2f3a]/80">
-              <p className="font-bella-queta text-lg text-[#081849]">Authors</p>
-              <ul className="mt-3 space-y-3">
-                {AUTHORS.map((author) => (
-                  <li key={author.name}>
-                    <p className="text-[#081849] font-medium">{author.name}</p>
-                    <p className="text-xs uppercase tracking-[0.3em] text-[#5F3475]">
-                      {author.role}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-4 text-xs uppercase tracking-[0.3em] text-[#5F3475]/70">
-                College of Liberal Arts · Term 3 · AY 2024-2025
-              </p>
-            </div>
-          </aside>
-        </section>
-
         <section className="mt-24 rounded-3xl border border-white/35 bg-white/55 p-8 shadow-[0_18px_35px_rgba(8,24,73,0.25)] backdrop-blur">
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.35em] text-[#5F3475]">Explore</p>
