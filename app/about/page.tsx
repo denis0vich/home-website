@@ -53,9 +53,7 @@ export default function AboutPage() {
             About The Haven
           </h1>
           <p className="mx-auto max-w-3xl text-lg text-[#2f2f3a]/80 md:text-xl">
-            The Haven is a living archive of dream homes imagined by Gen Z in Metro Manila. We weave
-            together journalism, creative nonfiction, and experiential design to honor how young people seek
-            safety, autonomy, and gentleness in the spaces they inhabit.
+            The Haven is a living archive of dream homes imagined by Gen Z in Metro Manila.
           </p>
         </header>
 
